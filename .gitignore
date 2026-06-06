@@ -26,3 +26,14 @@ data/raw/
 
 # Outputs temporales
 outputs/
+# ROS 2 workspace build outputs
+ros2_ws/build/
+ros2_ws/install/
+ros2_ws/log/
+
+# Gazebo logs
+.gazebo/
+*.log
+
+# Videos pesados
+reports/videos/*.mp4
