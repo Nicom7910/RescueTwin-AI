@@ -25,6 +25,7 @@ setup(
     'console_scripts': [
         'motion_node = rescuetwin_sim.motion_node:main',
         'sensor_sim_node = rescuetwin_sim.sensor_sim_node:main',
+        'risk_ai_node = rescuetwin_sim.risk_ai_node:main',
     ],
 },
 )
