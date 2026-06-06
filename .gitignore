@@ -1,0 +1,28 @@
+# Entorno virtual
+.venv/
+venv/
+
+# Python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# Datasets crudos pesados
+data/raw/
+
+# Archivos comprimidos
+*.zip
+*.rar
+*.7z
+*.tar
+*.gz
+
+# Sistema
+.DS_Store
+
+# Modelos pesados, si después generan alguno muy grande
+*.pkl
+*.joblib
+
+# Outputs temporales
+outputs/
