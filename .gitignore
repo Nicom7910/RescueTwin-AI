@@ -24,6 +24,11 @@ data/raw/
 *.pkl
 *.joblib
 
+# Excepción: modelos necesarios del proyecto
+!models/
+!models/random_forest_rescuetwin.pkl
+!models/model_columns.pkl
+
 # Outputs temporales
 outputs/
 # ROS 2 workspace build outputs
