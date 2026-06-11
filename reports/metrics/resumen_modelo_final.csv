@@ -1,0 +1,2 @@
+modelo_final,variable_objetivo,clases,accuracy,precision_weighted,recall_weighted,f1_weighted,cross_validation_f1_mean,cross_validation_f1_std,cantidad_registros,cantidad_variables_modelo
+Random Forest Classifier,nivel_riesgo,"Alto, Bajo, Medio",0.8725,0.878,0.8725,0.8645,0.8443,0.0165,2000,25

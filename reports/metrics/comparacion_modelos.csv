@@ -1,0 +1,3 @@
+Modelo,Accuracy,Precision_weighted,Recall_weighted,F1_weighted
+Árbol de Decisión,0.765,0.7700551776266061,0.765,0.7633303517330625
+Random Forest,0.8725,0.8780049969450991,0.8725,0.8644831932773109
