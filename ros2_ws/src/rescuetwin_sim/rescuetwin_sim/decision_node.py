@@ -14,63 +14,58 @@ class DecisionNode(Node):
     """
     Nodo de decisión autónoma para RescueTwin AI.
 
-    Lee:
-    - /robot/pose
-    - /robot/sensor_status
-    - /robot/risk_status
-
-    Publica:
-    - /robot/cmd_vel
-    - /base/alertas
-    - /mission/state
-    - /mission/current_objective
-    - /mission/decision_status
+    Mejora principal:
+    - El robot ahora tiene una misión orientada a objetivo.
+    - Recorre una ruta extendida hasta la víctima probable.
+    - Ante riesgo alto, no aborta inmediatamente: rodea la zona crítica.
+    - Solo aborta si el riesgo extremo se sostiene durante demasiado tiempo.
     """
 
     def __init__(self):
         super().__init__("decision_node")
 
-        # Estado del robot
         self.x = -4.0
         self.y = 0.0
         self.theta = 0.0
 
-        # Últimos datos de sensores
         self.sensor_data: Dict[str, str] = {}
         self.risk_data: Dict[str, str] = {}
 
         self.mission_state = "EXPLORANDO"
         self.current_wp_index = 0
+
         self.alert_sent_person = False
+        self.alert_sent_complete = False
         self.alert_count = 0
         self.high_risk_count = 0
+        self.extreme_risk_count = 0
 
-        # Ruta lógica del derrumbe
+        # Ruta extendida.
+        # Incluye puntos de rodeo para evitar que el robot se quede trabado en escombros/riesgo alto.
         self.waypoints = [
             {"name": "Entrada del edificio", "x": -3.0, "y": 0.0},
-            {"name": "Pasillo principal", "x": -1.0, "y": 0.2},
-            {"name": "Zona de escombros inicial", "x": 1.5, "y": 0.8},
-            {"name": "Cruce inestable", "x": 3.2, "y": 1.4},
+            {"name": "Pasillo principal", "x": -1.2, "y": 0.2},
+            {"name": "Zona de escombros inicial", "x": 1.3, "y": 0.8},
+            {"name": "Desvío seguro superior", "x": 2.4, "y": 0.3},
+            {"name": "Corredor alternativo", "x": 3.5, "y": 1.2},
             {"name": "Borde de zona crítica", "x": 4.7, "y": 2.0},
+            {"name": "Rodeo de zona de riesgo alto", "x": 5.7, "y": 2.2},
             {"name": "Zona probable de víctima", "x": 6.8, "y": 2.6},
         ]
 
-        # Subscripciones
         self.create_subscription(Odometry, "/robot/pose", self.pose_callback, 10)
         self.create_subscription(String, "/robot/sensor_status", self.sensor_callback, 10)
         self.create_subscription(String, "/robot/risk_status", self.risk_callback, 10)
 
-        # Publishers
         self.cmd_pub = self.create_publisher(Twist, "/robot/cmd_vel", 10)
         self.alert_pub = self.create_publisher(String, "/base/alertas", 10)
         self.state_pub = self.create_publisher(String, "/mission/state", 10)
         self.objective_pub = self.create_publisher(String, "/mission/current_objective", 10)
         self.decision_pub = self.create_publisher(String, "/mission/decision_status", 10)
 
-        # Ciclo de decisión
-        self.timer = self.create_timer(2.0, self.decision_loop)
+        self.timer = self.create_timer(1.0, self.decision_loop)
 
-        self.get_logger().info("Decision Node iniciado. Control autónomo activo.")
+        self.get_logger().info("Decision Node iniciado. Exploración autónoma extendida activa.")
 
     # =========================================================
     # Callbacks
@@ -80,9 +75,11 @@ class DecisionNode(Node):
         self.x = msg.pose.pose.position.x
         self.y = msg.pose.pose.position.y
 
-        # En motion_node no publicamos orientación como quaternion real.
-        # Por eso tomamos theta desde /robot/status si no está disponible.
-        self.theta = getattr(self, "theta", 0.0)
+        qz = msg.pose.pose.orientation.z
+        qw = msg.pose.pose.orientation.w
+
+        # Yaw 2D desde quaternion simplificado.
+        self.theta = math.atan2(2.0 * qw * qz, 1.0 - 2.0 * qz * qz)
 
     def sensor_callback(self, msg: String):
         self.sensor_data = self.parse_status(msg.data)
@@ -95,33 +92,29 @@ class DecisionNode(Node):
     # =========================================================
 
     def parse_status(self, text: str) -> Dict[str, str]:
-        """
-        Parsea strings tipo:
-        Sensores | x=1.2, y=0.4, temp=25.1C, gas=50ppm
-        Riesgo IA | nivel=Medio | accion=Avanzar con precaucion
-        """
         clean = text.replace(",", " |")
         parts = [p.strip() for p in clean.split("|")]
 
         data = {"_raw": text}
+
         for part in parts:
             if "=" not in part:
                 continue
+
             key, value = part.split("=", 1)
             data[key.strip()] = value.strip()
-
-        # Si llega theta por /robot/status en otra versión, lo usamos.
-        if "theta" in data:
-            self.theta = self.to_float(data.get("theta"), self.theta)
 
         return data
 
     def to_float(self, value: Optional[str], default: float = 0.0) -> float:
         if value is None:
             return default
+
         match = re.search(r"-?\d+(\.\d+)?", str(value))
+
         if match is None:
             return default
+
         return float(match.group(0))
 
     def publish_string(self, publisher, text: str):
@@ -137,12 +130,14 @@ class DecisionNode(Node):
 
     def send_alert(self, text: str):
         self.alert_count += 1
+
         alert = (
             f"ALERTA BASE #{self.alert_count} | "
             f"estado={self.mission_state} | "
             f"x={self.x:.2f}, y={self.y:.2f} | "
             f"{text}"
         )
+
         self.publish_string(self.alert_pub, alert)
         self.get_logger().warn(alert)
 
@@ -151,9 +146,9 @@ class DecisionNode(Node):
 
     def normalize_angle(self, angle: float) -> float:
         while angle > math.pi:
-            angle -= 2 * math.pi
+            angle -= 2.0 * math.pi
         while angle < -math.pi:
-            angle += 2 * math.pi
+            angle += 2.0 * math.pi
         return angle
 
     def current_objective(self) -> Dict[str, float]:
@@ -161,40 +156,63 @@ class DecisionNode(Node):
 
     def advance_waypoint_if_needed(self):
         wp = self.current_objective()
-        if self.distance_to(wp) < 0.9 and self.current_wp_index < len(self.waypoints) - 1:
+
+        if self.distance_to(wp) < 0.55 and self.current_wp_index < len(self.waypoints) - 1:
             self.current_wp_index += 1
             wp_next = self.current_objective()
             self.send_alert(f"Waypoint alcanzado. Nuevo objetivo: {wp_next['name']}")
-
-    # =========================================================
-    # Decisión
-    # =========================================================
 
     def compute_navigation_command(self, max_speed: float):
         wp = self.current_objective()
 
         dx = wp["x"] - self.x
         dy = wp["y"] - self.y
+
         distance = math.sqrt(dx * dx + dy * dy)
 
         desired_theta = math.atan2(dy, dx)
         angle_error = self.normalize_angle(desired_theta - self.theta)
 
-        angular = max(-0.9, min(0.9, 1.1 * angle_error))
-        linear = min(max_speed, max(0.10, 0.35 * distance))
+        angular = max(-1.1, min(1.1, 1.8 * angle_error))
 
-        # Si está muy desalineado, gira con avance mínimo.
-        if abs(angle_error) > 1.0:
-            linear = 0.08
+        # Avanza más lento cerca del objetivo.
+        linear = min(max_speed, max(0.08, 0.45 * distance))
+
+        # Si está muy desalineado, gira casi en el lugar.
+        if abs(angle_error) > 1.15:
+            linear = 0.05
 
         return linear, angular
+
+    def compute_risk_avoidance_command(self):
+        """
+        Maniobra evasiva simple.
+        En vez de quedarse girando o abortar, el robot avanza lento con giro
+        para rodear la zona crítica y luego retoma el waypoint.
+        """
+
+        wp = self.current_objective()
+
+        # Si el objetivo está por arriba, rodea hacia abajo.
+        # Si el objetivo está por abajo, rodea hacia arriba.
+        if wp["y"] >= self.y:
+            angular = -0.65
+        else:
+            angular = 0.65
+
+        linear = 0.16
+
+        return linear, angular
+
+    # =========================================================
+    # Decisión principal
+    # =========================================================
 
     def decision_loop(self):
         self.advance_waypoint_if_needed()
 
         wp = self.current_objective()
 
-        # Valores sensores
         gas = self.to_float(self.sensor_data.get("gas"), 0.0)
         temp = self.to_float(self.sensor_data.get("temp"), 25.0)
         vib = self.to_float(self.sensor_data.get("vib"), 0.0)
@@ -208,85 +226,128 @@ class DecisionNode(Node):
 
         decision = ""
 
+        risk_extreme = gas > 340 or vib > 2.4 or inc > 34 or temp > 52
+        risk_high = nivel == "Alto" or gas > 245 or vib > 1.55 or inc > 23
+        risk_medium = nivel == "Medio" or gas > 150 or vib > 0.9 or inc > 14
+
         # 1. Víctima detectada
         if persona == 1:
             self.mission_state = "VICTIMA_DETECTADA"
             self.send_cmd(0.0, 0.0)
-            decision = "Detenerse y enviar alerta por posible víctima detectada."
+
+            decision = "Víctima probable detectada. Detenerse, señalizar ubicación y enviar alerta."
 
             if not self.alert_sent_person:
                 self.send_alert(
                     "Posible víctima detectada. "
-                    "Se requiere intervención del equipo de rescate."
+                    "Robot detenido en zona final. Se requiere intervención del equipo de rescate."
                 )
                 self.alert_sent_person = True
 
-        # 2. Batería baja
-        elif bateria < 20:
+        # 2. Batería crítica
+        elif bateria < 12:
             self.mission_state = "RETORNANDO_BASE"
             self.current_wp_index = 0
+
             linear, angular = self.compute_navigation_command(max_speed=0.25)
             self.send_cmd(linear, angular)
-            decision = "Batería baja. Retornar hacia entrada/base."
-            self.send_alert("Batería baja. Robot inicia retorno a base.")
 
-        # 3. Riesgo alto o sensores críticos
-        elif nivel == "Alto" or gas > 260 or vib > 1.7 or inc > 25:
-            self.mission_state = "EVITANDO_RIESGO"
-            self.high_risk_count += 1
+            decision = "Batería crítica. Retornar hacia entrada/base."
+            self.send_alert("Batería crítica. Robot inicia retorno a base.")
 
-            # Maniobra evasiva simple
-            angular = 0.85 if self.y <= wp["y"] else -0.85
-            self.send_cmd(0.08, angular)
+        # 3. Riesgo extremo sostenido
+        elif risk_extreme:
+            self.extreme_risk_count += 1
+            self.mission_state = "EVITANDO_RIESGO_EXTREMO"
+
+            linear, angular = self.compute_risk_avoidance_command()
+            self.send_cmd(linear, angular)
 
             decision = (
-                "Riesgo alto o sensores críticos. "
-                "Reducir velocidad, cambiar orientación y evitar zona."
+                "Riesgo extremo detectado. Ejecutar maniobra evasiva, "
+                "mantener exploración si la condición no se sostiene."
             )
 
             self.send_alert(
-                f"Riesgo alto/sensor crítico. nivel={nivel}, "
-                f"gas={gas:.1f}, vib={vib:.2f}, inc={inc:.1f}, temp={temp:.1f}"
+                f"Riesgo extremo. gas={gas:.1f}, vib={vib:.2f}, "
+                f"inc={inc:.1f}, temp={temp:.1f}"
             )
 
-            if self.high_risk_count >= 4:
+            if self.extreme_risk_count >= 8:
                 self.mission_state = "MISION_ABORTADA"
                 self.send_cmd(0.0, 0.0)
-                decision = "Riesgo alto sostenido. Misión abortada por seguridad."
-                self.send_alert("Misión abortada por riesgo alto sostenido.")
+                decision = "Riesgo extremo sostenido. Misión abortada por seguridad."
+                self.send_alert("Misión abortada por riesgo extremo sostenido.")
 
-        # 4. Obstáculo cercano
-        elif obstaculo < 1.0:
+        # 4. Riesgo alto evitable
+        elif risk_high:
+            self.high_risk_count += 1
+            self.extreme_risk_count = 0
+            self.mission_state = "RODEANDO_ZONA_CRITICA"
+
+            linear, angular = self.compute_risk_avoidance_command()
+            self.send_cmd(linear, angular)
+
+            decision = (
+                "Riesgo alto. No se aborta la misión: "
+                "se rodea la zona crítica y luego se continúa hacia la víctima probable."
+            )
+
+            if self.high_risk_count in [1, 4, 8]:
+                self.send_alert(
+                    f"Riesgo alto evitable. nivel={nivel}, gas={gas:.1f}, "
+                    f"vib={vib:.2f}, inc={inc:.1f}, temp={temp:.1f}"
+                )
+
+        # 5. Obstáculo cercano
+        elif obstaculo < 0.65:
+            self.extreme_risk_count = 0
             self.mission_state = "EVITANDO_OBSTACULO"
-            angular = -0.9 if self.y > 0 else 0.9
-            self.send_cmd(0.10, angular)
-            decision = "Obstáculo cercano. Ejecutar maniobra evasiva."
 
-        # 5. Riesgo medio
-        elif nivel == "Medio" or gas > 150:
+            angular = -0.75 if self.y > wp["y"] else 0.75
+            self.send_cmd(0.12, angular)
+
+            decision = "Obstáculo cercano. Maniobra evasiva corta y continuidad de exploración."
+
+        # 6. Riesgo medio
+        elif risk_medium:
+            self.extreme_risk_count = 0
             self.mission_state = "EXPLORANDO_CON_PRECAUCION"
-            linear, angular = self.compute_navigation_command(max_speed=0.35)
-            self.send_cmd(linear, angular)
-            decision = "Riesgo medio. Avanzar lentamente hacia objetivo."
 
-        # 6. Riesgo bajo
-        else:
-            self.mission_state = "EXPLORANDO"
-            linear, angular = self.compute_navigation_command(max_speed=0.75)
+            linear, angular = self.compute_navigation_command(max_speed=0.32)
             self.send_cmd(linear, angular)
+
+            decision = "Riesgo medio. Avanzar con precaución hacia el siguiente objetivo."
+
+        # 7. Riesgo bajo
+        else:
+            self.high_risk_count = max(0, self.high_risk_count - 1)
+            self.extreme_risk_count = 0
+            self.mission_state = "EXPLORANDO"
+
+            linear, angular = self.compute_navigation_command(max_speed=0.62)
+            self.send_cmd(linear, angular)
+
             decision = "Riesgo bajo. Continuar exploración hacia waypoint."
 
-        # Fin de ruta sin víctima
-        if self.current_wp_index == len(self.waypoints) - 1 and self.distance_to(self.current_objective()) < 0.9:
-            if self.mission_state not in ["VICTIMA_DETECTADA", "MISION_ABORTADA"]:
-                self.mission_state = "MISION_COMPLETADA"
-                self.send_cmd(0.0, 0.0)
-                decision = "Último waypoint alcanzado. Misión completada sin nueva alerta."
-                self.send_alert("Misión completada. Zona probable inspeccionada.")
+        # Fin de ruta si llega a la zona probable y no detectó persona.
+        if (
+            self.current_wp_index == len(self.waypoints) - 1
+            and self.distance_to(self.current_objective()) < 0.65
+            and self.mission_state not in ["VICTIMA_DETECTADA", "MISION_ABORTADA"]
+        ):
+            self.mission_state = "ZONA_VICTIMA_INSPECCIONADA"
+            self.send_cmd(0.0, 0.0)
+            decision = "Zona probable de víctima alcanzada e inspeccionada."
+
+            if not self.alert_sent_complete:
+                self.send_alert("Zona probable de víctima alcanzada e inspeccionada.")
+                self.alert_sent_complete = True
 
         objective_text = (
             f"{wp['name']} | target=({wp['x']:.2f}, {wp['y']:.2f}) | "
-            f"robot=({self.x:.2f}, {self.y:.2f})"
+            f"robot=({self.x:.2f}, {self.y:.2f}) | "
+            f"waypoint={self.current_wp_index + 1}/{len(self.waypoints)}"
         )
 
         decision_text = (
