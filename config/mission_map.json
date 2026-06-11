@@ -1,0 +1,66 @@
+{
+  "mission_name": "RescueTwin AI - Robot de rescate en derrumbes",
+  "start": {
+    "x": -4.0,
+    "y": 0.0,
+    "name": "Entrada del edificio"
+  },
+  "waypoints": [
+    {
+      "name": "Entrada del edificio",
+      "x": -3.0,
+      "y": 0.0,
+      "risk_base": "Bajo"
+    },
+    {
+      "name": "Pasillo principal",
+      "x": -1.0,
+      "y": 0.2,
+      "risk_base": "Bajo"
+    },
+    {
+      "name": "Zona de escombros inicial",
+      "x": 1.5,
+      "y": 0.8,
+      "risk_base": "Medio"
+    },
+    {
+      "name": "Cruce inestable",
+      "x": 3.2,
+      "y": 1.4,
+      "risk_base": "Medio"
+    },
+    {
+      "name": "Borde de zona crítica",
+      "x": 4.7,
+      "y": 2.0,
+      "risk_base": "Alto"
+    },
+    {
+      "name": "Zona probable de víctima",
+      "x": 6.8,
+      "y": 2.6,
+      "risk_base": "Medio"
+    }
+  ],
+  "zones": [
+    {
+      "name": "Riesgo alto",
+      "x": 5.0,
+      "y": 2.8,
+      "radius": 2.0
+    },
+    {
+      "name": "Riesgo medio",
+      "x": 3.0,
+      "y": -2.8,
+      "radius": 2.0
+    },
+    {
+      "name": "Víctima simulada",
+      "x": 7.0,
+      "y": 2.6,
+      "radius": 1.8
+    }
+  ]
+}

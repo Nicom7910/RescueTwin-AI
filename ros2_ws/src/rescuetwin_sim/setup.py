@@ -26,6 +26,8 @@ setup(
         'motion_node = rescuetwin_sim.motion_node:main',
         'sensor_sim_node = rescuetwin_sim.sensor_sim_node:main',
         'risk_ai_node = rescuetwin_sim.risk_ai_node:main',
+        'decision_node = rescuetwin_sim.decision_node:main',
+        'mission_logger_node = rescuetwin_sim.mission_logger_node:main',
     ],
 },
 )

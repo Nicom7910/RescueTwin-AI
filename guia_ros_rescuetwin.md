@@ -1,48 +1,100 @@
-# Guía de ejecución ROS/Gazebo - RescueTwin AI
+# Guía completa de ejecución ROS/Gazebo - RescueTwin AI
 
-Esta guía explica cómo levantar el contenedor Docker, cargar ROS 2 Humble, ejecutar el nodo de movimiento del robot y enviar comandos para simular su desplazamiento.
+Esta guía explica cómo levantar desde cero la extensión ROS/Gazebo del proyecto **RescueTwin AI**, cómo iniciar los nodos del robot, cómo moverlo, cómo consultar sensores simulados y cómo ejecutar el nodo de Inteligencia Artificial que predice el nivel de riesgo.
+
+El flujo completo del sistema es:
+
+```text
+Comando de movimiento
+        ↓
+motion_node
+        ↓
+/robot/pose y /robot/status
+        ↓
+sensor_sim_node
+        ↓
+Sensores simulados
+        ↓
+risk_ai_node
+        ↓
+Nivel de riesgo + acción recomendada
+```
 
 ---
 
-## 1. Abrir Docker Desktop
+## 1. Requisitos previos
 
-Antes de ejecutar comandos, abrir **Docker Desktop** en Mac y esperar a que quede corriendo.
+Antes de empezar, asegurarse de tener:
+
+- Docker Desktop abierto y funcionando.
+- El proyecto en la carpeta local:
+
+```text
+/RescueTwin-AI
+```
+
+- La imagen Docker creada:
+
+```text
+rescuetwin_ros_image
+```
+
+- El contenedor llamado:
+
+```text
+rescuetwin_ros
+```
+
+- El modelo IA entrenado en:
+
+```text
+models/random_forest_rescuetwin.pkl
+models/model_columns.pkl
+```
+
+---
+
+## 2. Abrir Docker Desktop
+
+En Mac, abrir **Docker Desktop** y esperar a que diga que está corriendo.
+
+Luego, en una terminal de Mac:
 
 ```bash
 docker ps
 ```
 
-Si no tira error, Docker está funcionando.
+Si no muestra error, Docker está funcionando.
 
 ---
 
-## 2. Ir a la carpeta del proyecto
+## 3. Ir a la carpeta del proyecto
 
-En la terminal de Mac:
+Desde la terminal de Mac:
 
 ```bash
-cd /Users/nicom7910/Downloads/RescueTwin-AI
+cd RescueTwin-AI
 ls
 ```
 
-Deberías ver carpetas como:
+Deberías ver algo similar a:
 
 ```text
-app  data  models  notebooks  reports  ros2_ws
+README.md  app  data  models  notebooks  reports  requirements.txt  ros2_ws
 ```
 
 ---
 
-## 3. Levantar el contenedor
+## 4. Levantar el contenedor
 
-### Si el contenedor ya existe
+### Caso A: el contenedor ya existe
 
 ```bash
 docker start rescuetwin_ros
 docker exec -it rescuetwin_ros bash
 ```
 
-### Si el contenedor no existe
+### Caso B: el contenedor no existe
 
 Ejecutar desde la carpeta raíz del proyecto:
 
@@ -58,11 +110,17 @@ docker run -it \
   bash
 ```
 
+Este comando monta el proyecto dentro del contenedor en:
+
+```text
+/workspace/RescueTwin-AI
+```
+
 ---
 
-## 4. Cargar ROS dentro del contenedor
+## 5. Cargar ROS dentro del contenedor
 
-Una vez dentro del contenedor:
+Una vez dentro del contenedor, ejecutar siempre:
 
 ```bash
 set +u
@@ -71,7 +129,7 @@ cd /workspace/RescueTwin-AI/ros2_ws
 source install/setup.bash
 ```
 
-Verificar que el paquete esté disponible:
+Verificar que el paquete del proyecto esté disponible:
 
 ```bash
 ros2 pkg list | grep rescuetwin_sim
@@ -83,21 +141,28 @@ Resultado esperado:
 rescuetwin_sim
 ```
 
-Si no aparece, recompilar:
+---
+
+## 6. Recompilar el workspace si hace falta
+
+Si agregaste o modificaste nodos, o si `ros2 pkg list` no encuentra el paquete, recompilar:
 
 ```bash
 cd /workspace/RescueTwin-AI/ros2_ws
+set +u
+source /opt/ros/humble/setup.bash
 rm -rf build install log
 colcon build
 source install/setup.bash
-ros2 pkg list | grep rescuetwin_sim
 ```
 
 ---
 
-## 5. Validar el mundo Gazebo en modo servidor
+## 7. Validar el mundo Gazebo
 
-Como Gazebo visual puede fallar en Mac + Docker por OpenGL, se valida el mundo en modo headless con `gzserver`:
+En Mac + Docker, Gazebo visual puede fallar por OpenGL. Por eso se valida el mundo con `gzserver` en modo headless.
+
+Desde dentro del contenedor:
 
 ```bash
 cd /workspace/RescueTwin-AI
@@ -106,14 +171,14 @@ source /opt/ros/humble/setup.bash
 gzserver ros2_ws/src/rescuetwin_sim/worlds/collapse_world.world --verbose
 ```
 
-Si aparece una línea similar a:
+Si aparece algo parecido a:
 
 ```text
 Loading world file [.../collapse_world.world]
 Connected to gazebo master
 ```
 
-el mundo está cargando correctamente.
+significa que el mundo Gazebo de derrumbe carga correctamente.
 
 Para detenerlo:
 
@@ -123,9 +188,69 @@ CTRL + C
 
 ---
 
-## 6. Ejecutar el nodo de movimiento del robot
+## 8. Verificar versiones de Python para el nodo IA
 
-En la primera terminal dentro del contenedor:
+El modelo fue entrenado con versiones nuevas de NumPy y scikit-learn. Dentro del contenedor, verificar:
+
+```bash
+python3 -c "import numpy, scipy, sklearn, pandas, joblib; print('numpy', numpy.__version__); print('scipy', scipy.__version__); print('sklearn', sklearn.__version__); print('pandas', pandas.__version__); print('joblib', joblib.__version__)"
+```
+
+Versiones esperadas:
+
+```text
+numpy 2.2.6
+scipy 1.15.3
+sklearn 1.7.2
+pandas 2.3.3
+joblib 1.5.3
+```
+
+Si no coinciden o aparece error al cargar el modelo, reinstalar:
+
+```bash
+pip3 uninstall -y numpy scipy scikit-learn pandas joblib
+
+pip3 install --no-cache-dir \
+  numpy==2.2.6 \
+  scipy==1.15.3 \
+  scikit-learn==1.7.2 \
+  pandas==2.3.3 \
+  joblib==1.5.3
+```
+
+Probar que el modelo carga:
+
+```bash
+cd /workspace/RescueTwin-AI
+python3 -c "import joblib; modelo = joblib.load('models/random_forest_rescuetwin.pkl'); columnas = joblib.load('models/model_columns.pkl'); print('Modelo cargado OK'); print(type(modelo)); print(len(columnas))"
+```
+
+Resultado esperado:
+
+```text
+Modelo cargado OK
+```
+
+---
+
+# Ejecución completa del proyecto ROS
+
+Para ejecutar todo el sistema se usan 4 terminales.
+
+---
+
+## Terminal 1: nodo de movimiento
+
+Desde una terminal de Mac:
+
+```bash
+cd RescueTwin-AI
+docker start rescuetwin_ros
+docker exec -it rescuetwin_ros bash
+```
+
+Dentro del contenedor:
 
 ```bash
 cd /workspace/RescueTwin-AI/ros2_ws
@@ -141,13 +266,18 @@ Resultado esperado:
 Motion Node iniciado. Esperando comandos en /robot/cmd_vel
 ```
 
-Esta terminal debe quedar abierta. Es el nodo que simula la posición del robot.
+Este nodo publica:
+
+```text
+/robot/pose
+/robot/status
+```
 
 ---
 
-## 7. Abrir una segunda terminal para enviar comandos
+## Terminal 2: nodo de sensores simulados
 
-En otra terminal de Mac:
+Abrir otra terminal de Mac:
 
 ```bash
 docker exec -it rescuetwin_ros bash
@@ -156,220 +286,26 @@ docker exec -it rescuetwin_ros bash
 Dentro del contenedor:
 
 ```bash
+cd /workspace/RescueTwin-AI/ros2_ws
 set +u
 source /opt/ros/humble/setup.bash
-cd /workspace/RescueTwin-AI/ros2_ws
 source install/setup.bash
+ros2 run rescuetwin_sim sensor_sim_node
 ```
 
-Verificar topics disponibles:
-
-```bash
-ros2 topic list
-```
-
-Deberías ver:
+Resultado esperado:
 
 ```text
-/robot/cmd_vel
+Sensor Sim Node iniciado. Publicando sensores simulados del robot.
+```
+
+Este nodo lee:
+
+```text
 /robot/pose
-/robot/status
 ```
 
----
-
-## 8. Comandos para mover el robot
-
-### Avanzar
-
-```bash
-ros2 topic pub --once /robot/cmd_vel geometry_msgs/msg/Twist "{linear: {x: 0.5}, angular: {z: 0.0}}"
-```
-
-### Avanzar más lento
-
-```bash
-ros2 topic pub --once /robot/cmd_vel geometry_msgs/msg/Twist "{linear: {x: 0.2}, angular: {z: 0.0}}"
-```
-
-### Girar sobre su eje
-
-```bash
-ros2 topic pub --once /robot/cmd_vel geometry_msgs/msg/Twist "{linear: {x: 0.0}, angular: {z: 0.5}}"
-```
-
-### Avanzar girando
-
-```bash
-ros2 topic pub --once /robot/cmd_vel geometry_msgs/msg/Twist "{linear: {x: 0.2}, angular: {z: 0.5}}"
-```
-
-### Retroceder
-
-```bash
-ros2 topic pub --once /robot/cmd_vel geometry_msgs/msg/Twist "{linear: {x: -0.3}, angular: {z: 0.0}}"
-```
-
-### Detener el robot
-
-```bash
-ros2 topic pub --once /robot/cmd_vel geometry_msgs/msg/Twist "{linear: {x: 0.0}, angular: {z: 0.0}}"
-```
-
----
-
-## 9. Ver estado del robot
-
-Para ver el estado una sola vez:
-
-```bash
-ros2 topic echo /robot/status --once
-```
-
-Ejemplo de salida:
-
-```text
-data: Robot simulado | x=15.65, y=0.49, theta=4.45, v=0.00, w=0.00
-```
-
-Significado:
-
-| Campo | Significado |
-|---|---|
-| x | Posición horizontal simulada |
-| y | Posición vertical simulada |
-| theta | Orientación del robot |
-| v | Velocidad lineal |
-| w | Velocidad angular |
-
----
-
-## 10. Ver pose del robot
-
-Para ver la pose una sola vez:
-
-```bash
-ros2 topic echo /robot/pose --once
-```
-
-Esto muestra la posición del robot en formato `nav_msgs/Odometry`.
-
-Campos principales:
-
-```text
-pose.pose.position.x
-pose.pose.position.y
-pose.pose.position.z
-```
-
----
-
-## 11. Evitar mensajes infinitos
-
-Si usás:
-
-```bash
-ros2 topic echo /robot/status
-```
-
-ROS imprime mensajes continuamente hasta que lo cortes con:
-
-```text
-CTRL + C
-```
-
-Para ver solo un mensaje, usar:
-
-```bash
-ros2 topic echo /robot/status --once
-```
-
-Lo mismo aplica para `/robot/pose`.
-
----
-
-## 12. Ejemplo completo de prueba
-
-### Terminal 1
-
-```bash
-cd /Users/nicom7910/Downloads/RescueTwin-AI
-docker start rescuetwin_ros
-docker exec -it rescuetwin_ros bash
-set +u
-source /opt/ros/humble/setup.bash
-cd /workspace/RescueTwin-AI/ros2_ws
-source install/setup.bash
-ros2 run rescuetwin_sim motion_node
-```
-
-### Terminal 2
-
-```bash
-docker exec -it rescuetwin_ros bash
-set +u
-source /opt/ros/humble/setup.bash
-cd /workspace/RescueTwin-AI/ros2_ws
-source install/setup.bash
-```
-
-Enviar avance:
-
-```bash
-ros2 topic pub --once /robot/cmd_vel geometry_msgs/msg/Twist "{linear: {x: 0.5}, angular: {z: 0.0}}"
-```
-
-Ver estado:
-
-```bash
-ros2 topic echo /robot/status --once
-```
-
-Enviar giro:
-
-```bash
-ros2 topic pub --once /robot/cmd_vel geometry_msgs/msg/Twist "{linear: {x: 0.2}, angular: {z: 0.5}}"
-```
-
-Ver pose:
-
-```bash
-ros2 topic echo /robot/pose --once
-```
-
-Detener:
-
-```bash
-ros2 topic pub --once /robot/cmd_vel geometry_msgs/msg/Twist "{linear: {x: 0.0}, angular: {z: 0.0}}"
-```
-
-Confirmar detención:
-
-```bash
-ros2 topic echo /robot/status --once
-```
-
----
-
-## 13. Interpretación para el proyecto
-
-Esta ejecución representa la **Etapa 2 del simulador ROS/Gazebo**.
-
-Aunque Gazebo visual no renderice correctamente en Docker sobre Mac, el movimiento del robot se valida por datos ROS:
-
-```text
-Comando de velocidad → Nodo de movimiento → Pose simulada → Estado del robot
-```
-
-Esto permite demostrar que el robot simulado responde a comandos y actualiza su posición dentro del sistema ROS.
-
-En etapas posteriores, esta pose será utilizada para simular sensores ambientales y conectar el modelo de inteligencia artificial de riesgo.
-
----
-
-## 14. Próxima etapa
-
-La siguiente etapa del proyecto será crear un nodo de sensores simulados que publique topics como:
+Y publica:
 
 ```text
 /robot/temperatura
@@ -379,11 +315,435 @@ La siguiente etapa del proyecto será crear un nodo de sensores simulados que pu
 /robot/bateria
 /robot/distancia_obstaculo
 /robot/persona_detectada
+/robot/sensor_status
 ```
 
-Luego, el nodo IA usará esos sensores y el modelo `random_forest_rescuetwin.pkl` para publicar:
+---
+
+## Terminal 3: nodo IA de riesgo
+
+Abrir otra terminal de Mac:
+
+```bash
+docker exec -it rescuetwin_ros bash
+```
+
+Dentro del contenedor:
+
+```bash
+cd /workspace/RescueTwin-AI/ros2_ws
+set +u
+source /opt/ros/humble/setup.bash
+source install/setup.bash
+ros2 run rescuetwin_sim risk_ai_node
+```
+
+Resultado esperado:
+
+```text
+Modelo cargado desde: /workspace/RescueTwin-AI/models/random_forest_rescuetwin.pkl
+Risk AI Node iniciado. Modelo IA cargado correctamente.
+```
+
+Este nodo lee sensores y publica:
 
 ```text
 /robot/nivel_riesgo
 /robot/accion_recomendada
+/robot/risk_status
+```
+
+---
+
+## Terminal 4: control y consulta
+
+Abrir otra terminal de Mac:
+
+```bash
+docker exec -it rescuetwin_ros bash
+```
+
+Dentro del contenedor:
+
+```bash
+cd /workspace/RescueTwin-AI/ros2_ws
+set +u
+source /opt/ros/humble/setup.bash
+source install/setup.bash
+```
+
+Ver todos los topics activos:
+
+```bash
+ros2 topic list
+```
+
+Deberían aparecer, entre otros:
+
+```text
+/robot/cmd_vel
+/robot/pose
+/robot/status
+/robot/temperatura
+/robot/gas_ppm
+/robot/vibracion
+/robot/inclinacion
+/robot/bateria
+/robot/distancia_obstaculo
+/robot/persona_detectada
+/robot/sensor_status
+/robot/nivel_riesgo
+/robot/accion_recomendada
+/robot/risk_status
+```
+
+---
+
+# Comandos para mover el robot
+
+## Avanzar
+
+```bash
+ros2 topic pub --once /robot/cmd_vel geometry_msgs/msg/Twist "{linear: {x: 0.5}, angular: {z: 0.0}}"
+```
+
+## Avanzar más rápido
+
+```bash
+ros2 topic pub --once /robot/cmd_vel geometry_msgs/msg/Twist "{linear: {x: 0.8}, angular: {z: 0.0}}"
+```
+
+## Girar mientras avanza
+
+```bash
+ros2 topic pub --once /robot/cmd_vel geometry_msgs/msg/Twist "{linear: {x: 0.2}, angular: {z: 0.5}}"
+```
+
+## Girar en sentido contrario
+
+```bash
+ros2 topic pub --once /robot/cmd_vel geometry_msgs/msg/Twist "{linear: {x: 0.2}, angular: {z: -0.5}}"
+```
+
+## Detener el robot
+
+```bash
+ros2 topic pub --once /robot/cmd_vel geometry_msgs/msg/Twist "{linear: {x: 0.0}, angular: {z: 0.0}}"
+```
+
+---
+
+# Consultar estado del robot
+
+## Ver estado de movimiento una sola vez
+
+```bash
+ros2 topic echo /robot/status --once
+```
+
+Ejemplo esperado:
+
+```text
+data: Robot simulado | x=2.15, y=0.40, theta=0.50, v=0.50, w=0.00
+```
+
+## Ver pose completa una sola vez
+
+```bash
+ros2 topic echo /robot/pose --once
+```
+
+La pose muestra la posición `x`, `y`, `z` del robot.
+
+---
+
+# Consultar sensores simulados
+
+## Ver resumen de sensores una sola vez
+
+```bash
+ros2 topic echo /robot/sensor_status --once
+```
+
+Ejemplo esperado:
+
+```text
+data: Sensores | x=2.10, y=0.30, temp=26.4C, gas=65.2ppm, vib=0.30, inc=5.1deg, bateria=98.8%, obstaculo=4.30m, persona=0
+```
+
+## Ver sensores individuales
+
+```bash
+ros2 topic echo /robot/temperatura --once
+ros2 topic echo /robot/gas_ppm --once
+ros2 topic echo /robot/vibracion --once
+ros2 topic echo /robot/inclinacion --once
+ros2 topic echo /robot/bateria --once
+ros2 topic echo /robot/distancia_obstaculo --once
+ros2 topic echo /robot/persona_detectada --once
+```
+
+---
+
+# Consultar IA de riesgo
+
+## Ver resultado IA una sola vez
+
+```bash
+ros2 topic echo /robot/risk_status --once
+```
+
+Ejemplo esperado:
+
+```text
+data: Riesgo IA | nivel=Medio | accion=Avanzar con precaucion | temp=28.1C | gas=120.5ppm | vib=0.60 | inc=8.5deg | bateria=96.4% | obstaculo=3.40m | persona=0
+```
+
+## Ver nivel de riesgo solamente
+
+```bash
+ros2 topic echo /robot/nivel_riesgo --once
+```
+
+Ejemplo:
+
+```text
+data: Medio
+```
+
+## Ver acción recomendada solamente
+
+```bash
+ros2 topic echo /robot/accion_recomendada --once
+```
+
+Ejemplo:
+
+```text
+data: Avanzar con precaucion
+```
+
+---
+
+# Ejemplo completo de prueba
+
+Con las 3 primeras terminales corriendo `motion_node`, `sensor_sim_node` y `risk_ai_node`, en la Terminal 4 ejecutar:
+
+```bash
+ros2 topic echo /robot/status --once
+ros2 topic echo /robot/sensor_status --once
+ros2 topic echo /robot/risk_status --once
+```
+
+Mover el robot hacia adelante:
+
+```bash
+ros2 topic pub --once /robot/cmd_vel geometry_msgs/msg/Twist "{linear: {x: 0.8}, angular: {z: 0.0}}"
+```
+
+Esperar 3 segundos.
+
+Detener:
+
+```bash
+ros2 topic pub --once /robot/cmd_vel geometry_msgs/msg/Twist "{linear: {x: 0.0}, angular: {z: 0.0}}"
+```
+
+Consultar nuevamente:
+
+```bash
+ros2 topic echo /robot/status --once
+ros2 topic echo /robot/sensor_status --once
+ros2 topic echo /robot/risk_status --once
+```
+
+Interpretación:
+
+- Si `x` o `y` cambiaron, el robot se movió.
+- Si cambian gas, vibración, temperatura o inclinación, los sensores están respondiendo al entorno.
+- Si cambia `nivel`, la IA está clasificando el riesgo según los sensores.
+
+---
+
+# Por qué a veces imprime muchas líneas
+
+Los comandos:
+
+```bash
+ros2 topic echo /robot/status
+ros2 topic echo /robot/pose
+ros2 topic echo /robot/sensor_status
+ros2 topic echo /robot/risk_status
+```
+
+sin `--once` quedan escuchando en tiempo real y muestran mensajes continuamente.
+
+Para evitar el “choclo”, usar siempre:
+
+```bash
+--once
+```
+
+Ejemplo:
+
+```bash
+ros2 topic echo /robot/risk_status --once
+```
+
+Para cortar un comando que imprime sin parar:
+
+```text
+CTRL + C
+```
+
+---
+
+# Solución de errores frecuentes
+
+## Error: Package 'rescuetwin_sim' not found
+
+Cargar ROS y el workspace:
+
+```bash
+cd /workspace/RescueTwin-AI/ros2_ws
+set +u
+source /opt/ros/humble/setup.bash
+source install/setup.bash
+ros2 pkg list | grep rescuetwin_sim
+```
+
+Si sigue sin aparecer:
+
+```bash
+rm -rf build install log
+colcon build
+source install/setup.bash
+```
+
+---
+
+## Error: No module named rescuetwin_sim.sensor_sim_node o risk_ai_node
+
+Verificar que el archivo exista en la carpeta correcta:
+
+```bash
+ls /workspace/RescueTwin-AI/ros2_ws/src/rescuetwin_sim/rescuetwin_sim
+```
+
+Deberías ver:
+
+```text
+__init__.py
+motion_node.py
+sensor_sim_node.py
+risk_ai_node.py
+```
+
+Luego recompilar:
+
+```bash
+cd /workspace/RescueTwin-AI/ros2_ws
+rm -rf build install log
+colcon build
+source install/setup.bash
+```
+
+---
+
+## Error de NumPy, SciPy o scikit-learn al correr risk_ai_node
+
+Reinstalar versiones compatibles:
+
+```bash
+pip3 uninstall -y numpy scipy scikit-learn pandas joblib
+
+pip3 install --no-cache-dir \
+  numpy==2.2.6 \
+  scipy==1.15.3 \
+  scikit-learn==1.7.2 \
+  pandas==2.3.3 \
+  joblib==1.5.3
+```
+
+Probar modelo:
+
+```bash
+cd /workspace/RescueTwin-AI
+python3 -c "import joblib; modelo = joblib.load('models/random_forest_rescuetwin.pkl'); columnas = joblib.load('models/model_columns.pkl'); print('Modelo cargado OK'); print(type(modelo)); print(len(columnas))"
+```
+
+---
+
+## Gazebo abre xeyes pero no abre la escena 3D
+
+En Mac + Docker + XQuartz puede fallar el renderizado OpenGL con errores como:
+
+```text
+Unable to create glx context
+GLWidget could not create a scene
+```
+
+En ese caso, validar Gazebo sin interfaz gráfica:
+
+```bash
+gzserver ros2_ws/src/rescuetwin_sim/worlds/collapse_world.world --verbose
+```
+
+Para el TP, el circuito ROS puede ejecutarse correctamente aunque Gazebo GUI no renderice en Mac.
+
+---
+
+# Comandos de Git para guardar cambios
+
+Después de completar una etapa:
+
+```bash
+cd RescueTwin-AI
+git status
+git add ros2_ws/src/rescuetwin_sim
+git commit -m "Actualizar simulacion ROS de RescueTwin AI"
+git push
+```
+
+Para la Etapa 4 específicamente:
+
+```bash
+git add ros2_ws/src/rescuetwin_sim/rescuetwin_sim/risk_ai_node.py
+git add ros2_ws/src/rescuetwin_sim/setup.py
+git commit -m "Agregar nodo ROS IA de prediccion de riesgo"
+git push
+```
+
+---
+
+# Resumen rápido
+
+Ejecutar estos nodos en tres terminales separadas:
+
+```bash
+ros2 run rescuetwin_sim motion_node
+```
+
+```bash
+ros2 run rescuetwin_sim sensor_sim_node
+```
+
+```bash
+ros2 run rescuetwin_sim risk_ai_node
+```
+
+En una cuarta terminal:
+
+```bash
+ros2 topic pub --once /robot/cmd_vel geometry_msgs/msg/Twist "{linear: {x: 0.8}, angular: {z: 0.0}}"
+ros2 topic echo /robot/status --once
+ros2 topic echo /robot/sensor_status --once
+ros2 topic echo /robot/risk_status --once
+ros2 topic pub --once /robot/cmd_vel geometry_msgs/msg/Twist "{linear: {x: 0.0}, angular: {z: 0.0}}"
+```
+
+Con eso queda levantado el flujo completo de RescueTwin AI en ROS:
+
+```text
+Movimiento → Sensores → IA → Riesgo + Acción recomendada
 ```
