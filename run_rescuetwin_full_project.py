@@ -612,8 +612,8 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--duration",
         type=int,
-        default=45,
-        help="Duración de la misión en segundos. Default: 45.",
+        default=180,
+        help="Duración de la misión en segundos. Default: 180.",
     )
 
     parser.add_argument(

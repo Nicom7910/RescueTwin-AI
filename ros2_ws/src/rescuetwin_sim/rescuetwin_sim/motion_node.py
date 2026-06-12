@@ -10,7 +10,7 @@ from std_msgs.msg import String
 
 class MotionNode(Node):
     """
-    Nodo de movimiento simulado del robot.
+    Nodo de movimiento simulado del robot RescueTwin AI.
 
     Recibe:
     - /robot/cmd_vel
@@ -19,15 +19,13 @@ class MotionNode(Node):
     - /robot/pose
     - /robot/status
 
-    Mejora:
-    - Publica orientación real como quaternion en Odometry.
-    - Evita que el robot quede girando sin que el nodo de decisión conozca su orientación.
+    Simula movimiento 2D con orientación real.
     """
 
     def __init__(self):
         super().__init__("motion_node")
 
-        self.x = -4.0
+        self.x = -3.2
         self.y = 0.0
         self.z = 0.45
         self.theta = 0.0
@@ -58,7 +56,7 @@ class MotionNode(Node):
 
         self.timer = self.create_timer(0.1, self.update_motion)
 
-        self.get_logger().info("Motion Node iniciado. Esperando comandos en /robot/cmd_vel")
+        self.get_logger().info("Motion Node iniciado.")
 
     def cmd_callback(self, msg: Twist):
         self.linear_velocity = float(msg.linear.x)
@@ -83,6 +81,10 @@ class MotionNode(Node):
         self.x += self.linear_velocity * math.cos(self.theta) * dt
         self.y += self.linear_velocity * math.sin(self.theta) * dt
 
+        # Límites del entorno simulado.
+        self.x = max(-3.5, min(7.4, self.x))
+        self.y = max(-3.2, min(3.2, self.y))
+
         odom = Odometry()
         odom.header.stamp = now.to_msg()
         odom.header.frame_id = "world"
@@ -92,7 +94,6 @@ class MotionNode(Node):
         odom.pose.pose.position.y = self.y
         odom.pose.pose.position.z = self.z
 
-        # Quaternion simplificado para yaw 2D.
         odom.pose.pose.orientation.z = math.sin(self.theta / 2.0)
         odom.pose.pose.orientation.w = math.cos(self.theta / 2.0)
 
@@ -103,10 +104,11 @@ class MotionNode(Node):
 
         status = String()
         status.data = (
-            f"Robot simulado | x={self.x:.2f}, y={self.y:.2f}, "
-            f"theta={self.theta:.2f}, v={self.linear_velocity:.2f}, "
-            f"w={self.angular_velocity:.2f}"
+            f"Robot simulado | "
+            f"x={self.x:.2f}, y={self.y:.2f}, theta={self.theta:.2f}, "
+            f"v={self.linear_velocity:.2f}, w={self.angular_velocity:.2f}"
         )
+
         self.status_pub.publish(status)
 
 

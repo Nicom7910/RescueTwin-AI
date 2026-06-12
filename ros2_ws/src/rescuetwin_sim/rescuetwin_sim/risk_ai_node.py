@@ -1,7 +1,10 @@
 import os
+import re
+from pathlib import Path
+from typing import Dict, Optional
+
 import joblib
 import pandas as pd
-
 import rclpy
 from rclpy.node import Node
 
@@ -9,6 +12,17 @@ from std_msgs.msg import Float32, Int32, String
 
 
 class RiskAINode(Node):
+    """
+    Nodo de IA para estimación de riesgo.
+
+    Corrección principal:
+    - Antes quedaba usando valores por defecto porque escuchaba tópicos Float32
+      que no necesariamente estaban siendo publicados.
+    - Ahora también escucha /robot/sensor_status, que es el mensaje real generado
+      por sensor_sim_node.py.
+    - Publica /robot/risk_status con los valores reales recibidos.
+    """
+
     def __init__(self):
         super().__init__("risk_ai_node")
 
@@ -23,6 +37,12 @@ class RiskAINode(Node):
         self.bateria = 100.0
         self.distancia_obstaculo = 5.0
         self.persona_detectada = 0
+
+        self.riesgo_local = "bajo"
+        self.tipo_obstaculo = "ninguno"
+        self.victim_signal = 0.0
+        self.victim_bearing = 0.0
+        self.victim_distance = 999.0
 
         # Variables adicionales necesarias para el modelo
         self.humedad = 55.0
@@ -47,9 +67,13 @@ class RiskAINode(Node):
         self.modelo, self.columnas_modelo = self.cargar_modelo()
 
         # ==========================
-        # Suscripciones a sensores
+        # Suscripciones
         # ==========================
 
+        # Suscripción principal actual.
+        self.create_subscription(String, "/robot/sensor_status", self.sensor_status_callback, 10)
+
+        # Suscripciones antiguas, se mantienen por compatibilidad.
         self.create_subscription(Float32, "/robot/temperatura", self.temp_callback, 10)
         self.create_subscription(Float32, "/robot/gas_ppm", self.gas_callback, 10)
         self.create_subscription(Float32, "/robot/vibracion", self.vib_callback, 10)
@@ -70,32 +94,36 @@ class RiskAINode(Node):
 
         self.get_logger().info("Risk AI Node iniciado. Modelo IA cargado correctamente.")
 
-    # ==========================
+    # =========================================================
     # Carga del modelo
-    # ==========================
+    # =========================================================
 
     def cargar_modelo(self):
+        current = Path.cwd().resolve()
+
         posibles_rutas = [
-            "/workspace/RescueTwin-AI/models",
-            os.path.abspath(os.path.join(os.getcwd(), "..", "models")),
-            os.path.abspath(os.path.join(os.getcwd(), "..", "..", "models")),
+            Path("/workspace/RescueTwin-AI/models"),
+            current / "models",
+            current.parent / "models",
+            current.parent.parent / "models",
         ]
 
         model_path = None
         columns_path = None
 
         for ruta in posibles_rutas:
-            posible_modelo = os.path.join(ruta, "random_forest_rescuetwin.pkl")
-            posibles_columnas = os.path.join(ruta, "model_columns.pkl")
+            posible_modelo = ruta / "random_forest_rescuetwin.pkl"
+            posibles_columnas = ruta / "model_columns.pkl"
 
-            if os.path.exists(posible_modelo) and os.path.exists(posibles_columnas):
+            if posible_modelo.exists() and posibles_columnas.exists():
                 model_path = posible_modelo
                 columns_path = posibles_columnas
                 break
 
         if model_path is None or columns_path is None:
             raise FileNotFoundError(
-                "No se encontraron los archivos del modelo. Verificar que existan:\n"
+                "No se encontraron los archivos del modelo.\n"
+                "Verificar que existan:\n"
                 "models/random_forest_rescuetwin.pkl\n"
                 "models/model_columns.pkl"
             )
@@ -107,16 +135,41 @@ class RiskAINode(Node):
 
         return modelo, columnas
 
-    # ==========================
-    # Callbacks de sensores
-    # ==========================
+    # =========================================================
+    # Parsing
+    # =========================================================
 
-    def temp_callback(self, msg):
-        self.temperatura = msg.data
+    def parse_status(self, text: str) -> Dict[str, str]:
+        clean = text.replace(",", " |")
+        parts = [p.strip() for p in clean.split("|")]
 
-    def gas_callback(self, msg):
-        self.gas_ppm = msg.data
+        data = {"_raw": text}
 
+        for part in parts:
+            if "=" not in part:
+                continue
+
+            key, value = part.split("=", 1)
+            data[key.strip()] = value.strip()
+
+        return data
+
+    def to_float(self, value: Optional[str], default: float = 0.0) -> float:
+        if value is None:
+            return default
+
+        match = re.search(r"-?\d+(\.\d+)?", str(value))
+
+        if match is None:
+            return default
+
+        return float(match.group(0))
+
+    # =========================================================
+    # Actualización de variables
+    # =========================================================
+
+    def actualizar_variables_derivadas(self):
         if self.gas_ppm < 50:
             self.gas_tipo = "sin_gas"
         elif self.gas_ppm < 150:
@@ -126,27 +179,84 @@ class RiskAINode(Node):
         else:
             self.gas_tipo = "gas_desconocido"
 
+        self.voltaje_bateria = 10.5 + (self.bateria / 100.0) * 2.1
+        self.autonomia_estimada_min = max(
+            0.0,
+            self.bateria * 0.8 - self.temperatura_bateria * 0.15,
+        )
+
+        self.confianza_persona = 0.9 if self.persona_detectada == 1 else max(
+            0.2,
+            min(0.85, self.victim_signal),
+        )
+
+        self.visibilidad = max(
+            10.0,
+            min(100.0, 90.0 - self.gas_ppm * 0.10 - self.particulas_pm25 * 0.15),
+        )
+
+        self.co2 = 850.0 + self.gas_ppm * 1.8
+        self.particulas_pm25 = max(20.0, min(180.0, 35.0 + self.gas_ppm * 0.20))
+
+    # =========================================================
+    # Callbacks principales
+    # =========================================================
+
+    def sensor_status_callback(self, msg: String):
+        data = self.parse_status(msg.data)
+
+        self.temperatura = self.to_float(data.get("temp"), self.temperatura)
+        self.gas_ppm = self.to_float(data.get("gas"), self.gas_ppm)
+        self.vibracion = self.to_float(data.get("vib"), self.vibracion)
+        self.inclinacion = self.to_float(data.get("inc"), self.inclinacion)
+        self.bateria = self.to_float(data.get("bateria"), self.bateria)
+        self.distancia_obstaculo = self.to_float(data.get("obstaculo"), self.distancia_obstaculo)
+        self.persona_detectada = int(self.to_float(data.get("persona"), self.persona_detectada))
+
+        self.riesgo_local = data.get("riesgo_local", self.riesgo_local)
+        self.tipo_obstaculo = data.get("tipo_obstaculo", self.tipo_obstaculo)
+
+        self.victim_signal = self.to_float(data.get("victim_signal"), self.victim_signal)
+        self.victim_bearing = self.to_float(data.get("victim_bearing"), self.victim_bearing)
+        self.victim_distance = self.to_float(data.get("victim_distance"), self.victim_distance)
+
+        self.actualizar_variables_derivadas()
+
+    # =========================================================
+    # Callbacks de compatibilidad
+    # =========================================================
+
+    def temp_callback(self, msg):
+        self.temperatura = float(msg.data)
+        self.actualizar_variables_derivadas()
+
+    def gas_callback(self, msg):
+        self.gas_ppm = float(msg.data)
+        self.actualizar_variables_derivadas()
+
     def vib_callback(self, msg):
-        self.vibracion = msg.data
+        self.vibracion = float(msg.data)
+        self.actualizar_variables_derivadas()
 
     def inc_callback(self, msg):
-        self.inclinacion = msg.data
+        self.inclinacion = float(msg.data)
+        self.actualizar_variables_derivadas()
 
     def bat_callback(self, msg):
-        self.bateria = msg.data
-        self.voltaje_bateria = 10.5 + (self.bateria / 100) * 2.1
-        self.autonomia_estimada_min = max(0.0, self.bateria * 0.8 - self.temperatura_bateria * 0.15)
+        self.bateria = float(msg.data)
+        self.actualizar_variables_derivadas()
 
     def obs_callback(self, msg):
-        self.distancia_obstaculo = msg.data
+        self.distancia_obstaculo = float(msg.data)
+        self.actualizar_variables_derivadas()
 
     def person_callback(self, msg):
-        self.persona_detectada = msg.data
-        self.confianza_persona = 0.9 if self.persona_detectada == 1 else 0.2
+        self.persona_detectada = int(msg.data)
+        self.actualizar_variables_derivadas()
 
-    # ==========================
-    # Preparar entrada del modelo
-    # ==========================
+    # =========================================================
+    # Modelo
+    # =========================================================
 
     def preparar_entrada_modelo(self):
         datos = {
@@ -174,7 +284,6 @@ class RiskAINode(Node):
         }
 
         df_input = pd.DataFrame([datos])
-
         df_input = pd.get_dummies(df_input, columns=["gas_tipo"], drop_first=True)
 
         for col in self.columnas_modelo:
@@ -185,42 +294,83 @@ class RiskAINode(Node):
 
         return df_input
 
-    # ==========================
-    # Recomendación de acción
-    # ==========================
+    def heuristic_risk_level(self):
+        if (
+            self.riesgo_local == "alto"
+            or self.gas_ppm > 270
+            or self.vibracion > 1.8
+            or self.inclinacion > 27
+            or self.temperatura > 55
+            or self.distancia_obstaculo < 0.30
+        ):
+            return "Alto"
+
+        if (
+            self.riesgo_local == "medio"
+            or self.gas_ppm > 150
+            or self.vibracion > 1.0
+            or self.inclinacion > 16
+            or self.temperatura > 42
+            or self.distancia_obstaculo < 0.75
+        ):
+            return "Medio"
+
+        return "Bajo"
+
+    def max_risk_level(self, model_level: str, heuristic_level: str):
+        rank = {
+            "Bajo": 1,
+            "Medio": 2,
+            "Alto": 3,
+        }
+
+        model_level = str(model_level)
+
+        if model_level not in rank:
+            model_level = "Bajo"
+
+        if heuristic_level not in rank:
+            heuristic_level = "Bajo"
+
+        return model_level if rank[model_level] >= rank[heuristic_level] else heuristic_level
 
     def recomendar_accion(self, nivel_riesgo):
+        if self.persona_detectada == 1:
+            return "Detener robot, enviar alerta y señalizar ubicación de víctima"
+
         if self.bateria < 20:
             return "Volver a base por bateria baja"
 
-        if nivel_riesgo == "Bajo" and self.persona_detectada == 0:
+        if self.victim_signal > 0.18 and nivel_riesgo != "Alto":
+            return "Priorizar aproximacion controlada hacia señal de víctima"
+
+        if nivel_riesgo == "Bajo":
             return "Avanzar"
 
-        if nivel_riesgo == "Bajo" and self.persona_detectada == 1:
-            return "Enviar alerta y continuar exploracion"
-
-        if nivel_riesgo == "Medio" and self.persona_detectada == 0:
+        if nivel_riesgo == "Medio":
             return "Avanzar con precaucion"
 
-        if nivel_riesgo == "Medio" and self.persona_detectada == 1:
-            return "Enviar alerta y avanzar con precaucion"
-
-        if nivel_riesgo == "Alto" and self.persona_detectada == 0:
-            return "Cambiar ruta o detenerse"
-
-        if nivel_riesgo == "Alto" and self.persona_detectada == 1:
-            return "Enviar alerta y cambiar ruta"
+        if nivel_riesgo == "Alto":
+            return "Cambiar ruta, rodear zona o detenerse si el riesgo persiste"
 
         return "Revisar manualmente"
 
-    # ==========================
+    # =========================================================
     # Predicción IA
-    # ==========================
+    # =========================================================
 
     def predict_risk(self):
         entrada = self.preparar_entrada_modelo()
 
-        nivel_riesgo = self.modelo.predict(entrada)[0]
+        try:
+            nivel_modelo = str(self.modelo.predict(entrada)[0])
+        except Exception as exc:
+            self.get_logger().error(f"Error al predecir riesgo con el modelo: {exc}")
+            nivel_modelo = "Bajo"
+
+        nivel_heuristico = self.heuristic_risk_level()
+        nivel_riesgo = self.max_risk_level(nivel_modelo, nivel_heuristico)
+
         accion = self.recomendar_accion(nivel_riesgo)
 
         msg_risk = String()
@@ -235,6 +385,8 @@ class RiskAINode(Node):
         msg_status.data = (
             f"Riesgo IA | "
             f"nivel={nivel_riesgo} | "
+            f"modelo={nivel_modelo} | "
+            f"heuristico={nivel_heuristico} | "
             f"accion={accion} | "
             f"temp={self.temperatura:.1f}C | "
             f"gas={self.gas_ppm:.1f}ppm | "
@@ -242,8 +394,12 @@ class RiskAINode(Node):
             f"inc={self.inclinacion:.1f}deg | "
             f"bateria={self.bateria:.1f}% | "
             f"obstaculo={self.distancia_obstaculo:.2f}m | "
-            f"persona={self.persona_detectada}"
+            f"persona={self.persona_detectada} | "
+            f"riesgo_local={self.riesgo_local} | "
+            f"victim_signal={self.victim_signal:.2f} | "
+            f"victim_distance={self.victim_distance:.2f}"
         )
+
         self.status_pub.publish(msg_status)
 
 

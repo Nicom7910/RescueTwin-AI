@@ -1,24 +1,25 @@
 #!/usr/bin/env python3
 
 """
-Visualización 2D de ruta RescueTwin AI.
-
-Uso:
-    python3 scripts/visualize_mission_route.py
-
-O indicando un CSV:
-    python3 scripts/visualize_mission_route.py reports/mission_logs/ros_mission_YYYYMMDD_HHMMSS.csv
+Visualización 2D de misión RescueTwin AI.
 
 Genera:
-    reports/mission_logs/mission_route_YYYYMMDD_HHMMSS.png
+- Ruta real del robot.
+- Obstáculos aleatorios.
+- Zonas de riesgo aleatorias.
+- Víctima probable.
+- Puntos con maniobras evasivas.
+- Puntos con detección de víctima.
+- Estado final de misión.
 """
 
-from pathlib import Path
+import json
 import sys
 from datetime import datetime
+from pathlib import Path
 
-import pandas as pd
 import matplotlib.pyplot as plt
+import pandas as pd
 
 
 PROJECT_DIR = Path(__file__).resolve().parents[1]
@@ -38,6 +39,33 @@ def find_latest_csv() -> Path:
     return files[0]
 
 
+def load_environment():
+    env_path = LOG_DIR / "latest_environment.json"
+
+    if not env_path.exists():
+        return None
+
+    with open(env_path, "r", encoding="utf-8") as f:
+        return json.load(f)
+
+
+def find_column(df, candidates):
+    for col in candidates:
+        if col in df.columns:
+            return col
+
+    return None
+
+
+def get_series_or_default(df, candidates, default):
+    col = find_column(df, candidates)
+
+    if col is None:
+        return pd.Series([default] * len(df))
+
+    return df[col]
+
+
 def main():
     if len(sys.argv) > 1:
         csv_path = Path(sys.argv[1])
@@ -47,48 +75,107 @@ def main():
     df = pd.read_csv(csv_path)
 
     if df.empty:
-        raise ValueError(f"El archivo está vacío: {csv_path}")
+        raise ValueError(f"El CSV está vacío: {csv_path}")
+
+    x_col = find_column(df, ["x", "pos_x", "robot_x"])
+    y_col = find_column(df, ["y", "pos_y", "robot_y"])
+
+    if x_col is None or y_col is None:
+        raise ValueError(
+            "No se encontraron columnas de posición. "
+            "Se esperaban columnas x/y, pos_x/pos_y o robot_x/robot_y."
+        )
+
+    environment = load_environment()
 
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     output_path = LOG_DIR / f"mission_route_{timestamp}.png"
 
-    zones = [
-        ("Entrada", -3.0, 0.0),
-        ("Escombros", 1.5, 0.8),
-        ("Riesgo medio", 3.0, -2.8),
-        ("Riesgo alto", 5.0, 2.8),
-        ("Víctima probable", 6.8, 2.6),
-    ]
+    plt.figure(figsize=(13, 8))
 
-    planned_route = [
-        (-3.0, 0.0),
-        (-1.2, 0.2),
-        (1.3, 0.8),
-        (2.4, 0.3),
-        (3.5, 1.2),
-        (4.7, 2.0),
-        (5.7, 2.2),
-        (6.8, 2.6),
-    ]
+    # Entorno aleatorio.
+    if environment:
+        bounds = environment.get("map_bounds", {})
+        x_min = bounds.get("x_min", -3.5)
+        x_max = bounds.get("x_max", 7.4)
+        y_min = bounds.get("y_min", -3.2)
+        y_max = bounds.get("y_max", 3.2)
 
-    plt.figure(figsize=(12, 7))
+        # Obstáculos.
+        for obstacle in environment.get("obstacles", []):
+            circle = plt.Circle(
+                (obstacle["x"], obstacle["y"]),
+                obstacle["radius"],
+                fill=False,
+                linewidth=1.7,
+                linestyle="-",
+            )
+            plt.gca().add_patch(circle)
 
-    # Ruta planificada.
-    planned_x = [p[0] for p in planned_route]
-    planned_y = [p[1] for p in planned_route]
+            plt.text(
+                obstacle["x"] + 0.08,
+                obstacle["y"] + 0.08,
+                "Obstáculo",
+                fontsize=8,
+            )
+
+        # Zonas de riesgo.
+        for zone in environment.get("risk_zones", []):
+            circle = plt.Circle(
+                (zone["x"], zone["y"]),
+                zone["radius"],
+                fill=False,
+                linewidth=2,
+                linestyle="--",
+            )
+            plt.gca().add_patch(circle)
+
+            plt.text(
+                zone["x"] + 0.08,
+                zone["y"] + 0.08,
+                f"Riesgo {zone['risk_level']}",
+                fontsize=8,
+            )
+
+        # Entrada.
+        entry = environment.get("entry", {})
+        if entry:
+            plt.scatter(entry["x"], entry["y"], s=170, marker="s", label="Entrada")
+
+        # Víctima probable.
+        victim = environment.get("victim", {})
+        if victim:
+            plt.scatter(
+                victim["x"],
+                victim["y"],
+                s=220,
+                marker="*",
+                label="Víctima probable real",
+            )
+
+            signal_circle = plt.Circle(
+                (victim["x"], victim["y"]),
+                victim.get("signal_radius", 3.2),
+                fill=False,
+                linestyle=":",
+                linewidth=1.2,
+            )
+            plt.gca().add_patch(signal_circle)
+
+            plt.text(
+                victim["x"] + 0.1,
+                victim["y"] + 0.1,
+                "Víctima probable",
+                fontsize=10,
+            )
+    else:
+        x_min, x_max = -3.5, 7.4
+        y_min, y_max = -3.2, 3.2
+
+    # Ruta real.
     plt.plot(
-        planned_x,
-        planned_y,
-        linestyle="--",
-        linewidth=1.5,
-        alpha=0.6,
-        label="Ruta planificada",
-    )
-
-    # Ruta real del robot.
-    plt.plot(
-        df["x"],
-        df["y"],
+        df[x_col],
+        df[y_col],
         marker="o",
         markersize=4,
         linewidth=2,
@@ -96,74 +183,120 @@ def main():
     )
 
     # Inicio y fin.
-    plt.scatter(df["x"].iloc[0], df["y"].iloc[0], s=150, marker="s", label="Inicio")
-    plt.scatter(df["x"].iloc[-1], df["y"].iloc[-1], s=180, marker="*", label="Fin")
+    plt.scatter(
+        df[x_col].iloc[0],
+        df[y_col].iloc[0],
+        s=160,
+        marker="s",
+        label="Inicio registrado",
+    )
 
-    # Zonas de referencia.
-    for name, x, y in zones:
-        plt.scatter([x], [y], s=130)
-        plt.text(x + 0.1, y + 0.1, name, fontsize=10)
+    plt.scatter(
+        df[x_col].iloc[-1],
+        df[y_col].iloc[-1],
+        s=200,
+        marker="X",
+        label="Fin registrado",
+    )
 
-    # Riesgo alto.
-    if "risk_level" in df.columns:
-        high = df[df["risk_level"].astype(str).str.lower() == "alto"]
+    # Estados.
+    state_series = get_series_or_default(
+        df,
+        ["mission_state", "state", "estado"],
+        "",
+    ).astype(str)
 
-        if not high.empty:
+    evasion_mask = state_series.str.contains(
+        "EVITANDO|RODEANDO",
+        case=False,
+        na=False,
+    )
+
+    if evasion_mask.any():
+        plt.scatter(
+            df.loc[evasion_mask, x_col],
+            df.loc[evasion_mask, y_col],
+            s=90,
+            marker="x",
+            label="Maniobras evasivas",
+        )
+
+    signal_series = get_series_or_default(
+        df,
+        ["victim_signal", "senal_victima"],
+        0,
+    )
+
+    try:
+        signal_values = pd.to_numeric(signal_series, errors="coerce").fillna(0)
+        signal_mask = signal_values > 0.35
+
+        if signal_mask.any():
             plt.scatter(
-                high["x"],
-                high["y"],
-                s=180,
-                facecolors="none",
-                edgecolors="red",
-                linewidths=2,
-                label="Puntos con riesgo alto",
+                df.loc[signal_mask, x_col],
+                df.loc[signal_mask, y_col],
+                s=95,
+                marker="^",
+                label="Señal de víctima detectada",
             )
+    except Exception:
+        pass
 
-    # Estados de evasión.
-    if "mission_state" in df.columns:
-        evasion = df[
-            df["mission_state"].astype(str).str.contains(
-                "RODEANDO|EVITANDO",
-                case=False,
-                na=False,
-            )
-        ]
+    person_series = get_series_or_default(
+        df,
+        ["person_detected", "persona", "victima_detectada"],
+        0,
+    )
 
-        if not evasion.empty:
+    try:
+        person_values = pd.to_numeric(person_series, errors="coerce").fillna(0)
+        person_mask = person_values == 1
+
+        if person_mask.any():
             plt.scatter(
-                evasion["x"],
-                evasion["y"],
-                s=90,
-                marker="x",
-                label="Maniobras evasivas",
-            )
-
-    # Persona detectada.
-    if "person_detected" in df.columns:
-        victim = df[df["person_detected"] == 1]
-
-        if not victim.empty:
-            plt.scatter(
-                victim["x"],
-                victim["y"],
-                s=280,
+                df.loc[person_mask, x_col],
+                df.loc[person_mask, y_col],
+                s=300,
                 facecolors="none",
                 edgecolors="green",
                 linewidths=2.5,
                 label="Víctima detectada",
             )
+    except Exception:
+        pass
 
-    # Último estado.
     final_state = "SIN_ESTADO"
-    if "mission_state" in df.columns:
-        final_state = str(df["mission_state"].iloc[-1])
 
-    plt.title(f"RescueTwin AI - Ruta 2D de misión | Estado final: {final_state}")
+    if len(state_series) > 0:
+        final_state = str(state_series.iloc[-1])
+
+    explored_series = get_series_or_default(
+        df,
+        ["explorado", "exploration_percent", "porcentaje_explorado"],
+        None,
+    )
+
+    explored_text = ""
+
+    try:
+        explored_values = pd.to_numeric(explored_series, errors="coerce").dropna()
+
+        if not explored_values.empty:
+            explored_text = f" | Exploración estimada: {explored_values.iloc[-1]:.1f}%"
+    except Exception:
+        explored_text = ""
+
+    plt.title(
+        f"RescueTwin AI - Ruta 2D de misión | Estado final: {final_state}{explored_text}"
+    )
+
     plt.xlabel("Posición X")
     plt.ylabel("Posición Y")
     plt.grid(True, alpha=0.3)
-    plt.legend()
-    plt.axis("equal")
+    plt.legend(loc="best")
+    plt.xlim(x_min - 0.4, x_max + 0.4)
+    plt.ylim(y_min - 0.4, y_max + 0.4)
+    plt.gca().set_aspect("equal", adjustable="box")
     plt.tight_layout()
 
     plt.savefig(output_path, dpi=160)
