@@ -42,3 +42,25 @@ ros2_ws/log/
 
 # Videos pesados
 reports/videos/*.mp4
+
+
+# Python cache
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Autonomous agent generated outputs
+reports/autonomous_missions/
+!reports/autonomous_missions/sample/
+!reports/autonomous_missions/sample/**
+
+# Q-table backups
+models/autonomous/q_table_v*_backup.json
+
+# Local environments
+.venv/
+venv/
+.env
+
+# OS files
+.DS_Store
