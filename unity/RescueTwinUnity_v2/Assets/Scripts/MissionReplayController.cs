@@ -17,6 +17,7 @@ public class MissionStep
     public bool return_to_base_mode;
 
     public bool victim_detected;
+    public bool victim_search_mode;
     public bool victim_found;
     public int victim_x;
     public int victim_y;
@@ -42,8 +43,9 @@ public class MissionReplayController : MonoBehaviour
     [Header("Replay settings")]
     public float cellSize = 1.0f;
     public float stepDuration = 0.32f;
-    public float robotHeight = 0.65f;
+    public float robotHeight = 0.38f;
     public bool loopReplay = true;
+    public float rotationSmoothness = 10f;
 
     [Header("Map settings")]
     public int mapWidth = 20;
@@ -51,7 +53,7 @@ public class MissionReplayController : MonoBehaviour
 
     [Header("Demo selector")]
     public int currentDemo = 1;
-    public int maxDemo = 3;
+    public int maxDemo = 2;
 
     [Header("Visual trail")]
     public LineRenderer trailLine;
@@ -62,8 +64,13 @@ public class MissionReplayController : MonoBehaviour
     private List<MissionStep> steps = new List<MissionStep>();
     private int currentIndex = 0;
     private float timer = 0f;
+
     private Vector3 startPosition;
     private Vector3 targetPosition;
+
+    private Quaternion startRotation;
+    private Quaternion targetRotation;
+
     private MissionStep currentStep;
 
     private GUIStyle hudStyle;
@@ -97,6 +104,7 @@ public class MissionReplayController : MonoBehaviour
         float t = Mathf.Clamp01(timer / stepDuration);
 
         robot.position = Vector3.Lerp(startPosition, targetPosition, t);
+        robot.rotation = Quaternion.Slerp(startRotation, targetRotation, t);
 
         if (t >= 1f)
         {
@@ -114,11 +122,6 @@ public class MissionReplayController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             LoadDemo(2);
-        }
-
-        if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            LoadDemo(3);
         }
 
         if (Input.GetKeyDown(KeyCode.R))
@@ -169,15 +172,33 @@ public class MissionReplayController : MonoBehaviour
 
         Vector3 initialPosition = GridToWorld(currentStep.x, currentStep.y);
         robot.position = initialPosition;
-        robot.rotation = Quaternion.identity;
+
+        Quaternion initialRotation = Quaternion.identity;
+
+        if (steps.Count > 1)
+        {
+            Vector3 nextPosition = GridToWorld(steps[1].x, steps[1].y);
+            initialRotation = CalculateTargetRotation(
+                initialPosition,
+                nextPosition,
+                Quaternion.identity
+            );
+        }
+
+        robot.rotation = initialRotation;
 
         startPosition = initialPosition;
         targetPosition = initialPosition;
+
+        startRotation = initialRotation;
+        targetRotation = initialRotation;
+
         timer = 0f;
 
         SetupBaseMarker();
         ApplyRobotVisualState(currentStep);
         AddTrailPoint(initialPosition);
+        CheckVictimFound(currentStep);
     }
 
     private void LoadMission()
@@ -228,12 +249,36 @@ public class MissionReplayController : MonoBehaviour
 
         startPosition = robot.position;
         targetPosition = GridToWorld(currentStep.x, currentStep.y);
+
+        startRotation = robot.rotation;
+        targetRotation = CalculateTargetRotation(
+            startPosition,
+            targetPosition,
+            startRotation
+        );
+
         timer = 0f;
 
-        RotateRobotByAction(currentStep.action);
         ApplyRobotVisualState(currentStep);
         AddTrailPoint(targetPosition);
         CheckVictimFound(currentStep);
+    }
+
+    private Quaternion CalculateTargetRotation(
+        Vector3 fromPosition,
+        Vector3 toPosition,
+        Quaternion fallbackRotation
+    )
+    {
+        Vector3 direction = toPosition - fromPosition;
+        direction.y = 0f;
+
+        if (direction.sqrMagnitude < 0.001f)
+        {
+            return fallbackRotation;
+        }
+
+        return Quaternion.LookRotation(direction.normalized, Vector3.up);
     }
 
     private void CheckVictimFound(MissionStep step)
@@ -305,7 +350,7 @@ public class MissionReplayController : MonoBehaviour
             return;
         }
 
-        baseMarker.position = GridToWorld(10, 10);
+        baseMarker.position = GridToWorld(10, 10, 0.12f);
         baseMarker.localScale = new Vector3(1.8f, 0.18f, 1.8f);
 
         Renderer renderer = baseMarker.GetComponent<Renderer>();
@@ -353,61 +398,48 @@ public class MissionReplayController : MonoBehaviour
         }
     }
 
-    private void RotateRobotByAction(string action)
-    {
-        if (string.IsNullOrEmpty(action))
-        {
-            return;
-        }
-
-        if (action == "GIRAR_DERECHA")
-        {
-            robot.Rotate(Vector3.up, 90f);
-        }
-        else if (action == "GIRAR_IZQUIERDA")
-        {
-            robot.Rotate(Vector3.up, -90f);
-        }
-    }
-
     private void ApplyRobotVisualState(MissionStep step)
     {
-        Renderer renderer = robot.GetComponentInChildren<Renderer>();
-
-        if (renderer == null)
-        {
-            return;
-        }
+        Color targetColor;
 
         if (step.victim_found)
         {
-            renderer.material.color = Color.magenta;
-            return;
+            targetColor = Color.magenta;
         }
-
-        if (step.return_to_base_mode)
+        else if (step.return_to_base_mode)
         {
-            renderer.material.color = Color.blue;
-            return;
+            targetColor = Color.blue;
         }
-
-        if (step.escape_mode)
+        else if (step.victim_search_mode)
         {
-            renderer.material.color = new Color(1f, 0.5f, 0f);
-            return;
+            targetColor = new Color(0.8f, 0.2f, 1f);
         }
-
-        if (step.risk_level == "ALTO")
+        else if (step.risk_level == "ALTO")
         {
-            renderer.material.color = Color.red;
+            targetColor = Color.red;
         }
         else if (step.risk_level == "MEDIO")
         {
-            renderer.material.color = Color.yellow;
+            targetColor = Color.yellow;
         }
         else
         {
-            renderer.material.color = Color.green;
+            targetColor = Color.green;
+        }
+
+        QuadrupedRobotVisual quadrupedVisual = robot.GetComponent<QuadrupedRobotVisual>();
+
+        if (quadrupedVisual != null)
+        {
+            quadrupedVisual.SetRobotColor(targetColor);
+            return;
+        }
+
+        Renderer[] renderers = robot.GetComponentsInChildren<Renderer>();
+
+        foreach (Renderer renderer in renderers)
+        {
+            renderer.material.color = targetColor;
         }
     }
 
@@ -444,17 +476,17 @@ public class MissionReplayController : MonoBehaviour
             return;
         }
 
-        GUI.Box(new Rect(15, 15, 560, 345), "");
+        GUI.Box(new Rect(15, 15, 580, 365), "");
 
-        GUI.Label(new Rect(30, 25, 520, 30), "RescueTwin AI - Demo Unity", titleStyle);
+        GUI.Label(new Rect(30, 25, 540, 30), "RescueTwin AI - Demo Unity", titleStyle);
 
-        GUI.Label(new Rect(30, 65, 520, 25), "Demo actual: " + currentDemo + " / " + maxDemo, hudStyle);
-        GUI.Label(new Rect(30, 90, 520, 25), "Archivo: " + missionFileName, hudStyle);
-        GUI.Label(new Rect(30, 115, 520, 25), "Step: " + currentStep.step, hudStyle);
-        GUI.Label(new Rect(30, 140, 520, 25), "Posición: (" + currentStep.x + ", " + currentStep.y + ")", hudStyle);
-        GUI.Label(new Rect(30, 165, 520, 25), "Acción: " + currentStep.action, hudStyle);
-        GUI.Label(new Rect(30, 190, 520, 25), "Riesgo: " + currentStep.risk_level, hudStyle);
-        GUI.Label(new Rect(30, 215, 520, 25), "Batería: " + currentStep.battery_level, hudStyle);
+        GUI.Label(new Rect(30, 65, 540, 25), "Demo actual: " + currentDemo + " / " + maxDemo, hudStyle);
+        GUI.Label(new Rect(30, 90, 540, 25), "Archivo: " + missionFileName, hudStyle);
+        GUI.Label(new Rect(30, 115, 540, 25), "Step: " + currentStep.step, hudStyle);
+        GUI.Label(new Rect(30, 140, 540, 25), "Posición: (" + currentStep.x + ", " + currentStep.y + ")", hudStyle);
+        GUI.Label(new Rect(30, 165, 540, 25), "Acción: " + currentStep.action, hudStyle);
+        GUI.Label(new Rect(30, 190, 540, 25), "Riesgo: " + currentStep.risk_level, hudStyle);
+        GUI.Label(new Rect(30, 215, 540, 25), "Batería: " + currentStep.battery_level, hudStyle);
 
         string mode = "EXPLORACIÓN";
 
@@ -462,17 +494,17 @@ public class MissionReplayController : MonoBehaviour
         {
             mode = "RETORNO A BASE";
         }
-        else if (currentStep.escape_mode)
+        else if (currentStep.victim_search_mode)
         {
-            mode = "ESCAPE";
+            mode = "BÚSQUEDA DE VÍCTIMA";
         }
 
-        GUI.Label(new Rect(30, 240, 520, 25), "Modo: " + mode, modeStyle);
+        GUI.Label(new Rect(30, 240, 540, 25), "Modo: " + mode, modeStyle);
 
         if (victimAlreadyMarked)
         {
             GUI.Label(
-                new Rect(30, 270, 520, 25),
+                new Rect(30, 270, 540, 25),
                 "Víctima localizada en: (" + lastVictimLocation.x + ", " + lastVictimLocation.y + ")",
                 victimStyle
             );
@@ -480,7 +512,7 @@ public class MissionReplayController : MonoBehaviour
         else if (currentStep.victim_detected)
         {
             GUI.Label(
-                new Rect(30, 270, 520, 25),
+                new Rect(30, 270, 540, 25),
                 "Señal de posible víctima detectada",
                 victimStyle
             );
@@ -488,15 +520,15 @@ public class MissionReplayController : MonoBehaviour
         else
         {
             GUI.Label(
-                new Rect(30, 270, 520, 25),
+                new Rect(30, 270, 540, 25),
                 "Víctima: sin localización confirmada",
                 hudStyle
             );
         }
 
         GUI.Label(
-            new Rect(30, 315, 520, 25),
-            "Teclas: 1, 2, 3 cambiar demo | R reiniciar",
+            new Rect(30, 320, 540, 25),
+            "Teclas: 1 y 2 cambiar demo | R reiniciar",
             helpStyle
         );
     }

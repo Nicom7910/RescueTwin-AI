@@ -58295,6 +58295,1221 @@
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
+    },
+    "x1|y2|dN|riskMEDIO|batteryALTA|obsCERCA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x1|y3|dE|riskMEDIO|batteryALTA|obsMEDIA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x3|y0|dE|riskMEDIO|batteryMEDIA|obsCERCA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x6|y1|dS|riskBAJO|batteryALTA|obsCERCA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x3|y0|dW|riskMEDIO|batteryALTA|obsMEDIA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x2|y0|dS|riskBAJO|batteryMEDIA|obsMEDIA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x2|y0|dS|riskBAJO|batteryMEDIA|obsCERCA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x7|y0|dE|riskMEDIO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x5|y7|dW|riskMEDIO|batteryALTA|obsCERCA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x2|y1|dS|riskBAJO|batteryALTA|obsCERCA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x2|y1|dS|riskBAJO|batteryALTA|obsMEDIA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x1|y2|dE|riskMEDIO|batteryMEDIA|obsMEDIA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x2|y2|dE|riskMEDIO|batteryMEDIA|obsCERCA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x1|y8|dN|riskBAJO|batteryALTA|obsCERCA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x8|y0|dW|riskBAJO|batteryALTA|obsCERCA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x8|y0|dS|riskBAJO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x4|y5|dN|riskMEDIO|batteryALTA|obsMEDIA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x5|y5|dS|riskMEDIO|batteryMEDIA|obsMEDIA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x3|y6|dN|riskMEDIO|batteryALTA|obsMEDIA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x3|y4|dW|riskMEDIO|batteryALTA|obsCERCA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x3|y2|dE|riskMEDIO|batteryMEDIA|obsCERCA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x0|y9|dN|riskMEDIO|batteryMEDIA|obsMEDIA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x8|y1|dN|riskMEDIO|batteryALTA|obsMEDIA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x3|y0|dE|riskMEDIO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x4|y2|dN|riskMEDIO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x5|y0|dE|riskMEDIO|batteryALTA|obsCERCA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x7|y4|dW|riskBAJO|batteryALTA|obsCERCA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x9|y5|dN|riskMEDIO|batteryALTA|obsMEDIA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x8|y9|dE|riskMEDIO|batteryMEDIA|obsMEDIA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x2|y4|dE|riskMEDIO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x7|y2|dN|riskMEDIO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x4|y0|dW|riskBAJO|batteryMEDIA|obsMEDIA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x4|y0|dW|riskMEDIO|batteryMEDIA|obsMEDIA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x9|y9|dN|riskMEDIO|batteryALTA|obsMEDIA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x7|y4|dW|riskMEDIO|batteryALTA|obsMEDIA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x4|y7|dN|riskMEDIO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x3|y8|dE|riskMEDIO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x4|y8|dE|riskMEDIO|batteryMEDIA|obsMEDIA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x7|y6|dW|riskMEDIO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x8|y1|dE|riskBAJO|batteryMEDIA|obsCERCA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x8|y2|dS|riskBAJO|batteryMEDIA|obsMEDIA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x8|y3|dS|riskBAJO|batteryMEDIA|obsCERCA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x8|y3|dE|riskBAJO|batteryMEDIA|obsCERCA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x4|y0|dE|riskMEDIO|batteryALTA|obsMEDIA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x8|y7|dW|riskMEDIO|batteryMEDIA|obsMEDIA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x7|y6|dN|riskBAJO|batteryMEDIA|obsMEDIA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x3|y2|dE|riskMEDIO|batteryMEDIA|obsMEDIA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x3|y8|dN|riskBAJO|batteryMEDIA|obsCERCA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x1|y9|dN|riskBAJO|batteryMEDIA|obsCERCA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x5|y1|dS|riskMEDIO|batteryMEDIA|obsCERCA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x8|y1|dE|riskMEDIO|batteryALTA|obsMEDIA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x8|y1|dE|riskMEDIO|batteryALTA|obsCERCA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x5|y6|dN|riskMEDIO|batteryALTA|obsCERCA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x6|y8|dE|riskMEDIO|batteryALTA|obsCERCA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x4|y5|dE|riskMEDIO|batteryMEDIA|obsMEDIA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x0|y7|dN|riskBAJO|batteryMEDIA|obsMEDIA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x2|y4|dE|riskMEDIO|batteryALTA|obsCERCA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x1|y1|dE|riskMEDIO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x2|y3|dE|riskMEDIO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x6|y3|dS|riskBAJO|batteryALTA|obsCERCA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x6|y7|dE|riskMEDIO|batteryALTA|obsCERCA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x6|y0|dN|riskMEDIO|batteryALTA|obsMEDIA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x2|y0|dE|riskMEDIO|batteryMEDIA|obsCERCA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x4|y6|dS|riskMEDIO|batteryALTA|obsCERCA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x4|y6|dE|riskMEDIO|batteryMEDIA|obsMEDIA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x5|y6|dE|riskBAJO|batteryMEDIA|obsCERCA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x4|y6|dN|riskMEDIO|batteryALTA|obsMEDIA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x1|y2|dS|riskMEDIO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x8|y2|dE|riskMEDIO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x2|y1|dE|riskMEDIO|batteryALTA|obsMEDIA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x4|y3|dS|riskMEDIO|batteryALTA|obsMEDIA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x1|y1|dE|riskMEDIO|batteryALTA|obsCERCA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x1|y1|dE|riskMEDIO|batteryMEDIA|obsCERCA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x7|y9|dW|riskMEDIO|batteryMEDIA|obsMEDIA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x8|y0|dS|riskBAJO|batteryMEDIA|obsMEDIA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x8|y0|dS|riskMEDIO|batteryMEDIA|obsMEDIA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x2|y3|dS|riskMEDIO|batteryALTA|obsMEDIA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x4|y5|dS|riskMEDIO|batteryMEDIA|obsMEDIA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x5|y9|dN|riskMEDIO|batteryALTA|obsMEDIA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x6|y9|dN|riskBAJO|batteryALTA|obsCERCA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x6|y9|dN|riskBAJO|batteryMEDIA|obsCERCA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x9|y8|dN|riskMEDIO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x8|y7|dW|riskMEDIO|batteryMEDIA|obsCERCA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x0|y2|dS|riskMEDIO|batteryMEDIA|obsCERCA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x5|y4|dS|riskMEDIO|batteryMEDIA|obsMEDIA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x4|y1|dW|riskMEDIO|batteryALTA|obsCERCA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x1|y3|dW|riskBAJO|batteryMEDIA|obsCERCA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x6|y7|dS|riskMEDIO|batteryMEDIA|obsCERCA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x6|y0|dN|riskMEDIO|batteryALTA|obsCERCA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x9|y3|dS|riskBAJO|batteryALTA|obsMEDIA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x4|y2|dE|riskMEDIO|batteryALTA|obsCERCA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x6|y7|dN|riskMEDIO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x3|y8|dS|riskMEDIO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x4|y6|dN|riskMEDIO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x4|y9|dN|riskMEDIO|batteryALTA|obsMEDIA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x4|y8|dN|riskMEDIO|batteryMEDIA|obsCERCA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x8|y3|dW|riskMEDIO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x3|y3|dN|riskMEDIO|batteryALTA|obsCERCA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x5|y2|dE|riskBAJO|batteryMEDIA|obsMEDIA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x4|y1|dS|riskMEDIO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x2|y7|dN|riskMEDIO|batteryALTA|obsCERCA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x4|y7|dE|riskMEDIO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x2|y6|dN|riskMEDIO|batteryALTA|obsCERCA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x4|y7|dS|riskMEDIO|batteryMEDIA|obsMEDIA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x4|y7|dS|riskMEDIO|batteryMEDIA|obsCERCA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x1|y0|dW|riskMEDIO|batteryALTA|obsCERCA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x1|y0|dE|riskMEDIO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x4|y8|dS|riskBAJO|batteryALTA|obsCERCA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x6|y7|dW|riskBAJO|batteryMEDIA|obsCERCA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x5|y1|dW|riskMEDIO|batteryALTA|obsMEDIA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x1|y8|dN|riskMEDIO|batteryALTA|obsCERCA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x7|y0|dW|riskBAJO|batteryALTA|obsMEDIA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x3|y7|dN|riskMEDIO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x4|y6|dW|riskALTO|batteryMEDIA|obsMEDIA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x4|y9|dN|riskMEDIO|batteryMEDIA|obsCERCA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x2|y2|dE|riskMEDIO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x2|y2|dN|riskMEDIO|batteryMEDIA|obsCERCA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x0|y4|dS|riskMEDIO|batteryMEDIA|obsMEDIA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x9|y6|dN|riskMEDIO|batteryMEDIA|obsMEDIA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x9|y5|dN|riskMEDIO|batteryMEDIA|obsCERCA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x4|y7|dN|riskMEDIO|batteryMEDIA|obsMEDIA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x5|y0|dW|riskMEDIO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x4|y0|dS|riskBAJO|batteryALTA|obsCERCA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x4|y0|dS|riskBAJO|batteryMEDIA|obsCERCA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x3|y0|dE|riskMEDIO|batteryMEDIA|obsMEDIA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x4|y6|dW|riskMEDIO|batteryMEDIA|obsCERCA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x6|y8|dW|riskMEDIO|batteryMEDIA|obsMEDIA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x6|y8|dW|riskMEDIO|batteryMEDIA|obsCERCA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x0|y8|dN|riskMEDIO|batteryALTA|obsMEDIA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x0|y8|dN|riskMEDIO|batteryALTA|obsCERCA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x0|y8|dS|riskMEDIO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x6|y0|dE|riskMEDIO|batteryMEDIA|obsCERCA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x9|y8|dN|riskMEDIO|batteryALTA|obsMEDIA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x6|y6|dN|riskMEDIO|batteryMEDIA|obsCERCA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x7|y8|dS|riskMEDIO|batteryMEDIA|obsCERCA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
     }
   }
 }
