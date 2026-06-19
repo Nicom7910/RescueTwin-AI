@@ -21,6 +21,8 @@ public class MissionStep
     public bool victim_found;
     public int victim_x;
     public int victim_y;
+    public int victim_target_x;
+    public int victim_target_y;
     public string message;
 }
 
@@ -52,6 +54,7 @@ public class MissionReplayController : MonoBehaviour
     public int mapHeight = 20;
 
     [Header("Demo selector")]
+    public bool useDemoSelector = true;
     public int currentDemo = 1;
     public int maxDemo = 2;
 
@@ -88,7 +91,14 @@ public class MissionReplayController : MonoBehaviour
         SetupTrail();
         SetupHudStyles();
 
-        LoadDemo(currentDemo);
+        if (useDemoSelector)
+        {
+            LoadDemo(currentDemo);
+        }
+        else
+        {
+            LoadManualMission();
+        }
     }
 
     void Update()
@@ -114,14 +124,17 @@ public class MissionReplayController : MonoBehaviour
 
     private void HandleKeyboardInput()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        if (useDemoSelector)
         {
-            LoadDemo(1);
-        }
+            if (Input.GetKeyDown(KeyCode.Alpha1))
+            {
+                LoadDemo(1);
+            }
 
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            LoadDemo(2);
+            if (Input.GetKeyDown(KeyCode.Alpha2))
+            {
+                LoadDemo(2);
+            }
         }
 
         if (Input.GetKeyDown(KeyCode.R))
@@ -152,6 +165,26 @@ public class MissionReplayController : MonoBehaviour
         RestartCurrentDemo();
 
         Debug.Log("Demo cargada: " + demoNumber);
+    }
+
+    public void LoadManualMission()
+    {
+        if (mapBuilder != null)
+        {
+            mapBuilder.LoadAndBuildWorld(
+                mapBuilder.worldFileName,
+                missionFileName
+            );
+
+            mapWidth = mapBuilder.mapWidth;
+            mapHeight = mapBuilder.mapHeight;
+            cellSize = mapBuilder.cellSize;
+        }
+
+        LoadMission();
+        RestartCurrentDemo();
+
+        Debug.Log("Misión manual cargada: " + missionFileName);
     }
 
     private void RestartCurrentDemo()
@@ -476,17 +509,27 @@ public class MissionReplayController : MonoBehaviour
             return;
         }
 
-        GUI.Box(new Rect(15, 15, 580, 365), "");
+        GUI.Box(new Rect(15, 15, 600, 385), "");
 
-        GUI.Label(new Rect(30, 25, 540, 30), "RescueTwin AI - Demo Unity", titleStyle);
+        GUI.Label(new Rect(30, 25, 560, 30), "RescueTwin AI - Demo Unity", titleStyle);
 
-        GUI.Label(new Rect(30, 65, 540, 25), "Demo actual: " + currentDemo + " / " + maxDemo, hudStyle);
-        GUI.Label(new Rect(30, 90, 540, 25), "Archivo: " + missionFileName, hudStyle);
-        GUI.Label(new Rect(30, 115, 540, 25), "Step: " + currentStep.step, hudStyle);
-        GUI.Label(new Rect(30, 140, 540, 25), "Posición: (" + currentStep.x + ", " + currentStep.y + ")", hudStyle);
-        GUI.Label(new Rect(30, 165, 540, 25), "Acción: " + currentStep.action, hudStyle);
-        GUI.Label(new Rect(30, 190, 540, 25), "Riesgo: " + currentStep.risk_level, hudStyle);
-        GUI.Label(new Rect(30, 215, 540, 25), "Batería: " + currentStep.battery_level, hudStyle);
+        if (useDemoSelector)
+        {
+            GUI.Label(new Rect(30, 65, 560, 25), "Modo carga: demos predefinidas", hudStyle);
+            GUI.Label(new Rect(30, 90, 560, 25), "Demo actual: " + currentDemo + " / " + maxDemo, hudStyle);
+        }
+        else
+        {
+            GUI.Label(new Rect(30, 65, 560, 25), "Modo carga: misión manual", hudStyle);
+            GUI.Label(new Rect(30, 90, 560, 25), "Archivo manual: " + missionFileName, hudStyle);
+        }
+
+        GUI.Label(new Rect(30, 115, 560, 25), "Archivo: " + missionFileName, hudStyle);
+        GUI.Label(new Rect(30, 140, 560, 25), "Step: " + currentStep.step, hudStyle);
+        GUI.Label(new Rect(30, 165, 560, 25), "Posición: (" + currentStep.x + ", " + currentStep.y + ")", hudStyle);
+        GUI.Label(new Rect(30, 190, 560, 25), "Acción: " + currentStep.action, hudStyle);
+        GUI.Label(new Rect(30, 215, 560, 25), "Riesgo: " + currentStep.risk_level, hudStyle);
+        GUI.Label(new Rect(30, 240, 560, 25), "Batería: " + currentStep.battery_level, hudStyle);
 
         string mode = "EXPLORACIÓN";
 
@@ -499,12 +542,12 @@ public class MissionReplayController : MonoBehaviour
             mode = "BÚSQUEDA DE VÍCTIMA";
         }
 
-        GUI.Label(new Rect(30, 240, 540, 25), "Modo: " + mode, modeStyle);
+        GUI.Label(new Rect(30, 265, 560, 25), "Modo: " + mode, modeStyle);
 
         if (victimAlreadyMarked)
         {
             GUI.Label(
-                new Rect(30, 270, 540, 25),
+                new Rect(30, 295, 560, 25),
                 "Víctima localizada en: (" + lastVictimLocation.x + ", " + lastVictimLocation.y + ")",
                 victimStyle
             );
@@ -512,7 +555,7 @@ public class MissionReplayController : MonoBehaviour
         else if (currentStep.victim_detected)
         {
             GUI.Label(
-                new Rect(30, 270, 540, 25),
+                new Rect(30, 295, 560, 25),
                 "Señal de posible víctima detectada",
                 victimStyle
             );
@@ -520,15 +563,19 @@ public class MissionReplayController : MonoBehaviour
         else
         {
             GUI.Label(
-                new Rect(30, 270, 540, 25),
+                new Rect(30, 295, 560, 25),
                 "Víctima: sin localización confirmada",
                 hudStyle
             );
         }
 
+        string helpText = useDemoSelector
+            ? "Teclas: 1 y 2 cambiar demo | R reiniciar"
+            : "Tecla: R reiniciar misión manual";
+
         GUI.Label(
-            new Rect(30, 320, 540, 25),
-            "Teclas: 1 y 2 cambiar demo | R reiniciar",
+            new Rect(30, 345, 560, 25),
+            helpText,
             helpStyle
         );
     }

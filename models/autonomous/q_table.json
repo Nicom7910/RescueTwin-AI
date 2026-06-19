@@ -5,7 +5,7 @@
   "q_table": {
     "x5|y5|dW|riskBAJO|batteryALTA|obsMEDIA|victim0|visitedBAJA": {
       "AVANZAR": -12.33948,
-      "GIRAR_IZQUIERDA": 7.75501,
+      "GIRAR_IZQUIERDA": 7.6928,
       "GIRAR_DERECHA": -19.78371,
       "RETROCEDER": -8.231,
       "ESCANEAR": -3.888,
@@ -33,14 +33,14 @@
     "x4|y6|dS|riskBAJO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
       "AVANZAR": 1.10222,
       "GIRAR_IZQUIERDA": -4.38,
-      "GIRAR_DERECHA": -0.12308,
+      "GIRAR_DERECHA": -5.63125,
       "RETROCEDER": -0.65502,
       "ESCANEAR": -5.58,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
     },
     "x4|y7|dS|riskBAJO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 5.21511,
+      "AVANZAR": 4.84849,
       "GIRAR_IZQUIERDA": -3.72143,
       "GIRAR_DERECHA": -4.08,
       "RETROCEDER": -0.98985,
@@ -49,7 +49,7 @@
       "VOLVER_BASE": 0.0
     },
     "x4|y8|dS|riskBAJO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 4.41223,
+      "AVANZAR": 5.96364,
       "GIRAR_IZQUIERDA": -2.3579,
       "GIRAR_DERECHA": -2.88,
       "RETROCEDER": -1.48533,
@@ -67,8 +67,8 @@
       "VOLVER_BASE": 0.0
     },
     "x4|y9|dS|riskBAJO|batteryALTA|obsMEDIA|victim0|visitedBAJA": {
-      "AVANZAR": -0.34231,
-      "GIRAR_IZQUIERDA": 0.0,
+      "AVANZAR": 0.82218,
+      "GIRAR_IZQUIERDA": -2.88,
       "GIRAR_DERECHA": -3.33227,
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
@@ -78,7 +78,7 @@
     "x4|y9|dS|riskMEDIO|batteryALTA|obsMEDIA|victim0|visitedBAJA": {
       "AVANZAR": -3.408,
       "GIRAR_IZQUIERDA": -5.88,
-      "GIRAR_DERECHA": 0.0,
+      "GIRAR_DERECHA": -0.48,
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
@@ -86,24 +86,24 @@
     },
     "x4|y9|dS|riskBAJO|batteryALTA|obsCERCA|victim0|visitedBAJA": {
       "AVANZAR": -9.03,
-      "GIRAR_IZQUIERDA": -2.53451,
+      "GIRAR_IZQUIERDA": -3.48123,
       "GIRAR_DERECHA": -4.57247,
-      "RETROCEDER": -2.13,
+      "RETROCEDER": -5.7405,
       "ESCANEAR": -2.88,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
     },
     "x4|y9|dE|riskBAJO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": -1.07444,
+      "AVANZAR": -2.89327,
       "GIRAR_IZQUIERDA": -7.64932,
-      "GIRAR_DERECHA": -2.47695,
+      "GIRAR_DERECHA": -6.18541,
       "RETROCEDER": -3.84282,
       "ESCANEAR": -3.888,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
     },
     "x5|y9|dE|riskBAJO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 2.01384,
+      "AVANZAR": 5.65009,
       "GIRAR_IZQUIERDA": -2.51287,
       "GIRAR_DERECHA": -2.8167,
       "RETROCEDER": -2.3762,
@@ -112,7 +112,7 @@
       "VOLVER_BASE": 0.0
     },
     "x6|y9|dE|riskBAJO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 8.35348,
+      "AVANZAR": 8.43095,
       "GIRAR_IZQUIERDA": -3.18,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": -5.21291,
@@ -176,7 +176,7 @@
     },
     "x6|y7|dN|riskBAJO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
       "AVANZAR": 2.79082,
-      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_IZQUIERDA": -0.48,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
       "ESCANEAR": -3.50921,
@@ -247,7 +247,7 @@
       "VOLVER_BASE": 0.0
     },
     "x6|y5|dS|riskBAJO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 5.57337,
+      "AVANZAR": -0.35751,
       "GIRAR_IZQUIERDA": -7.83,
       "GIRAR_DERECHA": -8.21605,
       "RETROCEDER": -1.98,
@@ -442,12 +442,12 @@
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
-      "VOLVER_BASE": 227.48813
+      "VOLVER_BASE": 240.53987
     },
     "x5|y5|dS|riskBAJO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 5.7756,
+      "AVANZAR": 6.77386,
       "GIRAR_IZQUIERDA": -5.01107,
-      "GIRAR_DERECHA": -5.43986,
+      "GIRAR_DERECHA": -4.05695,
       "RETROCEDER": -2.47167,
       "ESCANEAR": -4.11979,
       "ENVIAR_ALERTA": 0.0,
@@ -518,7 +518,7 @@
     },
     "x3|y4|dN|riskBAJO|batteryALTA|obsMEDIA|victim0|visitedBAJA": {
       "AVANZAR": -8.28,
-      "GIRAR_IZQUIERDA": -7.09303,
+      "GIRAR_IZQUIERDA": -5.3204,
       "GIRAR_DERECHA": -9.28142,
       "RETROCEDER": -8.26305,
       "ESCANEAR": -9.08549,
@@ -526,7 +526,7 @@
       "VOLVER_BASE": 0.0
     },
     "x3|y4|dW|riskBAJO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 8.80501,
+      "AVANZAR": 6.60715,
       "GIRAR_IZQUIERDA": -6.46482,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 1.52102,
@@ -607,7 +607,7 @@
       "VOLVER_BASE": 0.0
     },
     "x3|y7|dE|riskBAJO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 0.75825,
+      "AVANZAR": 0.46451,
       "GIRAR_IZQUIERDA": -2.88,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
@@ -634,7 +634,7 @@
       "VOLVER_BASE": 0.0
     },
     "x3|y7|dW|riskBAJO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 9.11235,
+      "AVANZAR": 10.90827,
       "GIRAR_IZQUIERDA": 0.0,
       "GIRAR_DERECHA": -0.48,
       "RETROCEDER": 0.0,
@@ -643,7 +643,7 @@
       "VOLVER_BASE": 0.0
     },
     "x2|y7|dW|riskBAJO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 7.47745,
+      "AVANZAR": 6.865,
       "GIRAR_IZQUIERDA": 0.39145,
       "GIRAR_DERECHA": -0.48,
       "RETROCEDER": 0.01845,
@@ -654,7 +654,7 @@
     "x1|y7|dW|riskBAJO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
       "AVANZAR": -0.26455,
       "GIRAR_IZQUIERDA": -4.63906,
-      "GIRAR_DERECHA": 0.0,
+      "GIRAR_DERECHA": -0.48,
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
@@ -763,7 +763,7 @@
       "AVANZAR": 4.8341,
       "GIRAR_IZQUIERDA": -3.36372,
       "GIRAR_DERECHA": -2.3714,
-      "RETROCEDER": -0.89473,
+      "RETROCEDER": -0.77574,
       "ESCANEAR": -4.9036,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
@@ -787,7 +787,7 @@
       "VOLVER_BASE": 0.0
     },
     "x0|y7|dN|riskMEDIO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 1.99364,
+      "AVANZAR": 2.5099,
       "GIRAR_IZQUIERDA": 0.0,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
@@ -806,10 +806,10 @@
     },
     "x0|y6|dN|riskBAJO|batteryMEDIA|obsMEDIA|victim0|visitedBAJA": {
       "AVANZAR": -1.34306,
-      "GIRAR_IZQUIERDA": -0.48,
+      "GIRAR_IZQUIERDA": -4.188,
       "GIRAR_DERECHA": -4.38,
-      "RETROCEDER": 0.0,
-      "ESCANEAR": 0.0,
+      "RETROCEDER": -2.45278,
+      "ESCANEAR": -2.28,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
     },
@@ -895,7 +895,7 @@
       "VOLVER_BASE": 0.0
     },
     "x0|y6|dS|riskBAJO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 7.05778,
+      "AVANZAR": 13.25235,
       "GIRAR_IZQUIERDA": -0.48,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
@@ -1022,7 +1022,7 @@
     },
     "x5|y5|dS|riskBAJO|batteryALTA|obsCERCA|victim0|visitedBAJA": {
       "AVANZAR": -16.36867,
-      "GIRAR_IZQUIERDA": -7.63645,
+      "GIRAR_IZQUIERDA": -2.38606,
       "GIRAR_DERECHA": -32.38635,
       "RETROCEDER": -9.0503,
       "ESCANEAR": -1.42142,
@@ -1041,7 +1041,7 @@
     "x5|y4|dS|riskBAJO|batteryALTA|obsMEDIA|victim0|visitedBAJA": {
       "AVANZAR": -21.56976,
       "GIRAR_IZQUIERDA": -7.16697,
-      "GIRAR_DERECHA": -4.80594,
+      "GIRAR_DERECHA": -3.72048,
       "RETROCEDER": -4.82084,
       "ESCANEAR": -6.59343,
       "ENVIAR_ALERTA": 0.0,
@@ -1050,14 +1050,14 @@
     "x5|y4|dE|riskBAJO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
       "AVANZAR": 20.00675,
       "GIRAR_IZQUIERDA": -5.88,
-      "GIRAR_DERECHA": 0.23353,
+      "GIRAR_DERECHA": -5.64099,
       "RETROCEDER": 0.44135,
       "ESCANEAR": 1.29053,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
     },
     "x6|y4|dE|riskBAJO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 13.61479,
+      "AVANZAR": 13.07364,
       "GIRAR_IZQUIERDA": -0.32102,
       "GIRAR_DERECHA": 2.21205,
       "RETROCEDER": 2.63956,
@@ -1075,7 +1075,7 @@
       "VOLVER_BASE": 0.21573
     },
     "x7|y5|dE|riskBAJO|batteryALTA|obsMEDIA|victim0|visitedBAJA": {
-      "AVANZAR": 2.5577,
+      "AVANZAR": 1.72257,
       "GIRAR_IZQUIERDA": -1.81452,
       "GIRAR_DERECHA": -0.48,
       "RETROCEDER": -1.54104,
@@ -1084,8 +1084,8 @@
       "VOLVER_BASE": 0.0
     },
     "x6|y5|dE|riskBAJO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 16.55682,
-      "GIRAR_IZQUIERDA": -3.11504,
+      "AVANZAR": 12.72739,
+      "GIRAR_IZQUIERDA": -2.28543,
       "GIRAR_DERECHA": -1.20424,
       "RETROCEDER": -0.90001,
       "ESCANEAR": 11.18046,
@@ -1093,7 +1093,7 @@
       "VOLVER_BASE": 0.0
     },
     "x7|y5|dE|riskBAJO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 3.57184,
+      "AVANZAR": 1.38808,
       "GIRAR_IZQUIERDA": -3.2224,
       "GIRAR_DERECHA": -1.72191,
       "RETROCEDER": -3.72667,
@@ -1140,7 +1140,7 @@
     "x7|y6|dE|riskBAJO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
       "AVANZAR": 10.18496,
       "GIRAR_IZQUIERDA": -3.5761,
-      "GIRAR_DERECHA": -4.38,
+      "GIRAR_DERECHA": -6.33824,
       "RETROCEDER": -0.62884,
       "ESCANEAR": -3.18,
       "ENVIAR_ALERTA": 0.0,
@@ -1183,7 +1183,7 @@
       "VOLVER_BASE": 0.0
     },
     "x5|y6|dN|riskBAJO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 19.88183,
+      "AVANZAR": 49.08045,
       "GIRAR_IZQUIERDA": -3.588,
       "GIRAR_DERECHA": -5.66358,
       "RETROCEDER": -9.33,
@@ -1210,7 +1210,7 @@
       "VOLVER_BASE": 0.0
     },
     "x5|y4|dN|riskBAJO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 29.1871,
+      "AVANZAR": 22.89996,
       "GIRAR_IZQUIERDA": -4.38,
       "GIRAR_DERECHA": -0.48,
       "RETROCEDER": 2.21533,
@@ -1219,10 +1219,10 @@
       "VOLVER_BASE": 0.0
     },
     "x5|y3|dN|riskBAJO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 1.7641,
+      "AVANZAR": -0.27592,
       "GIRAR_IZQUIERDA": -7.788,
       "GIRAR_DERECHA": -6.09201,
-      "RETROCEDER": -10.983,
+      "RETROCEDER": -9.08252,
       "ESCANEAR": -9.51106,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
@@ -1237,11 +1237,11 @@
       "VOLVER_BASE": 0.0
     },
     "x5|y2|dN|riskBAJO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 4.9752,
+      "AVANZAR": 0.53859,
       "GIRAR_IZQUIERDA": -7.38,
       "GIRAR_DERECHA": -6.03822,
-      "RETROCEDER": -0.18,
-      "ESCANEAR": -2.08465,
+      "RETROCEDER": -1.69771,
+      "ESCANEAR": -7.31501,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
     },
@@ -1345,7 +1345,7 @@
       "VOLVER_BASE": 0.0
     },
     "x9|y4|dE|riskBAJO|batteryMEDIA|obsMEDIA|victim0|visitedBAJA": {
-      "AVANZAR": 1.64066,
+      "AVANZAR": 2.86456,
       "GIRAR_IZQUIERDA": -0.888,
       "GIRAR_DERECHA": -0.82398,
       "RETROCEDER": -1.93455,
@@ -1365,7 +1365,7 @@
     "x9|y4|dE|riskBAJO|batteryMEDIA|obsCERCA|victim0|visitedBAJA": {
       "AVANZAR": -5.43,
       "GIRAR_IZQUIERDA": -4.72997,
-      "GIRAR_DERECHA": -2.17543,
+      "GIRAR_DERECHA": -0.43619,
       "RETROCEDER": -3.03,
       "ESCANEAR": -2.5848,
       "ENVIAR_ALERTA": 0.0,
@@ -1387,7 +1387,7 @@
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
-      "VOLVER_BASE": 41.09104
+      "VOLVER_BASE": 43.21892
     },
     "x6|y5|dN|riskBAJO|batteryBAJA|obsMEDIA|victim0|visitedBAJA": {
       "AVANZAR": 0.0,
@@ -1399,7 +1399,7 @@
       "VOLVER_BASE": 49.09627
     },
     "x5|y5|dN|riskBAJO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 12.23137,
+      "AVANZAR": 16.6243,
       "GIRAR_IZQUIERDA": -5.91678,
       "GIRAR_DERECHA": -6.89369,
       "RETROCEDER": -3.97619,
@@ -1411,7 +1411,7 @@
       "AVANZAR": -7.67555,
       "GIRAR_IZQUIERDA": -12.42921,
       "GIRAR_DERECHA": -10.06255,
-      "RETROCEDER": -6.03095,
+      "RETROCEDER": -3.26633,
       "ESCANEAR": -10.63087,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
@@ -1435,16 +1435,16 @@
       "VOLVER_BASE": 0.0
     },
     "x5|y4|dW|riskBAJO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 6.25607,
+      "AVANZAR": 8.5122,
       "GIRAR_IZQUIERDA": -9.2088,
       "GIRAR_DERECHA": -6.49583,
-      "RETROCEDER": -5.06121,
+      "RETROCEDER": -2.42479,
       "ESCANEAR": -6.18555,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
     },
     "x4|y4|dW|riskBAJO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 7.44296,
+      "AVANZAR": 8.26883,
       "GIRAR_IZQUIERDA": -4.98,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": -3.07869,
@@ -1498,11 +1498,11 @@
       "VOLVER_BASE": 0.0
     },
     "x3|y4|dE|riskBAJO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": -3.43895,
-      "GIRAR_IZQUIERDA": -4.4672,
+      "AVANZAR": -4.70466,
+      "GIRAR_IZQUIERDA": -7.29312,
       "GIRAR_DERECHA": -4.52037,
       "RETROCEDER": -3.5464,
-      "ESCANEAR": -3.18,
+      "ESCANEAR": -6.18555,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
     },
@@ -1510,7 +1510,7 @@
       "AVANZAR": -2.36658,
       "GIRAR_IZQUIERDA": -0.48,
       "GIRAR_DERECHA": -7.83,
-      "RETROCEDER": 0.0,
+      "RETROCEDER": 1.47,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
@@ -1519,7 +1519,7 @@
       "AVANZAR": -3.6582,
       "GIRAR_IZQUIERDA": -0.18636,
       "GIRAR_DERECHA": -2.97594,
-      "RETROCEDER": 5.39223,
+      "RETROCEDER": 1.7034,
       "ESCANEAR": -2.18017,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
@@ -1581,7 +1581,7 @@
     "x5|y4|dS|riskMEDIO|batteryMEDIA|obsCERCA|victim0|visitedBAJA": {
       "AVANZAR": -7.83,
       "GIRAR_IZQUIERDA": -3.63,
-      "GIRAR_DERECHA": 0.0,
+      "GIRAR_DERECHA": -8.13,
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
@@ -1777,16 +1777,16 @@
       "VOLVER_BASE": 0.0
     },
     "x5|y6|dS|riskBAJO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 20.1713,
+      "AVANZAR": 8.8336,
       "GIRAR_IZQUIERDA": -0.5221,
-      "GIRAR_DERECHA": -2.85028,
-      "RETROCEDER": 2.00117,
-      "ESCANEAR": 9.85863,
+      "GIRAR_DERECHA": -6.90453,
+      "RETROCEDER": 4.67412,
+      "ESCANEAR": 5.63075,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
     },
     "x5|y7|dS|riskBAJO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 11.40242,
+      "AVANZAR": 9.01871,
       "GIRAR_IZQUIERDA": 0.53513,
       "GIRAR_DERECHA": -0.68955,
       "RETROCEDER": -1.68316,
@@ -1804,7 +1804,7 @@
       "VOLVER_BASE": 0.0
     },
     "x5|y8|dS|riskBAJO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 5.38029,
+      "AVANZAR": -4.19708,
       "GIRAR_IZQUIERDA": -2.50385,
       "GIRAR_DERECHA": -4.43866,
       "RETROCEDER": -2.55867,
@@ -1966,7 +1966,7 @@
       "VOLVER_BASE": 0.0
     },
     "x1|y5|dN|riskBAJO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 1.28222,
+      "AVANZAR": -1.06103,
       "GIRAR_IZQUIERDA": -9.27954,
       "GIRAR_DERECHA": -12.02042,
       "RETROCEDER": -7.24269,
@@ -2002,7 +2002,7 @@
       "VOLVER_BASE": 0.0
     },
     "x2|y5|dS|riskBAJO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 0.32137,
+      "AVANZAR": 1.24212,
       "GIRAR_IZQUIERDA": -3.03781,
       "GIRAR_DERECHA": -5.71431,
       "RETROCEDER": -4.28363,
@@ -2095,7 +2095,7 @@
       "AVANZAR": -1.77632,
       "GIRAR_IZQUIERDA": -0.88983,
       "GIRAR_DERECHA": -2.68397,
-      "RETROCEDER": 1.22063,
+      "RETROCEDER": 0.23897,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
@@ -2173,7 +2173,7 @@
       "VOLVER_BASE": 38.31537
     },
     "x5|y4|dN|riskBAJO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 15.08305,
+      "AVANZAR": 17.70723,
       "GIRAR_IZQUIERDA": -6.34787,
       "GIRAR_DERECHA": -7.76766,
       "RETROCEDER": -5.91208,
@@ -2191,7 +2191,7 @@
       "VOLVER_BASE": 0.75373
     },
     "x5|y3|dN|riskBAJO|batteryALTA|obsLEJOS|victim1|visitedBAJA": {
-      "AVANZAR": 12.94405,
+      "AVANZAR": 18.56989,
       "GIRAR_IZQUIERDA": 0.0,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
@@ -2200,25 +2200,25 @@
       "VOLVER_BASE": 0.0
     },
     "x5|y3|dN|riskBAJO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 6.93545,
+      "AVANZAR": 11.85645,
       "GIRAR_IZQUIERDA": -3.54141,
-      "GIRAR_DERECHA": 0.36029,
+      "GIRAR_DERECHA": 1.70633,
       "RETROCEDER": -4.22455,
-      "ESCANEAR": -1.87364,
+      "ESCANEAR": -1.13631,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
     },
     "x5|y2|dN|riskBAJO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 1.39099,
+      "AVANZAR": 2.21346,
       "GIRAR_IZQUIERDA": -0.42767,
       "GIRAR_DERECHA": -0.48,
       "RETROCEDER": -4.21299,
-      "ESCANEAR": 0.44617,
+      "ESCANEAR": -0.04052,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
     },
     "x5|y1|dN|riskBAJO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": -0.49,
+      "AVANZAR": -3.07953,
       "GIRAR_IZQUIERDA": -2.928,
       "GIRAR_DERECHA": -3.09381,
       "RETROCEDER": -1.79945,
@@ -2229,7 +2229,7 @@
     "x5|y0|dN|riskBAJO|batteryALTA|obsMEDIA|victim0|visitedBAJA": {
       "AVANZAR": -8.28317,
       "GIRAR_IZQUIERDA": -4.58955,
-      "GIRAR_DERECHA": 2.26398,
+      "GIRAR_DERECHA": 2.70665,
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
@@ -2759,7 +2759,7 @@
     },
     "x7|y9|dE|riskBAJO|batteryALTA|obsMEDIA|victim0|visitedBAJA": {
       "AVANZAR": -3.06855,
-      "GIRAR_IZQUIERDA": -3.07838,
+      "GIRAR_IZQUIERDA": -3.09662,
       "GIRAR_DERECHA": -4.08,
       "RETROCEDER": -2.88,
       "ESCANEAR": -0.48,
@@ -2881,7 +2881,7 @@
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
-      "VOLVER_BASE": 18.74163
+      "VOLVER_BASE": 27.06821
     },
     "x6|y7|dS|riskBAJO|batteryBAJA|obsLEJOS|victim0|visitedBAJA": {
       "AVANZAR": 0.0,
@@ -2890,7 +2890,7 @@
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
-      "VOLVER_BASE": 25.07239
+      "VOLVER_BASE": 32.49151
     },
     "x6|y7|dS|riskMEDIO|batteryBAJA|obsLEJOS|victim0|visitedBAJA": {
       "AVANZAR": 0.0,
@@ -2908,7 +2908,7 @@
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
-      "VOLVER_BASE": 35.48261
+      "VOLVER_BASE": 49.19171
     },
     "x6|y5|dS|riskBAJO|batteryBAJA|obsLEJOS|victim0|visitedBAJA": {
       "AVANZAR": 0.0,
@@ -2917,7 +2917,7 @@
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
-      "VOLVER_BASE": 103.98451
+      "VOLVER_BASE": 116.69884
     },
     "x6|y5|dS|riskMEDIO|batteryBAJA|obsLEJOS|victim0|visitedBAJA": {
       "AVANZAR": 0.0,
@@ -2926,7 +2926,7 @@
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
-      "VOLVER_BASE": 13.5773
+      "VOLVER_BASE": 25.84861
     },
     "x5|y5|dS|riskMEDIO|batteryBAJA|obsMEDIA|victim0|visitedBAJA": {
       "AVANZAR": 0.0,
@@ -2953,10 +2953,10 @@
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
-      "VOLVER_BASE": 182.43399
+      "VOLVER_BASE": 184.83602
     },
     "x5|y5|dE|riskBAJO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 27.68745,
+      "AVANZAR": 23.305,
       "GIRAR_IZQUIERDA": -2.77499,
       "GIRAR_DERECHA": -2.1065,
       "RETROCEDER": 1.17577,
@@ -2976,7 +2976,7 @@
     "x6|y4|dN|riskBAJO|batteryALTA|obsMEDIA|victim0|visitedBAJA": {
       "AVANZAR": -9.63,
       "GIRAR_IZQUIERDA": -0.18866,
-      "GIRAR_DERECHA": 0.42397,
+      "GIRAR_DERECHA": 1.71837,
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
@@ -2992,7 +2992,7 @@
       "VOLVER_BASE": 0.0
     },
     "x6|y4|dW|riskBAJO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 2.61823,
+      "AVANZAR": 1.42866,
       "GIRAR_IZQUIERDA": -4.83,
       "GIRAR_DERECHA": -2.06668,
       "RETROCEDER": -4.43205,
@@ -3001,7 +3001,7 @@
       "VOLVER_BASE": 0.0
     },
     "x6|y4|dN|riskBAJO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 2.3016,
+      "AVANZAR": 0.94182,
       "GIRAR_IZQUIERDA": -2.88,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": -8.50756,
@@ -3012,8 +3012,8 @@
     "x6|y3|dN|riskBAJO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
       "AVANZAR": -1.099,
       "GIRAR_IZQUIERDA": -2.29281,
-      "GIRAR_DERECHA": -1.92012,
-      "RETROCEDER": -0.01559,
+      "GIRAR_DERECHA": -3.60448,
+      "RETROCEDER": -1.19866,
       "ESCANEAR": -4.4188,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
@@ -3091,7 +3091,7 @@
       "VOLVER_BASE": 0.0
     },
     "x8|y1|dN|riskBAJO|batteryALTA|obsMEDIA|victim0|visitedBAJA": {
-      "AVANZAR": 1.86908,
+      "AVANZAR": 2.03741,
       "GIRAR_IZQUIERDA": -4.08,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
@@ -3101,7 +3101,7 @@
     },
     "x8|y0|dN|riskBAJO|batteryALTA|obsCERCA|victim0|visitedBAJA": {
       "AVANZAR": -5.43,
-      "GIRAR_IZQUIERDA": 0.27,
+      "GIRAR_IZQUIERDA": 0.4995,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": -1.93155,
       "ESCANEAR": 0.0,
@@ -3181,7 +3181,7 @@
       "VOLVER_BASE": 0.0
     },
     "x7|y0|dW|riskBAJO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 6.60593,
+      "AVANZAR": 7.65026,
       "GIRAR_IZQUIERDA": -4.98,
       "GIRAR_DERECHA": -2.28,
       "RETROCEDER": -4.18869,
@@ -3191,7 +3191,7 @@
     },
     "x6|y0|dW|riskBAJO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
       "AVANZAR": -1.71583,
-      "GIRAR_IZQUIERDA": -0.45122,
+      "GIRAR_IZQUIERDA": 0.58265,
       "GIRAR_DERECHA": -9.37994,
       "RETROCEDER": -2.133,
       "ESCANEAR": -0.48,
@@ -3318,8 +3318,8 @@
     "x5|y5|dE|riskBAJO|batteryALTA|obsMEDIA|victim0|visitedBAJA": {
       "AVANZAR": -11.32003,
       "GIRAR_IZQUIERDA": -11.92034,
-      "GIRAR_DERECHA": -12.50372,
-      "RETROCEDER": -8.47248,
+      "GIRAR_DERECHA": -10.98973,
+      "RETROCEDER": -9.43927,
       "ESCANEAR": -5.68555,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
@@ -3328,7 +3328,7 @@
       "AVANZAR": -31.37859,
       "GIRAR_IZQUIERDA": -6.89736,
       "GIRAR_DERECHA": -8.04526,
-      "RETROCEDER": -5.28375,
+      "RETROCEDER": -2.27119,
       "ESCANEAR": 0.08061,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
@@ -3388,7 +3388,7 @@
       "VOLVER_BASE": 0.0
     },
     "x7|y4|dW|riskBAJO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 5.23303,
+      "AVANZAR": 7.43685,
       "GIRAR_IZQUIERDA": 0.0,
       "GIRAR_DERECHA": -9.7148,
       "RETROCEDER": 0.0,
@@ -3469,7 +3469,7 @@
       "VOLVER_BASE": 0.0
     },
     "x6|y1|dS|riskBAJO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 7.5487,
+      "AVANZAR": 9.31806,
       "GIRAR_IZQUIERDA": 0.0,
       "GIRAR_DERECHA": -0.48,
       "RETROCEDER": 0.0,
@@ -3525,14 +3525,14 @@
     "x6|y2|dE|riskBAJO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
       "AVANZAR": -5.3258,
       "GIRAR_IZQUIERDA": -5.7132,
-      "GIRAR_DERECHA": -3.33778,
-      "RETROCEDER": -0.6697,
+      "GIRAR_DERECHA": -9.50039,
+      "RETROCEDER": -11.39925,
       "ESCANEAR": -5.73845,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
     },
     "x6|y2|dS|riskBAJO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 5.39565,
+      "AVANZAR": 4.41341,
       "GIRAR_IZQUIERDA": 0.0,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
@@ -3541,7 +3541,7 @@
       "VOLVER_BASE": 0.0
     },
     "x6|y3|dS|riskBAJO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 1.38542,
+      "AVANZAR": -0.10436,
       "GIRAR_IZQUIERDA": -0.48,
       "GIRAR_DERECHA": -4.08,
       "RETROCEDER": -2.88,
@@ -3550,11 +3550,11 @@
       "VOLVER_BASE": 0.0
     },
     "x6|y4|dS|riskBAJO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 3.69286,
+      "AVANZAR": 0.23869,
       "GIRAR_IZQUIERDA": 0.0,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
-      "ESCANEAR": 1.31836,
+      "ESCANEAR": -2.6737,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
     },
@@ -3610,7 +3610,7 @@
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
-      "VOLVER_BASE": 22.56721
+      "VOLVER_BASE": 22.00213
     },
     "x6|y4|dN|riskBAJO|batteryBAJA|obsLEJOS|victim0|visitedBAJA": {
       "AVANZAR": 0.0,
@@ -3769,7 +3769,7 @@
       "AVANZAR": -0.8913,
       "GIRAR_IZQUIERDA": -2.16237,
       "GIRAR_DERECHA": -5.68155,
-      "RETROCEDER": 0.0,
+      "RETROCEDER": 1.47,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
@@ -4054,7 +4054,7 @@
       "VOLVER_BASE": 0.0
     },
     "x1|y5|dS|riskBAJO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 11.93546,
+      "AVANZAR": 11.88316,
       "GIRAR_IZQUIERDA": -5.88,
       "GIRAR_DERECHA": -2.7423,
       "RETROCEDER": 0.0,
@@ -4315,7 +4315,7 @@
       "VOLVER_BASE": 0.0
     },
     "x2|y5|dN|riskBAJO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 4.36515,
+      "AVANZAR": 1.86433,
       "GIRAR_IZQUIERDA": -6.618,
       "GIRAR_DERECHA": -0.48,
       "RETROCEDER": -5.21287,
@@ -4357,7 +4357,7 @@
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
-      "VOLVER_BASE": 34.20753
+      "VOLVER_BASE": 51.51455
     },
     "x2|y5|dW|riskBAJO|batteryBAJA|obsLEJOS|victim0|visitedBAJA": {
       "AVANZAR": 0.0,
@@ -4366,7 +4366,7 @@
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
-      "VOLVER_BASE": 68.99458
+      "VOLVER_BASE": 76.81307
     },
     "x3|y5|dW|riskBAJO|batteryBAJA|obsLEJOS|victim0|visitedBAJA": {
       "AVANZAR": 0.0,
@@ -4375,7 +4375,7 @@
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
-      "VOLVER_BASE": 89.55266
+      "VOLVER_BASE": 101.53742
     },
     "x4|y5|dW|riskBAJO|batteryBAJA|obsLEJOS|victim0|visitedBAJA": {
       "AVANZAR": 0.0,
@@ -4384,7 +4384,7 @@
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
-      "VOLVER_BASE": 164.05672
+      "VOLVER_BASE": 172.62379
     },
     "x4|y5|dW|riskMEDIO|batteryBAJA|obsLEJOS|victim0|visitedBAJA": {
       "AVANZAR": 0.0,
@@ -4423,11 +4423,11 @@
       "VOLVER_BASE": 0.0
     },
     "x4|y7|dE|riskBAJO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": -0.3286,
-      "GIRAR_IZQUIERDA": -1.81951,
-      "GIRAR_DERECHA": -2.73604,
+      "AVANZAR": -1.87406,
+      "GIRAR_IZQUIERDA": -7.33625,
+      "GIRAR_DERECHA": -8.40159,
       "RETROCEDER": -5.56756,
-      "ESCANEAR": -0.48,
+      "ESCANEAR": -3.288,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
     },
@@ -4506,14 +4506,14 @@
     "x6|y9|dW|riskBAJO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
       "AVANZAR": 3.36023,
       "GIRAR_IZQUIERDA": -3.6828,
-      "GIRAR_DERECHA": -0.28155,
+      "GIRAR_DERECHA": -3.08698,
       "RETROCEDER": -3.43373,
       "ESCANEAR": -5.04169,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
     },
     "x6|y9|dW|riskBAJO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 5.44334,
+      "AVANZAR": 1.22827,
       "GIRAR_IZQUIERDA": 0.0,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
@@ -4525,7 +4525,7 @@
       "AVANZAR": -5.013,
       "GIRAR_IZQUIERDA": -2.88,
       "GIRAR_DERECHA": -0.28155,
-      "RETROCEDER": 0.0,
+      "RETROCEDER": -1.44976,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
@@ -4595,7 +4595,7 @@
     },
     "x4|y9|dN|riskBAJO|batteryMEDIA|obsMEDIA|victim0|visitedBAJA": {
       "AVANZAR": -3.81916,
-      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_IZQUIERDA": -2.65365,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
@@ -4675,7 +4675,7 @@
       "VOLVER_BASE": 117.45979
     },
     "x6|y6|dN|riskMEDIO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 0.0,
+      "AVANZAR": 0.15229,
       "GIRAR_IZQUIERDA": -0.48,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
@@ -4684,10 +4684,10 @@
       "VOLVER_BASE": 0.0
     },
     "x6|y6|dN|riskBAJO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 1.00654,
+      "AVANZAR": 4.51862,
       "GIRAR_IZQUIERDA": -4.14104,
       "GIRAR_DERECHA": -2.87362,
-      "RETROCEDER": 0.5173,
+      "RETROCEDER": -1.208,
       "ESCANEAR": -3.10128,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
@@ -4702,7 +4702,7 @@
       "VOLVER_BASE": 0.0
     },
     "x5|y6|dW|riskBAJO|batteryALTA|obsMEDIA|victim0|visitedBAJA": {
-      "AVANZAR": 1.30321,
+      "AVANZAR": -7.63535,
       "GIRAR_IZQUIERDA": -7.413,
       "GIRAR_DERECHA": -2.28,
       "RETROCEDER": 3.69045,
@@ -4873,7 +4873,7 @@
       "VOLVER_BASE": 0.0
     },
     "x4|y8|dN|riskBAJO|batteryMEDIA|obsMEDIA|victim0|visitedBAJA": {
-      "AVANZAR": 2.7195,
+      "AVANZAR": 3.78158,
       "GIRAR_IZQUIERDA": 0.0,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": -3.78,
@@ -4954,7 +4954,7 @@
       "VOLVER_BASE": 0.0
     },
     "x5|y4|dW|riskBAJO|batteryALTA|obsMEDIA|victim0|visitedBAJA": {
-      "AVANZAR": -2.84226,
+      "AVANZAR": -2.47754,
       "GIRAR_IZQUIERDA": -5.118,
       "GIRAR_DERECHA": -6.46916,
       "RETROCEDER": -4.4021,
@@ -4990,7 +4990,7 @@
       "VOLVER_BASE": 0.0
     },
     "x5|y3|dE|riskBAJO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 13.92652,
+      "AVANZAR": 15.18762,
       "GIRAR_IZQUIERDA": -0.34745,
       "GIRAR_DERECHA": -0.48,
       "RETROCEDER": -6.38259,
@@ -5020,7 +5020,7 @@
       "AVANZAR": -2.73327,
       "GIRAR_IZQUIERDA": -2.28,
       "GIRAR_DERECHA": -3.53236,
-      "RETROCEDER": -0.72998,
+      "RETROCEDER": 0.90675,
       "ESCANEAR": -3.18,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
@@ -5100,7 +5100,7 @@
     "x6|y2|dW|riskBAJO|batteryMEDIA|obsCERCA|victim0|visitedBAJA": {
       "AVANZAR": -5.43,
       "GIRAR_IZQUIERDA": -2.13,
-      "GIRAR_DERECHA": 0.70651,
+      "GIRAR_DERECHA": -1.52947,
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
@@ -5127,7 +5127,7 @@
     "x6|y1|dS|riskBAJO|batteryMEDIA|obsMEDIA|victim0|visitedBAJA": {
       "AVANZAR": -3.13826,
       "GIRAR_IZQUIERDA": -5.88,
-      "GIRAR_DERECHA": 1.76573,
+      "GIRAR_DERECHA": 2.78702,
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
@@ -5311,7 +5311,7 @@
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
-      "VOLVER_BASE": 155.64576
+      "VOLVER_BASE": 170.87121
     },
     "x5|y4|dW|riskBAJO|batteryALTA|obsCERCA|victim0|visitedBAJA": {
       "AVANZAR": -7.83,
@@ -5326,7 +5326,7 @@
       "AVANZAR": -1.35835,
       "GIRAR_IZQUIERDA": -3.948,
       "GIRAR_DERECHA": -8.4465,
-      "RETROCEDER": -0.82532,
+      "RETROCEDER": 0.76848,
       "ESCANEAR": -2.88714,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
@@ -5334,7 +5334,7 @@
     "x5|y5|dE|riskMEDIO|batteryALTA|obsMEDIA|victim0|visitedBAJA": {
       "AVANZAR": -23.16172,
       "GIRAR_IZQUIERDA": -0.11287,
-      "GIRAR_DERECHA": 0.70895,
+      "GIRAR_DERECHA": 2.58695,
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
@@ -5404,11 +5404,11 @@
       "VOLVER_BASE": 0.0
     },
     "x4|y7|dS|riskBAJO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": -0.09133,
+      "AVANZAR": 2.07548,
       "GIRAR_IZQUIERDA": -1.12987,
       "GIRAR_DERECHA": -4.85602,
-      "RETROCEDER": 0.0,
-      "ESCANEAR": 0.0,
+      "RETROCEDER": -1.4665,
+      "ESCANEAR": -1.93747,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
     },
@@ -5422,7 +5422,7 @@
       "VOLVER_BASE": 0.0
     },
     "x4|y8|dS|riskBAJO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": -2.61966,
+      "AVANZAR": -0.75671,
       "GIRAR_IZQUIERDA": -5.88,
       "GIRAR_DERECHA": -6.78,
       "RETROCEDER": -6.94566,
@@ -5433,7 +5433,7 @@
     "x4|y8|dS|riskMEDIO|batteryMEDIA|obsMEDIA|victim0|visitedBAJA": {
       "AVANZAR": -0.33,
       "GIRAR_IZQUIERDA": -0.11287,
-      "GIRAR_DERECHA": 0.0,
+      "GIRAR_DERECHA": -0.12,
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
@@ -5441,7 +5441,7 @@
     },
     "x4|y9|dN|riskMEDIO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
       "AVANZAR": -0.18,
-      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_IZQUIERDA": -4.98127,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
@@ -5458,16 +5458,16 @@
       "VOLVER_BASE": 0.0
     },
     "x4|y8|dW|riskBAJO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 0.78695,
+      "AVANZAR": 3.17701,
       "GIRAR_IZQUIERDA": -0.11978,
-      "GIRAR_DERECHA": 0.96087,
+      "GIRAR_DERECHA": 0.70387,
       "RETROCEDER": 0.53448,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
     },
     "x3|y8|dW|riskBAJO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 7.68964,
+      "AVANZAR": 8.00619,
       "GIRAR_IZQUIERDA": -7.38,
       "GIRAR_DERECHA": -3.18,
       "RETROCEDER": -1.71992,
@@ -5476,7 +5476,7 @@
       "VOLVER_BASE": 0.0
     },
     "x3|y8|dW|riskMEDIO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 0.0,
+      "AVANZAR": 0.687,
       "GIRAR_IZQUIERDA": 0.0,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
@@ -5485,10 +5485,10 @@
       "VOLVER_BASE": 0.0
     },
     "x2|y8|dW|riskBAJO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": -0.7124,
+      "AVANZAR": 9.44162,
       "GIRAR_IZQUIERDA": -0.30221,
       "GIRAR_DERECHA": -4.38,
-      "RETROCEDER": 0.0,
+      "RETROCEDER": -0.0423,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
@@ -5563,7 +5563,7 @@
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
-      "VOLVER_BASE": 42.83882
+      "VOLVER_BASE": 42.41942
     },
     "x1|y7|dS|riskBAJO|batteryBAJA|obsLEJOS|victim0|visitedBAJA": {
       "AVANZAR": 0.0,
@@ -5572,7 +5572,7 @@
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
-      "VOLVER_BASE": 31.07799
+      "VOLVER_BASE": 38.30802
     },
     "x1|y7|dS|riskBAJO|batteryBAJA|obsMEDIA|victim0|visitedBAJA": {
       "AVANZAR": 0.0,
@@ -5608,7 +5608,7 @@
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
-      "VOLVER_BASE": 48.97718
+      "VOLVER_BASE": 50.27711
     },
     "x3|y6|dS|riskMEDIO|batteryBAJA|obsMEDIA|victim0|visitedBAJA": {
       "AVANZAR": 0.0,
@@ -5662,7 +5662,7 @@
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
-      "VOLVER_BASE": 140.90724
+      "VOLVER_BASE": 155.20138
     },
     "x5|y5|dS|riskMEDIO|batteryBAJA|obsLEJOS|victim0|visitedBAJA": {
       "AVANZAR": 0.0,
@@ -5671,7 +5671,7 @@
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
-      "VOLVER_BASE": 151.92683
+      "VOLVER_BASE": 161.64972
     },
     "x4|y4|dN|riskBAJO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
       "AVANZAR": 5.14772,
@@ -5783,10 +5783,10 @@
     },
     "x3|y1|dW|riskBAJO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
       "AVANZAR": -0.81088,
-      "GIRAR_IZQUIERDA": -2.51287,
+      "GIRAR_IZQUIERDA": -6.77618,
       "GIRAR_DERECHA": -5.10656,
-      "RETROCEDER": 2.35872,
-      "ESCANEAR": -1.90982,
+      "RETROCEDER": -2.54967,
+      "ESCANEAR": -4.76073,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
     },
@@ -5809,7 +5809,7 @@
       "VOLVER_BASE": 0.0
     },
     "x2|y2|dS|riskBAJO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 6.26201,
+      "AVANZAR": 8.28931,
       "GIRAR_IZQUIERDA": 0.0,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
@@ -5818,7 +5818,7 @@
       "VOLVER_BASE": 0.0
     },
     "x2|y3|dS|riskBAJO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 3.13419,
+      "AVANZAR": 4.8936,
       "GIRAR_IZQUIERDA": -0.48,
       "GIRAR_DERECHA": -0.48,
       "RETROCEDER": 0.0,
@@ -5845,7 +5845,7 @@
       "VOLVER_BASE": 0.0
     },
     "x1|y3|dW|riskBAJO|batteryMEDIA|obsMEDIA|victim0|visitedBAJA": {
-      "AVANZAR": -0.2955,
+      "AVANZAR": 1.21883,
       "GIRAR_IZQUIERDA": -0.33562,
       "GIRAR_DERECHA": -0.33562,
       "RETROCEDER": -3.61025,
@@ -5854,7 +5854,7 @@
       "VOLVER_BASE": 0.0
     },
     "x1|y3|dW|riskBAJO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 6.6979,
+      "AVANZAR": 7.16322,
       "GIRAR_IZQUIERDA": 0.0,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
@@ -5872,11 +5872,11 @@
       "VOLVER_BASE": 0.0
     },
     "x0|y3|dS|riskMEDIO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": -1.98,
+      "AVANZAR": 0.19016,
       "GIRAR_IZQUIERDA": -4.38,
       "GIRAR_DERECHA": -0.48,
-      "RETROCEDER": 0.0,
-      "ESCANEAR": 0.0,
+      "RETROCEDER": -2.57908,
+      "ESCANEAR": -3.18,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
     },
@@ -5899,8 +5899,8 @@
       "VOLVER_BASE": 0.0
     },
     "x1|y3|dN|riskBAJO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 1.83169,
-      "GIRAR_IZQUIERDA": 0.0,
+      "AVANZAR": -1.07579,
+      "GIRAR_IZQUIERDA": 0.42422,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
@@ -5908,18 +5908,18 @@
       "VOLVER_BASE": 0.0
     },
     "x1|y2|dN|riskBAJO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": -0.03706,
+      "AVANZAR": 2.69273,
       "GIRAR_IZQUIERDA": -2.28,
       "GIRAR_DERECHA": -4.38,
       "RETROCEDER": -12.03793,
-      "ESCANEAR": 0.0,
+      "ESCANEAR": -4.68,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
     },
     "x1|y1|dN|riskBAJO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
       "AVANZAR": -3.06744,
       "GIRAR_IZQUIERDA": -3.18,
-      "GIRAR_DERECHA": -2.1423,
+      "GIRAR_DERECHA": -3.22808,
       "RETROCEDER": -10.83,
       "ESCANEAR": -5.67158,
       "ENVIAR_ALERTA": 0.0,
@@ -5954,7 +5954,7 @@
     },
     "x1|y0|dW|riskBAJO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
       "AVANZAR": -2.44402,
-      "GIRAR_IZQUIERDA": 0.75005,
+      "GIRAR_IZQUIERDA": 1.40153,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
       "ESCANEAR": -2.4708,
@@ -6085,7 +6085,7 @@
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
-      "VOLVER_BASE": 22.93062
+      "VOLVER_BASE": 24.87419
     },
     "x5|y2|dS|riskBAJO|batteryBAJA|obsLEJOS|victim0|visitedBAJA": {
       "AVANZAR": 0.0,
@@ -6103,7 +6103,7 @@
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
-      "VOLVER_BASE": 44.60793
+      "VOLVER_BASE": 64.23717
     },
     "x5|y3|dS|riskMEDIO|batteryBAJA|obsLEJOS|victim0|visitedBAJA": {
       "AVANZAR": 0.0,
@@ -6199,7 +6199,7 @@
       "AVANZAR": -15.3858,
       "GIRAR_IZQUIERDA": -0.24649,
       "GIRAR_DERECHA": -2.28,
-      "RETROCEDER": 1.45424,
+      "RETROCEDER": 2.87723,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
@@ -6234,7 +6234,7 @@
     "x5|y6|dW|riskBAJO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
       "AVANZAR": -1.38411,
       "GIRAR_IZQUIERDA": -3.32273,
-      "GIRAR_DERECHA": -0.888,
+      "GIRAR_DERECHA": 1.44925,
       "RETROCEDER": -2.63408,
       "ESCANEAR": -2.28,
       "ENVIAR_ALERTA": 0.0,
@@ -6259,7 +6259,7 @@
       "VOLVER_BASE": 0.0
     },
     "x3|y6|dE|riskBAJO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": -1.6529,
+      "AVANZAR": -0.12472,
       "GIRAR_IZQUIERDA": -4.83874,
       "GIRAR_DERECHA": -7.38,
       "RETROCEDER": -1.66482,
@@ -6288,7 +6288,7 @@
     "x4|y6|dE|riskBAJO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
       "AVANZAR": -2.36514,
       "GIRAR_IZQUIERDA": -4.38,
-      "GIRAR_DERECHA": -2.18545,
+      "GIRAR_DERECHA": -1.70493,
       "RETROCEDER": -19.77231,
       "ESCANEAR": -5.1423,
       "ENVIAR_ALERTA": 0.0,
@@ -6376,9 +6376,9 @@
       "VOLVER_BASE": 0.0
     },
     "x5|y5|dW|riskBAJO|batteryALTA|obsLEJOS|victim1|visitedBAJA": {
-      "AVANZAR": 45.64844,
+      "AVANZAR": 70.06899,
       "GIRAR_IZQUIERDA": 0.0,
-      "GIRAR_DERECHA": 0.0,
+      "GIRAR_DERECHA": 4.22273,
       "RETROCEDER": 0.0,
       "ESCANEAR": 32.8957,
       "ENVIAR_ALERTA": 0.0,
@@ -6484,7 +6484,7 @@
       "VOLVER_BASE": 0.0
     },
     "x7|y8|dN|riskBAJO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 3.67638,
+      "AVANZAR": 4.92466,
       "GIRAR_IZQUIERDA": -0.48,
       "GIRAR_DERECHA": -0.3997,
       "RETROCEDER": -3.42522,
@@ -6619,7 +6619,7 @@
       "VOLVER_BASE": 0.0
     },
     "x5|y8|dW|riskBAJO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 5.90868,
+      "AVANZAR": 5.94376,
       "GIRAR_IZQUIERDA": 0.0,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
@@ -6667,14 +6667,14 @@
       "AVANZAR": -22.3282,
       "GIRAR_IZQUIERDA": -3.18,
       "GIRAR_DERECHA": -8.29196,
-      "RETROCEDER": -1.83835,
+      "RETROCEDER": -1.38437,
       "ESCANEAR": -5.28,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
     },
     "x4|y8|dW|riskMEDIO|batteryMEDIA|obsMEDIA|victim0|visitedBAJA": {
       "AVANZAR": -12.33,
-      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_IZQUIERDA": -5.88,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
@@ -6733,7 +6733,7 @@
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
-      "VOLVER_BASE": 55.56943
+      "VOLVER_BASE": 52.41032
     },
     "x4|y6|dW|riskMEDIO|batteryBAJA|obsLEJOS|victim0|visitedBAJA": {
       "AVANZAR": 0.0,
@@ -6952,7 +6952,7 @@
       "VOLVER_BASE": 0.0
     },
     "x4|y6|dS|riskBAJO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 4.68668,
+      "AVANZAR": 3.05313,
       "GIRAR_IZQUIERDA": -5.88633,
       "GIRAR_DERECHA": -6.87397,
       "RETROCEDER": -0.18,
@@ -6994,7 +6994,7 @@
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
-      "VOLVER_BASE": 82.49873
+      "VOLVER_BASE": 109.79141
     },
     "x5|y5|dS|riskMEDIO|batteryBAJA|obsCERCA|victim0|visitedBAJA": {
       "AVANZAR": 0.0,
@@ -7017,7 +7017,7 @@
     "x6|y6|dW|riskMEDIO|batteryALTA|obsCERCA|victim0|visitedBAJA": {
       "AVANZAR": -9.33,
       "GIRAR_IZQUIERDA": -4.9056,
-      "GIRAR_DERECHA": 0.0,
+      "GIRAR_DERECHA": 0.40588,
       "RETROCEDER": 0.0,
       "ESCANEAR": -2.88,
       "ENVIAR_ALERTA": 0.0,
@@ -7285,7 +7285,7 @@
       "VOLVER_BASE": 0.0
     },
     "x5|y2|dE|riskBAJO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 16.68417,
+      "AVANZAR": 16.91005,
       "GIRAR_IZQUIERDA": 0.0,
       "GIRAR_DERECHA": -2.59445,
       "RETROCEDER": 0.0,
@@ -7294,7 +7294,7 @@
       "VOLVER_BASE": 0.0
     },
     "x6|y2|dE|riskBAJO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 9.3223,
+      "AVANZAR": 10.09145,
       "GIRAR_IZQUIERDA": 0.0,
       "GIRAR_DERECHA": -7.38,
       "RETROCEDER": 0.0,
@@ -7411,7 +7411,7 @@
       "VOLVER_BASE": 0.0
     },
     "x8|y3|dN|riskBAJO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 4.5518,
+      "AVANZAR": 7.79999,
       "GIRAR_IZQUIERDA": -3.09763,
       "GIRAR_DERECHA": -6.79142,
       "RETROCEDER": -9.63,
@@ -7555,11 +7555,11 @@
       "VOLVER_BASE": 104.46043
     },
     "x5|y1|dW|riskBAJO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": -3.57087,
+      "AVANZAR": -1.47122,
       "GIRAR_IZQUIERDA": -2.28,
       "GIRAR_DERECHA": -4.38,
-      "RETROCEDER": 0.0,
-      "ESCANEAR": 0.0,
+      "RETROCEDER": -12.33,
+      "ESCANEAR": -8.88,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
     },
@@ -7573,7 +7573,7 @@
       "VOLVER_BASE": 0.0
     },
     "x4|y1|dW|riskBAJO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 0.69647,
+      "AVANZAR": -3.38965,
       "GIRAR_IZQUIERDA": -4.22298,
       "GIRAR_DERECHA": -3.05553,
       "RETROCEDER": -3.87307,
@@ -7637,7 +7637,7 @@
     },
     "x1|y1|dW|riskBAJO|batteryALTA|obsMEDIA|victim0|visitedBAJA": {
       "AVANZAR": -8.13,
-      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_IZQUIERDA": -0.21614,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
@@ -7683,15 +7683,15 @@
     "x1|y2|dS|riskBAJO|batteryMEDIA|obsCERCA|victim0|visitedBAJA": {
       "AVANZAR": -5.88,
       "GIRAR_IZQUIERDA": -2.13,
-      "GIRAR_DERECHA": 0.0,
+      "GIRAR_DERECHA": 0.88818,
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
     },
     "x1|y2|dE|riskBAJO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 0.34452,
-      "GIRAR_IZQUIERDA": -4.07362,
+      "AVANZAR": 2.80983,
+      "GIRAR_IZQUIERDA": -6.64258,
       "GIRAR_DERECHA": -4.7877,
       "RETROCEDER": -0.80333,
       "ESCANEAR": -5.88,
@@ -7708,7 +7708,7 @@
       "VOLVER_BASE": 0.0
     },
     "x1|y2|dW|riskBAJO|batteryMEDIA|obsMEDIA|victim0|visitedBAJA": {
-      "AVANZAR": 4.57909,
+      "AVANZAR": 5.77251,
       "GIRAR_IZQUIERDA": 0.0,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
@@ -7717,34 +7717,34 @@
       "VOLVER_BASE": 0.0
     },
     "x0|y2|dW|riskBAJO|batteryMEDIA|obsMEDIA|victim0|visitedBAJA": {
-      "AVANZAR": 3.03917,
+      "AVANZAR": -1.54719,
       "GIRAR_IZQUIERDA": -2.81287,
       "GIRAR_DERECHA": -2.2693,
       "RETROCEDER": 0.0,
-      "ESCANEAR": 0.0,
+      "ESCANEAR": -2.96832,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
     },
     "x0|y2|dW|riskBAJO|batteryMEDIA|obsCERCA|victim0|visitedBAJA": {
       "AVANZAR": -5.88,
       "GIRAR_IZQUIERDA": -15.52942,
-      "GIRAR_DERECHA": -3.3033,
-      "RETROCEDER": -0.41928,
-      "ESCANEAR": 0.0,
+      "GIRAR_DERECHA": -6.13781,
+      "RETROCEDER": -0.37163,
+      "ESCANEAR": -0.48,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
     },
     "x0|y2|dS|riskBAJO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 4.95183,
+      "AVANZAR": -0.9853,
       "GIRAR_IZQUIERDA": 0.0,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": -1.39391,
-      "ESCANEAR": -0.28155,
+      "ESCANEAR": -4.01839,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
     },
     "x0|y3|dS|riskBAJO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 2.98638,
+      "AVANZAR": 4.83459,
       "GIRAR_IZQUIERDA": -0.888,
       "GIRAR_DERECHA": -3.09677,
       "RETROCEDER": 0.0,
@@ -7840,7 +7840,7 @@
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
-      "VOLVER_BASE": 95.40196
+      "VOLVER_BASE": 104.49727
     },
     "x4|y5|dS|riskBAJO|batteryBAJA|obsCERCA|victim0|visitedBAJA": {
       "AVANZAR": 0.0,
@@ -7963,7 +7963,7 @@
       "AVANZAR": -8.28,
       "GIRAR_IZQUIERDA": -6.52042,
       "GIRAR_DERECHA": -5.13,
-      "RETROCEDER": 0.4095,
+      "RETROCEDER": 2.56807,
       "ESCANEAR": -2.88,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
@@ -8014,7 +8014,7 @@
       "VOLVER_BASE": 0.0
     },
     "x6|y8|dN|riskBAJO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 5.99525,
+      "AVANZAR": 6.84806,
       "GIRAR_IZQUIERDA": 0.0,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
@@ -8050,7 +8050,7 @@
       "VOLVER_BASE": 15.3507
     },
     "x5|y3|dN|riskBAJO|batteryALTA|obsMEDIA|victim0|visitedBAJA": {
-      "AVANZAR": -3.14424,
+      "AVANZAR": -1.11107,
       "GIRAR_IZQUIERDA": -13.7507,
       "GIRAR_DERECHA": -18.47236,
       "RETROCEDER": -9.62142,
@@ -8059,7 +8059,7 @@
       "VOLVER_BASE": 0.0
     },
     "x5|y2|dN|riskBAJO|batteryALTA|obsMEDIA|victim0|visitedBAJA": {
-      "AVANZAR": 4.85164,
+      "AVANZAR": 5.59389,
       "GIRAR_IZQUIERDA": -2.88,
       "GIRAR_DERECHA": -0.74903,
       "RETROCEDER": -1.98,
@@ -8095,7 +8095,7 @@
       "VOLVER_BASE": 0.0
     },
     "x5|y2|dW|riskBAJO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 7.8494,
+      "AVANZAR": 9.68773,
       "GIRAR_IZQUIERDA": -2.48086,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
@@ -8132,7 +8132,7 @@
     },
     "x5|y2|dN|riskMEDIO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
       "AVANZAR": 0.25339,
-      "GIRAR_IZQUIERDA": -7.38,
+      "GIRAR_IZQUIERDA": -6.6159,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
@@ -8142,7 +8142,7 @@
     "x5|y2|dN|riskBAJO|batteryALTA|obsLEJOS|victim1|visitedBAJA": {
       "AVANZAR": 6.49245,
       "GIRAR_IZQUIERDA": 0.0,
-      "GIRAR_DERECHA": 0.0,
+      "GIRAR_DERECHA": 1.1005,
       "RETROCEDER": 0.0,
       "ESCANEAR": 7.32083,
       "ENVIAR_ALERTA": 0.0,
@@ -8203,7 +8203,7 @@
       "VOLVER_BASE": 0.0
     },
     "x8|y1|dS|riskBAJO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 3.51708,
+      "AVANZAR": 4.53647,
       "GIRAR_IZQUIERDA": 0.0,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
@@ -8212,7 +8212,7 @@
       "VOLVER_BASE": 0.0
     },
     "x8|y2|dS|riskBAJO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 5.55137,
+      "AVANZAR": 3.62979,
       "GIRAR_IZQUIERDA": -5.88,
       "GIRAR_DERECHA": -5.68155,
       "RETROCEDER": 0.0,
@@ -8221,7 +8221,7 @@
       "VOLVER_BASE": 0.0
     },
     "x8|y2|dS|riskMEDIO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 0.57,
+      "AVANZAR": 2.78997,
       "GIRAR_IZQUIERDA": 0.0,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
@@ -8250,14 +8250,14 @@
     "x8|y3|dW|riskMEDIO|batteryMEDIA|obsCERCA|victim0|visitedBAJA": {
       "AVANZAR": -5.43,
       "GIRAR_IZQUIERDA": -2.1138,
-      "GIRAR_DERECHA": 0.0,
+      "GIRAR_DERECHA": -1.51551,
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
     },
     "x8|y3|dW|riskBAJO|batteryMEDIA|obsCERCA|victim0|visitedBAJA": {
-      "AVANZAR": 0.0,
+      "AVANZAR": -5.88,
       "GIRAR_IZQUIERDA": 0.0,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
@@ -8330,10 +8330,10 @@
     },
     "x9|y1|dN|riskBAJO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
       "AVANZAR": -1.578,
-      "GIRAR_IZQUIERDA": -0.888,
+      "GIRAR_IZQUIERDA": -3.6348,
       "GIRAR_DERECHA": -4.788,
       "RETROCEDER": -2.99924,
-      "ESCANEAR": -0.48,
+      "ESCANEAR": -0.888,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
     },
@@ -8608,7 +8608,7 @@
       "VOLVER_BASE": 0.0
     },
     "x6|y5|dN|riskBAJO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 6.23967,
+      "AVANZAR": 5.79258,
       "GIRAR_IZQUIERDA": -2.88,
       "GIRAR_DERECHA": -8.10768,
       "RETROCEDER": -5.20211,
@@ -8635,7 +8635,7 @@
       "VOLVER_BASE": 0.0
     },
     "x3|y4|dN|riskBAJO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 4.32593,
+      "AVANZAR": 5.14704,
       "GIRAR_IZQUIERDA": -3.08852,
       "GIRAR_DERECHA": -2.88,
       "RETROCEDER": -3.52434,
@@ -8797,7 +8797,7 @@
       "VOLVER_BASE": 0.0
     },
     "x1|y0|dS|riskBAJO|batteryMEDIA|obsMEDIA|victim0|visitedBAJA": {
-      "AVANZAR": 0.0,
+      "AVANZAR": 1.89273,
       "GIRAR_IZQUIERDA": -2.88,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
@@ -8943,7 +8943,7 @@
     "x5|y5|dS|riskBAJO|batteryALTA|obsLEJOS|victim1|visitedBAJA": {
       "AVANZAR": 66.81146,
       "GIRAR_IZQUIERDA": 2.19805,
-      "GIRAR_DERECHA": 0.0,
+      "GIRAR_DERECHA": 6.13254,
       "RETROCEDER": 0.0,
       "ESCANEAR": 56.38071,
       "ENVIAR_ALERTA": 0.0,
@@ -9271,7 +9271,7 @@
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
-      "VOLVER_BASE": 39.02965
+      "VOLVER_BASE": 42.45278
     },
     "x1|y4|dS|riskBAJO|batteryBAJA|obsMEDIA|victim0|visitedBAJA": {
       "AVANZAR": 0.0,
@@ -9727,7 +9727,7 @@
       "AVANZAR": -0.62066,
       "GIRAR_IZQUIERDA": -3.588,
       "GIRAR_DERECHA": -1.80372,
-      "RETROCEDER": 0.12782,
+      "RETROCEDER": 0.19187,
       "ESCANEAR": -2.2683,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
@@ -9752,7 +9752,7 @@
     },
     "x4|y9|dE|riskBAJO|batteryMEDIA|obsMEDIA|victim0|visitedBAJA": {
       "AVANZAR": -4.24625,
-      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_IZQUIERDA": -0.48,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
@@ -9793,7 +9793,7 @@
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
-      "VOLVER_BASE": 31.47082
+      "VOLVER_BASE": 32.2702
     },
     "x2|y7|dW|riskMEDIO|batteryBAJA|obsLEJOS|victim1|visitedBAJA": {
       "AVANZAR": 0.0,
@@ -9811,7 +9811,7 @@
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
-      "VOLVER_BASE": 27.54225
+      "VOLVER_BASE": 28.03091
     },
     "x2|y7|dW|riskBAJO|batteryBAJA|obsMEDIA|victim1|visitedBAJA": {
       "AVANZAR": 0.0,
@@ -9874,11 +9874,11 @@
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
-      "VOLVER_BASE": 61.57809
+      "VOLVER_BASE": 76.00937
     },
     "x5|y2|dN|riskBAJO|batteryALTA|obsCERCA|victim0|visitedBAJA": {
       "AVANZAR": -7.23,
-      "GIRAR_IZQUIERDA": -5.06287,
+      "GIRAR_IZQUIERDA": -2.84601,
       "GIRAR_DERECHA": 4.11957,
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
@@ -9886,7 +9886,7 @@
       "VOLVER_BASE": 0.0
     },
     "x4|y2|dW|riskBAJO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 4.84259,
+      "AVANZAR": 6.86723,
       "GIRAR_IZQUIERDA": -0.48,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
@@ -10003,7 +10003,7 @@
       "VOLVER_BASE": 0.0
     },
     "x4|y2|dW|riskBAJO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": -2.0672,
+      "AVANZAR": 1.38463,
       "GIRAR_IZQUIERDA": -5.54065,
       "GIRAR_DERECHA": -4.98,
       "RETROCEDER": -7.17304,
@@ -10022,8 +10022,8 @@
     },
     "x3|y2|dW|riskBAJO|batteryMEDIA|obsMEDIA|victim0|visitedBAJA": {
       "AVANZAR": -11.22855,
-      "GIRAR_IZQUIERDA": 0.0,
-      "GIRAR_DERECHA": 0.0,
+      "GIRAR_IZQUIERDA": -0.37883,
+      "GIRAR_DERECHA": -5.40989,
       "RETROCEDER": -3.43203,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
@@ -10159,7 +10159,7 @@
       "AVANZAR": -12.67516,
       "GIRAR_IZQUIERDA": -8.45299,
       "GIRAR_DERECHA": -6.23931,
-      "RETROCEDER": -3.97757,
+      "RETROCEDER": -2.40492,
       "ESCANEAR": -7.4841,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
@@ -10564,7 +10564,7 @@
       "AVANZAR": -0.78,
       "GIRAR_IZQUIERDA": -4.38,
       "GIRAR_DERECHA": -4.38,
-      "RETROCEDER": 0.0,
+      "RETROCEDER": -2.88,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
@@ -10589,10 +10589,10 @@
     },
     "x5|y9|dS|riskBAJO|batteryALTA|obsMEDIA|victim0|visitedBAJA": {
       "AVANZAR": -3.48297,
-      "GIRAR_IZQUIERDA": -6.76258,
+      "GIRAR_IZQUIERDA": -10.45632,
       "GIRAR_DERECHA": -14.46174,
-      "RETROCEDER": -1.04076,
-      "ESCANEAR": -5.84597,
+      "RETROCEDER": -4.5036,
+      "ESCANEAR": -8.14907,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
     },
@@ -10606,11 +10606,11 @@
       "VOLVER_BASE": 0.0
     },
     "x4|y9|dW|riskBAJO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 6.65724,
+      "AVANZAR": -0.55485,
       "GIRAR_IZQUIERDA": -3.98423,
       "GIRAR_DERECHA": -14.103,
       "RETROCEDER": -1.82849,
-      "ESCANEAR": -0.48,
+      "ESCANEAR": -6.88927,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
     },
@@ -10675,7 +10675,7 @@
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
-      "VOLVER_BASE": 8.18526
+      "VOLVER_BASE": 14.19032
     },
     "x5|y7|dS|riskBAJO|batteryBAJA|obsLEJOS|victim0|visitedBAJA": {
       "AVANZAR": 0.0,
@@ -10684,7 +10684,7 @@
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
-      "VOLVER_BASE": 21.57664
+      "VOLVER_BASE": 35.91187
     },
     "x5|y7|dS|riskMEDIO|batteryBAJA|obsLEJOS|victim0|visitedBAJA": {
       "AVANZAR": 0.0,
@@ -10711,10 +10711,10 @@
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
-      "VOLVER_BASE": 113.30463
+      "VOLVER_BASE": 112.1294
     },
     "x2|y4|dW|riskBAJO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 3.86055,
+      "AVANZAR": 4.37477,
       "GIRAR_IZQUIERDA": -4.79497,
       "GIRAR_DERECHA": -2.28606,
       "RETROCEDER": -1.32259,
@@ -10743,7 +10743,7 @@
     "x1|y4|dW|riskBAJO|batteryALTA|obsMEDIA|victim0|visitedBAJA": {
       "AVANZAR": -2.17544,
       "GIRAR_IZQUIERDA": -4.18315,
-      "GIRAR_DERECHA": 1.10016,
+      "GIRAR_DERECHA": 2.33057,
       "RETROCEDER": 0.0,
       "ESCANEAR": -2.568,
       "ENVIAR_ALERTA": 0.0,
@@ -10903,7 +10903,7 @@
       "VOLVER_BASE": 0.0
     },
     "x1|y6|dS|riskBAJO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 2.69006,
+      "AVANZAR": 3.75655,
       "GIRAR_IZQUIERDA": -2.57362,
       "GIRAR_DERECHA": -3.29484,
       "RETROCEDER": 0.0,
@@ -10913,7 +10913,7 @@
     },
     "x1|y7|dS|riskBAJO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
       "AVANZAR": 2.43272,
-      "GIRAR_IZQUIERDA": -3.588,
+      "GIRAR_IZQUIERDA": -7.1298,
       "GIRAR_DERECHA": -7.38,
       "RETROCEDER": 1.60205,
       "ESCANEAR": -5.09688,
@@ -10966,7 +10966,7 @@
       "VOLVER_BASE": 28.64618
     },
     "x1|y7|dN|riskBAJO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": -1.10795,
+      "AVANZAR": -2.35649,
       "GIRAR_IZQUIERDA": -2.48859,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": -0.96898,
@@ -11065,7 +11065,7 @@
       "VOLVER_BASE": 0.0
     },
     "x5|y5|dE|riskMEDIO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 9.49077,
+      "AVANZAR": 14.4215,
       "GIRAR_IZQUIERDA": -0.28155,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
@@ -11157,7 +11157,7 @@
     "x9|y7|dE|riskMEDIO|batteryMEDIA|obsCERCA|victim0|visitedBAJA": {
       "AVANZAR": -9.13155,
       "GIRAR_IZQUIERDA": -17.11811,
-      "GIRAR_DERECHA": 0.0,
+      "GIRAR_DERECHA": -3.93,
       "RETROCEDER": 0.0,
       "ESCANEAR": -3.68955,
       "ENVIAR_ALERTA": 0.0,
@@ -11337,14 +11337,14 @@
     "x5|y5|dE|riskBAJO|batteryALTA|obsLEJOS|victim1|visitedBAJA": {
       "AVANZAR": 50.33443,
       "GIRAR_IZQUIERDA": -4.53,
-      "GIRAR_DERECHA": 2.79823,
+      "GIRAR_DERECHA": 11.36804,
       "RETROCEDER": 0.0,
       "ESCANEAR": 47.73216,
       "ENVIAR_ALERTA": -2.36982,
       "VOLVER_BASE": 0.0
     },
     "x5|y5|dN|riskBAJO|batteryALTA|obsLEJOS|victim1|visitedBAJA": {
-      "AVANZAR": 31.5017,
+      "AVANZAR": 58.77166,
       "GIRAR_IZQUIERDA": -5.43,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
@@ -11371,7 +11371,7 @@
       "VOLVER_BASE": 0.0
     },
     "x6|y4|dS|riskMEDIO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 1.22958,
+      "AVANZAR": 0.31368,
       "GIRAR_IZQUIERDA": -3.18,
       "GIRAR_DERECHA": -0.48,
       "RETROCEDER": -1.98,
@@ -11380,18 +11380,18 @@
       "VOLVER_BASE": 0.0
     },
     "x6|y6|dS|riskBAJO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 3.5375,
+      "AVANZAR": 2.1745,
       "GIRAR_IZQUIERDA": -6.288,
-      "GIRAR_DERECHA": -14.28747,
+      "GIRAR_DERECHA": -12.62435,
       "RETROCEDER": -2.51665,
       "ESCANEAR": -4.08,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
     },
     "x6|y7|dS|riskBAJO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 2.1967,
+      "AVANZAR": 0.88626,
       "GIRAR_IZQUIERDA": -4.45807,
-      "GIRAR_DERECHA": -4.17078,
+      "GIRAR_DERECHA": -8.52516,
       "RETROCEDER": -7.63977,
       "ESCANEAR": -6.18555,
       "ENVIAR_ALERTA": 0.0,
@@ -11641,7 +11641,7 @@
       "VOLVER_BASE": 0.0
     },
     "x3|y9|dE|riskBAJO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": -2.11177,
+      "AVANZAR": -5.575,
       "GIRAR_IZQUIERDA": -6.288,
       "GIRAR_DERECHA": -7.803,
       "RETROCEDER": -13.18321,
@@ -11652,7 +11652,7 @@
     "x3|y9|dN|riskBAJO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
       "AVANZAR": -1.9489,
       "GIRAR_IZQUIERDA": -4.63308,
-      "GIRAR_DERECHA": 0.0,
+      "GIRAR_DERECHA": -3.78,
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
@@ -11668,7 +11668,7 @@
       "VOLVER_BASE": 0.0
     },
     "x3|y7|dN|riskBAJO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 7.1958,
+      "AVANZAR": 7.91189,
       "GIRAR_IZQUIERDA": -0.48,
       "GIRAR_DERECHA": -2.88,
       "RETROCEDER": -1.23021,
@@ -11719,7 +11719,7 @@
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
-      "VOLVER_BASE": 17.2801
+      "VOLVER_BASE": 24.92113
     },
     "x5|y5|dN|riskMEDIO|batteryALTA|obsMEDIA|victim0|visitedBAJA": {
       "AVANZAR": 4.68434,
@@ -11767,7 +11767,7 @@
       "VOLVER_BASE": 0.0
     },
     "x3|y2|dW|riskBAJO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": -0.63587,
+      "AVANZAR": 1.66717,
       "GIRAR_IZQUIERDA": -5.88,
       "GIRAR_DERECHA": -11.61157,
       "RETROCEDER": -2.41482,
@@ -11776,7 +11776,7 @@
       "VOLVER_BASE": 0.0
     },
     "x3|y2|dS|riskBAJO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": -3.26972,
+      "AVANZAR": -1.30926,
       "GIRAR_IZQUIERDA": -7.83,
       "GIRAR_DERECHA": -11.088,
       "RETROCEDER": -3.98205,
@@ -11796,7 +11796,7 @@
     "x3|y2|dE|riskMEDIO|batteryALTA|obsCERCA|victim0|visitedBAJA": {
       "AVANZAR": -13.83,
       "GIRAR_IZQUIERDA": -1.8046,
-      "GIRAR_DERECHA": 0.0,
+      "GIRAR_DERECHA": -2.13,
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
@@ -11812,8 +11812,8 @@
       "VOLVER_BASE": 0.0
     },
     "x2|y2|dW|riskBAJO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": -0.549,
-      "GIRAR_IZQUIERDA": -0.58926,
+      "AVANZAR": -1.24665,
+      "GIRAR_IZQUIERDA": 0.37896,
       "GIRAR_DERECHA": -3.31645,
       "RETROCEDER": -1.13264,
       "ESCANEAR": -3.18,
@@ -11848,11 +11848,11 @@
       "VOLVER_BASE": 0.0
     },
     "x1|y2|dN|riskBAJO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 2.91467,
+      "AVANZAR": 5.15981,
       "GIRAR_IZQUIERDA": 0.0,
       "GIRAR_DERECHA": -11.328,
       "RETROCEDER": 0.0,
-      "ESCANEAR": 4.62791,
+      "ESCANEAR": 0.53731,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
     },
@@ -11869,7 +11869,7 @@
       "AVANZAR": -31.4362,
       "GIRAR_IZQUIERDA": -3.1032,
       "GIRAR_DERECHA": -11.81451,
-      "RETROCEDER": 0.0,
+      "RETROCEDER": -0.0423,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
@@ -11893,7 +11893,7 @@
       "VOLVER_BASE": 0.0
     },
     "x1|y1|dS|riskBAJO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 10.94628,
+      "AVANZAR": 12.92585,
       "GIRAR_IZQUIERDA": -11.35455,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
@@ -11902,7 +11902,7 @@
       "VOLVER_BASE": 0.0
     },
     "x1|y1|dE|riskBAJO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 7.20381,
+      "AVANZAR": 7.6291,
       "GIRAR_IZQUIERDA": 0.0,
       "GIRAR_DERECHA": -5.56526,
       "RETROCEDER": 0.0,
@@ -11911,7 +11911,7 @@
       "VOLVER_BASE": 0.0
     },
     "x2|y1|dE|riskBAJO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 4.76172,
+      "AVANZAR": 4.73262,
       "GIRAR_IZQUIERDA": -0.48,
       "GIRAR_DERECHA": -5.87751,
       "RETROCEDER": 0.0,
@@ -12010,7 +12010,7 @@
       "VOLVER_BASE": 0.0
     },
     "x0|y1|dN|riskMEDIO|batteryMEDIA|obsMEDIA|victim0|visitedBAJA": {
-      "AVANZAR": 2.517,
+      "AVANZAR": -5.69055,
       "GIRAR_IZQUIERDA": -0.48,
       "GIRAR_DERECHA": -0.48,
       "RETROCEDER": 0.0,
@@ -12030,9 +12030,9 @@
     "x0|y0|dN|riskBAJO|batteryMEDIA|obsMEDIA|victim0|visitedBAJA": {
       "AVANZAR": -4.563,
       "GIRAR_IZQUIERDA": -3.588,
-      "GIRAR_DERECHA": -2.47074,
-      "RETROCEDER": -1.25135,
-      "ESCANEAR": -0.48,
+      "GIRAR_DERECHA": -6.18013,
+      "RETROCEDER": -1.24365,
+      "ESCANEAR": -4.2348,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
     },
@@ -12046,7 +12046,7 @@
       "VOLVER_BASE": 0.0
     },
     "x0|y0|dE|riskBAJO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 0.27614,
+      "AVANZAR": 1.70472,
       "GIRAR_IZQUIERDA": 0.0,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
@@ -12160,7 +12160,7 @@
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
-      "VOLVER_BASE": 8.10033
+      "VOLVER_BASE": 15.15787
     },
     "x4|y2|dE|riskBAJO|batteryBAJA|obsMEDIA|victim0|visitedBAJA": {
       "AVANZAR": 0.0,
@@ -12178,7 +12178,7 @@
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
-      "VOLVER_BASE": 23.72291
+      "VOLVER_BASE": 32.84022
     },
     "x4|y3|dE|riskBAJO|batteryBAJA|obsMEDIA|victim0|visitedBAJA": {
       "AVANZAR": 0.0,
@@ -12232,7 +12232,7 @@
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
-      "VOLVER_BASE": 85.84356
+      "VOLVER_BASE": 83.78291
     },
     "x5|y5|dE|riskMEDIO|batteryBAJA|obsMEDIA|victim0|visitedBAJA": {
       "AVANZAR": 0.0,
@@ -12460,7 +12460,7 @@
       "VOLVER_BASE": 0.0
     },
     "x6|y3|dE|riskBAJO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 8.94534,
+      "AVANZAR": 10.60034,
       "GIRAR_IZQUIERDA": 0.29977,
       "GIRAR_DERECHA": 0.72412,
       "RETROCEDER": 0.91565,
@@ -12469,7 +12469,7 @@
       "VOLVER_BASE": 0.0
     },
     "x7|y3|dE|riskBAJO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 2.89891,
+      "AVANZAR": 4.09727,
       "GIRAR_IZQUIERDA": -2.88,
       "GIRAR_DERECHA": -2.28,
       "RETROCEDER": -3.06531,
@@ -12487,11 +12487,11 @@
       "VOLVER_BASE": 0.0
     },
     "x8|y3|dE|riskBAJO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 2.97314,
+      "AVANZAR": 5.70736,
       "GIRAR_IZQUIERDA": 0.0,
       "GIRAR_DERECHA": -0.3423,
       "RETROCEDER": 0.0,
-      "ESCANEAR": 1.32504,
+      "ESCANEAR": -3.0141,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
     },
@@ -12514,11 +12514,11 @@
       "VOLVER_BASE": 0.0
     },
     "x9|y3|dE|riskBAJO|batteryALTA|obsMEDIA|victim0|visitedBAJA": {
-      "AVANZAR": -1.85855,
+      "AVANZAR": -1.86043,
       "GIRAR_IZQUIERDA": -3.75928,
       "GIRAR_DERECHA": -2.688,
-      "RETROCEDER": -0.56833,
-      "ESCANEAR": -2.44388,
+      "RETROCEDER": -2.30605,
+      "ESCANEAR": -5.24854,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
     },
@@ -12533,9 +12533,9 @@
     },
     "x9|y3|dE|riskBAJO|batteryALTA|obsCERCA|victim0|visitedBAJA": {
       "AVANZAR": 0.0,
-      "GIRAR_IZQUIERDA": 0.06487,
-      "GIRAR_DERECHA": -1.83,
-      "RETROCEDER": 5.39891,
+      "GIRAR_IZQUIERDA": -2.60642,
+      "GIRAR_DERECHA": -3.9855,
+      "RETROCEDER": -0.0564,
       "ESCANEAR": -1.25115,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
@@ -12849,14 +12849,14 @@
     "x8|y5|dE|riskBAJO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
       "AVANZAR": -4.25531,
       "GIRAR_IZQUIERDA": -4.88955,
-      "GIRAR_DERECHA": -1.3999,
+      "GIRAR_DERECHA": 1.49951,
       "RETROCEDER": -4.13393,
       "ESCANEAR": -4.44307,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
     },
     "x8|y5|dN|riskBAJO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 5.8808,
+      "AVANZAR": 9.86562,
       "GIRAR_IZQUIERDA": -3.78,
       "GIRAR_DERECHA": -15.0855,
       "RETROCEDER": -4.21038,
@@ -12865,16 +12865,16 @@
       "VOLVER_BASE": 0.0
     },
     "x8|y4|dN|riskBAJO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 12.05788,
+      "AVANZAR": 12.14371,
       "GIRAR_IZQUIERDA": 0.0,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
-      "ESCANEAR": 1.53943,
+      "ESCANEAR": -2.24374,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
     },
     "x8|y3|dN|riskBAJO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 3.60773,
+      "AVANZAR": 4.07957,
       "GIRAR_IZQUIERDA": -5.88,
       "GIRAR_DERECHA": -0.40305,
       "RETROCEDER": 0.0,
@@ -12883,11 +12883,11 @@
       "VOLVER_BASE": 0.0
     },
     "x8|y2|dN|riskBAJO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 3.3667,
+      "AVANZAR": -2.69156,
       "GIRAR_IZQUIERDA": -2.26692,
       "GIRAR_DERECHA": -0.48,
       "RETROCEDER": -2.133,
-      "ESCANEAR": 0.981,
+      "ESCANEAR": -2.21372,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
     },
@@ -13114,7 +13114,7 @@
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
-      "VOLVER_BASE": 25.13768
+      "VOLVER_BASE": 29.97602
     },
     "x8|y5|dS|riskMEDIO|batteryBAJA|obsLEJOS|victim0|visitedBAJA": {
       "AVANZAR": 0.0,
@@ -13132,7 +13132,7 @@
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
-      "VOLVER_BASE": 31.12146
+      "VOLVER_BASE": 31.10805
     },
     "x7|y5|dS|riskBAJO|batteryBAJA|obsLEJOS|victim0|visitedBAJA": {
       "AVANZAR": 0.0,
@@ -13141,7 +13141,7 @@
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
-      "VOLVER_BASE": 46.92934
+      "VOLVER_BASE": 58.46874
     },
     "x6|y5|dS|riskBAJO|batteryBAJA|obsMEDIA|victim0|visitedBAJA": {
       "AVANZAR": 0.0,
@@ -13252,7 +13252,7 @@
       "VOLVER_BASE": 0.0
     },
     "x2|y3|dS|riskBAJO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 5.08045,
+      "AVANZAR": 6.57518,
       "GIRAR_IZQUIERDA": 0.0,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
@@ -13261,7 +13261,7 @@
       "VOLVER_BASE": 0.0
     },
     "x2|y4|dS|riskBAJO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 0.38573,
+      "AVANZAR": 0.92745,
       "GIRAR_IZQUIERDA": -3.80608,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
@@ -13270,17 +13270,17 @@
       "VOLVER_BASE": 0.0
     },
     "x2|y6|dE|riskBAJO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 1.01052,
+      "AVANZAR": -2.91857,
       "GIRAR_IZQUIERDA": -2.40024,
       "GIRAR_DERECHA": -2.28,
-      "RETROCEDER": -1.89764,
+      "RETROCEDER": -0.00657,
       "ESCANEAR": -6.018,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
     },
     "x2|y6|dE|riskMEDIO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
       "AVANZAR": 0.01845,
-      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_IZQUIERDA": -4.00652,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
@@ -13405,7 +13405,7 @@
       "VOLVER_BASE": 0.0
     },
     "x0|y3|dN|riskMEDIO|batteryMEDIA|obsMEDIA|victim0|visitedBAJA": {
-      "AVANZAR": 3.9195,
+      "AVANZAR": 4.80158,
       "GIRAR_IZQUIERDA": 0.0,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
@@ -13427,7 +13427,7 @@
       "GIRAR_IZQUIERDA": 0.0,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
-      "ESCANEAR": 0.0,
+      "ESCANEAR": -0.48,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
     },
@@ -13478,7 +13478,7 @@
     },
     "x0|y6|dW|riskBAJO|batteryMEDIA|obsCERCA|victim0|visitedBAJA": {
       "AVANZAR": -9.18,
-      "GIRAR_IZQUIERDA": 1.0222,
+      "GIRAR_IZQUIERDA": 5.59433,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
@@ -13573,7 +13573,7 @@
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
-      "VOLVER_BASE": 58.59103
+      "VOLVER_BASE": 66.40164
     },
     "x3|y5|dS|riskMEDIO|batteryBAJA|obsLEJOS|victim0|visitedBAJA": {
       "AVANZAR": 0.0,
@@ -13585,11 +13585,11 @@
       "VOLVER_BASE": 49.66127
     },
     "x5|y5|dW|riskBAJO|batteryALTA|obsCERCA|victim0|visitedBAJA": {
-      "AVANZAR": -5.43,
+      "AVANZAR": -12.4455,
       "GIRAR_IZQUIERDA": -28.94056,
-      "GIRAR_DERECHA": -7.06156,
-      "RETROCEDER": -1.56492,
-      "ESCANEAR": 0.0,
+      "GIRAR_DERECHA": -9.48109,
+      "RETROCEDER": 1.32635,
+      "ESCANEAR": -8.58287,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
     },
@@ -13612,7 +13612,7 @@
       "VOLVER_BASE": 0.0
     },
     "x6|y4|dE|riskMEDIO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": -0.0423,
+      "AVANZAR": 2.21496,
       "GIRAR_IZQUIERDA": -2.00736,
       "GIRAR_DERECHA": 0.23014,
       "RETROCEDER": -0.21091,
@@ -13885,14 +13885,14 @@
       "AVANZAR": -17.05449,
       "GIRAR_IZQUIERDA": -4.488,
       "GIRAR_DERECHA": -4.38,
-      "RETROCEDER": -0.11877,
+      "RETROCEDER": -4.16634,
       "ESCANEAR": -3.918,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
     },
     "x3|y2|dS|riskMEDIO|batteryMEDIA|obsMEDIA|victim0|visitedBAJA": {
       "AVANZAR": -1.6305,
-      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_IZQUIERDA": -0.11287,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
@@ -14063,7 +14063,7 @@
     },
     "x5|y5|dN|riskBAJO|batteryALTA|obsMEDIA|victim0|visitedBAJA": {
       "AVANZAR": 3.20946,
-      "GIRAR_IZQUIERDA": 3.9956,
+      "GIRAR_IZQUIERDA": 3.96319,
       "GIRAR_DERECHA": -0.79538,
       "RETROCEDER": -4.59658,
       "ESCANEAR": -1.83048,
@@ -14145,7 +14145,7 @@
     "x1|y6|dE|riskBAJO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
       "AVANZAR": -0.18,
       "GIRAR_IZQUIERDA": -8.88,
-      "GIRAR_DERECHA": 0.0,
+      "GIRAR_DERECHA": -2.42681,
       "RETROCEDER": -3.58155,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
@@ -14161,7 +14161,7 @@
       "VOLVER_BASE": 0.0
     },
     "x2|y6|dN|riskBAJO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 7.21095,
+      "AVANZAR": 6.29367,
       "GIRAR_IZQUIERDA": -3.18,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
@@ -14251,7 +14251,7 @@
       "VOLVER_BASE": 77.85177
     },
     "x1|y3|dS|riskBAJO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 3.36404,
+      "AVANZAR": 5.68881,
       "GIRAR_IZQUIERDA": -0.48,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
@@ -14260,11 +14260,11 @@
       "VOLVER_BASE": 0.0
     },
     "x1|y4|dS|riskBAJO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 4.46495,
+      "AVANZAR": 7.55672,
       "GIRAR_IZQUIERDA": -0.888,
       "GIRAR_DERECHA": -5.88,
       "RETROCEDER": -0.42629,
-      "ESCANEAR": -3.18,
+      "ESCANEAR": -2.58023,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
     },
@@ -14279,9 +14279,9 @@
     },
     "x2|y4|dE|riskBAJO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
       "AVANZAR": -1.67444,
-      "GIRAR_IZQUIERDA": -2.28,
+      "GIRAR_IZQUIERDA": -0.18771,
       "GIRAR_DERECHA": -3.7803,
-      "RETROCEDER": 0.0,
+      "RETROCEDER": 1.47,
       "ESCANEAR": -0.48,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
@@ -14428,7 +14428,7 @@
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
-      "VOLVER_BASE": 36.49261
+      "VOLVER_BASE": 51.44906
     },
     "x3|y6|dS|riskBAJO|batteryBAJA|obsMEDIA|victim0|visitedBAJA": {
       "AVANZAR": 0.0,
@@ -14737,7 +14737,7 @@
       "VOLVER_BASE": 0.0
     },
     "x8|y9|dE|riskBAJO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 5.0644,
+      "AVANZAR": 6.95967,
       "GIRAR_IZQUIERDA": -2.88,
       "GIRAR_DERECHA": -4.38,
       "RETROCEDER": -0.25512,
@@ -14756,7 +14756,7 @@
     },
     "x9|y9|dE|riskBAJO|batteryALTA|obsMEDIA|victim0|visitedBAJA": {
       "AVANZAR": -4.5741,
-      "GIRAR_IZQUIERDA": -1.57132,
+      "GIRAR_IZQUIERDA": -0.94882,
       "GIRAR_DERECHA": -3.899,
       "RETROCEDER": -2.60875,
       "ESCANEAR": -5.5803,
@@ -14773,7 +14773,7 @@
       "VOLVER_BASE": 0.0
     },
     "x9|y9|dN|riskBAJO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 6.42078,
+      "AVANZAR": 8.0953,
       "GIRAR_IZQUIERDA": 0.0,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
@@ -14791,7 +14791,7 @@
       "VOLVER_BASE": 0.0
     },
     "x9|y8|dN|riskMEDIO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 0.0,
+      "AVANZAR": 1.54381,
       "GIRAR_IZQUIERDA": -0.48,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
@@ -15112,7 +15112,7 @@
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
-      "VOLVER_BASE": 3.42
+      "VOLVER_BASE": 15.69662
     },
     "x7|y7|dS|riskMEDIO|batteryBAJA|obsLEJOS|victim0|visitedBAJA": {
       "AVANZAR": 0.0,
@@ -15130,7 +15130,7 @@
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
-      "VOLVER_BASE": 34.97207
+      "VOLVER_BASE": 43.71283
     },
     "x3|y6|dS|riskMEDIO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
       "AVANZAR": 4.5598,
@@ -15169,8 +15169,8 @@
       "VOLVER_BASE": 0.0
     },
     "x1|y6|dS|riskBAJO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 3.35698,
-      "GIRAR_IZQUIERDA": 0.0,
+      "AVANZAR": 0.09068,
+      "GIRAR_IZQUIERDA": -0.48,
       "GIRAR_DERECHA": -0.12324,
       "RETROCEDER": 0.0,
       "ESCANEAR": -6.48,
@@ -15181,8 +15181,8 @@
       "AVANZAR": -4.19047,
       "GIRAR_IZQUIERDA": -2.96291,
       "GIRAR_DERECHA": -3.1735,
-      "RETROCEDER": -0.42852,
-      "ESCANEAR": -0.48,
+      "RETROCEDER": -5.56968,
+      "ESCANEAR": -2.688,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
     },
@@ -15268,7 +15268,7 @@
       "VOLVER_BASE": 0.0
     },
     "x2|y4|dN|riskBAJO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 2.41487,
+      "AVANZAR": -0.68765,
       "GIRAR_IZQUIERDA": -6.888,
       "GIRAR_DERECHA": -1.96307,
       "RETROCEDER": -4.68,
@@ -15314,7 +15314,7 @@
     },
     "x5|y7|dS|riskBAJO|batteryALTA|obsMEDIA|victim0|visitedBAJA": {
       "AVANZAR": -8.24188,
-      "GIRAR_IZQUIERDA": -0.43708,
+      "GIRAR_IZQUIERDA": -0.7155,
       "GIRAR_DERECHA": -11.53457,
       "RETROCEDER": -7.80933,
       "ESCANEAR": -7.10437,
@@ -15562,7 +15562,7 @@
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
-      "VOLVER_BASE": 81.11374
+      "VOLVER_BASE": 84.75629
     },
     "x6|y4|dS|riskMEDIO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
       "AVANZAR": 9.25462,
@@ -15577,7 +15577,7 @@
       "AVANZAR": -6.79132,
       "GIRAR_IZQUIERDA": -3.288,
       "GIRAR_DERECHA": -5.70519,
-      "RETROCEDER": -2.85118,
+      "RETROCEDER": -10.2535,
       "ESCANEAR": -4.2348,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
@@ -15601,11 +15601,11 @@
       "VOLVER_BASE": 0.0
     },
     "x0|y6|dW|riskBAJO|batteryMEDIA|obsMEDIA|victim0|visitedBAJA": {
-      "AVANZAR": -6.33,
+      "AVANZAR": -3.7725,
       "GIRAR_IZQUIERDA": -6.6814,
       "GIRAR_DERECHA": -6.30917,
-      "RETROCEDER": -5.53014,
-      "ESCANEAR": -5.118,
+      "RETROCEDER": -4.88062,
+      "ESCANEAR": -7.58575,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
     },
@@ -15790,16 +15790,16 @@
       "VOLVER_BASE": 0.0
     },
     "x0|y1|dN|riskBAJO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": -4.5801,
+      "AVANZAR": -0.58962,
       "GIRAR_IZQUIERDA": -5.388,
       "GIRAR_DERECHA": -6.88938,
       "RETROCEDER": -7.98577,
-      "ESCANEAR": -3.18,
+      "ESCANEAR": -7.083,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
     },
     "x0|y1|dN|riskBAJO|batteryMEDIA|obsMEDIA|victim0|visitedBAJA": {
-      "AVANZAR": -1.29405,
+      "AVANZAR": -3.97994,
       "GIRAR_IZQUIERDA": -3.588,
       "GIRAR_DERECHA": -2.6098,
       "RETROCEDER": -2.26305,
@@ -15810,9 +15810,9 @@
     "x0|y1|dW|riskBAJO|batteryMEDIA|obsMEDIA|victim0|visitedBAJA": {
       "AVANZAR": -1.19477,
       "GIRAR_IZQUIERDA": -2.28,
-      "GIRAR_DERECHA": -0.48,
+      "GIRAR_DERECHA": -3.288,
       "RETROCEDER": -0.60384,
-      "ESCANEAR": -0.48,
+      "ESCANEAR": -0.888,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
     },
@@ -15862,7 +15862,7 @@
       "VOLVER_BASE": 0.0
     },
     "x1|y2|dS|riskBAJO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 7.71534,
+      "AVANZAR": 7.57804,
       "GIRAR_IZQUIERDA": 0.0,
       "GIRAR_DERECHA": -0.26206,
       "RETROCEDER": 0.0,
@@ -16071,7 +16071,7 @@
     "x3|y7|dW|riskBAJO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
       "AVANZAR": -3.3381,
       "GIRAR_IZQUIERDA": -3.21732,
-      "GIRAR_DERECHA": -1.99516,
+      "GIRAR_DERECHA": -1.20445,
       "RETROCEDER": -2.24445,
       "ESCANEAR": -3.78,
       "ENVIAR_ALERTA": 0.0,
@@ -16114,7 +16114,7 @@
       "VOLVER_BASE": 0.0
     },
     "x1|y6|dN|riskBAJO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 4.18714,
+      "AVANZAR": 3.37907,
       "GIRAR_IZQUIERDA": -7.83,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
@@ -16465,7 +16465,7 @@
       "VOLVER_BASE": 0.0
     },
     "x7|y2|dE|riskBAJO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 6.29152,
+      "AVANZAR": 6.31715,
       "GIRAR_IZQUIERDA": -4.42371,
       "GIRAR_DERECHA": -3.93603,
       "RETROCEDER": -2.21759,
@@ -16474,7 +16474,7 @@
       "VOLVER_BASE": 0.0
     },
     "x8|y2|dE|riskBAJO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 3.67945,
+      "AVANZAR": 2.99029,
       "GIRAR_IZQUIERDA": 0.0,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
@@ -16512,14 +16512,14 @@
     "x9|y3|dS|riskBAJO|batteryALTA|obsCERCA|victim0|visitedBAJA": {
       "AVANZAR": -5.88,
       "GIRAR_IZQUIERDA": -2.13,
-      "GIRAR_DERECHA": 0.0,
+      "GIRAR_DERECHA": -3.73155,
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
     },
     "x8|y3|dE|riskBAJO|batteryALTA|obsMEDIA|victim0|visitedBAJA": {
-      "AVANZAR": 1.1632,
+      "AVANZAR": 0.87065,
       "GIRAR_IZQUIERDA": -2.19839,
       "GIRAR_DERECHA": -3.18,
       "RETROCEDER": -1.50595,
@@ -16654,16 +16654,16 @@
       "VOLVER_BASE": 0.0
     },
     "x9|y5|dS|riskBAJO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 8.17124,
+      "AVANZAR": 10.60669,
       "GIRAR_IZQUIERDA": -0.71932,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.27273,
-      "ESCANEAR": -3.18,
+      "ESCANEAR": -2.07988,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
     },
     "x9|y6|dS|riskBAJO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 7.74682,
+      "AVANZAR": 7.92303,
       "GIRAR_IZQUIERDA": -9.738,
       "GIRAR_DERECHA": -10.353,
       "RETROCEDER": 0.0,
@@ -16678,7 +16678,7 @@
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
-      "VOLVER_BASE": 33.73464
+      "VOLVER_BASE": 39.17991
     },
     "x9|y5|dS|riskMEDIO|batteryBAJA|obsLEJOS|victim0|visitedBAJA": {
       "AVANZAR": 0.0,
@@ -16705,7 +16705,7 @@
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
-      "VOLVER_BASE": 16.87994
+      "VOLVER_BASE": 17.89473
     },
     "x7|y5|dS|riskBAJO|batteryBAJA|obsLEJOS|victim1|visitedBAJA": {
       "AVANZAR": 0.0,
@@ -16717,7 +16717,7 @@
       "VOLVER_BASE": 19.75741
     },
     "x8|y5|dE|riskBAJO|batteryALTA|obsMEDIA|victim0|visitedBAJA": {
-      "AVANZAR": 1.26212,
+      "AVANZAR": -1.15011,
       "GIRAR_IZQUIERDA": -2.32087,
       "GIRAR_DERECHA": -2.31072,
       "RETROCEDER": -3.93607,
@@ -16773,14 +16773,14 @@
     "x8|y4|dS|riskBAJO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
       "AVANZAR": -2.30937,
       "GIRAR_IZQUIERDA": -7.38,
-      "GIRAR_DERECHA": -0.48,
-      "RETROCEDER": 1.26795,
+      "GIRAR_DERECHA": -0.61148,
+      "RETROCEDER": 1.18266,
       "ESCANEAR": -6.18,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
     },
     "x8|y4|dE|riskBAJO|batteryALTA|obsMEDIA|victim0|visitedBAJA": {
-      "AVANZAR": 5.75947,
+      "AVANZAR": 4.80748,
       "GIRAR_IZQUIERDA": -3.183,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
@@ -16798,7 +16798,7 @@
       "VOLVER_BASE": 0.0
     },
     "x9|y4|dE|riskBAJO|batteryALTA|obsMEDIA|victim0|visitedBAJA": {
-      "AVANZAR": 3.62585,
+      "AVANZAR": 4.55197,
       "GIRAR_IZQUIERDA": 3.00292,
       "GIRAR_DERECHA": -0.17997,
       "RETROCEDER": 0.0,
@@ -16816,7 +16816,7 @@
       "VOLVER_BASE": 0.0
     },
     "x9|y4|dN|riskBAJO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 12.57851,
+      "AVANZAR": 14.09698,
       "GIRAR_IZQUIERDA": -2.88,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
@@ -16825,8 +16825,8 @@
       "VOLVER_BASE": 0.0
     },
     "x9|y3|dN|riskBAJO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 9.60094,
-      "GIRAR_IZQUIERDA": 0.0,
+      "AVANZAR": 11.13007,
+      "GIRAR_IZQUIERDA": -6.18,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": -0.61523,
       "ESCANEAR": 0.72,
@@ -16834,10 +16834,10 @@
       "VOLVER_BASE": 0.0
     },
     "x9|y2|dN|riskBAJO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 5.57729,
+      "AVANZAR": 5.49373,
       "GIRAR_IZQUIERDA": -3.60262,
       "GIRAR_DERECHA": -0.48,
-      "RETROCEDER": -2.52304,
+      "RETROCEDER": -1.65112,
       "ESCANEAR": -2.28,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
@@ -16861,7 +16861,7 @@
       "VOLVER_BASE": 0.0
     },
     "x9|y1|dN|riskBAJO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 3.11101,
+      "AVANZAR": 1.83434,
       "GIRAR_IZQUIERDA": -0.48,
       "GIRAR_DERECHA": -0.48,
       "RETROCEDER": 0.06099,
@@ -16870,7 +16870,7 @@
       "VOLVER_BASE": 0.0
     },
     "x9|y1|dN|riskBAJO|batteryALTA|obsMEDIA|victim0|visitedBAJA": {
-      "AVANZAR": 4.06928,
+      "AVANZAR": 1.77889,
       "GIRAR_IZQUIERDA": 0.0,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
@@ -16881,7 +16881,7 @@
     "x9|y0|dN|riskBAJO|batteryALTA|obsMEDIA|victim0|visitedBAJA": {
       "AVANZAR": -6.17617,
       "GIRAR_IZQUIERDA": -3.43158,
-      "GIRAR_DERECHA": -1.2348,
+      "GIRAR_DERECHA": -1.52958,
       "RETROCEDER": -1.98,
       "ESCANEAR": -2.28,
       "ENVIAR_ALERTA": 0.0,
@@ -16915,7 +16915,7 @@
       "VOLVER_BASE": 0.0
     },
     "x8|y0|dW|riskBAJO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 7.5793,
+      "AVANZAR": 8.80421,
       "GIRAR_IZQUIERDA": 0.0,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": -3.6196,
@@ -17023,7 +17023,7 @@
       "VOLVER_BASE": 6.98918
     },
     "x5|y5|dN|riskMEDIO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 1.45235,
+      "AVANZAR": 4.74071,
       "GIRAR_IZQUIERDA": -3.18,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
@@ -17032,7 +17032,7 @@
       "VOLVER_BASE": 0.0
     },
     "x5|y3|dE|riskBAJO|batteryALTA|obsMEDIA|victim0|visitedBAJA": {
-      "AVANZAR": 4.39027,
+      "AVANZAR": 5.20173,
       "GIRAR_IZQUIERDA": 0.0,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
@@ -17257,7 +17257,7 @@
       "VOLVER_BASE": 0.0
     },
     "x8|y5|dS|riskBAJO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 15.19183,
+      "AVANZAR": 17.05116,
       "GIRAR_IZQUIERDA": 0.0,
       "GIRAR_DERECHA": -0.48,
       "RETROCEDER": 0.0,
@@ -17266,7 +17266,7 @@
       "VOLVER_BASE": 0.0
     },
     "x8|y6|dS|riskBAJO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 4.96987,
+      "AVANZAR": 7.24654,
       "GIRAR_IZQUIERDA": 0.0,
       "GIRAR_DERECHA": -0.888,
       "RETROCEDER": 0.0,
@@ -17284,7 +17284,7 @@
       "VOLVER_BASE": 0.0
     },
     "x8|y7|dS|riskBAJO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 4.82903,
+      "AVANZAR": 3.34912,
       "GIRAR_IZQUIERDA": -3.18,
       "GIRAR_DERECHA": -4.68,
       "RETROCEDER": -0.19909,
@@ -17302,7 +17302,7 @@
       "VOLVER_BASE": 0.0
     },
     "x8|y8|dS|riskBAJO|batteryALTA|obsMEDIA|victim0|visitedBAJA": {
-      "AVANZAR": 2.16984,
+      "AVANZAR": 0.77034,
       "GIRAR_IZQUIERDA": 0.0,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": -3.56809,
@@ -17431,13 +17431,13 @@
       "AVANZAR": -1.18659,
       "GIRAR_IZQUIERDA": 0.0,
       "GIRAR_DERECHA": 0.0,
-      "RETROCEDER": 1.94983,
+      "RETROCEDER": -0.81934,
       "ESCANEAR": 0.72,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
     },
     "x7|y8|dS|riskBAJO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 0.29943,
+      "AVANZAR": 0.89953,
       "GIRAR_IZQUIERDA": -6.018,
       "GIRAR_DERECHA": -8.41432,
       "RETROCEDER": -12.4455,
@@ -17484,7 +17484,7 @@
     "x3|y9|dS|riskBAJO|batteryMEDIA|obsCERCA|victim0|visitedBAJA": {
       "AVANZAR": -15.4455,
       "GIRAR_IZQUIERDA": -2.13,
-      "GIRAR_DERECHA": 1.7059,
+      "GIRAR_DERECHA": -3.37999,
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
@@ -17608,16 +17608,16 @@
       "VOLVER_BASE": 0.0
     },
     "x8|y8|dS|riskBAJO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 3.38793,
+      "AVANZAR": 2.39267,
       "GIRAR_IZQUIERDA": -8.71879,
-      "GIRAR_DERECHA": -0.20197,
+      "GIRAR_DERECHA": -0.50729,
       "RETROCEDER": -1.13377,
       "ESCANEAR": -3.18,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
     },
     "x8|y9|dS|riskBAJO|batteryALTA|obsMEDIA|victim0|visitedBAJA": {
-      "AVANZAR": 1.15541,
+      "AVANZAR": -0.43441,
       "GIRAR_IZQUIERDA": 0.0,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
@@ -17627,7 +17627,7 @@
     },
     "x8|y9|dS|riskBAJO|batteryALTA|obsCERCA|victim0|visitedBAJA": {
       "AVANZAR": -5.88,
-      "GIRAR_IZQUIERDA": 1.9518,
+      "GIRAR_IZQUIERDA": 2.61272,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
@@ -17812,7 +17812,7 @@
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
-      "VOLVER_BASE": 217.02621
+      "VOLVER_BASE": 218.51003
     },
     "x5|y5|dE|riskMEDIO|batteryALTA|obsCERCA|victim0|visitedBAJA": {
       "AVANZAR": -4.9564,
@@ -17824,7 +17824,7 @@
       "VOLVER_BASE": 0.0
     },
     "x5|y4|dN|riskMEDIO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 11.12139,
+      "AVANZAR": 13.30024,
       "GIRAR_IZQUIERDA": 0.0,
       "GIRAR_DERECHA": -3.50354,
       "RETROCEDER": 0.68643,
@@ -17842,10 +17842,10 @@
       "VOLVER_BASE": 0.0
     },
     "x6|y6|dW|riskBAJO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": -0.66795,
+      "AVANZAR": 2.62279,
       "GIRAR_IZQUIERDA": -7.38,
       "GIRAR_DERECHA": -4.98,
-      "RETROCEDER": -4.64703,
+      "RETROCEDER": -1.71906,
       "ESCANEAR": -1.49678,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
@@ -17878,7 +17878,7 @@
       "VOLVER_BASE": 0.0
     },
     "x5|y6|dW|riskBAJO|batteryMEDIA|obsMEDIA|victim0|visitedBAJA": {
-      "AVANZAR": -4.18758,
+      "AVANZAR": -24.65162,
       "GIRAR_IZQUIERDA": -3.73541,
       "GIRAR_DERECHA": -6.96444,
       "RETROCEDER": -6.55355,
@@ -17998,7 +17998,7 @@
       "AVANZAR": -11.73,
       "GIRAR_IZQUIERDA": -2.88,
       "GIRAR_DERECHA": -8.328,
-      "RETROCEDER": 1.95302,
+      "RETROCEDER": 3.30124,
       "ESCANEAR": -4.71708,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
@@ -18040,7 +18040,7 @@
       "VOLVER_BASE": 0.0
     },
     "x9|y5|dN|riskBAJO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 3.77529,
+      "AVANZAR": 3.02389,
       "GIRAR_IZQUIERDA": -0.13605,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
@@ -18220,7 +18220,7 @@
       "VOLVER_BASE": 0.0
     },
     "x7|y4|dE|riskBAJO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 5.78452,
+      "AVANZAR": 6.28009,
       "GIRAR_IZQUIERDA": 0.0,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
@@ -18247,7 +18247,7 @@
       "VOLVER_BASE": 0.0
     },
     "x8|y4|dE|riskBAJO|batteryALTA|obsLEJOS|victim1|visitedBAJA": {
-      "AVANZAR": 5.99544,
+      "AVANZAR": 35.55561,
       "GIRAR_IZQUIERDA": 0.0,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
@@ -18634,9 +18634,9 @@
       "VOLVER_BASE": 0.0
     },
     "x1|y1|dS|riskBAJO|batteryMEDIA|obsMEDIA|victim0|visitedBAJA": {
-      "AVANZAR": 1.9545,
+      "AVANZAR": -3.82289,
       "GIRAR_IZQUIERDA": -2.08155,
-      "GIRAR_DERECHA": 0.0,
+      "GIRAR_DERECHA": -3.10038,
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
@@ -18667,7 +18667,7 @@
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
-      "VOLVER_BASE": 17.10155
+      "VOLVER_BASE": 26.14303
     },
     "x3|y1|dE|riskBAJO|batteryBAJA|obsLEJOS|victim0|visitedBAJA": {
       "AVANZAR": 0.0,
@@ -18676,7 +18676,7 @@
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
-      "VOLVER_BASE": 21.44631
+      "VOLVER_BASE": 29.07745
     },
     "x3|y1|dE|riskMEDIO|batteryBAJA|obsLEJOS|victim0|visitedBAJA": {
       "AVANZAR": 0.0,
@@ -18694,7 +18694,7 @@
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
-      "VOLVER_BASE": 22.67552
+      "VOLVER_BASE": 31.37023
     },
     "x4|y1|dE|riskBAJO|batteryBAJA|obsMEDIA|victim0|visitedBAJA": {
       "AVANZAR": 0.0,
@@ -18739,7 +18739,7 @@
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
-      "VOLVER_BASE": 76.87784
+      "VOLVER_BASE": 63.80591
     },
     "x5|y4|dE|riskMEDIO|batteryBAJA|obsCERCA|victim0|visitedBAJA": {
       "AVANZAR": 0.0,
@@ -18757,7 +18757,7 @@
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
-      "VOLVER_BASE": 89.13732
+      "VOLVER_BASE": 111.87084
     },
     "x5|y6|dS|riskBAJO|batteryALTA|obsMEDIA|victim1|visitedBAJA": {
       "AVANZAR": 10.14631,
@@ -18850,16 +18850,16 @@
       "VOLVER_BASE": 0.0
     },
     "x3|y9|dW|riskBAJO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": -2.8765,
-      "GIRAR_IZQUIERDA": -3.18,
-      "GIRAR_DERECHA": -3.18,
-      "RETROCEDER": -1.10607,
-      "ESCANEAR": -0.6606,
+      "AVANZAR": -2.15684,
+      "GIRAR_IZQUIERDA": -6.5527,
+      "GIRAR_DERECHA": -4.983,
+      "RETROCEDER": -5.91699,
+      "ESCANEAR": -4.36528,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
     },
     "x2|y9|dW|riskBAJO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": -3.50841,
+      "AVANZAR": -1.77762,
       "GIRAR_IZQUIERDA": -10.053,
       "GIRAR_DERECHA": -7.55148,
       "RETROCEDER": -4.50829,
@@ -18868,7 +18868,7 @@
       "VOLVER_BASE": 0.0
     },
     "x2|y9|dW|riskBAJO|batteryMEDIA|obsMEDIA|victim0|visitedBAJA": {
-      "AVANZAR": 1.33077,
+      "AVANZAR": 0.95115,
       "GIRAR_IZQUIERDA": -0.48,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
@@ -18880,7 +18880,7 @@
       "AVANZAR": -1.7884,
       "GIRAR_IZQUIERDA": -5.88,
       "GIRAR_DERECHA": -2.73562,
-      "RETROCEDER": -1.25911,
+      "RETROCEDER": -2.89,
       "ESCANEAR": -6.00969,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
@@ -19126,7 +19126,7 @@
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
-      "VOLVER_BASE": 13.56008
+      "VOLVER_BASE": 20.29449
     },
     "x2|y3|dN|riskBAJO|batteryBAJA|obsMEDIA|victim0|visitedBAJA": {
       "AVANZAR": 0.0,
@@ -19144,7 +19144,7 @@
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
-      "VOLVER_BASE": 20.72903
+      "VOLVER_BASE": 23.58968
     },
     "x4|y3|dN|riskBAJO|batteryBAJA|obsLEJOS|victim0|visitedBAJA": {
       "AVANZAR": 0.0,
@@ -19177,8 +19177,8 @@
       "AVANZAR": -8.73,
       "GIRAR_IZQUIERDA": -4.06025,
       "GIRAR_DERECHA": -4.53,
-      "RETROCEDER": -3.36928,
-      "ESCANEAR": -2.28,
+      "RETROCEDER": -4.99389,
+      "ESCANEAR": -4.818,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
     },
@@ -19192,11 +19192,11 @@
       "VOLVER_BASE": 0.0
     },
     "x4|y6|dN|riskBAJO|batteryALTA|obsMEDIA|victim0|visitedBAJA": {
-      "AVANZAR": -0.978,
+      "AVANZAR": -4.88711,
       "GIRAR_IZQUIERDA": -3.87106,
       "GIRAR_DERECHA": -3.1392,
-      "RETROCEDER": 1.41483,
-      "ESCANEAR": -2.88,
+      "RETROCEDER": -1.80431,
+      "ESCANEAR": -4.728,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
     },
@@ -19283,9 +19283,9 @@
     },
     "x6|y6|dW|riskBAJO|batteryMEDIA|obsMEDIA|victim0|visitedBAJA": {
       "AVANZAR": -9.53495,
-      "GIRAR_IZQUIERDA": -0.29548,
+      "GIRAR_IZQUIERDA": -3.8536,
       "GIRAR_DERECHA": -4.17344,
-      "RETROCEDER": 2.21854,
+      "RETROCEDER": -2.41917,
       "ESCANEAR": -4.08,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
@@ -19471,7 +19471,7 @@
       "VOLVER_BASE": 0.0
     },
     "x7|y6|dW|riskBAJO|batteryALTA|obsMEDIA|victim1|visitedBAJA": {
-      "AVANZAR": 0.0,
+      "AVANZAR": 29.97,
       "GIRAR_IZQUIERDA": 0.0,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
@@ -19552,7 +19552,7 @@
       "VOLVER_BASE": 0.0
     },
     "x6|y5|dN|riskBAJO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 2.9689,
+      "AVANZAR": 3.40271,
       "GIRAR_IZQUIERDA": -0.35624,
       "GIRAR_DERECHA": -4.46287,
       "RETROCEDER": -0.18,
@@ -19561,7 +19561,7 @@
       "VOLVER_BASE": 0.0
     },
     "x6|y4|dN|riskBAJO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 2.28998,
+      "AVANZAR": 2.5267,
       "GIRAR_IZQUIERDA": -0.48,
       "GIRAR_DERECHA": -5.88,
       "RETROCEDER": 0.0,
@@ -19624,7 +19624,7 @@
       "VOLVER_BASE": 0.0
     },
     "x5|y1|dN|riskBAJO|batteryALTA|obsMEDIA|victim0|visitedBAJA": {
-      "AVANZAR": 2.11524,
+      "AVANZAR": -7.53205,
       "GIRAR_IZQUIERDA": -4.13795,
       "GIRAR_DERECHA": -2.02432,
       "RETROCEDER": -1.48568,
@@ -19642,7 +19642,7 @@
       "VOLVER_BASE": 0.0
     },
     "x5|y0|dE|riskBAJO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 9.35013,
+      "AVANZAR": 10.78083,
       "GIRAR_IZQUIERDA": 0.0,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
@@ -19687,11 +19687,11 @@
       "VOLVER_BASE": 0.0
     },
     "x6|y0|dW|riskBAJO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 2.91795,
+      "AVANZAR": 3.15781,
       "GIRAR_IZQUIERDA": -7.38,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
-      "ESCANEAR": 0.0,
+      "ESCANEAR": -3.98608,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
     },
@@ -19715,7 +19715,7 @@
     },
     "x6|y0|dE|riskBAJO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
       "AVANZAR": -1.98,
-      "GIRAR_IZQUIERDA": -2.28,
+      "GIRAR_IZQUIERDA": -2.418,
       "GIRAR_DERECHA": -3.47357,
       "RETROCEDER": 1.72544,
       "ESCANEAR": -3.13262,
@@ -19724,7 +19724,7 @@
     },
     "x6|y0|dN|riskBAJO|batteryALTA|obsMEDIA|victim0|visitedBAJA": {
       "AVANZAR": -0.18,
-      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_IZQUIERDA": -2.48608,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
@@ -19768,7 +19768,7 @@
       "VOLVER_BASE": 0.0
     },
     "x6|y0|dS|riskBAJO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 6.36439,
+      "AVANZAR": 9.44193,
       "GIRAR_IZQUIERDA": 0.0,
       "GIRAR_DERECHA": -9.01579,
       "RETROCEDER": 0.0,
@@ -19994,7 +19994,7 @@
     },
     "x9|y5|dE|riskBAJO|batteryALTA|obsCERCA|victim0|visitedBAJA": {
       "AVANZAR": -10.83,
-      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_IZQUIERDA": 0.77966,
       "GIRAR_DERECHA": -6.16363,
       "RETROCEDER": 0.0,
       "ESCANEAR": -1.29913,
@@ -20021,15 +20021,15 @@
     },
     "x9|y6|dN|riskBAJO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
       "AVANZAR": -0.63,
-      "GIRAR_IZQUIERDA": -7.38,
+      "GIRAR_IZQUIERDA": -7.556,
       "GIRAR_DERECHA": -0.48,
-      "RETROCEDER": 4.43447,
+      "RETROCEDER": 3.64637,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
     },
     "x9|y6|dW|riskBAJO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 7.38517,
+      "AVANZAR": 8.81268,
       "GIRAR_IZQUIERDA": 0.0,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
@@ -20038,7 +20038,7 @@
       "VOLVER_BASE": 0.0
     },
     "x8|y6|dW|riskBAJO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 7.89098,
+      "AVANZAR": 7.59262,
       "GIRAR_IZQUIERDA": 0.0,
       "GIRAR_DERECHA": -0.19057,
       "RETROCEDER": 0.80871,
@@ -20074,10 +20074,10 @@
       "VOLVER_BASE": 0.0
     },
     "x6|y8|dS|riskBAJO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": -0.5983,
+      "AVANZAR": -1.6664,
       "GIRAR_IZQUIERDA": -2.88,
-      "GIRAR_DERECHA": -0.48,
-      "RETROCEDER": -0.1681,
+      "GIRAR_DERECHA": -0.68864,
+      "RETROCEDER": -3.69511,
       "ESCANEAR": -5.87811,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
@@ -20121,14 +20121,14 @@
     "x7|y8|dE|riskBAJO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
       "AVANZAR": -1.00401,
       "GIRAR_IZQUIERDA": -3.0423,
-      "GIRAR_DERECHA": 0.0,
-      "RETROCEDER": 0.27582,
+      "GIRAR_DERECHA": -2.23958,
+      "RETROCEDER": -2.44208,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
     },
     "x7|y8|dE|riskMEDIO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 0.0,
+      "AVANZAR": 1.10115,
       "GIRAR_IZQUIERDA": 0.0,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
@@ -20227,7 +20227,7 @@
       "VOLVER_BASE": 52.22347
     },
     "x2|y4|dN|riskBAJO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 16.52067,
+      "AVANZAR": 16.85893,
       "GIRAR_IZQUIERDA": 0.0,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 1.69524,
@@ -20362,7 +20362,7 @@
       "VOLVER_BASE": 0.0
     },
     "x7|y9|dW|riskBAJO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 7.13799,
+      "AVANZAR": 6.62214,
       "GIRAR_IZQUIERDA": 0.0,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
@@ -20374,7 +20374,7 @@
       "AVANZAR": -0.98275,
       "GIRAR_IZQUIERDA": -2.88,
       "GIRAR_DERECHA": -2.08155,
-      "RETROCEDER": 1.0476,
+      "RETROCEDER": -4.02999,
       "ESCANEAR": -2.04493,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
@@ -20533,11 +20533,11 @@
       "VOLVER_BASE": 0.0
     },
     "x5|y1|dN|riskBAJO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": -0.79871,
+      "AVANZAR": 1.13025,
       "GIRAR_IZQUIERDA": -2.88,
       "GIRAR_DERECHA": -2.88,
       "RETROCEDER": -0.18,
-      "ESCANEAR": -6.018,
+      "ESCANEAR": -5.5953,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
     },
@@ -20605,7 +20605,7 @@
       "VOLVER_BASE": 0.0
     },
     "x6|y1|dW|riskBAJO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 13.0826,
+      "AVANZAR": 14.80664,
       "GIRAR_IZQUIERDA": -7.83,
       "GIRAR_DERECHA": -0.48,
       "RETROCEDER": 0.1697,
@@ -20647,7 +20647,7 @@
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
-      "VOLVER_BASE": 7.87528
+      "VOLVER_BASE": 20.15765
     },
     "x5|y3|dS|riskBAJO|batteryBAJA|obsMEDIA|victim1|visitedBAJA": {
       "AVANZAR": 0.0,
@@ -20724,8 +20724,8 @@
     "x8|y2|dE|riskBAJO|batteryALTA|obsMEDIA|victim0|visitedBAJA": {
       "AVANZAR": -3.49487,
       "GIRAR_IZQUIERDA": -4.38,
-      "GIRAR_DERECHA": -0.3423,
-      "RETROCEDER": 0.0,
+      "GIRAR_DERECHA": -2.61958,
+      "RETROCEDER": -1.30709,
       "ESCANEAR": -0.48,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
@@ -20776,7 +20776,7 @@
       "VOLVER_BASE": 0.0
     },
     "x8|y2|dS|riskBAJO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 6.30645,
+      "AVANZAR": 7.57864,
       "GIRAR_IZQUIERDA": 0.0,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
@@ -20785,8 +20785,8 @@
       "VOLVER_BASE": 0.0
     },
     "x8|y3|dS|riskBAJO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 5.54191,
-      "GIRAR_IZQUIERDA": 0.0,
+      "AVANZAR": 3.47355,
+      "GIRAR_IZQUIERDA": -2.64038,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
@@ -20794,7 +20794,7 @@
       "VOLVER_BASE": 0.0
     },
     "x8|y3|dS|riskMEDIO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 1.47,
+      "AVANZAR": 2.89067,
       "GIRAR_IZQUIERDA": 0.0,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
@@ -20830,7 +20830,7 @@
       "VOLVER_BASE": 0.0
     },
     "x9|y4|dS|riskBAJO|batteryMEDIA|obsMEDIA|victim0|visitedBAJA": {
-      "AVANZAR": 1.15418,
+      "AVANZAR": -0.90897,
       "GIRAR_IZQUIERDA": 0.0,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
@@ -20839,7 +20839,7 @@
       "VOLVER_BASE": 0.0
     },
     "x9|y4|dS|riskBAJO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 8.46613,
+      "AVANZAR": 9.76933,
       "GIRAR_IZQUIERDA": -2.73738,
       "GIRAR_DERECHA": -5.68155,
       "RETROCEDER": -1.08477,
@@ -20893,7 +20893,7 @@
       "VOLVER_BASE": 0.0
     },
     "x9|y3|dW|riskMEDIO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 1.92176,
+      "AVANZAR": -1.2465,
       "GIRAR_IZQUIERDA": 0.0,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
@@ -21097,7 +21097,7 @@
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
-      "VOLVER_BASE": 42.55685
+      "VOLVER_BASE": 39.44332
     },
     "x6|y4|dN|riskMEDIO|batteryBAJA|obsLEJOS|victim0|visitedBAJA": {
       "AVANZAR": 0.0,
@@ -21106,7 +21106,7 @@
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
-      "VOLVER_BASE": 39.88608
+      "VOLVER_BASE": 65.12171
     },
     "x4|y6|dS|riskMEDIO|batteryALTA|obsMEDIA|victim0|visitedBAJA": {
       "AVANZAR": 1.02,
@@ -21172,10 +21172,10 @@
       "VOLVER_BASE": 0.0
     },
     "x9|y3|dW|riskBAJO|batteryMEDIA|obsMEDIA|victim0|visitedBAJA": {
-      "AVANZAR": -9.5805,
-      "GIRAR_IZQUIERDA": 0.0,
-      "GIRAR_DERECHA": 0.0,
-      "RETROCEDER": 0.0,
+      "AVANZAR": -6.67342,
+      "GIRAR_IZQUIERDA": -0.48,
+      "GIRAR_DERECHA": -4.08,
+      "RETROCEDER": -2.88,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
@@ -21301,7 +21301,7 @@
       "AVANZAR": -4.88253,
       "GIRAR_IZQUIERDA": -6.0772,
       "GIRAR_DERECHA": -5.41165,
-      "RETROCEDER": -4.14199,
+      "RETROCEDER": -3.61463,
       "ESCANEAR": -10.93684,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
@@ -21343,7 +21343,7 @@
       "VOLVER_BASE": 0.0
     },
     "x9|y7|dS|riskBAJO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 2.32757,
+      "AVANZAR": 2.09843,
       "GIRAR_IZQUIERDA": -0.48,
       "GIRAR_DERECHA": -2.28,
       "RETROCEDER": 0.37891,
@@ -21535,7 +21535,7 @@
       "AVANZAR": 0.46357,
       "GIRAR_IZQUIERDA": -0.35317,
       "GIRAR_DERECHA": -2.88,
-      "RETROCEDER": 2.7195,
+      "RETROCEDER": 3.78158,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
@@ -21559,7 +21559,7 @@
       "VOLVER_BASE": 0.0
     },
     "x3|y2|dN|riskBAJO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 1.26008,
+      "AVANZAR": 4.00997,
       "GIRAR_IZQUIERDA": 0.0,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
@@ -21580,7 +21580,7 @@
       "AVANZAR": 1.15334,
       "GIRAR_IZQUIERDA": -0.48,
       "GIRAR_DERECHA": -3.18,
-      "RETROCEDER": 2.02639,
+      "RETROCEDER": -2.57759,
       "ESCANEAR": -3.27278,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
@@ -21786,15 +21786,15 @@
     "x4|y6|dW|riskBAJO|batteryALTA|obsCERCA|victim0|visitedBAJA": {
       "AVANZAR": -5.43,
       "GIRAR_IZQUIERDA": -1.67693,
-      "GIRAR_DERECHA": -1.17832,
+      "GIRAR_DERECHA": -6.13157,
       "RETROCEDER": 2.61752,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
     },
     "x4|y5|dE|riskBAJO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 3.1645,
-      "GIRAR_IZQUIERDA": -4.00299,
+      "AVANZAR": 0.15336,
+      "GIRAR_IZQUIERDA": -5.98495,
       "GIRAR_DERECHA": -10.95066,
       "RETROCEDER": -8.02232,
       "ESCANEAR": -6.70075,
@@ -21984,7 +21984,7 @@
     "x0|y2|dE|riskBAJO|batteryMEDIA|obsCERCA|victim0|visitedBAJA": {
       "AVANZAR": -5.43,
       "GIRAR_IZQUIERDA": -3.93,
-      "GIRAR_DERECHA": 0.0,
+      "GIRAR_DERECHA": -1.4615,
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
@@ -22069,7 +22069,7 @@
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
-      "VOLVER_BASE": 12.49017
+      "VOLVER_BASE": 17.15389
     },
     "x3|y1|dN|riskBAJO|batteryBAJA|obsLEJOS|victim0|visitedBAJA": {
       "AVANZAR": 0.0,
@@ -22078,7 +22078,7 @@
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
-      "VOLVER_BASE": 13.31507
+      "VOLVER_BASE": 18.97398
     },
     "x3|y1|dN|riskMEDIO|batteryBAJA|obsCERCA|victim0|visitedBAJA": {
       "AVANZAR": 0.0,
@@ -22096,7 +22096,7 @@
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
-      "VOLVER_BASE": 10.47697
+      "VOLVER_BASE": 20.52208
     },
     "x4|y1|dN|riskBAJO|batteryBAJA|obsLEJOS|victim0|visitedBAJA": {
       "AVANZAR": 0.0,
@@ -22171,11 +22171,11 @@
       "VOLVER_BASE": 51.52907
     },
     "x6|y4|dW|riskMEDIO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": -0.14907,
+      "AVANZAR": 1.34329,
       "GIRAR_IZQUIERDA": -5.37596,
       "GIRAR_DERECHA": -2.28,
       "RETROCEDER": -1.60866,
-      "ESCANEAR": 0.0,
+      "ESCANEAR": -0.48,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
     },
@@ -22513,7 +22513,7 @@
       "VOLVER_BASE": 0.0
     },
     "x5|y2|dW|riskMEDIO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 1.01558,
+      "AVANZAR": 3.39291,
       "GIRAR_IZQUIERDA": -9.33,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
@@ -22747,7 +22747,7 @@
       "VOLVER_BASE": 0.0
     },
     "x9|y7|dN|riskBAJO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 0.06219,
+      "AVANZAR": 0.67157,
       "GIRAR_IZQUIERDA": -2.928,
       "GIRAR_DERECHA": -0.48,
       "RETROCEDER": -1.80224,
@@ -23314,7 +23314,7 @@
       "VOLVER_BASE": 0.0
     },
     "x8|y3|dW|riskBAJO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": -3.26101,
+      "AVANZAR": -1.03908,
       "GIRAR_IZQUIERDA": -3.34294,
       "GIRAR_DERECHA": -6.288,
       "RETROCEDER": -9.33,
@@ -23333,9 +23333,9 @@
     },
     "x7|y3|dW|riskBAJO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
       "AVANZAR": -0.57642,
-      "GIRAR_IZQUIERDA": -1.98323,
+      "GIRAR_IZQUIERDA": -3.90504,
       "GIRAR_DERECHA": -8.32498,
-      "RETROCEDER": -0.22083,
+      "RETROCEDER": -2.08276,
       "ESCANEAR": -4.66498,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
@@ -23395,7 +23395,7 @@
       "VOLVER_BASE": 0.0
     },
     "x5|y0|dW|riskBAJO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 6.35223,
+      "AVANZAR": 6.19274,
       "GIRAR_IZQUIERDA": 0.0,
       "GIRAR_DERECHA": -2.61614,
       "RETROCEDER": 0.0,
@@ -23404,7 +23404,7 @@
       "VOLVER_BASE": 0.0
     },
     "x4|y0|dW|riskBAJO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 11.38764,
+      "AVANZAR": 11.39785,
       "GIRAR_IZQUIERDA": 0.0,
       "GIRAR_DERECHA": -0.48,
       "RETROCEDER": 0.0,
@@ -23440,7 +23440,7 @@
       "VOLVER_BASE": 0.0
     },
     "x3|y0|dS|riskBAJO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 5.04117,
+      "AVANZAR": 5.63994,
       "GIRAR_IZQUIERDA": 0.0,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
@@ -23449,7 +23449,7 @@
       "VOLVER_BASE": 0.0
     },
     "x3|y1|dS|riskBAJO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 0.75718,
+      "AVANZAR": 3.60925,
       "GIRAR_IZQUIERDA": 0.0,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
@@ -24016,7 +24016,7 @@
       "VOLVER_BASE": 0.0
     },
     "x1|y4|dN|riskBAJO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 2.3217,
+      "AVANZAR": -0.20928,
       "GIRAR_IZQUIERDA": -3.82512,
       "GIRAR_DERECHA": -0.3423,
       "RETROCEDER": -0.34305,
@@ -24197,7 +24197,7 @@
     },
     "x8|y3|dE|riskMEDIO|batteryMEDIA|obsCERCA|victim0|visitedBAJA": {
       "AVANZAR": -5.43,
-      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_IZQUIERDA": 1.17841,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
@@ -24250,7 +24250,7 @@
       "VOLVER_BASE": 0.0
     },
     "x7|y6|dS|riskBAJO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 0.64961,
+      "AVANZAR": 4.74876,
       "GIRAR_IZQUIERDA": -1.88608,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 1.96119,
@@ -24295,7 +24295,7 @@
       "VOLVER_BASE": 0.0
     },
     "x7|y7|dN|riskBAJO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 2.44247,
+      "AVANZAR": 4.31446,
       "GIRAR_IZQUIERDA": -3.588,
       "GIRAR_DERECHA": -8.62831,
       "RETROCEDER": -1.62801,
@@ -24547,7 +24547,7 @@
       "VOLVER_BASE": 0.0
     },
     "x1|y6|dS|riskMEDIO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 3.22561,
+      "AVANZAR": 3.31496,
       "GIRAR_IZQUIERDA": 0.0,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
@@ -24814,10 +24814,10 @@
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
-      "VOLVER_BASE": 50.53129
+      "VOLVER_BASE": 47.5716
     },
     "x5|y9|dS|riskMEDIO|batteryALTA|obsMEDIA|victim0|visitedBAJA": {
-      "AVANZAR": 0.17966,
+      "AVANZAR": 1.77847,
       "GIRAR_IZQUIERDA": -3.03999,
       "GIRAR_DERECHA": -4.38,
       "RETROCEDER": -2.32894,
@@ -24828,7 +24828,7 @@
     "x5|y9|dS|riskMEDIO|batteryALTA|obsCERCA|victim0|visitedBAJA": {
       "AVANZAR": -9.03,
       "GIRAR_IZQUIERDA": -2.13,
-      "GIRAR_DERECHA": 1.15374,
+      "GIRAR_DERECHA": 1.25068,
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
@@ -25080,14 +25080,14 @@
     "x7|y8|dN|riskMEDIO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
       "AVANZAR": -0.63,
       "GIRAR_IZQUIERDA": -2.08155,
-      "GIRAR_DERECHA": 0.0,
+      "GIRAR_DERECHA": -2.88,
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
     },
     "x6|y8|dW|riskBAJO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 4.2778,
+      "AVANZAR": 5.9038,
       "GIRAR_IZQUIERDA": -0.48,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
@@ -25129,7 +25129,7 @@
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
-      "VOLVER_BASE": 30.18925
+      "VOLVER_BASE": 40.56901
     },
     "x1|y7|dW|riskBAJO|batteryBAJA|obsMEDIA|victim0|visitedBAJA": {
       "AVANZAR": 0.0,
@@ -25213,7 +25213,7 @@
       "VOLVER_BASE": 0.0
     },
     "x8|y3|dS|riskBAJO|batteryALTA|obsMEDIA|victim0|visitedBAJA": {
-      "AVANZAR": 3.78158,
+      "AVANZAR": 0.71919,
       "GIRAR_IZQUIERDA": 0.0,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
@@ -25224,9 +25224,9 @@
     "x8|y4|dS|riskBAJO|batteryALTA|obsCERCA|victim0|visitedBAJA": {
       "AVANZAR": -5.88,
       "GIRAR_IZQUIERDA": -5.02062,
-      "GIRAR_DERECHA": -3.03,
-      "RETROCEDER": -2.57568,
-      "ESCANEAR": -2.28,
+      "GIRAR_DERECHA": -5.21148,
+      "RETROCEDER": -1.04769,
+      "ESCANEAR": -5.5353,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
     },
@@ -25258,7 +25258,7 @@
       "VOLVER_BASE": 0.0
     },
     "x9|y7|dS|riskBAJO|batteryMEDIA|obsMEDIA|victim0|visitedBAJA": {
-      "AVANZAR": -2.2363,
+      "AVANZAR": -1.99928,
       "GIRAR_IZQUIERDA": -5.42958,
       "GIRAR_DERECHA": -5.88,
       "RETROCEDER": -4.43957,
@@ -25309,7 +25309,7 @@
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
-      "VOLVER_BASE": 15.71076
+      "VOLVER_BASE": 22.81932
     },
     "x3|y3|dN|riskMEDIO|batteryALTA|obsMEDIA|victim0|visitedBAJA": {
       "AVANZAR": -2.3955,
@@ -25402,7 +25402,7 @@
       "VOLVER_BASE": 0.0
     },
     "x0|y1|dE|riskBAJO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 4.55906,
+      "AVANZAR": 5.85908,
       "GIRAR_IZQUIERDA": -5.88,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
@@ -25412,7 +25412,7 @@
     },
     "x1|y2|dS|riskBAJO|batteryMEDIA|obsLEJOS|victim1|visitedBAJA": {
       "AVANZAR": 0.0,
-      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_IZQUIERDA": 0.35131,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
@@ -25431,7 +25431,7 @@
     "x2|y2|dE|riskBAJO|batteryMEDIA|obsLEJOS|victim1|visitedBAJA": {
       "AVANZAR": 1.542,
       "GIRAR_IZQUIERDA": 0.0,
-      "GIRAR_DERECHA": 0.0,
+      "GIRAR_DERECHA": 0.89923,
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
@@ -25465,7 +25465,7 @@
       "VOLVER_BASE": 0.0
     },
     "x3|y1|dW|riskBAJO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 1.10394,
+      "AVANZAR": -0.39207,
       "GIRAR_IZQUIERDA": -5.748,
       "GIRAR_DERECHA": -5.51096,
       "RETROCEDER": -7.60729,
@@ -25474,7 +25474,7 @@
       "VOLVER_BASE": 0.0
     },
     "x2|y1|dW|riskBAJO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 4.27157,
+      "AVANZAR": 0.01838,
       "GIRAR_IZQUIERDA": -11.103,
       "GIRAR_DERECHA": -3.11932,
       "RETROCEDER": 0.14389,
@@ -25647,7 +25647,7 @@
     "x2|y4|dW|riskBAJO|batteryALTA|obsMEDIA|victim0|visitedBAJA": {
       "AVANZAR": -5.86517,
       "GIRAR_IZQUIERDA": -4.82774,
-      "GIRAR_DERECHA": -2.12,
+      "GIRAR_DERECHA": -2.282,
       "RETROCEDER": -3.89153,
       "ESCANEAR": -4.30305,
       "ENVIAR_ALERTA": 0.0,
@@ -25663,7 +25663,7 @@
       "VOLVER_BASE": 0.0
     },
     "x2|y4|dS|riskBAJO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": -1.28552,
+      "AVANZAR": -0.47062,
       "GIRAR_IZQUIERDA": -2.15694,
       "GIRAR_DERECHA": -2.88,
       "RETROCEDER": -1.72845,
@@ -25789,7 +25789,7 @@
       "VOLVER_BASE": 0.0
     },
     "x5|y7|dS|riskBAJO|batteryALTA|obsMEDIA|victim1|visitedBAJA": {
-      "AVANZAR": 2.59586,
+      "AVANZAR": 7.12648,
       "GIRAR_IZQUIERDA": 0.0,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
@@ -25969,7 +25969,7 @@
       "VOLVER_BASE": 0.0
     },
     "x6|y3|dN|riskBAJO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 6.2031,
+      "AVANZAR": 3.30054,
       "GIRAR_IZQUIERDA": 0.0,
       "GIRAR_DERECHA": -2.88,
       "RETROCEDER": 0.0,
@@ -26041,10 +26041,10 @@
       "VOLVER_BASE": 0.0
     },
     "x8|y3|dN|riskBAJO|batteryALTA|obsMEDIA|victim0|visitedBAJA": {
-      "AVANZAR": -1.68,
+      "AVANZAR": 0.042,
       "GIRAR_IZQUIERDA": -0.48,
       "GIRAR_DERECHA": -0.27399,
-      "RETROCEDER": 0.0,
+      "RETROCEDER": -2.05668,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
@@ -26072,13 +26072,13 @@
       "GIRAR_IZQUIERDA": -2.28,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
-      "ESCANEAR": 0.92973,
+      "ESCANEAR": 0.50872,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
     },
     "x9|y3|dN|riskBAJO|batteryMEDIA|obsCERCA|victim0|visitedBAJA": {
       "AVANZAR": 0.0,
-      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_IZQUIERDA": -4.83,
       "GIRAR_DERECHA": -4.53,
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
@@ -26101,7 +26101,7 @@
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
-      "VOLVER_BASE": 4.574
+      "VOLVER_BASE": 9.09592
     },
     "x5|y0|dN|riskBAJO|batteryMEDIA|obsMEDIA|victim0|visitedBAJA": {
       "AVANZAR": -2.80782,
@@ -26140,7 +26140,7 @@
       "VOLVER_BASE": 0.0
     },
     "x5|y1|dW|riskBAJO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 8.39806,
+      "AVANZAR": 8.2353,
       "GIRAR_IZQUIERDA": -7.55715,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
@@ -26212,7 +26212,7 @@
       "VOLVER_BASE": 0.0
     },
     "x3|y0|dW|riskBAJO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 9.32627,
+      "AVANZAR": 7.34591,
       "GIRAR_IZQUIERDA": -7.46287,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
@@ -26221,9 +26221,9 @@
       "VOLVER_BASE": 0.0
     },
     "x2|y0|dW|riskBAJO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 4.4295,
+      "AVANZAR": 5.33633,
       "GIRAR_IZQUIERDA": -0.48,
-      "GIRAR_DERECHA": 0.0,
+      "GIRAR_DERECHA": -0.36397,
       "RETROCEDER": -0.0423,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
@@ -26524,7 +26524,7 @@
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
-      "VOLVER_BASE": 4.62
+      "VOLVER_BASE": 10.0707
     },
     "x3|y6|dS|riskMEDIO|batteryBAJA|obsCERCA|victim0|visitedBAJA": {
       "AVANZAR": 0.0,
@@ -26752,7 +26752,7 @@
       "VOLVER_BASE": 0.0
     },
     "x1|y4|dN|riskBAJO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 13.89209,
+      "AVANZAR": 14.62154,
       "GIRAR_IZQUIERDA": 0.0,
       "GIRAR_DERECHA": -2.2672,
       "RETROCEDER": 0.0,
@@ -26933,7 +26933,7 @@
     },
     "x8|y5|dE|riskBAJO|batteryALTA|obsCERCA|victim0|visitedBAJA": {
       "AVANZAR": -10.53,
-      "GIRAR_IZQUIERDA": 2.292,
+      "GIRAR_IZQUIERDA": 3.92332,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
@@ -27202,7 +27202,7 @@
       "VOLVER_BASE": 0.0
     },
     "x3|y9|dE|riskBAJO|batteryMEDIA|obsMEDIA|victim0|visitedBAJA": {
-      "AVANZAR": -0.33,
+      "AVANZAR": -0.4605,
       "GIRAR_IZQUIERDA": 0.0,
       "GIRAR_DERECHA": -10.38,
       "RETROCEDER": 0.0,
@@ -27562,7 +27562,7 @@
       "VOLVER_BASE": 0.0
     },
     "x6|y9|dN|riskBAJO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 2.46177,
+      "AVANZAR": 4.18747,
       "GIRAR_IZQUIERDA": 0.0,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
@@ -27628,7 +27628,7 @@
       "AVANZAR": -4.1805,
       "GIRAR_IZQUIERDA": -2.88,
       "GIRAR_DERECHA": -4.488,
-      "RETROCEDER": -0.19967,
+      "RETROCEDER": 0.92524,
       "ESCANEAR": -2.27751,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
@@ -27646,8 +27646,8 @@
       "AVANZAR": -0.18,
       "GIRAR_IZQUIERDA": -0.36253,
       "GIRAR_DERECHA": -2.88,
-      "RETROCEDER": 0.0,
-      "ESCANEAR": 0.0,
+      "RETROCEDER": -9.33,
+      "ESCANEAR": -5.88,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
     },
@@ -27987,7 +27987,7 @@
     "x4|y8|dW|riskBAJO|batteryALTA|obsMEDIA|victim0|visitedBAJA": {
       "AVANZAR": -4.5546,
       "GIRAR_IZQUIERDA": -0.48,
-      "GIRAR_DERECHA": 0.31328,
+      "GIRAR_DERECHA": -0.01526,
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
@@ -28066,7 +28066,7 @@
       "VOLVER_BASE": 0.0
     },
     "x4|y7|dW|riskBAJO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 12.26808,
+      "AVANZAR": 11.47804,
       "GIRAR_IZQUIERDA": -0.48,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
@@ -28075,7 +28075,7 @@
       "VOLVER_BASE": 0.0
     },
     "x4|y7|dN|riskBAJO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 11.69681,
+      "AVANZAR": 11.60329,
       "GIRAR_IZQUIERDA": 0.17483,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": -3.28181,
@@ -28084,7 +28084,7 @@
       "VOLVER_BASE": 0.0
     },
     "x4|y5|dN|riskBAJO|batteryALTA|obsMEDIA|victim0|visitedBAJA": {
-      "AVANZAR": 4.42663,
+      "AVANZAR": 5.23264,
       "GIRAR_IZQUIERDA": 0.0,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
@@ -28165,7 +28165,7 @@
       "VOLVER_BASE": 0.0
     },
     "x4|y8|dN|riskBAJO|batteryALTA|obsMEDIA|victim0|visitedBAJA": {
-      "AVANZAR": 1.47,
+      "AVANZAR": 2.80984,
       "GIRAR_IZQUIERDA": 0.0,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
@@ -28175,7 +28175,7 @@
     },
     "x4|y7|dN|riskMEDIO|batteryALTA|obsMEDIA|victim0|visitedBAJA": {
       "AVANZAR": -0.18,
-      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_IZQUIERDA": -0.62381,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
@@ -28183,18 +28183,18 @@
       "VOLVER_BASE": 0.0
     },
     "x4|y7|dN|riskBAJO|batteryALTA|obsMEDIA|victim0|visitedBAJA": {
-      "AVANZAR": -2.53724,
+      "AVANZAR": -2.33665,
       "GIRAR_IZQUIERDA": -4.08,
       "GIRAR_DERECHA": -4.98,
       "RETROCEDER": -3.55476,
-      "ESCANEAR": -0.98046,
+      "ESCANEAR": -6.41339,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
     },
     "x4|y7|dN|riskBAJO|batteryALTA|obsCERCA|victim0|visitedBAJA": {
       "AVANZAR": -5.88,
       "GIRAR_IZQUIERDA": -2.13,
-      "GIRAR_DERECHA": 0.78001,
+      "GIRAR_DERECHA": 0.93301,
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
@@ -28383,7 +28383,7 @@
     "x0|y3|dW|riskMEDIO|batteryMEDIA|obsMEDIA|victim0|visitedBAJA": {
       "AVANZAR": -3.9855,
       "GIRAR_IZQUIERDA": -2.88,
-      "GIRAR_DERECHA": 0.0,
+      "GIRAR_DERECHA": 0.04913,
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
@@ -28591,7 +28591,7 @@
       "AVANZAR": -8.48396,
       "GIRAR_IZQUIERDA": -9.978,
       "GIRAR_DERECHA": -9.70093,
-      "RETROCEDER": 1.64604,
+      "RETROCEDER": -4.18087,
       "ESCANEAR": -10.12389,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
@@ -29002,7 +29002,7 @@
       "VOLVER_BASE": 0.0
     },
     "x4|y9|dE|riskBAJO|batteryALTA|obsMEDIA|victim0|visitedBAJA": {
-      "AVANZAR": 1.5045,
+      "AVANZAR": 2.74883,
       "GIRAR_IZQUIERDA": 0.0,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
@@ -29101,9 +29101,9 @@
       "VOLVER_BASE": 0.0
     },
     "x4|y6|dW|riskMEDIO|batteryMEDIA|obsMEDIA|victim0|visitedBAJA": {
-      "AVANZAR": 0.0,
+      "AVANZAR": -31.71218,
       "GIRAR_IZQUIERDA": 0.0,
-      "GIRAR_DERECHA": 0.0,
+      "GIRAR_DERECHA": -5.88,
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
@@ -29278,7 +29278,7 @@
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
-      "VOLVER_BASE": 12.49202
+      "VOLVER_BASE": 15.56192
     },
     "x1|y6|dS|riskMEDIO|batteryBAJA|obsLEJOS|victim0|visitedBAJA": {
       "AVANZAR": 0.0,
@@ -29345,7 +29345,7 @@
     },
     "x1|y6|dW|riskMEDIO|batteryMEDIA|obsMEDIA|victim0|visitedBAJA": {
       "AVANZAR": -12.03,
-      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_IZQUIERDA": -1.83232,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
@@ -29398,7 +29398,7 @@
       "VOLVER_BASE": 0.0
     },
     "x0|y2|dN|riskBAJO|batteryMEDIA|obsMEDIA|victim0|visitedBAJA": {
-      "AVANZAR": -2.5305,
+      "AVANZAR": -6.97617,
       "GIRAR_IZQUIERDA": -2.84355,
       "GIRAR_DERECHA": -9.453,
       "RETROCEDER": -0.36292,
@@ -29409,8 +29409,8 @@
     "x0|y1|dN|riskMEDIO|batteryMEDIA|obsCERCA|victim0|visitedBAJA": {
       "AVANZAR": -5.43,
       "GIRAR_IZQUIERDA": -2.13,
-      "GIRAR_DERECHA": -3.95956,
-      "RETROCEDER": -1.03155,
+      "GIRAR_DERECHA": -8.78015,
+      "RETROCEDER": -0.30682,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
@@ -29418,14 +29418,14 @@
     "x0|y1|dW|riskMEDIO|batteryMEDIA|obsCERCA|victim0|visitedBAJA": {
       "AVANZAR": -7.5303,
       "GIRAR_IZQUIERDA": -3.63,
-      "GIRAR_DERECHA": 0.0,
+      "GIRAR_DERECHA": -8.13,
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
     },
     "x1|y1|dE|riskMEDIO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 1.55329,
+      "AVANZAR": 2.53313,
       "GIRAR_IZQUIERDA": 0.0,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
@@ -29443,7 +29443,7 @@
       "VOLVER_BASE": 0.0
     },
     "x3|y1|dE|riskBAJO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": -1.70848,
+      "AVANZAR": -0.62988,
       "GIRAR_IZQUIERDA": -3.78,
       "GIRAR_DERECHA": -2.88,
       "RETROCEDER": -9.33,
@@ -29452,7 +29452,7 @@
       "VOLVER_BASE": 0.0
     },
     "x4|y1|dE|riskBAJO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": -2.29478,
+      "AVANZAR": 0.78063,
       "GIRAR_IZQUIERDA": -5.88,
       "GIRAR_DERECHA": -6.918,
       "RETROCEDER": -3.88988,
@@ -29686,7 +29686,7 @@
       "VOLVER_BASE": 0.0
     },
     "x4|y1|dE|riskBAJO|batteryMEDIA|obsMEDIA|victim0|visitedBAJA": {
-      "AVANZAR": 1.47,
+      "AVANZAR": -3.10401,
       "GIRAR_IZQUIERDA": 0.0,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
@@ -29697,16 +29697,16 @@
     "x5|y1|dE|riskMEDIO|batteryMEDIA|obsCERCA|victim0|visitedBAJA": {
       "AVANZAR": -5.88,
       "GIRAR_IZQUIERDA": -2.13,
-      "GIRAR_DERECHA": 0.0,
-      "RETROCEDER": 0.0,
-      "ESCANEAR": 0.0,
+      "GIRAR_DERECHA": -9.63631,
+      "RETROCEDER": 2.41845,
+      "ESCANEAR": -5.88,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
     },
     "x5|y1|dN|riskMEDIO|batteryMEDIA|obsMEDIA|victim0|visitedBAJA": {
       "AVANZAR": -2.42676,
       "GIRAR_IZQUIERDA": -1.23611,
-      "GIRAR_DERECHA": 0.0,
+      "GIRAR_DERECHA": -2.88,
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
@@ -29791,7 +29791,7 @@
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
-      "VOLVER_BASE": 16.03311
+      "VOLVER_BASE": 29.47002
     },
     "x5|y2|dN|riskMEDIO|batteryBAJA|obsMEDIA|victim0|visitedBAJA": {
       "AVANZAR": 0.0,
@@ -29809,7 +29809,7 @@
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
-      "VOLVER_BASE": 149.49901
+      "VOLVER_BASE": 156.92929
     },
     "x5|y4|dN|riskMEDIO|batteryBAJA|obsLEJOS|victim0|visitedBAJA": {
       "AVANZAR": 0.0,
@@ -29818,7 +29818,7 @@
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
-      "VOLVER_BASE": 126.46251
+      "VOLVER_BASE": 152.98312
     },
     "x4|y5|dW|riskMEDIO|batteryALTA|obsLEJOS|victim1|visitedBAJA": {
       "AVANZAR": 3.86506,
@@ -29940,7 +29940,7 @@
     "x8|y3|dE|riskMEDIO|batteryALTA|obsCERCA|victim0|visitedBAJA": {
       "AVANZAR": -7.83,
       "GIRAR_IZQUIERDA": -3.63,
-      "GIRAR_DERECHA": 0.46845,
+      "GIRAR_DERECHA": 0.86663,
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
@@ -29975,8 +29975,8 @@
     },
     "x6|y2|dN|riskBAJO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
       "AVANZAR": -2.97449,
-      "GIRAR_IZQUIERDA": 0.0,
-      "GIRAR_DERECHA": 0.0,
+      "GIRAR_IZQUIERDA": -0.38462,
+      "GIRAR_DERECHA": -4.38,
       "RETROCEDER": -3.17917,
       "ESCANEAR": -2.08136,
       "ENVIAR_ALERTA": 0.0,
@@ -30010,7 +30010,7 @@
       "VOLVER_BASE": 0.0
     },
     "x4|y1|dW|riskBAJO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 4.54711,
+      "AVANZAR": 3.7281,
       "GIRAR_IZQUIERDA": 0.0,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
@@ -30388,7 +30388,7 @@
       "VOLVER_BASE": 0.0
     },
     "x7|y6|dN|riskBAJO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 12.95502,
+      "AVANZAR": 11.9489,
       "GIRAR_IZQUIERDA": 0.0,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
@@ -30409,17 +30409,17 @@
       "AVANZAR": -5.51287,
       "GIRAR_IZQUIERDA": -4.83412,
       "GIRAR_DERECHA": -3.93,
-      "RETROCEDER": 0.37804,
+      "RETROCEDER": 1.62128,
       "ESCANEAR": -3.888,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
     },
     "x8|y4|dN|riskBAJO|batteryALTA|obsMEDIA|victim0|visitedBAJA": {
-      "AVANZAR": 3.39907,
+      "AVANZAR": 1.34283,
       "GIRAR_IZQUIERDA": 0.0,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
-      "ESCANEAR": 0.0,
+      "ESCANEAR": -0.47815,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
     },
@@ -30466,7 +30466,7 @@
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
-      "VOLVER_BASE": 43.80787
+      "VOLVER_BASE": 39.78963
     },
     "x6|y5|dS|riskMEDIO|batteryBAJA|obsCERCA|victim0|visitedBAJA": {
       "AVANZAR": 0.0,
@@ -30775,7 +30775,7 @@
       "VOLVER_BASE": 0.0
     },
     "x1|y2|dS|riskBAJO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 2.97394,
+      "AVANZAR": 4.45199,
       "GIRAR_IZQUIERDA": 0.0,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
@@ -31003,8 +31003,8 @@
       "AVANZAR": -1.98,
       "GIRAR_IZQUIERDA": -0.84699,
       "GIRAR_DERECHA": -1.85002,
-      "RETROCEDER": 0.0,
-      "ESCANEAR": 0.0,
+      "RETROCEDER": -0.08611,
+      "ESCANEAR": -2.28,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
     },
@@ -31065,7 +31065,7 @@
     "x8|y1|dE|riskMEDIO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
       "AVANZAR": -1.23604,
       "GIRAR_IZQUIERDA": -2.91614,
-      "GIRAR_DERECHA": 0.0,
+      "GIRAR_DERECHA": -0.25488,
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
@@ -31076,7 +31076,7 @@
       "GIRAR_IZQUIERDA": -3.02853,
       "GIRAR_DERECHA": -0.48,
       "RETROCEDER": -1.08901,
-      "ESCANEAR": 0.0,
+      "ESCANEAR": -2.88,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
     },
@@ -31258,7 +31258,7 @@
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
-      "VOLVER_BASE": 36.8618
+      "VOLVER_BASE": 36.42188
     },
     "x5|y1|dE|riskMEDIO|batteryBAJA|obsMEDIA|victim0|visitedBAJA": {
       "AVANZAR": 0.0,
@@ -31276,7 +31276,7 @@
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
-      "VOLVER_BASE": 9.447
+      "VOLVER_BASE": 9.94995
     },
     "x5|y2|dE|riskBAJO|batteryBAJA|obsLEJOS|victim0|visitedBAJA": {
       "AVANZAR": 0.0,
@@ -31285,7 +31285,7 @@
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
-      "VOLVER_BASE": 36.15715
+      "VOLVER_BASE": 52.15036
     },
     "x5|y3|dE|riskMEDIO|batteryBAJA|obsLEJOS|victim0|visitedBAJA": {
       "AVANZAR": 0.0,
@@ -31294,7 +31294,7 @@
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
-      "VOLVER_BASE": 21.31606
+      "VOLVER_BASE": 30.71375
     },
     "x0|y6|dN|riskBAJO|batteryALTA|obsMEDIA|victim0|visitedBAJA": {
       "AVANZAR": -1.46842,
@@ -31609,7 +31609,7 @@
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
-      "VOLVER_BASE": 5.52
+      "VOLVER_BASE": 11.44877
     },
     "x3|y1|dE|riskMEDIO|batteryBAJA|obsMEDIA|victim0|visitedBAJA": {
       "AVANZAR": 0.0,
@@ -31618,7 +31618,7 @@
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
-      "VOLVER_BASE": 5.82796
+      "VOLVER_BASE": 10.92377
     },
     "x3|y2|dE|riskBAJO|batteryBAJA|obsLEJOS|victim0|visitedBAJA": {
       "AVANZAR": 0.0,
@@ -31666,7 +31666,7 @@
       "VOLVER_BASE": 0.0
     },
     "x4|y9|dE|riskMEDIO|batteryALTA|obsMEDIA|victim0|visitedBAJA": {
-      "AVANZAR": 0.57,
+      "AVANZAR": -7.7955,
       "GIRAR_IZQUIERDA": 0.0,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
@@ -31819,7 +31819,7 @@
       "VOLVER_BASE": 0.0
     },
     "x1|y4|dN|riskMEDIO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 2.7195,
+      "AVANZAR": 0.645,
       "GIRAR_IZQUIERDA": 0.0,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
@@ -31948,8 +31948,8 @@
       "AVANZAR": -0.18,
       "GIRAR_IZQUIERDA": -0.48,
       "GIRAR_DERECHA": -4.66191,
-      "RETROCEDER": 0.0,
-      "ESCANEAR": 0.0,
+      "RETROCEDER": -0.18,
+      "ESCANEAR": -2.28,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
     },
@@ -32248,7 +32248,7 @@
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
-      "VOLVER_BASE": 35.48143
+      "VOLVER_BASE": 57.42721
     },
     "x2|y3|dW|riskBAJO|batteryALTA|obsLEJOS|victim1|visitedBAJA": {
       "AVANZAR": 10.7145,
@@ -32260,7 +32260,7 @@
       "VOLVER_BASE": 0.0
     },
     "x1|y3|dN|riskBAJO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 9.95012,
+      "AVANZAR": 11.22501,
       "GIRAR_IZQUIERDA": 0.0,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
@@ -32272,7 +32272,7 @@
       "AVANZAR": -0.228,
       "GIRAR_IZQUIERDA": -4.12087,
       "GIRAR_DERECHA": -2.88,
-      "RETROCEDER": 0.72479,
+      "RETROCEDER": 0.57377,
       "ESCANEAR": -3.25424,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
@@ -32332,7 +32332,7 @@
       "VOLVER_BASE": 10.2487
     },
     "x3|y2|dW|riskMEDIO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 0.222,
+      "AVANZAR": 1.69002,
       "GIRAR_IZQUIERDA": 0.0,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
@@ -32387,17 +32387,17 @@
     },
     "x3|y2|dS|riskMEDIO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
       "AVANZAR": -0.18,
-      "GIRAR_IZQUIERDA": 0.0,
-      "GIRAR_DERECHA": 0.0,
+      "GIRAR_IZQUIERDA": -0.48,
+      "GIRAR_DERECHA": -4.35003,
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
     },
     "x3|y2|dS|riskBAJO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 0.74048,
+      "AVANZAR": 1.69694,
       "GIRAR_IZQUIERDA": -7.488,
-      "GIRAR_DERECHA": -0.77685,
+      "GIRAR_DERECHA": -4.74032,
       "RETROCEDER": -10.92359,
       "ESCANEAR": -2.28,
       "ENVIAR_ALERTA": 0.0,
@@ -32422,7 +32422,7 @@
       "VOLVER_BASE": 0.0
     },
     "x3|y2|dW|riskMEDIO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 4.50873,
+      "AVANZAR": 4.40242,
       "GIRAR_IZQUIERDA": 0.0,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
@@ -32514,7 +32514,7 @@
     "x4|y7|dN|riskMEDIO|batteryALTA|obsCERCA|victim0|visitedBAJA": {
       "AVANZAR": 0.0,
       "GIRAR_IZQUIERDA": 0.0,
-      "GIRAR_DERECHA": 0.66916,
+      "GIRAR_DERECHA": -6.06121,
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
@@ -32608,7 +32608,7 @@
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
-      "VOLVER_BASE": 20.90876
+      "VOLVER_BASE": 21.94245
     },
     "x3|y7|dW|riskBAJO|batteryBAJA|obsMEDIA|victim0|visitedBAJA": {
       "AVANZAR": 0.0,
@@ -32644,7 +32644,7 @@
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
-      "VOLVER_BASE": 47.38847
+      "VOLVER_BASE": 50.29487
     },
     "x4|y5|dE|riskMEDIO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
       "AVANZAR": -1.20851,
@@ -32716,7 +32716,7 @@
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
-      "VOLVER_BASE": 24.8338
+      "VOLVER_BASE": 30.07602
     },
     "x8|y3|dN|riskMEDIO|batteryBAJA|obsLEJOS|victim0|visitedBAJA": {
       "AVANZAR": 0.0,
@@ -32725,7 +32725,7 @@
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
-      "VOLVER_BASE": 5.07
+      "VOLVER_BASE": 11.53206
     },
     "x8|y3|dN|riskMEDIO|batteryBAJA|obsMEDIA|victim0|visitedBAJA": {
       "AVANZAR": 0.0,
@@ -32962,7 +32962,7 @@
       "VOLVER_BASE": 0.0
     },
     "x8|y6|dW|riskBAJO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 8.37119,
+      "AVANZAR": 8.51499,
       "GIRAR_IZQUIERDA": 0.0,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
@@ -33004,7 +33004,7 @@
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
-      "VOLVER_BASE": 0.0
+      "VOLVER_BASE": 7.75462
     },
     "x6|y4|dN|riskBAJO|batteryBAJA|obsMEDIA|victim0|visitedBAJA": {
       "AVANZAR": 0.0,
@@ -33196,7 +33196,7 @@
       "VOLVER_BASE": 0.0
     },
     "x7|y6|dW|riskBAJO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 5.63644,
+      "AVANZAR": 2.82792,
       "GIRAR_IZQUIERDA": 0.0,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
@@ -33268,7 +33268,7 @@
       "VOLVER_BASE": 0.0
     },
     "x9|y4|dN|riskMEDIO|batteryALTA|obsMEDIA|victim0|visitedBAJA": {
-      "AVANZAR": 1.47,
+      "AVANZAR": 3.60153,
       "GIRAR_IZQUIERDA": 0.0,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
@@ -33286,9 +33286,9 @@
       "VOLVER_BASE": 0.0
     },
     "x9|y3|dW|riskBAJO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 1.47,
-      "GIRAR_IZQUIERDA": 0.0,
-      "GIRAR_DERECHA": 0.0,
+      "AVANZAR": -1.43205,
+      "GIRAR_IZQUIERDA": -3.09032,
+      "GIRAR_DERECHA": -6.41156,
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
@@ -33823,10 +33823,10 @@
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
-      "VOLVER_BASE": 9.91128
+      "VOLVER_BASE": 19.29158
     },
     "x2|y3|dN|riskBAJO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 6.178,
+      "AVANZAR": 6.0107,
       "GIRAR_IZQUIERDA": -0.42358,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
@@ -33835,7 +33835,7 @@
       "VOLVER_BASE": 0.0
     },
     "x2|y2|dN|riskBAJO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 1.40293,
+      "AVANZAR": 1.16591,
       "GIRAR_IZQUIERDA": -0.48,
       "GIRAR_DERECHA": -0.87474,
       "RETROCEDER": 0.0,
@@ -33844,7 +33844,7 @@
       "VOLVER_BASE": 0.0
     },
     "x2|y1|dN|riskBAJO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 2.1962,
+      "AVANZAR": 1.30608,
       "GIRAR_IZQUIERDA": -0.57594,
       "GIRAR_DERECHA": -0.48,
       "RETROCEDER": -1.15536,
@@ -33862,11 +33862,11 @@
       "VOLVER_BASE": 0.0
     },
     "x2|y0|dN|riskBAJO|batteryALTA|obsMEDIA|victim0|visitedBAJA": {
-      "AVANZAR": 0.8595,
-      "GIRAR_IZQUIERDA": -0.48,
-      "GIRAR_DERECHA": 0.0,
-      "RETROCEDER": 0.0,
-      "ESCANEAR": 0.72,
+      "AVANZAR": -0.24308,
+      "GIRAR_IZQUIERDA": -5.75919,
+      "GIRAR_DERECHA": -3.4803,
+      "RETROCEDER": 0.03931,
+      "ESCANEAR": -1.5708,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
     },
@@ -33973,8 +33973,8 @@
       "AVANZAR": -6.78,
       "GIRAR_IZQUIERDA": -1.99517,
       "GIRAR_DERECHA": -3.4005,
-      "RETROCEDER": 0.0,
-      "ESCANEAR": 0.0,
+      "RETROCEDER": -2.76368,
+      "ESCANEAR": -3.18,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
     },
@@ -34393,7 +34393,7 @@
       "VOLVER_BASE": 0.0
     },
     "x2|y0|dE|riskBAJO|batteryALTA|obsMEDIA|victim0|visitedBAJA": {
-      "AVANZAR": 1.47,
+      "AVANZAR": 2.75595,
       "GIRAR_IZQUIERDA": 0.0,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
@@ -34404,7 +34404,7 @@
     "x3|y0|dE|riskBAJO|batteryALTA|obsCERCA|victim0|visitedBAJA": {
       "AVANZAR": -5.43,
       "GIRAR_IZQUIERDA": -3.63,
-      "GIRAR_DERECHA": 0.27,
+      "GIRAR_DERECHA": 1.18006,
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
@@ -34438,7 +34438,7 @@
       "VOLVER_BASE": 0.0
     },
     "x5|y2|dW|riskBAJO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 3.63369,
+      "AVANZAR": 4.55864,
       "GIRAR_IZQUIERDA": 0.0,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
@@ -34477,8 +34477,8 @@
       "AVANZAR": -1.61287,
       "GIRAR_IZQUIERDA": -7.83,
       "GIRAR_DERECHA": -0.48,
-      "RETROCEDER": -0.36761,
-      "ESCANEAR": 0.0,
+      "RETROCEDER": 1.16462,
+      "ESCANEAR": -0.48,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
     },
@@ -34579,7 +34579,7 @@
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
-      "VOLVER_BASE": 98.68054
+      "VOLVER_BASE": 106.13083
     },
     "x5|y3|dN|riskMEDIO|batteryBAJA|obsLEJOS|victim0|visitedBAJA": {
       "AVANZAR": 0.0,
@@ -34588,7 +34588,7 @@
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
-      "VOLVER_BASE": 102.79146
+      "VOLVER_BASE": 106.96518
     },
     "x5|y4|dN|riskMEDIO|batteryBAJA|obsLEJOS|victim1|visitedBAJA": {
       "AVANZAR": 0.0,
@@ -34921,7 +34921,7 @@
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
-      "VOLVER_BASE": 11.81806
+      "VOLVER_BASE": 16.01535
     },
     "x3|y9|dW|riskBAJO|batteryBAJA|obsCERCA|victim0|visitedBAJA": {
       "AVANZAR": 0.0,
@@ -35425,7 +35425,7 @@
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
-      "VOLVER_BASE": 24.13234
+      "VOLVER_BASE": 29.62248
     },
     "x5|y6|dW|riskMEDIO|batteryBAJA|obsMEDIA|victim0|visitedBAJA": {
       "AVANZAR": 0.0,
@@ -35539,13 +35539,13 @@
       "AVANZAR": -1.29325,
       "GIRAR_IZQUIERDA": 0.0,
       "GIRAR_DERECHA": -0.24901,
-      "RETROCEDER": 1.47,
+      "RETROCEDER": 3.58041,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
     },
     "x9|y3|dS|riskBAJO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 0.66433,
+      "AVANZAR": 2.03468,
       "GIRAR_IZQUIERDA": -0.48,
       "GIRAR_DERECHA": -3.58155,
       "RETROCEDER": 0.0,
@@ -35827,8 +35827,8 @@
       "AVANZAR": -0.333,
       "GIRAR_IZQUIERDA": -4.94355,
       "GIRAR_DERECHA": -0.23272,
-      "RETROCEDER": 4.7256,
-      "ESCANEAR": 2.51222,
+      "RETROCEDER": 1.91915,
+      "ESCANEAR": 1.65539,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
     },
@@ -35959,7 +35959,7 @@
       "VOLVER_BASE": 0.0
     },
     "x1|y1|dN|riskMEDIO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 0.0,
+      "AVANZAR": 0.687,
       "GIRAR_IZQUIERDA": 0.0,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
@@ -36106,7 +36106,7 @@
       "AVANZAR": -5.81547,
       "GIRAR_IZQUIERDA": -1.55386,
       "GIRAR_DERECHA": -0.48,
-      "RETROCEDER": 0.0,
+      "RETROCEDER": 1.64117,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
@@ -36283,7 +36283,7 @@
       "VOLVER_BASE": 0.0
     },
     "x9|y8|dN|riskBAJO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 3.88005,
+      "AVANZAR": 3.87644,
       "GIRAR_IZQUIERDA": 0.0,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
@@ -36301,7 +36301,7 @@
       "VOLVER_BASE": 0.0
     },
     "x1|y6|dN|riskMEDIO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 0.0,
+      "AVANZAR": -0.4569,
       "GIRAR_IZQUIERDA": 0.0,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
@@ -36463,8 +36463,8 @@
       "VOLVER_BASE": 0.0
     },
     "x8|y3|dS|riskMEDIO|batteryMEDIA|obsCERCA|victim0|visitedBAJA": {
-      "AVANZAR": 0.0,
-      "GIRAR_IZQUIERDA": 0.0,
+      "AVANZAR": -6.33,
+      "GIRAR_IZQUIERDA": -1.93155,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
@@ -36472,7 +36472,7 @@
       "VOLVER_BASE": 0.0
     },
     "x8|y3|dE|riskMEDIO|batteryMEDIA|obsMEDIA|victim0|visitedBAJA": {
-      "AVANZAR": 1.47,
+      "AVANZAR": 1.0695,
       "GIRAR_IZQUIERDA": 0.0,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
@@ -36591,8 +36591,8 @@
     "x2|y0|dN|riskMEDIO|batteryALTA|obsCERCA|victim0|visitedBAJA": {
       "AVANZAR": -9.48,
       "GIRAR_IZQUIERDA": -2.99129,
-      "GIRAR_DERECHA": -0.93,
-      "RETROCEDER": 0.0,
+      "GIRAR_DERECHA": -2.12205,
+      "RETROCEDER": -0.12578,
       "ESCANEAR": -1.728,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
@@ -36616,7 +36616,7 @@
       "VOLVER_BASE": 0.0
     },
     "x2|y4|dS|riskMEDIO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": -0.08578,
+      "AVANZAR": 0.04709,
       "GIRAR_IZQUIERDA": -0.24748,
       "GIRAR_DERECHA": -4.68,
       "RETROCEDER": -1.71894,
@@ -36688,7 +36688,7 @@
       "VOLVER_BASE": 0.0
     },
     "x2|y2|dW|riskBAJO|batteryALTA|obsMEDIA|victim0|visitedBAJA": {
-      "AVANZAR": 0.9195,
+      "AVANZAR": -0.04884,
       "GIRAR_IZQUIERDA": 0.0,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
@@ -36697,8 +36697,8 @@
       "VOLVER_BASE": 0.0
     },
     "x1|y2|dW|riskBAJO|batteryALTA|obsCERCA|victim0|visitedBAJA": {
-      "AVANZAR": 0.0,
-      "GIRAR_IZQUIERDA": 0.0,
+      "AVANZAR": -8.13,
+      "GIRAR_IZQUIERDA": -1.72852,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
@@ -36815,7 +36815,7 @@
     },
     "x4|y9|dW|riskMEDIO|batteryALTA|obsCERCA|victim0|visitedBAJA": {
       "AVANZAR": -10.83,
-      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_IZQUIERDA": 0.27,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
@@ -36843,7 +36843,7 @@
     "x7|y8|dW|riskBAJO|batteryALTA|obsCERCA|victim0|visitedBAJA": {
       "AVANZAR": -7.83,
       "GIRAR_IZQUIERDA": -3.63,
-      "GIRAR_DERECHA": 0.0,
+      "GIRAR_DERECHA": 0.76631,
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
@@ -37696,7 +37696,7 @@
       "VOLVER_BASE": 0.0
     },
     "x5|y4|dW|riskMEDIO|batteryMEDIA|obsMEDIA|victim0|visitedBAJA": {
-      "AVANZAR": 0.0,
+      "AVANZAR": 1.47,
       "GIRAR_IZQUIERDA": 0.0,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
@@ -37723,7 +37723,7 @@
       "VOLVER_BASE": 0.0
     },
     "x2|y3|dN|riskMEDIO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 2.27779,
+      "AVANZAR": 3.79015,
       "GIRAR_IZQUIERDA": 0.0,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
@@ -37831,7 +37831,7 @@
       "VOLVER_BASE": 0.0
     },
     "x2|y5|dS|riskMEDIO|batteryMEDIA|obsMEDIA|victim0|visitedBAJA": {
-      "AVANZAR": 0.0,
+      "AVANZAR": -0.78,
       "GIRAR_IZQUIERDA": 0.0,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
@@ -38263,8 +38263,8 @@
       "VOLVER_BASE": 0.0
     },
     "x9|y4|dE|riskMEDIO|batteryALTA|obsCERCA|victim0|visitedBAJA": {
-      "AVANZAR": 0.0,
-      "GIRAR_IZQUIERDA": 0.0,
+      "AVANZAR": -5.88,
+      "GIRAR_IZQUIERDA": -0.22691,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
@@ -38299,7 +38299,7 @@
       "VOLVER_BASE": 0.0
     },
     "x8|y4|dW|riskBAJO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 2.04828,
+      "AVANZAR": 6.67295,
       "GIRAR_IZQUIERDA": -2.28,
       "GIRAR_DERECHA": -4.26169,
       "RETROCEDER": -11.13,
@@ -38668,7 +38668,7 @@
       "VOLVER_BASE": 0.0
     },
     "x7|y3|dW|riskMEDIO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 0.0,
+      "AVANZAR": -1.39605,
       "GIRAR_IZQUIERDA": 0.0,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
@@ -39163,7 +39163,7 @@
       "VOLVER_BASE": 0.0
     },
     "x8|y1|dS|riskMEDIO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 1.66759,
+      "AVANZAR": 3.63689,
       "GIRAR_IZQUIERDA": 0.0,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
@@ -39220,7 +39220,7 @@
       "AVANZAR": -5.88,
       "GIRAR_IZQUIERDA": -3.63,
       "GIRAR_DERECHA": -3.65553,
-      "RETROCEDER": 0.87919,
+      "RETROCEDER": 2.96731,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
@@ -39282,7 +39282,7 @@
     "x5|y4|dW|riskMEDIO|batteryALTA|obsMEDIA|victim0|visitedBAJA": {
       "AVANZAR": -2.38605,
       "GIRAR_IZQUIERDA": -2.28,
-      "GIRAR_DERECHA": 0.0,
+      "GIRAR_DERECHA": -0.48,
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
@@ -39352,7 +39352,7 @@
       "VOLVER_BASE": 0.0
     },
     "x4|y6|dW|riskMEDIO|batteryALTA|obsMEDIA|victim0|visitedBAJA": {
-      "AVANZAR": 1.0362,
+      "AVANZAR": -4.54923,
       "GIRAR_IZQUIERDA": 0.0,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
@@ -39399,7 +39399,7 @@
     "x7|y6|dS|riskBAJO|batteryALTA|obsLEJOS|victim1|visitedBAJA": {
       "AVANZAR": 4.64141,
       "GIRAR_IZQUIERDA": 0.0,
-      "GIRAR_DERECHA": 0.0,
+      "GIRAR_DERECHA": -1.83,
       "RETROCEDER": 0.0,
       "ESCANEAR": 2.67,
       "ENVIAR_ALERTA": 0.0,
@@ -39478,7 +39478,7 @@
       "VOLVER_BASE": 0.0
     },
     "x2|y1|dN|riskMEDIO|batteryALTA|obsMEDIA|victim0|visitedBAJA": {
-      "AVANZAR": 1.47,
+      "AVANZAR": -4.46413,
       "GIRAR_IZQUIERDA": 0.0,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
@@ -39490,7 +39490,7 @@
       "AVANZAR": -7.83,
       "GIRAR_IZQUIERDA": -3.63,
       "GIRAR_DERECHA": -22.80561,
-      "RETROCEDER": 1.00757,
+      "RETROCEDER": 3.07643,
       "ESCANEAR": -2.88,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
@@ -39507,7 +39507,7 @@
     "x5|y4|dW|riskBAJO|batteryMEDIA|obsCERCA|victim0|visitedBAJA": {
       "AVANZAR": 0.0,
       "GIRAR_IZQUIERDA": 0.0,
-      "GIRAR_DERECHA": 0.0,
+      "GIRAR_DERECHA": 7.42854,
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
@@ -39938,7 +39938,7 @@
     },
     "x4|y7|dE|riskMEDIO|batteryALTA|obsMEDIA|victim0|visitedBAJA": {
       "AVANZAR": -0.78,
-      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_IZQUIERDA": -3.79153,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
@@ -40334,10 +40334,10 @@
     },
     "x0|y7|dE|riskMEDIO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
       "AVANZAR": -0.18,
-      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_IZQUIERDA": -2.61086,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
-      "ESCANEAR": 0.0,
+      "ESCANEAR": -0.48,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
     },
@@ -40540,7 +40540,7 @@
       "VOLVER_BASE": 0.0
     },
     "x8|y2|dN|riskMEDIO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 0.0,
+      "AVANZAR": 0.85568,
       "GIRAR_IZQUIERDA": 0.0,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
@@ -40839,14 +40839,14 @@
     "x7|y6|dN|riskBAJO|batteryALTA|obsLEJOS|victim1|visitedBAJA": {
       "AVANZAR": 0.0,
       "GIRAR_IZQUIERDA": 0.0,
-      "GIRAR_DERECHA": 0.0,
+      "GIRAR_DERECHA": 1.34497,
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
     },
     "x7|y6|dW|riskBAJO|batteryALTA|obsLEJOS|victim1|visitedBAJA": {
-      "AVANZAR": 0.0,
+      "AVANZAR": 6.72,
       "GIRAR_IZQUIERDA": 0.0,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
@@ -40963,8 +40963,8 @@
       "VOLVER_BASE": 0.0
     },
     "x1|y7|dN|riskBAJO|batteryALTA|obsCERCA|victim0|visitedBAJA": {
-      "AVANZAR": 0.0,
-      "GIRAR_IZQUIERDA": 0.0,
+      "AVANZAR": -9.33,
+      "GIRAR_IZQUIERDA": -4.4774,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
@@ -41054,7 +41054,7 @@
     },
     "x5|y2|dN|riskBAJO|batteryMEDIA|obsMEDIA|victim0|visitedBAJA": {
       "AVANZAR": -11.1049,
-      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_IZQUIERDA": 0.01055,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
@@ -41242,7 +41242,7 @@
       "VOLVER_BASE": 0.0
     },
     "x2|y6|dS|riskBAJO|batteryMEDIA|obsMEDIA|victim0|visitedBAJA": {
-      "AVANZAR": 1.47,
+      "AVANZAR": 2.7195,
       "GIRAR_IZQUIERDA": 0.0,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
@@ -41369,7 +41369,7 @@
     },
     "x4|y9|dE|riskMEDIO|batteryMEDIA|obsCERCA|victim0|visitedBAJA": {
       "AVANZAR": 0.0,
-      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_IZQUIERDA": -2.46512,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
@@ -41800,7 +41800,7 @@
       "VOLVER_BASE": 0.0
     },
     "x7|y0|dW|riskBAJO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 4.25411,
+      "AVANZAR": 5.6603,
       "GIRAR_IZQUIERDA": 0.0,
       "GIRAR_DERECHA": -0.41257,
       "RETROCEDER": 0.0,
@@ -42045,7 +42045,7 @@
     "x0|y2|dN|riskBAJO|batteryMEDIA|obsCERCA|victim0|visitedBAJA": {
       "AVANZAR": -8.73,
       "GIRAR_IZQUIERDA": -3.9456,
-      "GIRAR_DERECHA": 0.0,
+      "GIRAR_DERECHA": 0.27,
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
@@ -43026,7 +43026,7 @@
     "x2|y4|dN|riskBAJO|batteryALTA|obsCERCA|victim0|visitedBAJA": {
       "AVANZAR": -7.83,
       "GIRAR_IZQUIERDA": -6.29638,
-      "GIRAR_DERECHA": -5.42947,
+      "GIRAR_DERECHA": -6.74505,
       "RETROCEDER": -7.36353,
       "ESCANEAR": -6.69708,
       "ENVIAR_ALERTA": 0.0,
@@ -43105,10 +43105,10 @@
       "VOLVER_BASE": 0.0
     },
     "x4|y6|dW|riskMEDIO|batteryALTA|obsCERCA|victim0|visitedBAJA": {
-      "AVANZAR": 0.0,
-      "GIRAR_IZQUIERDA": 0.0,
-      "GIRAR_DERECHA": 0.0,
-      "RETROCEDER": 0.0,
+      "AVANZAR": -8.28,
+      "GIRAR_IZQUIERDA": -3.4812,
+      "GIRAR_DERECHA": -5.13,
+      "RETROCEDER": -0.85074,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
@@ -43411,7 +43411,7 @@
       "VOLVER_BASE": 0.0
     },
     "x7|y2|dE|riskBAJO|batteryALTA|obsLEJOS|victim1|visitedBAJA": {
-      "AVANZAR": 4.17,
+      "AVANZAR": 9.13133,
       "GIRAR_IZQUIERDA": 0.0,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
@@ -43924,8 +43924,8 @@
       "VOLVER_BASE": 0.0
     },
     "x8|y1|dW|riskBAJO|batteryMEDIA|obsCERCA|victim0|visitedBAJA": {
-      "AVANZAR": 0.0,
-      "GIRAR_IZQUIERDA": 0.0,
+      "AVANZAR": -5.88,
+      "GIRAR_IZQUIERDA": -1.65519,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
@@ -44106,8 +44106,8 @@
     "x5|y4|dN|riskMEDIO|batteryALTA|obsCERCA|victim0|visitedBAJA": {
       "AVANZAR": -5.43,
       "GIRAR_IZQUIERDA": -2.13,
-      "GIRAR_DERECHA": -2.03995,
-      "RETROCEDER": 0.0,
+      "GIRAR_DERECHA": -2.66305,
+      "RETROCEDER": -7.08,
       "ESCANEAR": -3.25424,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
@@ -44258,7 +44258,7 @@
     },
     "x5|y9|dW|riskMEDIO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
       "AVANZAR": -2.52801,
-      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_IZQUIERDA": -2.25575,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
@@ -44392,7 +44392,7 @@
       "VOLVER_BASE": 0.0
     },
     "x4|y9|dW|riskMEDIO|batteryALTA|obsMEDIA|victim0|visitedBAJA": {
-      "AVANZAR": 0.0,
+      "AVANZAR": 1.47,
       "GIRAR_IZQUIERDA": -7.38,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
@@ -44689,7 +44689,7 @@
       "VOLVER_BASE": 0.0
     },
     "x5|y2|dE|riskBAJO|batteryALTA|obsLEJOS|victim1|visitedBAJA": {
-      "AVANZAR": 8.37409,
+      "AVANZAR": 39.34034,
       "GIRAR_IZQUIERDA": 0.0,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
@@ -45190,7 +45190,7 @@
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
-      "VOLVER_BASE": 12.38926
+      "VOLVER_BASE": 18.86889
     },
     "x2|y7|dE|riskBAJO|batteryALTA|obsCERCA|victim0|visitedBAJA": {
       "AVANZAR": -7.83,
@@ -45581,7 +45581,7 @@
     },
     "x1|y7|dS|riskMEDIO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
       "AVANZAR": -0.78,
-      "GIRAR_IZQUIERDA": -0.48,
+      "GIRAR_IZQUIERDA": -0.888,
       "GIRAR_DERECHA": -3.58155,
       "RETROCEDER": -0.80995,
       "ESCANEAR": -0.48,
@@ -45982,7 +45982,7 @@
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
-      "VOLVER_BASE": 1.92
+      "VOLVER_BASE": 3.58845
     },
     "x5|y4|dE|riskBAJO|batteryBAJA|obsCERCA|victim0|visitedBAJA": {
       "AVANZAR": 0.0,
@@ -45991,7 +45991,7 @@
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
-      "VOLVER_BASE": 22.79035
+      "VOLVER_BASE": 49.47617
     },
     "x4|y6|dW|riskBAJO|batteryMEDIA|obsMEDIA|victim1|visitedBAJA": {
       "AVANZAR": 23.97,
@@ -46333,14 +46333,14 @@
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
-      "VOLVER_BASE": 14.72764
+      "VOLVER_BASE": 28.81037
     },
     "x5|y1|dN|riskBAJO|batteryALTA|obsCERCA|victim0|visitedBAJA": {
       "AVANZAR": -5.88,
-      "GIRAR_IZQUIERDA": -1.95883,
+      "GIRAR_IZQUIERDA": -6.79501,
       "GIRAR_DERECHA": -4.93155,
       "RETROCEDER": -2.55194,
-      "ESCANEAR": 0.0,
+      "ESCANEAR": -3.888,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
     },
@@ -46428,7 +46428,7 @@
     "x3|y6|dN|riskMEDIO|batteryMEDIA|obsMEDIA|victim0|visitedBAJA": {
       "AVANZAR": -5.18543,
       "GIRAR_IZQUIERDA": -0.48,
-      "GIRAR_DERECHA": 0.0,
+      "GIRAR_DERECHA": -0.48,
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
@@ -46585,7 +46585,7 @@
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
-      "VOLVER_BASE": 26.41511
+      "VOLVER_BASE": 29.55383
     },
     "x6|y5|dS|riskBAJO|batteryBAJA|obsCERCA|victim0|visitedBAJA": {
       "AVANZAR": 0.0,
@@ -46594,7 +46594,7 @@
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
-      "VOLVER_BASE": 36.43187
+      "VOLVER_BASE": 64.88058
     },
     "x1|y4|dW|riskMEDIO|batteryALTA|obsMEDIA|victim0|visitedBAJA": {
       "AVANZAR": -3.58155,
@@ -46734,15 +46734,15 @@
     "x8|y4|dE|riskBAJO|batteryALTA|obsCERCA|victim1|visitedBAJA": {
       "AVANZAR": 0.0,
       "GIRAR_IZQUIERDA": 0.0,
-      "GIRAR_DERECHA": 0.0,
+      "GIRAR_DERECHA": -0.40606,
       "RETROCEDER": 0.0,
       "ESCANEAR": 2.89995,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
     },
     "x8|y4|dS|riskBAJO|batteryALTA|obsLEJOS|victim1|visitedBAJA": {
-      "AVANZAR": 4.99214,
-      "GIRAR_IZQUIERDA": 0.0,
+      "AVANZAR": 11.63726,
+      "GIRAR_IZQUIERDA": 0.77938,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
@@ -47544,7 +47544,7 @@
     "x8|y3|dS|riskBAJO|batteryMEDIA|obsMEDIA|victim0|visitedBAJA": {
       "AVANZAR": -3.29234,
       "GIRAR_IZQUIERDA": -0.48,
-      "GIRAR_DERECHA": 0.0,
+      "GIRAR_DERECHA": -0.48,
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
@@ -47992,7 +47992,7 @@
       "VOLVER_BASE": 0.0
     },
     "x8|y3|dS|riskMEDIO|batteryMEDIA|obsMEDIA|victim0|visitedBAJA": {
-      "AVANZAR": 1.47,
+      "AVANZAR": 1.0695,
       "GIRAR_IZQUIERDA": 0.0,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
@@ -48020,10 +48020,10 @@
     },
     "x9|y4|dS|riskBAJO|batteryMEDIA|obsCERCA|victim0|visitedBAJA": {
       "AVANZAR": -7.83,
-      "GIRAR_IZQUIERDA": -3.63,
+      "GIRAR_IZQUIERDA": -6.19401,
       "GIRAR_DERECHA": -5.53155,
-      "RETROCEDER": -1.15305,
-      "ESCANEAR": 0.0,
+      "RETROCEDER": -0.13995,
+      "ESCANEAR": -3.888,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
     },
@@ -48245,7 +48245,7 @@
     },
     "x6|y3|dE|riskMEDIO|batteryALTA|obsMEDIA|victim0|visitedBAJA": {
       "AVANZAR": -1.49355,
-      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_IZQUIERDA": -0.36131,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
@@ -48280,8 +48280,8 @@
       "VOLVER_BASE": 0.0
     },
     "x5|y1|dS|riskMEDIO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": -0.21729,
-      "GIRAR_IZQUIERDA": 0.0,
+      "AVANZAR": 2.73094,
+      "GIRAR_IZQUIERDA": -5.88,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
@@ -48304,14 +48304,14 @@
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
-      "VOLVER_BASE": 5.69887
+      "VOLVER_BASE": 14.01853
     },
     "x4|y7|dE|riskBAJO|batteryALTA|obsMEDIA|victim0|visitedBAJA": {
       "AVANZAR": -21.73978,
       "GIRAR_IZQUIERDA": -5.09332,
       "GIRAR_DERECHA": -0.27682,
-      "RETROCEDER": 0.0,
-      "ESCANEAR": 0.0,
+      "RETROCEDER": -2.84933,
+      "ESCANEAR": -4.98,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
     },
@@ -48601,7 +48601,7 @@
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
-      "VOLVER_BASE": 3.87
+      "VOLVER_BASE": 11.04886
     },
     "x7|y8|dS|riskBAJO|batteryBAJA|obsMEDIA|victim0|visitedBAJA": {
       "AVANZAR": 0.0,
@@ -48849,7 +48849,7 @@
     "x9|y3|dS|riskBAJO|batteryMEDIA|obsCERCA|victim0|visitedBAJA": {
       "AVANZAR": -7.83,
       "GIRAR_IZQUIERDA": -3.63,
-      "GIRAR_DERECHA": 0.0,
+      "GIRAR_DERECHA": -2.13,
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
@@ -49549,7 +49549,7 @@
       "VOLVER_BASE": 0.0
     },
     "x9|y1|dW|riskBAJO|batteryMEDIA|obsMEDIA|victim0|visitedBAJA": {
-      "AVANZAR": 0.0,
+      "AVANZAR": 2.7195,
       "GIRAR_IZQUIERDA": 0.0,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
@@ -49792,7 +49792,7 @@
       "VOLVER_BASE": 0.0
     },
     "x2|y2|dS|riskBAJO|batteryMEDIA|obsLEJOS|victim1|visitedBAJA": {
-      "AVANZAR": 6.16631,
+      "AVANZAR": 35.21136,
       "GIRAR_IZQUIERDA": 0.0,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
@@ -49900,7 +49900,7 @@
       "VOLVER_BASE": 4.5688
     },
     "x4|y7|dE|riskMEDIO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 0.0,
+      "AVANZAR": 0.1402,
       "GIRAR_IZQUIERDA": 0.0,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
@@ -50152,7 +50152,7 @@
       "VOLVER_BASE": 0.0
     },
     "x8|y2|dE|riskBAJO|batteryALTA|obsLEJOS|victim1|visitedBAJA": {
-      "AVANZAR": 8.02088,
+      "AVANZAR": 34.53775,
       "GIRAR_IZQUIERDA": 0.0,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
@@ -50329,7 +50329,7 @@
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
-      "VOLVER_BASE": 6.03095
+      "VOLVER_BASE": 11.09631
     },
     "x2|y7|dW|riskBAJO|batteryBAJA|obsMEDIA|victim0|visitedBAJA": {
       "AVANZAR": 0.0,
@@ -50536,7 +50536,7 @@
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
-      "VOLVER_BASE": 8.37767
+      "VOLVER_BASE": 13.70851
     },
     "x0|y5|dN|riskMEDIO|batteryALTA|obsMEDIA|victim0|visitedBAJA": {
       "AVANZAR": 1.65488,
@@ -51004,7 +51004,7 @@
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
-      "VOLVER_BASE": 0.0
+      "VOLVER_BASE": 8.78802
     },
     "x2|y6|dW|riskMEDIO|batteryBAJA|obsLEJOS|victim0|visitedBAJA": {
       "AVANZAR": 0.0,
@@ -51034,7 +51034,7 @@
       "VOLVER_BASE": 0.0
     },
     "x1|y6|dS|riskMEDIO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 3.31618,
+      "AVANZAR": 4.65191,
       "GIRAR_IZQUIERDA": 0.0,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
@@ -51046,7 +51046,7 @@
       "AVANZAR": -0.26243,
       "GIRAR_IZQUIERDA": -3.29053,
       "GIRAR_DERECHA": -3.18,
-      "RETROCEDER": 0.0,
+      "RETROCEDER": 1.47,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
@@ -51652,7 +51652,7 @@
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
-      "VOLVER_BASE": 0.0
+      "VOLVER_BASE": 6.20346
     },
     "x4|y3|dN|riskBAJO|batteryBAJA|obsCERCA|victim0|visitedBAJA": {
       "AVANZAR": 0.0,
@@ -51661,7 +51661,7 @@
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
-      "VOLVER_BASE": 5.06268
+      "VOLVER_BASE": 10.69822
     },
     "x3|y7|dE|riskMEDIO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
       "AVANZAR": 0.02409,
@@ -51988,11 +51988,11 @@
       "VOLVER_BASE": 0.0
     },
     "x0|y1|dN|riskBAJO|batteryMEDIA|obsCERCA|victim0|visitedBAJA": {
-      "AVANZAR": 0.0,
-      "GIRAR_IZQUIERDA": 0.0,
+      "AVANZAR": -10.83,
+      "GIRAR_IZQUIERDA": -6.63,
       "GIRAR_DERECHA": -0.93,
       "RETROCEDER": 0.0,
-      "ESCANEAR": 0.72,
+      "ESCANEAR": -4.18518,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
     },
@@ -52233,7 +52233,7 @@
     "x2|y6|dS|riskBAJO|batteryMEDIA|obsCERCA|victim0|visitedBAJA": {
       "AVANZAR": -5.88,
       "GIRAR_IZQUIERDA": -2.12751,
-      "GIRAR_DERECHA": 0.0,
+      "GIRAR_DERECHA": 0.27,
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
@@ -52456,8 +52456,8 @@
       "VOLVER_BASE": 11.47923
     },
     "x1|y1|dW|riskBAJO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": -2.6232,
-      "GIRAR_IZQUIERDA": -0.48,
+      "AVANZAR": 0.82424,
+      "GIRAR_IZQUIERDA": -4.15185,
       "GIRAR_DERECHA": -4.38,
       "RETROCEDER": -1.00254,
       "ESCANEAR": -2.4708,
@@ -52853,15 +52853,15 @@
     },
     "x8|y0|dN|riskBAJO|batteryALTA|obsMEDIA|victim0|visitedBAJA": {
       "AVANZAR": -1.23,
-      "GIRAR_IZQUIERDA": -0.08246,
+      "GIRAR_IZQUIERDA": -3.04203,
       "GIRAR_DERECHA": -0.48,
-      "RETROCEDER": 0.0,
-      "ESCANEAR": 0.0,
+      "RETROCEDER": -1.85254,
+      "ESCANEAR": -2.28,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
     },
     "x8|y0|dW|riskBAJO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 8.20783,
+      "AVANZAR": 9.02096,
       "GIRAR_IZQUIERDA": 0.0,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
@@ -53047,7 +53047,7 @@
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
-      "VOLVER_BASE": 4.55445
+      "VOLVER_BASE": 8.19128
     },
     "x2|y0|dE|riskMEDIO|batteryBAJA|obsMEDIA|victim0|visitedBAJA": {
       "AVANZAR": 0.0,
@@ -53167,7 +53167,7 @@
       "VOLVER_BASE": 4.73295
     },
     "x9|y3|dW|riskBAJO|batteryALTA|obsMEDIA|victim0|visitedBAJA": {
-      "AVANZAR": 1.47,
+      "AVANZAR": 2.7195,
       "GIRAR_IZQUIERDA": 0.0,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
@@ -53452,7 +53452,7 @@
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
-      "VOLVER_BASE": 6.30976
+      "VOLVER_BASE": 14.23747
     },
     "x9|y6|dS|riskBAJO|batteryBAJA|obsMEDIA|victim0|visitedBAJA": {
       "AVANZAR": 0.0,
@@ -53734,10 +53734,10 @@
       "VOLVER_BASE": 0.0
     },
     "x8|y1|dN|riskBAJO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 2.70642,
+      "AVANZAR": -1.9255,
       "GIRAR_IZQUIERDA": -4.38,
       "GIRAR_DERECHA": 0.0,
-      "RETROCEDER": 1.70537,
+      "RETROCEDER": -0.67328,
       "ESCANEAR": 0.95022,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
@@ -54217,7 +54217,7 @@
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
-      "VOLVER_BASE": 9.8144
+      "VOLVER_BASE": 31.49461
     },
     "x5|y3|dN|riskBAJO|batteryBAJA|obsLEJOS|victim1|visitedBAJA": {
       "AVANZAR": 0.0,
@@ -54748,7 +54748,7 @@
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
-      "VOLVER_BASE": 0.0
+      "VOLVER_BASE": 5.42501
     },
     "x4|y8|dS|riskMEDIO|batteryBAJA|obsMEDIA|victim0|visitedBAJA": {
       "AVANZAR": 0.0,
@@ -55356,7 +55356,7 @@
     "x4|y4|dN|riskMEDIO|batteryALTA|obsCERCA|victim0|visitedBAJA": {
       "AVANZAR": -7.68,
       "GIRAR_IZQUIERDA": -1.37189,
-      "GIRAR_DERECHA": 0.0,
+      "GIRAR_DERECHA": 0.99795,
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
@@ -55417,7 +55417,7 @@
       "VOLVER_BASE": 0.0
     },
     "x8|y2|dN|riskMEDIO|batteryMEDIA|obsMEDIA|victim0|visitedBAJA": {
-      "AVANZAR": 1.47,
+      "AVANZAR": 2.7195,
       "GIRAR_IZQUIERDA": 0.0,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
@@ -55428,7 +55428,7 @@
     "x8|y1|dN|riskMEDIO|batteryMEDIA|obsCERCA|victim0|visitedBAJA": {
       "AVANZAR": -5.88,
       "GIRAR_IZQUIERDA": -2.13,
-      "GIRAR_DERECHA": 0.0,
+      "GIRAR_DERECHA": 0.29082,
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
@@ -55588,7 +55588,7 @@
       "VOLVER_BASE": 0.0
     },
     "x5|y1|dW|riskMEDIO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 0.57,
+      "AVANZAR": 1.66836,
       "GIRAR_IZQUIERDA": 0.0,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
@@ -55707,9 +55707,9 @@
     "x1|y1|dS|riskBAJO|batteryMEDIA|obsCERCA|victim0|visitedBAJA": {
       "AVANZAR": -5.43,
       "GIRAR_IZQUIERDA": -1.8145,
-      "GIRAR_DERECHA": -2.13,
-      "RETROCEDER": 0.0,
-      "ESCANEAR": 0.0,
+      "GIRAR_DERECHA": -7.5405,
+      "RETROCEDER": -1.82475,
+      "ESCANEAR": -4.98,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
     },
@@ -55984,7 +55984,7 @@
       "VOLVER_BASE": 0.0
     },
     "x5|y2|dN|riskMEDIO|batteryMEDIA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": -1.23,
+      "AVANZAR": 0.64615,
       "GIRAR_IZQUIERDA": -6.48,
       "GIRAR_DERECHA": -0.33367,
       "RETROCEDER": 0.0,
@@ -56287,7 +56287,7 @@
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
-      "VOLVER_BASE": 4.32
+      "VOLVER_BASE": 16.85161
     },
     "x2|y4|dS|riskBAJO|batteryBAJA|obsCERCA|victim0|visitedBAJA": {
       "AVANZAR": 0.0,
@@ -56377,7 +56377,7 @@
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
-      "VOLVER_BASE": 31.89033
+      "VOLVER_BASE": 39.18657
     },
     "x8|y6|dW|riskBAJO|batteryALTA|obsMEDIA|victim0|visitedBAJA": {
       "AVANZAR": 0.0,
@@ -56490,7 +56490,7 @@
     "x7|y8|dW|riskMEDIO|batteryMEDIA|obsMEDIA|victim0|visitedBAJA": {
       "AVANZAR": -1.64694,
       "GIRAR_IZQUIERDA": -4.68,
-      "GIRAR_DERECHA": 0.0,
+      "GIRAR_DERECHA": -0.48,
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
@@ -56590,8 +56590,8 @@
       "AVANZAR": 0.0,
       "GIRAR_IZQUIERDA": 0.0,
       "GIRAR_DERECHA": 0.0,
-      "RETROCEDER": 0.7817,
-      "ESCANEAR": 0.0,
+      "RETROCEDER": 1.34654,
+      "ESCANEAR": -0.37447,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
     },
@@ -56629,7 +56629,7 @@
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
-      "VOLVER_BASE": 0.0
+      "VOLVER_BASE": 7.08406
     },
     "x7|y5|dS|riskBAJO|batteryBAJA|obsCERCA|victim1|visitedBAJA": {
       "AVANZAR": 0.0,
@@ -56696,7 +56696,7 @@
     },
     "x2|y0|dE|riskBAJO|batteryALTA|obsCERCA|victim0|visitedBAJA": {
       "AVANZAR": -10.83,
-      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_IZQUIERDA": -4.53,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
@@ -57289,9 +57289,9 @@
       "VOLVER_BASE": 9.97315
     },
     "x8|y0|dE|riskBAJO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 1.47,
-      "GIRAR_IZQUIERDA": 0.0,
-      "GIRAR_DERECHA": 0.0,
+      "AVANZAR": -0.55496,
+      "GIRAR_IZQUIERDA": -2.28,
+      "GIRAR_DERECHA": -4.38,
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
@@ -57875,7 +57875,7 @@
     },
     "x4|y6|dN|riskMEDIO|batteryMEDIA|obsCERCA|victim0|visitedBAJA": {
       "AVANZAR": 0.0,
-      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_IZQUIERDA": -31.66931,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
@@ -57892,7 +57892,7 @@
       "VOLVER_BASE": 0.0
     },
     "x5|y9|dW|riskMEDIO|batteryALTA|obsMEDIA|victim0|visitedBAJA": {
-      "AVANZAR": 0.0,
+      "AVANZAR": -0.88368,
       "GIRAR_IZQUIERDA": 0.0,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
@@ -58018,10 +58018,10 @@
       "VOLVER_BASE": 0.0
     },
     "x9|y7|dS|riskMEDIO|batteryMEDIA|obsMEDIA|victim0|visitedBAJA": {
-      "AVANZAR": 0.0,
-      "GIRAR_IZQUIERDA": 0.0,
+      "AVANZAR": -1.98,
+      "GIRAR_IZQUIERDA": -4.08,
       "GIRAR_DERECHA": 0.0,
-      "RETROCEDER": 0.0,
+      "RETROCEDER": 4.79967,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
@@ -58063,7 +58063,7 @@
       "VOLVER_BASE": 0.0
     },
     "x1|y7|dN|riskBAJO|batteryALTA|obsMEDIA|victim0|visitedBAJA": {
-      "AVANZAR": 0.0,
+      "AVANZAR": -7.83,
       "GIRAR_IZQUIERDA": 0.0,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
@@ -58144,8 +58144,8 @@
       "VOLVER_BASE": 0.0
     },
     "x1|y1|dN|riskMEDIO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
-      "AVANZAR": 0.0,
-      "GIRAR_IZQUIERDA": 0.0,
+      "AVANZAR": 1.02,
+      "GIRAR_IZQUIERDA": -1.74671,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
@@ -58153,7 +58153,7 @@
       "VOLVER_BASE": 0.0
     },
     "x2|y6|dS|riskMEDIO|batteryMEDIA|obsMEDIA|victim0|visitedBAJA": {
-      "AVANZAR": 0.0,
+      "AVANZAR": -8.73,
       "GIRAR_IZQUIERDA": 0.0,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
@@ -58216,7 +58216,7 @@
       "VOLVER_BASE": 0.0
     },
     "x8|y0|dN|riskMEDIO|batteryALTA|obsMEDIA|victim0|visitedBAJA": {
-      "AVANZAR": 0.0,
+      "AVANZAR": 1.50645,
       "GIRAR_IZQUIERDA": 0.0,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
@@ -58252,7 +58252,7 @@
       "VOLVER_BASE": 0.0
     },
     "x4|y8|dN|riskMEDIO|batteryMEDIA|obsMEDIA|victim0|visitedBAJA": {
-      "AVANZAR": 0.0,
+      "AVANZAR": -8.28,
       "GIRAR_IZQUIERDA": 0.0,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
@@ -58281,7 +58281,7 @@
     "x8|y3|dN|riskBAJO|batteryALTA|obsCERCA|victim0|visitedBAJA": {
       "AVANZAR": 0.0,
       "GIRAR_IZQUIERDA": 0.0,
-      "GIRAR_DERECHA": 0.0,
+      "GIRAR_DERECHA": 0.67137,
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
@@ -58423,8 +58423,8 @@
       "VOLVER_BASE": 0.0
     },
     "x8|y0|dW|riskBAJO|batteryALTA|obsCERCA|victim0|visitedBAJA": {
-      "AVANZAR": 0.0,
-      "GIRAR_IZQUIERDA": 0.0,
+      "AVANZAR": -5.43,
+      "GIRAR_IZQUIERDA": -2.13,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
@@ -58657,7 +58657,7 @@
       "VOLVER_BASE": 0.0
     },
     "x8|y2|dS|riskBAJO|batteryMEDIA|obsMEDIA|victim0|visitedBAJA": {
-      "AVANZAR": 0.0,
+      "AVANZAR": 1.02,
       "GIRAR_IZQUIERDA": 0.0,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
@@ -58963,9 +58963,9 @@
       "VOLVER_BASE": 0.0
     },
     "x8|y0|dS|riskBAJO|batteryMEDIA|obsMEDIA|victim0|visitedBAJA": {
-      "AVANZAR": 0.0,
+      "AVANZAR": -3.78,
       "GIRAR_IZQUIERDA": 0.0,
-      "GIRAR_DERECHA": 0.0,
+      "GIRAR_DERECHA": -3.95679,
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
@@ -59098,7 +59098,7 @@
       "VOLVER_BASE": 0.0
     },
     "x9|y3|dS|riskBAJO|batteryALTA|obsMEDIA|victim0|visitedBAJA": {
-      "AVANZAR": 0.0,
+      "AVANZAR": 1.62581,
       "GIRAR_IZQUIERDA": 0.0,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
@@ -59152,8 +59152,8 @@
       "VOLVER_BASE": 0.0
     },
     "x4|y8|dN|riskMEDIO|batteryMEDIA|obsCERCA|victim0|visitedBAJA": {
-      "AVANZAR": 0.0,
-      "GIRAR_IZQUIERDA": 0.0,
+      "AVANZAR": -5.43,
+      "GIRAR_IZQUIERDA": -3.63,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
@@ -59269,8 +59269,8 @@
       "VOLVER_BASE": 0.0
     },
     "x6|y7|dW|riskBAJO|batteryMEDIA|obsCERCA|victim0|visitedBAJA": {
-      "AVANZAR": 0.0,
-      "GIRAR_IZQUIERDA": 0.0,
+      "AVANZAR": -7.83,
+      "GIRAR_IZQUIERDA": -8.33566,
       "GIRAR_DERECHA": 0.0,
       "RETROCEDER": 0.0,
       "ESCANEAR": 0.0,
@@ -59424,8 +59424,8 @@
     "x4|y6|dW|riskMEDIO|batteryMEDIA|obsCERCA|victim0|visitedBAJA": {
       "AVANZAR": 0.0,
       "GIRAR_IZQUIERDA": 0.0,
-      "GIRAR_DERECHA": 0.0,
-      "RETROCEDER": 0.0,
+      "GIRAR_DERECHA": -27.91415,
+      "RETROCEDER": -0.62568,
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
@@ -59503,6 +59503,420 @@
       "VOLVER_BASE": 0.0
     },
     "x7|y8|dS|riskMEDIO|batteryMEDIA|obsCERCA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x7|y9|dN|riskBAJO|batteryALTA|obsCERCA|victim0|visitedBAJA": {
+      "AVANZAR": -7.83,
+      "GIRAR_IZQUIERDA": -2.66637,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x4|y8|dW|riskMEDIO|batteryMEDIA|obsCERCA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x8|y0|dW|riskBAJO|batteryALTA|obsMEDIA|victim0|visitedBAJA": {
+      "AVANZAR": 1.47,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x8|y0|dS|riskBAJO|batteryALTA|obsMEDIA|victim0|visitedBAJA": {
+      "AVANZAR": 1.47,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x8|y0|dS|riskBAJO|batteryALTA|obsCERCA|victim0|visitedBAJA": {
+      "AVANZAR": -5.43,
+      "GIRAR_IZQUIERDA": -2.13,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": -2.13,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x1|y1|dW|riskMEDIO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
+      "AVANZAR": 1.47,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x3|y1|dE|riskBAJO|batteryBAJA|obsCERCA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 6.61354
+    },
+    "x5|y3|dE|riskMEDIO|batteryBAJA|obsMEDIA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 13.19851
+    },
+    "x8|y5|dS|riskMEDIO|batteryBAJA|obsMEDIA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x2|y7|dW|riskMEDIO|batteryBAJA|obsCERCA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 17.26789
+    },
+    "x6|y5|dW|riskBAJO|batteryALTA|obsMEDIA|victim0|visitedBAJA": {
+      "AVANZAR": -8.51183,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x2|y6|dW|riskBAJO|batteryMEDIA|obsLEJOS|victim1|visitedBAJA": {
+      "AVANZAR": 6.96841,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x1|y6|dW|riskBAJO|batteryMEDIA|obsLEJOS|victim1|visitedBAJA": {
+      "AVANZAR": 6.72,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x1|y6|dW|riskMEDIO|batteryMEDIA|obsLEJOS|victim1|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x1|y6|dW|riskMEDIO|batteryMEDIA|obsMEDIA|victim1|visitedBAJA": {
+      "AVANZAR": 29.52,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x2|y7|dS|riskMEDIO|batteryBAJA|obsLEJOS|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 10.78192
+    },
+    "x5|y8|dS|riskBAJO|batteryALTA|obsCERCA|victim1|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.72,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x5|y8|dW|riskBAJO|batteryALTA|obsMEDIA|victim1|visitedBAJA": {
+      "AVANZAR": 30.01229,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x4|y9|dE|riskMEDIO|batteryALTA|obsCERCA|victim0|visitedBAJA": {
+      "AVANZAR": -5.43,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x4|y9|dE|riskBAJO|batteryALTA|obsCERCA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x2|y9|dW|riskBAJO|batteryBAJA|obsMEDIA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 5.91544
+    },
+    "x2|y9|dW|riskBAJO|batteryBAJA|obsCERCA|victim1|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x2|y9|dW|riskBAJO|batteryBAJA|obsCERCA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 6.58247
+    },
+    "x3|y9|dW|riskMEDIO|batteryBAJA|obsMEDIA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 5.89738
+    },
+    "x3|y8|dW|riskBAJO|batteryBAJA|obsCERCA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 5.3652
+    },
+    "x3|y7|dW|riskBAJO|batteryBAJA|obsMEDIA|victim1|visitedBAJA": {
+      "AVANZAR": 28.08418,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x2|y7|dW|riskMEDIO|batteryBAJA|obsMEDIA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x5|y4|dS|riskMEDIO|batteryALTA|obsCERCA|victim0|visitedBAJA": {
+      "AVANZAR": -12.33,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x5|y1|dE|riskMEDIO|batteryMEDIA|obsMEDIA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x9|y3|dN|riskMEDIO|batteryALTA|obsCERCA|victim0|visitedBAJA": {
+      "AVANZAR": -6.33,
+      "GIRAR_IZQUIERDA": -2.13,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x9|y3|dW|riskMEDIO|batteryALTA|obsMEDIA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x8|y2|dN|riskMEDIO|batteryBAJA|obsMEDIA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 4.32
+    },
+    "x8|y2|dN|riskMEDIO|batteryBAJA|obsLEJOS|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 5.87256
+    },
+    "x7|y4|dN|riskMEDIO|batteryBAJA|obsMEDIA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x1|y7|dE|riskMEDIO|batteryMEDIA|obsCERCA|victim0|visitedBAJA": {
+      "AVANZAR": -10.53,
+      "GIRAR_IZQUIERDA": -6.33,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x0|y4|dS|riskBAJO|batteryBAJA|obsLEJOS|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 11.239
+    },
+    "x2|y6|dS|riskMEDIO|batteryMEDIA|obsCERCA|victim0|visitedBAJA": {
+      "AVANZAR": -5.88,
+      "GIRAR_IZQUIERDA": -3.49358,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x4|y6|dN|riskMEDIO|batteryALTA|obsCERCA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": -11.3655,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x4|y6|dW|riskMEDIO|batteryBAJA|obsCERCA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 7.57787
+    },
+    "x8|y8|dS|riskMEDIO|batteryALTA|obsLEJOS|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x8|y8|dW|riskMEDIO|batteryALTA|obsMEDIA|victim0|visitedBAJA": {
+      "AVANZAR": 1.66845,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x0|y0|dE|riskBAJO|batteryBAJA|obsLEJOS|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x1|y0|dE|riskBAJO|batteryBAJA|obsMEDIA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 4.32
+    },
+    "x2|y0|dE|riskMEDIO|batteryBAJA|obsCERCA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 3.87
+    },
+    "x5|y2|dE|riskMEDIO|batteryBAJA|obsMEDIA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 8.3367
+    },
+    "x5|y3|dE|riskBAJO|batteryBAJA|obsCERCA|victim0|visitedBAJA": {
       "AVANZAR": 0.0,
       "GIRAR_IZQUIERDA": 0.0,
       "GIRAR_DERECHA": 0.0,
