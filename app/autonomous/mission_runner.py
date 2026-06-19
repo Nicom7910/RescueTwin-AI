@@ -332,6 +332,15 @@ class AutonomousMissionRunner:
             json.dumps(trajectory, indent=2, ensure_ascii=False),
             encoding="utf-8",
         )
+        world_path = self.output_dir / f"mission_{episode:03d}_world.json"
+        world_path.write_text(
+            json.dumps(
+                world.to_unity_world_dict(mission_number=episode),
+                indent=2,
+                ensure_ascii=False,
+            ),
+            encoding="utf-8",
+        )
 
         return {
             "episode": episode,
@@ -345,6 +354,7 @@ class AutonomousMissionRunner:
             "finish_reason": finish_reason,
             "known_map_file": str(map_path),
             "trajectory_file": str(trajectory_path),
+            "world_file": str(world_path),
         }
 
     def _get_blocked_actions(

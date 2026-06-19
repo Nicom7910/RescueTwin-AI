@@ -36767,6 +36767,42 @@
       "ESCANEAR": 0.0,
       "ENVIAR_ALERTA": 0.0,
       "VOLVER_BASE": 0.0
+    },
+    "x2|y2|dW|riskMEDIO|batteryALTA|obsMEDIA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x2|y2|dW|riskMEDIO|batteryALTA|obsCERCA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x2|y2|dS|riskMEDIO|batteryALTA|obsCERCA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
+    },
+    "x2|y2|dS|riskMEDIO|batteryMEDIA|obsMEDIA|victim0|visitedBAJA": {
+      "AVANZAR": 0.0,
+      "GIRAR_IZQUIERDA": 0.0,
+      "GIRAR_DERECHA": 0.0,
+      "RETROCEDER": 0.0,
+      "ESCANEAR": 0.0,
+      "ENVIAR_ALERTA": 0.0,
+      "VOLVER_BASE": 0.0
     }
   }
 }

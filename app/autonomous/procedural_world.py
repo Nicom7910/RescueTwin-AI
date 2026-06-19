@@ -67,6 +67,7 @@ class ProceduralWorld:
         self.visited: Set[Position] = {self.base}
 
         self._generate_world()
+        self.initial_victims: Set[Position] = set(self.victims)
 
     def _generate_world(self) -> None:
         total_cells = self.width * self.height
@@ -398,3 +399,118 @@ class ProceduralWorld:
             lines.append("".join(row))
 
         return "\n".join(lines)
+
+    def to_unity_world_dict(self, mission_number: int | None = None) -> Dict:
+        """
+        Exporta el mundo procedural real para Unity.
+
+        Unity usa este archivo para construir visualmente:
+        - tamaño del mapa
+        - base
+        - obstáculos reales
+        - víctimas reales iniciales
+        - celdas de riesgo reales
+        """
+
+        victims_source = getattr(self, "initial_victims", self.victims)
+
+        return {
+            "mission": mission_number,
+            "width": self.width,
+            "height": self.height,
+            "base": self._position_to_dict(self.base),
+            "obstacles": self._positions_to_list(self.obstacles),
+            "victims": self._positions_to_list(victims_source),
+            "risk_cells": self._build_unity_risk_cells(),
+        }
+
+    def _positions_to_list(self, positions: Set[Position]) -> List[Dict]:
+        return [
+            self._position_to_dict(position)
+            for position in sorted(positions)
+        ]
+
+    def _position_to_dict(self, position: Position) -> Dict:
+        x, y = position
+        return {
+            "x": x,
+            "y": y,
+        }
+
+    def _build_unity_risk_cells(self) -> List[Dict]:
+        """
+        Construye celdas de riesgo para Unity a partir de los mapas internos.
+
+        No inventa zonas visuales:
+        usa gas_map, temperature_map, vibration_map e inclination_map.
+        """
+
+        all_positions = set()
+        all_positions.update(self.gas_map.keys())
+        all_positions.update(self.temperature_map.keys())
+        all_positions.update(self.vibration_map.keys())
+        all_positions.update(self.inclination_map.keys())
+
+        risk_cells = []
+
+        for position in sorted(all_positions):
+            if position in self.obstacles:
+                continue
+
+            risk_level, risk_score = self._estimate_unity_risk_level(position)
+
+            if risk_level == "BAJO":
+                continue
+
+            x, y = position
+
+            risk_cells.append(
+                {
+                    "x": x,
+                    "y": y,
+                    "level": risk_level,
+                    "score": round(risk_score, 3),
+                    "gas": round(self.gas_map.get(position, 0), 2),
+                    "temperature": round(self.temperature_map.get(position, 0), 2),
+                    "vibration": round(self.vibration_map.get(position, 0), 3),
+                    "inclination": round(self.inclination_map.get(position, 0), 2),
+                }
+            )
+
+        return risk_cells
+
+    def _estimate_unity_risk_level(self, position: Position) -> Tuple[str, float]:
+        gas = self.gas_map.get(position, 0)
+        temperature = self.temperature_map.get(position, 0)
+        vibration = self.vibration_map.get(position, 0)
+        inclination = self.inclination_map.get(position, 0)
+
+        score = 0.0
+
+        if gas >= 160:
+            score += 1.2
+        elif gas >= 90:
+            score += 0.6
+
+        if temperature >= 42:
+            score += 1.0
+        elif temperature >= 32:
+            score += 0.5
+
+        if vibration >= 0.7:
+            score += 1.1
+        elif vibration >= 0.4:
+            score += 0.6
+
+        if inclination >= 15:
+            score += 1.0
+        elif inclination >= 8:
+            score += 0.5
+
+        if score >= 2.2:
+            return "ALTO", score
+
+        if score >= 1.0:
+            return "MEDIO", score
+
+        return "BAJO", score
