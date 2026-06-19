@@ -25,9 +25,11 @@ class AutonomousMissionRunner:
     - bloqueo temporal de acciones inútiles
     - control anti-oscilación
     - filtrado de acciones inválidas
+    - modo búsqueda de víctima
     - modo retorno de emergencia por batería baja
     - modo escape ante estancamiento operativo
     - acción forzada de escape cuando el agente queda trabado
+    - exportación de trayectoria y mundo procedural para Unity
     """
 
     def __init__(
@@ -106,8 +108,13 @@ class AutonomousMissionRunner:
         collisions = 0
         trajectory = []
         recent_steps: List[Dict] = []
+
         return_to_base_mode = False
+        victim_search_mode = False
+        victim_search_steps_remaining = 0
+
         finish_reason = "max_steps"
+        last_victim_location: Optional[Position] = None
 
         if verbose:
             print("\n" + "=" * 96)
@@ -128,6 +135,27 @@ class AutonomousMissionRunner:
             previous_position = world.current_position()
             previously_visited = set(world.visited)
 
+            # -----------------------------------------------------------------
+            # Activación de modos operativos
+            # -----------------------------------------------------------------
+
+            # Modo búsqueda de víctima:
+            # Si los sensores detectan una posible víctima, el robot prioriza
+            # localizarla durante algunos pasos, siempre que la batería no esté baja.
+            if state.victim_detected and state.battery_level != "BAJA":
+                victim_search_mode = True
+                victim_search_steps_remaining = 8
+
+            if victim_search_steps_remaining <= 0:
+                victim_search_mode = False
+
+            # Modo retorno de emergencia:
+            # Si la batería baja, se abandona exploración/búsqueda y se vuelve a base.
+            if state.battery_level == "BAJA" and world.current_position() != world.base:
+                return_to_base_mode = True
+                victim_search_mode = False
+                victim_search_steps_remaining = 0
+
             blocked_actions = self._get_blocked_actions(
                 recent_steps,
                 previous_position,
@@ -136,7 +164,12 @@ class AutonomousMissionRunner:
                 self._get_oscillation_blocked_actions(recent_steps)
             )
             blocked_actions.update(
-                self._get_invalid_actions(state, world, recent_steps)
+                self._get_invalid_actions(
+                    state=state,
+                    world=world,
+                    recent_steps=recent_steps,
+                    victim_search_mode=victim_search_mode,
+                )
             )
 
             # Modo escape:
@@ -144,24 +177,35 @@ class AutonomousMissionRunner:
             # y luego se fuerza una acción de escape.
             escape_mode = self._is_stuck(recent_steps)
 
-            if escape_mode and state.battery_level != "BAJA":
+            if escape_mode and state.battery_level != "BAJA" and not victim_search_mode:
                 blocked_actions.add(RobotAction.ESCANEAR.value)
                 blocked_actions.add(RobotAction.ENVIAR_ALERTA.value)
 
                 if state.obstacle_level == "CERCA":
                     blocked_actions.add(RobotAction.AVANZAR.value)
 
-            # Modo retorno de emergencia:
-            # si la batería está baja, el robot deja de explorar y vuelve a base.
-            if state.battery_level == "BAJA" and world.current_position() != world.base:
-                return_to_base_mode = True
-
             # En batería baja, VOLVER_BASE nunca debe quedar bloqueada.
             if state.battery_level == "BAJA":
                 blocked_actions.discard(RobotAction.VOLVER_BASE.value)
 
+            # En búsqueda de víctima, no se vuelve a base si no hay emergencia.
+            if victim_search_mode and state.battery_level != "BAJA":
+                blocked_actions.add(RobotAction.VOLVER_BASE.value)
+
+            # -----------------------------------------------------------------
+            # Selección de acción
+            # -----------------------------------------------------------------
+
             if return_to_base_mode and world.current_position() != world.base:
                 action = RobotAction.VOLVER_BASE.value
+
+            elif victim_search_mode and state.battery_level != "BAJA":
+                action = self._choose_victim_search_action(
+                    state=state,
+                    recent_steps=recent_steps,
+                    blocked_actions=blocked_actions,
+                )
+                victim_search_steps_remaining -= 1
 
             elif escape_mode and state.battery_level != "BAJA":
                 action = self._choose_escape_action(
@@ -211,12 +255,34 @@ class AutonomousMissionRunner:
                 recent_position_revisits=recent_position_revisits,
             )
 
+            # Refuerzo adicional para modo búsqueda:
+            # si había señal de víctima y se confirma localización, se premia fuerte.
+            # si hay señal y el robot actúa en consecuencia, se premia levemente.
+            if victim_search_mode and state.battery_level != "BAJA":
+                if result.reached_victim:
+                    reward += 80
+                elif action in {
+                    RobotAction.ESCANEAR.value,
+                    RobotAction.AVANZAR.value,
+                    RobotAction.GIRAR_DERECHA.value,
+                    RobotAction.GIRAR_IZQUIERDA.value,
+                }:
+                    reward += 8
+
             if training:
                 self.agent.learn(state, action, reward, next_state)
 
             total_reward += reward
             victims_found += int(result.reached_victim)
             collisions += int(result.collided)
+
+            victim_found_x = next_state.x if result.reached_victim else None
+            victim_found_y = next_state.y if result.reached_victim else None
+
+            if result.reached_victim:
+                last_victim_location = current_position
+                victim_search_mode = False
+                victim_search_steps_remaining = 0
 
             row = {
                 "episode": episode,
@@ -229,6 +295,11 @@ class AutonomousMissionRunner:
                 "battery_level": state.battery_level,
                 "obstacle_level": state.obstacle_level,
                 "victim_detected": state.victim_detected,
+                "victim_search_mode": victim_search_mode,
+                "victim_search_steps_remaining": victim_search_steps_remaining,
+                "victim_found": result.reached_victim,
+                "victim_x": victim_found_x,
+                "victim_y": victim_found_y,
                 "blocked_actions": ",".join(sorted(blocked_actions)),
                 "repeated_action_count": repeated_action_count,
                 "same_position_count": same_position_count,
@@ -257,6 +328,7 @@ class AutonomousMissionRunner:
                     "moved": result.moved,
                     "collided": result.collided,
                     "victim_detected": state.victim_detected,
+                    "victim_search_mode": victim_search_mode,
                     "reward": reward,
                 }
             )
@@ -273,6 +345,12 @@ class AutonomousMissionRunner:
                     "blocked_actions": sorted(blocked_actions),
                     "escape_mode": escape_mode,
                     "return_to_base_mode": return_to_base_mode,
+                    "victim_detected": next_state.victim_detected,
+                    "victim_search_mode": victim_search_mode,
+                    "victim_found": result.reached_victim,
+                    "victim_x": victim_found_x,
+                    "victim_y": victim_found_y,
+                    "message": result.message,
                 }
             )
 
@@ -284,10 +362,20 @@ class AutonomousMissionRunner:
                 )
 
                 mode_text = ""
+
                 if return_to_base_mode:
                     mode_text += " | modo=RETORNO"
+                elif victim_search_mode:
+                    mode_text += " | modo=BÚSQUEDA_VÍCTIMA"
                 elif escape_mode:
                     mode_text += " | modo=ESCAPE"
+
+                victim_text = ""
+
+                if result.reached_victim:
+                    victim_text = f" | víctima_localizada=({next_state.x},{next_state.y})"
+                elif state.victim_detected:
+                    victim_text = " | señal_víctima=True"
 
                 print(
                     f"t={step:03d} | pos=({state.x:02d},{state.y:02d}) "
@@ -299,7 +387,8 @@ class AutonomousMissionRunner:
                     f"| acción={action:<15} "
                     f"| reward={reward:>6.2f}"
                     f"{blocked_text}"
-                    f"{mode_text} "
+                    f"{mode_text}"
+                    f"{victim_text} "
                     f"| {result.message}"
                 )
 
@@ -332,6 +421,7 @@ class AutonomousMissionRunner:
             json.dumps(trajectory, indent=2, ensure_ascii=False),
             encoding="utf-8",
         )
+
         world_path = self.output_dir / f"mission_{episode:03d}_world.json"
         world_path.write_text(
             json.dumps(
@@ -341,6 +431,14 @@ class AutonomousMissionRunner:
             ),
             encoding="utf-8",
         )
+
+        last_victim_location_dict = None
+
+        if last_victim_location is not None:
+            last_victim_location_dict = {
+                "x": last_victim_location[0],
+                "y": last_victim_location[1],
+            }
 
         return {
             "episode": episode,
@@ -352,6 +450,7 @@ class AutonomousMissionRunner:
             "visited_ratio": round(world.visited_ratio(), 3),
             "battery_final": round(world.battery, 2),
             "finish_reason": finish_reason,
+            "last_victim_location": last_victim_location_dict,
             "known_map_file": str(map_path),
             "trajectory_file": str(trajectory_path),
             "world_file": str(world_path),
@@ -486,6 +585,7 @@ class AutonomousMissionRunner:
         state,
         world,
         recent_steps: List[Dict],
+        victim_search_mode: bool = False,
     ) -> Set[str]:
         """
         Bloquea acciones que no tienen sentido operativo.
@@ -496,6 +596,7 @@ class AutonomousMissionRunner:
         - alertar sin víctima, sin riesgo y sin batería baja
         - escanear repetidamente sin señales relevantes
         - volver a base demasiado pronto sin emergencia
+        - en modo búsqueda de víctima, evitar abandonar la zona
         """
 
         blocked: Set[str] = set()
@@ -541,9 +642,19 @@ class AutonomousMissionRunner:
             state.battery_level in {"ALTA", "MEDIA"}
             and state.risk_level != "ALTO"
             and not state.victim_detected
+            and not victim_search_mode
             and current_position != world.base
         ):
             blocked.add(RobotAction.VOLVER_BASE.value)
+
+        # En modo búsqueda, no se abandona el área salvo emergencia.
+        if victim_search_mode and state.battery_level != "BAJA":
+            blocked.add(RobotAction.VOLVER_BASE.value)
+            blocked.add(RobotAction.ENVIAR_ALERTA.value)
+
+            # Si ya escaneó muchas veces, no seguir escaneando eternamente.
+            if last_actions.count(RobotAction.ESCANEAR.value) >= 2:
+                blocked.add(RobotAction.ESCANEAR.value)
 
         # Con batería baja se prioriza volver a base.
         # No bloqueamos todo, porque puede necesitar evitar obstáculos,
@@ -608,6 +719,51 @@ class AutonomousMissionRunner:
             or repeated_turns
             or negative_rewards >= 4
         )
+
+    def _choose_victim_search_action(
+        self,
+        state,
+        recent_steps: List[Dict],
+        blocked_actions: Set[str],
+    ) -> str:
+        """
+        Política simple de búsqueda de víctima.
+
+        Se activa cuando los sensores detectan una posible víctima.
+        No conoce la ubicación real de la víctima.
+        Solo prioriza acciones razonables para confirmar/localizar.
+        """
+
+        last_actions = [item["action"] for item in recent_steps[-4:]]
+
+        if state.obstacle_level == "CERCA":
+            preferred_actions = [
+                RobotAction.ESCANEAR.value,
+                RobotAction.GIRAR_DERECHA.value,
+                RobotAction.GIRAR_IZQUIERDA.value,
+                RobotAction.RETROCEDER.value,
+            ]
+        else:
+            if last_actions and last_actions[-1] == RobotAction.ESCANEAR.value:
+                preferred_actions = [
+                    RobotAction.AVANZAR.value,
+                    RobotAction.GIRAR_DERECHA.value,
+                    RobotAction.GIRAR_IZQUIERDA.value,
+                    RobotAction.ESCANEAR.value,
+                ]
+            else:
+                preferred_actions = [
+                    RobotAction.ESCANEAR.value,
+                    RobotAction.AVANZAR.value,
+                    RobotAction.GIRAR_DERECHA.value,
+                    RobotAction.GIRAR_IZQUIERDA.value,
+                ]
+
+        for action in preferred_actions:
+            if action not in blocked_actions:
+                return action
+
+        return RobotAction.AVANZAR.value
 
     def _choose_escape_action(
         self,

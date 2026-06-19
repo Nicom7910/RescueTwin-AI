@@ -85,5 +85,18 @@ unity/**/*.mdb
 unity/**/*.opendb
 unity/**/*.VC.db
 unity/**/.vs/
+# Unity demo generated reports
+reports/unity_demo_scenarios/
+
+# Unity template/tutorial files
+unity/**/Assets/Readme.asset
+unity/**/Assets/Readme.asset.meta
+unity/**/Assets/TutorialInfo/
+unity/**/Assets/TutorialInfo.meta
+unity/**/*.slnx
+
+# Unity default input actions not used by this project
+unity/**/Assets/InputSystem_Actions.inputactions
+unity/**/Assets/InputSystem_Actions.inputactions.meta
 
 .vscode/

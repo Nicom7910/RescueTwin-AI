@@ -15,6 +15,12 @@ public class MissionStep
     public string[] blocked_actions;
     public bool escape_mode;
     public bool return_to_base_mode;
+
+    public bool victim_detected;
+    public bool victim_found;
+    public int victim_x;
+    public int victim_y;
+    public string message;
 }
 
 [Serializable]
@@ -26,15 +32,16 @@ public class MissionStepList
 public class MissionReplayController : MonoBehaviour
 {
     [Header("Mission file")]
-    public string missionFileName = "mission_001_trajectory.json";
+    public string missionFileName = "demo_001_trajectory.json";
 
     [Header("Scene references")]
     public Transform robot;
     public Transform baseMarker;
+    public MissionMapBuilder mapBuilder;
 
     [Header("Replay settings")]
     public float cellSize = 1.0f;
-    public float stepDuration = 0.35f;
+    public float stepDuration = 0.32f;
     public float robotHeight = 0.65f;
     public bool loopReplay = true;
 
@@ -42,8 +49,15 @@ public class MissionReplayController : MonoBehaviour
     public int mapWidth = 20;
     public int mapHeight = 20;
 
+    [Header("Demo selector")]
+    public int currentDemo = 1;
+    public int maxDemo = 3;
+
     [Header("Visual trail")]
     public LineRenderer trailLine;
+
+    [Header("Victim found marker")]
+    public GameObject victimFoundMarkerPrefab;
 
     private List<MissionStep> steps = new List<MissionStep>();
     private int currentIndex = 0;
@@ -55,41 +69,25 @@ public class MissionReplayController : MonoBehaviour
     private GUIStyle hudStyle;
     private GUIStyle titleStyle;
     private GUIStyle modeStyle;
+    private GUIStyle helpStyle;
+    private GUIStyle victimStyle;
+
+    private bool victimAlreadyMarked = false;
+    private Vector2Int lastVictimLocation = new Vector2Int(-1, -1);
+    private GameObject victimFoundMarker;
 
     void Start()
     {
-        LoadMission();
-
-        if (robot == null)
-        {
-            Debug.LogError("No se asignó el robot en MissionReplayController.");
-            return;
-        }
-
-        if (steps.Count == 0)
-        {
-            Debug.LogError("La misión no tiene pasos para reproducir.");
-            return;
-        }
-
-        SetupBaseMarker();
         SetupTrail();
         SetupHudStyles();
 
-        currentIndex = 0;
-        currentStep = steps[currentIndex];
-
-        Vector3 initialPosition = GridToWorld(currentStep.x, currentStep.y);
-        robot.position = initialPosition;
-        startPosition = initialPosition;
-        targetPosition = initialPosition;
-
-        ApplyRobotVisualState(currentStep);
-        AddTrailPoint(initialPosition);
+        LoadDemo(currentDemo);
     }
 
     void Update()
     {
+        HandleKeyboardInput();
+
         if (robot == null || steps.Count == 0)
         {
             return;
@@ -106,6 +104,82 @@ public class MissionReplayController : MonoBehaviour
         }
     }
 
+    private void HandleKeyboardInput()
+    {
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            LoadDemo(1);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            LoadDemo(2);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            LoadDemo(3);
+        }
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            RestartCurrentDemo();
+        }
+    }
+
+    public void LoadDemo(int demoNumber)
+    {
+        demoNumber = Mathf.Clamp(demoNumber, 1, maxDemo);
+        currentDemo = demoNumber;
+
+        string demoId = demoNumber.ToString("D3");
+
+        missionFileName = "demo_" + demoId + "_trajectory.json";
+        string worldFileName = "demo_" + demoId + "_world.json";
+
+        if (mapBuilder != null)
+        {
+            mapBuilder.LoadAndBuildWorld(worldFileName, missionFileName);
+            mapWidth = mapBuilder.mapWidth;
+            mapHeight = mapBuilder.mapHeight;
+            cellSize = mapBuilder.cellSize;
+        }
+
+        LoadMission();
+        RestartCurrentDemo();
+
+        Debug.Log("Demo cargada: " + demoNumber);
+    }
+
+    private void RestartCurrentDemo()
+    {
+        if (steps.Count == 0 || robot == null)
+        {
+            return;
+        }
+
+        ClearTrail();
+        ClearVictimFoundMarker();
+
+        victimAlreadyMarked = false;
+        lastVictimLocation = new Vector2Int(-1, -1);
+
+        currentIndex = 0;
+        currentStep = steps[currentIndex];
+
+        Vector3 initialPosition = GridToWorld(currentStep.x, currentStep.y);
+        robot.position = initialPosition;
+        robot.rotation = Quaternion.identity;
+
+        startPosition = initialPosition;
+        targetPosition = initialPosition;
+        timer = 0f;
+
+        SetupBaseMarker();
+        ApplyRobotVisualState(currentStep);
+        AddTrailPoint(initialPosition);
+    }
+
     private void LoadMission()
     {
         string path = Path.Combine(Application.streamingAssetsPath, missionFileName);
@@ -113,11 +187,11 @@ public class MissionReplayController : MonoBehaviour
         if (!File.Exists(path))
         {
             Debug.LogError("No se encontró el archivo de misión: " + path);
+            steps = new List<MissionStep>();
             return;
         }
 
         string json = File.ReadAllText(path);
-
         string wrappedJson = "{\"steps\":" + json + "}";
 
         MissionStepList loaded = JsonUtility.FromJson<MissionStepList>(wrappedJson);
@@ -125,10 +199,11 @@ public class MissionReplayController : MonoBehaviour
         if (loaded != null && loaded.steps != null)
         {
             steps = loaded.steps;
-            Debug.Log("Misión cargada correctamente. Pasos: " + steps.Count);
+            Debug.Log("Misión cargada correctamente: " + missionFileName + " | Pasos: " + steps.Count);
         }
         else
         {
+            steps = new List<MissionStep>();
             Debug.LogError("No se pudo parsear el archivo JSON de misión.");
         }
     }
@@ -141,14 +216,12 @@ public class MissionReplayController : MonoBehaviour
         {
             if (loopReplay)
             {
-                currentIndex = 0;
-                ClearTrail();
-            }
-            else
-            {
-                currentIndex = steps.Count - 1;
+                RestartCurrentDemo();
                 return;
             }
+
+            currentIndex = steps.Count - 1;
+            return;
         }
 
         currentStep = steps[currentIndex];
@@ -160,14 +233,69 @@ public class MissionReplayController : MonoBehaviour
         RotateRobotByAction(currentStep.action);
         ApplyRobotVisualState(currentStep);
         AddTrailPoint(targetPosition);
+        CheckVictimFound(currentStep);
+    }
+
+    private void CheckVictimFound(MissionStep step)
+    {
+        if (!step.victim_found)
+        {
+            return;
+        }
+
+        victimAlreadyMarked = true;
+        lastVictimLocation = new Vector2Int(step.victim_x, step.victim_y);
+
+        CreateVictimFoundMarker(step.victim_x, step.victim_y);
+
+        Debug.Log("Víctima encontrada en: (" + step.victim_x + ", " + step.victim_y + ")");
+    }
+
+    private void CreateVictimFoundMarker(int x, int y)
+    {
+        ClearVictimFoundMarker();
+
+        if (victimFoundMarkerPrefab != null)
+        {
+            victimFoundMarker = Instantiate(victimFoundMarkerPrefab);
+        }
+        else
+        {
+            victimFoundMarker = GameObject.CreatePrimitive(PrimitiveType.Cylinder);
+        }
+
+        victimFoundMarker.name = "Victim Found Marker";
+        victimFoundMarker.transform.position = GridToWorld(x, y, 1.1f);
+        victimFoundMarker.transform.localScale = new Vector3(0.65f, 0.08f, 0.65f);
+
+        Renderer renderer = victimFoundMarker.GetComponent<Renderer>();
+
+        if (renderer != null)
+        {
+            renderer.material.color = Color.magenta;
+        }
+    }
+
+    private void ClearVictimFoundMarker()
+    {
+        if (victimFoundMarker != null)
+        {
+            Destroy(victimFoundMarker);
+            victimFoundMarker = null;
+        }
     }
 
     private Vector3 GridToWorld(int x, int y)
     {
+        return GridToWorld(x, y, robotHeight);
+    }
+
+    private Vector3 GridToWorld(int x, int y, float height)
+    {
         float worldX = (x - mapWidth / 2f) * cellSize;
         float worldZ = (y - mapHeight / 2f) * cellSize;
 
-        return new Vector3(worldX, robotHeight, worldZ);
+        return new Vector3(worldX, height, worldZ);
     }
 
     private void SetupBaseMarker()
@@ -194,7 +322,7 @@ public class MissionReplayController : MonoBehaviour
         {
             GameObject trailObject = new GameObject("Mission Trail");
             trailLine = trailObject.AddComponent<LineRenderer>();
-            trailLine.widthMultiplier = 0.14f;
+            trailLine.widthMultiplier = 0.18f;
             trailLine.positionCount = 0;
             trailLine.useWorldSpace = true;
 
@@ -251,6 +379,12 @@ public class MissionReplayController : MonoBehaviour
             return;
         }
 
+        if (step.victim_found)
+        {
+            renderer.material.color = Color.magenta;
+            return;
+        }
+
         if (step.return_to_base_mode)
         {
             renderer.material.color = Color.blue;
@@ -292,6 +426,15 @@ public class MissionReplayController : MonoBehaviour
         modeStyle.fontSize = 20;
         modeStyle.fontStyle = FontStyle.Bold;
         modeStyle.normal.textColor = Color.cyan;
+
+        helpStyle = new GUIStyle();
+        helpStyle.fontSize = 17;
+        helpStyle.normal.textColor = Color.white;
+
+        victimStyle = new GUIStyle();
+        victimStyle.fontSize = 20;
+        victimStyle.fontStyle = FontStyle.Bold;
+        victimStyle.normal.textColor = Color.magenta;
     }
 
     void OnGUI()
@@ -301,15 +444,17 @@ public class MissionReplayController : MonoBehaviour
             return;
         }
 
-        GUI.Box(new Rect(15, 15, 470, 250), "");
+        GUI.Box(new Rect(15, 15, 560, 345), "");
 
-        GUI.Label(new Rect(30, 25, 440, 30), "RescueTwin AI - Replay de misión", titleStyle);
+        GUI.Label(new Rect(30, 25, 520, 30), "RescueTwin AI - Demo Unity", titleStyle);
 
-        GUI.Label(new Rect(30, 65, 430, 25), "Step: " + currentStep.step, hudStyle);
-        GUI.Label(new Rect(30, 90, 430, 25), "Posición: (" + currentStep.x + ", " + currentStep.y + ")", hudStyle);
-        GUI.Label(new Rect(30, 115, 430, 25), "Acción: " + currentStep.action, hudStyle);
-        GUI.Label(new Rect(30, 140, 430, 25), "Riesgo: " + currentStep.risk_level, hudStyle);
-        GUI.Label(new Rect(30, 165, 430, 25), "Batería: " + currentStep.battery_level, hudStyle);
+        GUI.Label(new Rect(30, 65, 520, 25), "Demo actual: " + currentDemo + " / " + maxDemo, hudStyle);
+        GUI.Label(new Rect(30, 90, 520, 25), "Archivo: " + missionFileName, hudStyle);
+        GUI.Label(new Rect(30, 115, 520, 25), "Step: " + currentStep.step, hudStyle);
+        GUI.Label(new Rect(30, 140, 520, 25), "Posición: (" + currentStep.x + ", " + currentStep.y + ")", hudStyle);
+        GUI.Label(new Rect(30, 165, 520, 25), "Acción: " + currentStep.action, hudStyle);
+        GUI.Label(new Rect(30, 190, 520, 25), "Riesgo: " + currentStep.risk_level, hudStyle);
+        GUI.Label(new Rect(30, 215, 520, 25), "Batería: " + currentStep.battery_level, hudStyle);
 
         string mode = "EXPLORACIÓN";
 
@@ -322,12 +467,37 @@ public class MissionReplayController : MonoBehaviour
             mode = "ESCAPE";
         }
 
-        GUI.Label(new Rect(30, 195, 430, 25), "Modo: " + mode, modeStyle);
+        GUI.Label(new Rect(30, 240, 520, 25), "Modo: " + mode, modeStyle);
+
+        if (victimAlreadyMarked)
+        {
+            GUI.Label(
+                new Rect(30, 270, 520, 25),
+                "Víctima localizada en: (" + lastVictimLocation.x + ", " + lastVictimLocation.y + ")",
+                victimStyle
+            );
+        }
+        else if (currentStep.victim_detected)
+        {
+            GUI.Label(
+                new Rect(30, 270, 520, 25),
+                "Señal de posible víctima detectada",
+                victimStyle
+            );
+        }
+        else
+        {
+            GUI.Label(
+                new Rect(30, 270, 520, 25),
+                "Víctima: sin localización confirmada",
+                hudStyle
+            );
+        }
 
         GUI.Label(
-            new Rect(30, 225, 430, 25),
-            "Colores: verde=bajo | amarillo=medio | rojo=alto | azul=retorno | naranja=escape",
-            hudStyle
+            new Rect(30, 315, 520, 25),
+            "Teclas: 1, 2, 3 cambiar demo | R reiniciar",
+            helpStyle
         );
     }
 }

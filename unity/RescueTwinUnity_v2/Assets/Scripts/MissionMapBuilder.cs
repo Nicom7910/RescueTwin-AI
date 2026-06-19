@@ -29,19 +29,40 @@ public class UnityWorldData
     public int mission;
     public int width;
     public int height;
-
-    // No usamos "base" porque es palabra reservada en C#.
     public WorldPoint base_point;
-
     public List<WorldPoint> obstacles;
     public List<WorldPoint> victims;
     public List<RiskCell> risk_cells;
 }
 
+[Serializable]
+public class MapTrajectoryStep
+{
+    public int step;
+    public int x;
+    public int y;
+    public string action;
+    public string risk_level;
+    public string battery_level;
+    public bool escape_mode;
+    public bool return_to_base_mode;
+}
+
+[Serializable]
+public class MapTrajectoryStepList
+{
+    public List<MapTrajectoryStep> steps;
+}
+
 public class MissionMapBuilder : MonoBehaviour
 {
     [Header("World file")]
-    public string worldFileName = "mission_001_world.json";
+    public string worldFileName = "demo_001_world.json";
+
+    [Header("Trajectory focus")]
+    public string trajectoryFileName = "demo_001_trajectory.json";
+    public bool focusOnTrajectory = true;
+    public int focusMargin = 3;
 
     [Header("Map settings")]
     public int mapWidth = 20;
@@ -69,9 +90,24 @@ public class MissionMapBuilder : MonoBehaviour
 
     private UnityWorldData worldData;
 
+    private int focusMinX = 0;
+    private int focusMaxX = 19;
+    private int focusMinY = 0;
+    private int focusMaxY = 19;
+    private bool hasFocusBounds = false;
+
     private void Start()
     {
+        LoadAndBuildWorld(worldFileName, trajectoryFileName);
+    }
+
+    public void LoadAndBuildWorld(string newWorldFileName, string newTrajectoryFileName)
+    {
+        worldFileName = newWorldFileName;
+        trajectoryFileName = newTrajectoryFileName;
+
         LoadWorld();
+        LoadTrajectoryFocusBounds();
         BuildMap();
     }
 
@@ -82,14 +118,13 @@ public class MissionMapBuilder : MonoBehaviour
         if (!File.Exists(path))
         {
             Debug.LogError("No se encontró el archivo de mundo para Unity: " + path);
+            worldData = null;
             return;
         }
 
         string json = File.ReadAllText(path);
 
-        // El JSON generado por Python tiene una clave llamada "base".
-        // En C# no podemos declarar una variable llamada "base",
-        // entonces la adaptamos antes de parsear.
+        // Python exporta "base", pero "base" es palabra reservada en C#.
         json = json.Replace("\"base\"", "\"base_point\"");
 
         worldData = JsonUtility.FromJson<UnityWorldData>(json);
@@ -104,10 +139,86 @@ public class MissionMapBuilder : MonoBehaviour
         mapHeight = worldData.height;
 
         Debug.Log(
-            "Mundo cargado correctamente. " +
-            "Obstáculos: " + SafeCount(worldData.obstacles) +
+            "Mundo cargado correctamente: " + worldFileName +
+            " | Obstáculos: " + SafeCount(worldData.obstacles) +
             " | Víctimas: " + SafeCount(worldData.victims) +
             " | Riesgos: " + SafeCount(worldData.risk_cells)
+        );
+    }
+
+    private void LoadTrajectoryFocusBounds()
+    {
+        hasFocusBounds = false;
+
+        if (!focusOnTrajectory)
+        {
+            focusMinX = 0;
+            focusMaxX = mapWidth - 1;
+            focusMinY = 0;
+            focusMaxY = mapHeight - 1;
+            hasFocusBounds = true;
+            return;
+        }
+
+        string path = Path.Combine(Application.streamingAssetsPath, trajectoryFileName);
+
+        if (!File.Exists(path))
+        {
+            Debug.LogWarning("No se encontró trayectoria para enfocar mapa: " + path);
+            focusMinX = 0;
+            focusMaxX = mapWidth - 1;
+            focusMinY = 0;
+            focusMaxY = mapHeight - 1;
+            hasFocusBounds = true;
+            return;
+        }
+
+        string json = File.ReadAllText(path);
+        string wrappedJson = "{\"steps\":" + json + "}";
+
+        MapTrajectoryStepList loaded = JsonUtility.FromJson<MapTrajectoryStepList>(wrappedJson);
+
+        if (loaded == null || loaded.steps == null || loaded.steps.Count == 0)
+        {
+            focusMinX = 0;
+            focusMaxX = mapWidth - 1;
+            focusMinY = 0;
+            focusMaxY = mapHeight - 1;
+            hasFocusBounds = true;
+            return;
+        }
+
+        int minX = mapWidth;
+        int maxX = 0;
+        int minY = mapHeight;
+        int maxY = 0;
+
+        foreach (MapTrajectoryStep step in loaded.steps)
+        {
+            minX = Mathf.Min(minX, step.x);
+            maxX = Mathf.Max(maxX, step.x);
+            minY = Mathf.Min(minY, step.y);
+            maxY = Mathf.Max(maxY, step.y);
+        }
+
+        if (worldData != null && worldData.base_point != null)
+        {
+            minX = Mathf.Min(minX, worldData.base_point.x);
+            maxX = Mathf.Max(maxX, worldData.base_point.x);
+            minY = Mathf.Min(minY, worldData.base_point.y);
+            maxY = Mathf.Max(maxY, worldData.base_point.y);
+        }
+
+        focusMinX = Mathf.Clamp(minX - focusMargin, 0, mapWidth - 1);
+        focusMaxX = Mathf.Clamp(maxX + focusMargin, 0, mapWidth - 1);
+        focusMinY = Mathf.Clamp(minY - focusMargin, 0, mapHeight - 1);
+        focusMaxY = Mathf.Clamp(maxY + focusMargin, 0, mapHeight - 1);
+
+        hasFocusBounds = true;
+
+        Debug.Log(
+            "Mapa enfocado en trayectoria: " +
+            $"X[{focusMinX},{focusMaxX}] Y[{focusMinY},{focusMaxY}]"
         );
     }
 
@@ -163,7 +274,14 @@ public class MissionMapBuilder : MonoBehaviour
 
             if (existing != null)
             {
-                Destroy(existing);
+                if (Application.isPlaying)
+                {
+                    Destroy(existing);
+                }
+                else
+                {
+                    DestroyImmediate(existing);
+                }
             }
         }
     }
@@ -178,8 +296,19 @@ public class MissionMapBuilder : MonoBehaviour
             ground.name = "Ground";
         }
 
-        ground.transform.position = Vector3.zero;
-        ground.transform.localScale = new Vector3(2.2f, 1f, 2.2f);
+        float minWorldX = GridLineToWorldX(focusMinX);
+        float maxWorldX = GridLineToWorldX(focusMaxX + 1);
+        float minWorldZ = GridLineToWorldZ(focusMinY);
+        float maxWorldZ = GridLineToWorldZ(focusMaxY + 1);
+
+        float centerX = (minWorldX + maxWorldX) / 2f;
+        float centerZ = (minWorldZ + maxWorldZ) / 2f;
+
+        float width = Mathf.Max(1f, Mathf.Abs(maxWorldX - minWorldX));
+        float height = Mathf.Max(1f, Mathf.Abs(maxWorldZ - minWorldZ));
+
+        ground.transform.position = new Vector3(centerX, 0f, centerZ);
+        ground.transform.localScale = new Vector3(width / 10f, 1f, height / 10f);
 
         Renderer renderer = ground.GetComponent<Renderer>();
 
@@ -197,10 +326,15 @@ public class MissionMapBuilder : MonoBehaviour
     {
         GameObject gridParent = new GameObject("Generated Grid");
 
-        for (int x = 0; x <= mapWidth; x++)
+        int startX = hasFocusBounds ? focusMinX : 0;
+        int endX = hasFocusBounds ? focusMaxX + 1 : mapWidth;
+        int startY = hasFocusBounds ? focusMinY : 0;
+        int endY = hasFocusBounds ? focusMaxY + 1 : mapHeight;
+
+        for (int x = startX; x <= endX; x++)
         {
-            Vector3 start = GridToWorldRaw(x, 0);
-            Vector3 end = GridToWorldRaw(x, mapHeight);
+            Vector3 start = GridLineToWorld(x, startY);
+            Vector3 end = GridLineToWorld(x, endY);
 
             CreateLine(
                 gridParent.transform,
@@ -213,10 +347,10 @@ public class MissionMapBuilder : MonoBehaviour
             );
         }
 
-        for (int y = 0; y <= mapHeight; y++)
+        for (int y = startY; y <= endY; y++)
         {
-            Vector3 start = GridToWorldRaw(0, y);
-            Vector3 end = GridToWorldRaw(mapWidth, y);
+            Vector3 start = GridLineToWorld(startX, y);
+            Vector3 end = GridLineToWorld(endX, y);
 
             CreateLine(
                 gridParent.transform,
@@ -241,6 +375,11 @@ public class MissionMapBuilder : MonoBehaviour
 
         foreach (WorldPoint point in worldData.obstacles)
         {
+            if (!IsInsideFocus(point.x, point.y))
+            {
+                continue;
+            }
+
             GameObject obstacle;
 
             if (obstaclePrefab != null)
@@ -283,6 +422,11 @@ public class MissionMapBuilder : MonoBehaviour
 
         foreach (RiskCell cell in worldData.risk_cells)
         {
+            if (!IsInsideFocus(cell.x, cell.y))
+            {
+                continue;
+            }
+
             GameObject riskCell;
 
             if (riskCellPrefab != null)
@@ -342,6 +486,11 @@ public class MissionMapBuilder : MonoBehaviour
 
         foreach (WorldPoint point in worldData.victims)
         {
+            if (!IsInsideFocus(point.x, point.y))
+            {
+                continue;
+            }
+
             GameObject victim;
 
             if (victimPrefab != null)
@@ -369,6 +518,16 @@ public class MissionMapBuilder : MonoBehaviour
                 renderer.material.color = Color.magenta;
             }
         }
+    }
+
+    private bool IsInsideFocus(int x, int y)
+    {
+        if (!hasFocusBounds)
+        {
+            return true;
+        }
+
+        return x >= focusMinX && x <= focusMaxX && y >= focusMinY && y <= focusMaxY;
     }
 
     private void CreateLine(
@@ -410,11 +569,18 @@ public class MissionMapBuilder : MonoBehaviour
         return new Vector3(worldX, height, worldZ);
     }
 
-    private Vector3 GridToWorldRaw(int x, int y)
+    private Vector3 GridLineToWorld(int x, int y)
     {
-        float worldX = (x - mapWidth / 2f) * cellSize;
-        float worldZ = (y - mapHeight / 2f) * cellSize;
+        return new Vector3(GridLineToWorldX(x), 0.04f, GridLineToWorldZ(y));
+    }
 
-        return new Vector3(worldX, 0.04f, worldZ);
+    private float GridLineToWorldX(int x)
+    {
+        return (x - mapWidth / 2f) * cellSize;
+    }
+
+    private float GridLineToWorldZ(int y)
+    {
+        return (y - mapHeight / 2f) * cellSize;
     }
 }
