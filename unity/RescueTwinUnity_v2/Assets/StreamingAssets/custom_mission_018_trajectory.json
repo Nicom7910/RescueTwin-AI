@@ -25,8 +25,8 @@
   {
     "step": 2,
     "x": 10,
-    "y": 9,
-    "action": "RETROCEDER",
+    "y": 8,
+    "action": "AVANZAR",
     "risk_level": "BAJO",
     "battery_level": "ALTA",
     "blocked_actions": [
@@ -42,12 +42,12 @@
     "victim_found": false,
     "victim_x": null,
     "victim_y": null,
-    "message": "El robot retrocedió"
+    "message": "El robot avanzó"
   },
   {
     "step": 3,
     "x": 10,
-    "y": 8,
+    "y": 7,
     "action": "AVANZAR",
     "risk_level": "BAJO",
     "battery_level": "ALTA",
@@ -69,7 +69,7 @@
   {
     "step": 4,
     "x": 10,
-    "y": 7,
+    "y": 6,
     "action": "AVANZAR",
     "risk_level": "BAJO",
     "battery_level": "ALTA",
@@ -79,10 +79,10 @@
     ],
     "escape_mode": false,
     "return_to_base_mode": false,
-    "victim_detected": false,
-    "victim_search_mode": false,
-    "victim_target_x": null,
-    "victim_target_y": null,
+    "victim_detected": true,
+    "victim_search_mode": true,
+    "victim_target_x": 11,
+    "victim_target_y": 5,
     "victim_found": false,
     "victim_x": null,
     "victim_y": null,
@@ -91,9 +91,9 @@
   {
     "step": 5,
     "x": 10,
-    "y": 6,
+    "y": 5,
     "action": "AVANZAR",
-    "risk_level": "MEDIO",
+    "risk_level": "BAJO",
     "battery_level": "ALTA",
     "blocked_actions": [
       "ENVIAR_ALERTA",
@@ -101,10 +101,10 @@
     ],
     "escape_mode": false,
     "return_to_base_mode": false,
-    "victim_detected": false,
-    "victim_search_mode": false,
-    "victim_target_x": null,
-    "victim_target_y": null,
+    "victim_detected": true,
+    "victim_search_mode": true,
+    "victim_target_x": 11,
+    "victim_target_y": 5,
     "victim_found": false,
     "victim_x": null,
     "victim_y": null,
@@ -113,14 +113,34 @@
   {
     "step": 6,
     "x": 10,
-    "y": 6,
-    "action": "GIRAR_IZQUIERDA",
+    "y": 5,
+    "action": "GIRAR_DERECHA",
     "risk_level": "BAJO",
     "battery_level": "ALTA",
     "blocked_actions": [
-      "AVANZAR",
       "ENVIAR_ALERTA",
-      "RETROCEDER",
+      "VOLVER_BASE"
+    ],
+    "escape_mode": false,
+    "return_to_base_mode": false,
+    "victim_detected": true,
+    "victim_search_mode": true,
+    "victim_target_x": 11,
+    "victim_target_y": 5,
+    "victim_found": false,
+    "victim_x": null,
+    "victim_y": null,
+    "message": "El robot giró a la derecha"
+  },
+  {
+    "step": 7,
+    "x": 11,
+    "y": 5,
+    "action": "AVANZAR",
+    "risk_level": "BAJO",
+    "battery_level": "ALTA",
+    "blocked_actions": [
+      "ENVIAR_ALERTA",
       "VOLVER_BASE"
     ],
     "escape_mode": false,
@@ -129,38 +149,15 @@
     "victim_search_mode": false,
     "victim_target_x": null,
     "victim_target_y": null,
-    "victim_found": false,
-    "victim_x": null,
-    "victim_y": null,
-    "message": "El robot giró a la izquierda"
-  },
-  {
-    "step": 7,
-    "x": 9,
-    "y": 6,
-    "action": "AVANZAR",
-    "risk_level": "BAJO",
-    "battery_level": "ALTA",
-    "blocked_actions": [
-      "ENVIAR_ALERTA",
-      "ESCANEAR",
-      "VOLVER_BASE"
-    ],
-    "escape_mode": true,
-    "return_to_base_mode": false,
-    "victim_detected": false,
-    "victim_search_mode": false,
-    "victim_target_x": null,
-    "victim_target_y": null,
-    "victim_found": false,
-    "victim_x": null,
-    "victim_y": null,
-    "message": "El robot avanzó"
+    "victim_found": true,
+    "victim_x": 11,
+    "victim_y": 5,
+    "message": "El robot encontró una posible víctima"
   },
   {
     "step": 8,
-    "x": 8,
-    "y": 6,
+    "x": 12,
+    "y": 5,
     "action": "AVANZAR",
     "risk_level": "BAJO",
     "battery_level": "ALTA",
@@ -181,8 +178,8 @@
   },
   {
     "step": 9,
-    "x": 7,
-    "y": 6,
+    "x": 13,
+    "y": 5,
     "action": "AVANZAR",
     "risk_level": "BAJO",
     "battery_level": "ALTA",
@@ -203,8 +200,8 @@
   },
   {
     "step": 10,
-    "x": 6,
-    "y": 6,
+    "x": 14,
+    "y": 5,
     "action": "AVANZAR",
     "risk_level": "BAJO",
     "battery_level": "ALTA",
@@ -225,8 +222,8 @@
   },
   {
     "step": 11,
-    "x": 5,
-    "y": 6,
+    "x": 15,
+    "y": 5,
     "action": "AVANZAR",
     "risk_level": "BAJO",
     "battery_level": "ALTA",
@@ -247,9 +244,9 @@
   },
   {
     "step": 12,
-    "x": 5,
-    "y": 6,
-    "action": "GIRAR_IZQUIERDA",
+    "x": 16,
+    "y": 5,
+    "action": "AVANZAR",
     "risk_level": "BAJO",
     "battery_level": "ALTA",
     "blocked_actions": [
@@ -258,19 +255,19 @@
     ],
     "escape_mode": false,
     "return_to_base_mode": false,
-    "victim_detected": false,
-    "victim_search_mode": false,
-    "victim_target_x": null,
-    "victim_target_y": null,
+    "victim_detected": true,
+    "victim_search_mode": true,
+    "victim_target_x": 17,
+    "victim_target_y": 5,
     "victim_found": false,
     "victim_x": null,
     "victim_y": null,
-    "message": "El robot giró a la izquierda"
+    "message": "El robot avanzó"
   },
   {
     "step": 13,
-    "x": 5,
-    "y": 7,
+    "x": 17,
+    "y": 5,
     "action": "AVANZAR",
     "risk_level": "BAJO",
     "battery_level": "ALTA",
@@ -284,15 +281,15 @@
     "victim_search_mode": false,
     "victim_target_x": null,
     "victim_target_y": null,
-    "victim_found": false,
-    "victim_x": null,
-    "victim_y": null,
-    "message": "El robot avanzó"
+    "victim_found": true,
+    "victim_x": 17,
+    "victim_y": 5,
+    "message": "El robot encontró una posible víctima"
   },
   {
     "step": 14,
-    "x": 5,
-    "y": 8,
+    "x": 17,
+    "y": 5,
     "action": "AVANZAR",
     "risk_level": "BAJO",
     "battery_level": "ALTA",
@@ -313,9 +310,9 @@
   },
   {
     "step": 15,
-    "x": 5,
-    "y": 9,
-    "action": "AVANZAR",
+    "x": 16,
+    "y": 5,
+    "action": "RETROCEDER",
     "risk_level": "BAJO",
     "battery_level": "ALTA",
     "blocked_actions": [
@@ -331,13 +328,13 @@
     "victim_found": false,
     "victim_x": null,
     "victim_y": null,
-    "message": "El robot avanzó"
+    "message": "El robot retrocedió"
   },
   {
     "step": 16,
-    "x": 5,
-    "y": 10,
-    "action": "AVANZAR",
+    "x": 16,
+    "y": 5,
+    "action": "GIRAR_DERECHA",
     "risk_level": "BAJO",
     "battery_level": "ALTA",
     "blocked_actions": [
@@ -353,12 +350,12 @@
     "victim_found": false,
     "victim_x": null,
     "victim_y": null,
-    "message": "El robot avanzó"
+    "message": "El robot giró a la derecha"
   },
   {
     "step": 17,
-    "x": 5,
-    "y": 11,
+    "x": 16,
+    "y": 6,
     "action": "AVANZAR",
     "risk_level": "BAJO",
     "battery_level": "ALTA",
@@ -379,8 +376,8 @@
   },
   {
     "step": 18,
-    "x": 5,
-    "y": 12,
+    "x": 16,
+    "y": 7,
     "action": "AVANZAR",
     "risk_level": "BAJO",
     "battery_level": "ALTA",
@@ -401,8 +398,8 @@
   },
   {
     "step": 19,
-    "x": 5,
-    "y": 13,
+    "x": 16,
+    "y": 8,
     "action": "AVANZAR",
     "risk_level": "BAJO",
     "battery_level": "ALTA",
@@ -423,13 +420,15 @@
   },
   {
     "step": 20,
-    "x": 5,
-    "y": 14,
-    "action": "AVANZAR",
+    "x": 16,
+    "y": 8,
+    "action": "GIRAR_DERECHA",
     "risk_level": "BAJO",
     "battery_level": "ALTA",
     "blocked_actions": [
+      "AVANZAR",
       "ENVIAR_ALERTA",
+      "RETROCEDER",
       "VOLVER_BASE"
     ],
     "escape_mode": false,
@@ -441,14 +440,14 @@
     "victim_found": false,
     "victim_x": null,
     "victim_y": null,
-    "message": "El robot avanzó"
+    "message": "El robot giró a la derecha"
   },
   {
     "step": 21,
-    "x": 5,
-    "y": 15,
+    "x": 15,
+    "y": 8,
     "action": "AVANZAR",
-    "risk_level": "MEDIO",
+    "risk_level": "BAJO",
     "battery_level": "ALTA",
     "blocked_actions": [
       "ENVIAR_ALERTA",
@@ -467,10 +466,10 @@
   },
   {
     "step": 22,
-    "x": 5,
-    "y": 15,
-    "action": "GIRAR_IZQUIERDA",
-    "risk_level": "MEDIO",
+    "x": 14,
+    "y": 8,
+    "action": "AVANZAR",
+    "risk_level": "BAJO",
     "battery_level": "ALTA",
     "blocked_actions": [
       "ENVIAR_ALERTA",
@@ -485,14 +484,14 @@
     "victim_found": false,
     "victim_x": null,
     "victim_y": null,
-    "message": "El robot giró a la izquierda"
+    "message": "El robot avanzó"
   },
   {
     "step": 23,
-    "x": 6,
-    "y": 15,
+    "x": 13,
+    "y": 8,
     "action": "AVANZAR",
-    "risk_level": "BAJO",
+    "risk_level": "MEDIO",
     "battery_level": "ALTA",
     "blocked_actions": [
       "ENVIAR_ALERTA",
@@ -511,10 +510,10 @@
   },
   {
     "step": 24,
-    "x": 7,
-    "y": 15,
-    "action": "AVANZAR",
-    "risk_level": "BAJO",
+    "x": 13,
+    "y": 8,
+    "action": "ESCANEAR",
+    "risk_level": "MEDIO",
     "battery_level": "ALTA",
     "blocked_actions": [
       "ENVIAR_ALERTA",
@@ -529,14 +528,14 @@
     "victim_found": false,
     "victim_x": null,
     "victim_y": null,
-    "message": "El robot avanzó"
+    "message": "El robot escaneó el entorno cercano"
   },
   {
     "step": 25,
-    "x": 8,
-    "y": 15,
+    "x": 12,
+    "y": 8,
     "action": "AVANZAR",
-    "risk_level": "MEDIO",
+    "risk_level": "BAJO",
     "battery_level": "ALTA",
     "blocked_actions": [
       "ENVIAR_ALERTA",
@@ -555,11 +554,11 @@
   },
   {
     "step": 26,
-    "x": 9,
-    "y": 15,
+    "x": 11,
+    "y": 8,
     "action": "AVANZAR",
     "risk_level": "BAJO",
-    "battery_level": "MEDIA",
+    "battery_level": "ALTA",
     "blocked_actions": [
       "ENVIAR_ALERTA",
       "VOLVER_BASE"
@@ -578,29 +577,7 @@
   {
     "step": 27,
     "x": 10,
-    "y": 15,
-    "action": "AVANZAR",
-    "risk_level": "MEDIO",
-    "battery_level": "MEDIA",
-    "blocked_actions": [
-      "ENVIAR_ALERTA",
-      "VOLVER_BASE"
-    ],
-    "escape_mode": false,
-    "return_to_base_mode": false,
-    "victim_detected": false,
-    "victim_search_mode": false,
-    "victim_target_x": null,
-    "victim_target_y": null,
-    "victim_found": false,
-    "victim_x": null,
-    "victim_y": null,
-    "message": "El robot avanzó"
-  },
-  {
-    "step": 28,
-    "x": 11,
-    "y": 15,
+    "y": 8,
     "action": "AVANZAR",
     "risk_level": "BAJO",
     "battery_level": "MEDIA",
@@ -620,9 +597,31 @@
     "message": "El robot avanzó"
   },
   {
+    "step": 28,
+    "x": 10,
+    "y": 8,
+    "action": "GIRAR_DERECHA",
+    "risk_level": "BAJO",
+    "battery_level": "MEDIA",
+    "blocked_actions": [
+      "ENVIAR_ALERTA",
+      "VOLVER_BASE"
+    ],
+    "escape_mode": false,
+    "return_to_base_mode": false,
+    "victim_detected": false,
+    "victim_search_mode": false,
+    "victim_target_x": null,
+    "victim_target_y": null,
+    "victim_found": false,
+    "victim_x": null,
+    "victim_y": null,
+    "message": "El robot giró a la derecha"
+  },
+  {
     "step": 29,
-    "x": 12,
-    "y": 15,
+    "x": 10,
+    "y": 7,
     "action": "AVANZAR",
     "risk_level": "BAJO",
     "battery_level": "MEDIA",
@@ -643,8 +642,8 @@
   },
   {
     "step": 30,
-    "x": 13,
-    "y": 15,
+    "x": 10,
+    "y": 6,
     "action": "AVANZAR",
     "risk_level": "BAJO",
     "battery_level": "MEDIA",
@@ -665,9 +664,9 @@
   },
   {
     "step": 31,
-    "x": 14,
-    "y": 15,
-    "action": "AVANZAR",
+    "x": 10,
+    "y": 6,
+    "action": "RETROCEDER",
     "risk_level": "BAJO",
     "battery_level": "MEDIA",
     "blocked_actions": [
@@ -683,12 +682,12 @@
     "victim_found": false,
     "victim_x": null,
     "victim_y": null,
-    "message": "El robot avanzó"
+    "message": "El robot retrocedió"
   },
   {
     "step": 32,
-    "x": 15,
-    "y": 15,
+    "x": 10,
+    "y": 5,
     "action": "AVANZAR",
     "risk_level": "BAJO",
     "battery_level": "MEDIA",
@@ -709,98 +708,10 @@
   },
   {
     "step": 33,
-    "x": 16,
-    "y": 15,
-    "action": "AVANZAR",
-    "risk_level": "BAJO",
-    "battery_level": "MEDIA",
-    "blocked_actions": [
-      "ENVIAR_ALERTA",
-      "VOLVER_BASE"
-    ],
-    "escape_mode": false,
-    "return_to_base_mode": false,
-    "victim_detected": false,
-    "victim_search_mode": false,
-    "victim_target_x": null,
-    "victim_target_y": null,
-    "victim_found": false,
-    "victim_x": null,
-    "victim_y": null,
-    "message": "El robot avanzó"
-  },
-  {
-    "step": 34,
-    "x": 16,
-    "y": 15,
-    "action": "RETROCEDER",
-    "risk_level": "BAJO",
-    "battery_level": "MEDIA",
-    "blocked_actions": [
-      "ENVIAR_ALERTA",
-      "VOLVER_BASE"
-    ],
-    "escape_mode": false,
-    "return_to_base_mode": false,
-    "victim_detected": false,
-    "victim_search_mode": false,
-    "victim_target_x": null,
-    "victim_target_y": null,
-    "victim_found": false,
-    "victim_x": null,
-    "victim_y": null,
-    "message": "El robot retrocedió"
-  },
-  {
-    "step": 35,
-    "x": 17,
-    "y": 15,
-    "action": "AVANZAR",
-    "risk_level": "BAJO",
-    "battery_level": "MEDIA",
-    "blocked_actions": [
-      "ENVIAR_ALERTA",
-      "VOLVER_BASE"
-    ],
-    "escape_mode": false,
-    "return_to_base_mode": false,
-    "victim_detected": false,
-    "victim_search_mode": false,
-    "victim_target_x": null,
-    "victim_target_y": null,
-    "victim_found": false,
-    "victim_x": null,
-    "victim_y": null,
-    "message": "El robot avanzó"
-  },
-  {
-    "step": 36,
-    "x": 18,
-    "y": 15,
-    "action": "AVANZAR",
-    "risk_level": "MEDIO",
-    "battery_level": "MEDIA",
-    "blocked_actions": [
-      "ENVIAR_ALERTA",
-      "VOLVER_BASE"
-    ],
-    "escape_mode": false,
-    "return_to_base_mode": false,
-    "victim_detected": false,
-    "victim_search_mode": false,
-    "victim_target_x": null,
-    "victim_target_y": null,
-    "victim_found": false,
-    "victim_x": null,
-    "victim_y": null,
-    "message": "El robot avanzó"
-  },
-  {
-    "step": 37,
-    "x": 18,
-    "y": 15,
+    "x": 10,
+    "y": 5,
     "action": "ESCANEAR",
-    "risk_level": "MEDIO",
+    "risk_level": "BAJO",
     "battery_level": "MEDIA",
     "blocked_actions": [
       "AVANZAR",
@@ -820,18 +731,105 @@
     "message": "El robot escaneó el entorno cercano"
   },
   {
+    "step": 34,
+    "x": 10,
+    "y": 4,
+    "action": "AVANZAR",
+    "risk_level": "BAJO",
+    "battery_level": "MEDIA",
+    "blocked_actions": [
+      "ENVIAR_ALERTA",
+      "VOLVER_BASE"
+    ],
+    "escape_mode": false,
+    "return_to_base_mode": false,
+    "victim_detected": false,
+    "victim_search_mode": false,
+    "victim_target_x": null,
+    "victim_target_y": null,
+    "victim_found": false,
+    "victim_x": null,
+    "victim_y": null,
+    "message": "El robot avanzó"
+  },
+  {
+    "step": 35,
+    "x": 10,
+    "y": 4,
+    "action": "GIRAR_IZQUIERDA",
+    "risk_level": "BAJO",
+    "battery_level": "MEDIA",
+    "blocked_actions": [
+      "ENVIAR_ALERTA",
+      "VOLVER_BASE"
+    ],
+    "escape_mode": false,
+    "return_to_base_mode": false,
+    "victim_detected": false,
+    "victim_search_mode": false,
+    "victim_target_x": null,
+    "victim_target_y": null,
+    "victim_found": false,
+    "victim_x": null,
+    "victim_y": null,
+    "message": "El robot giró a la izquierda"
+  },
+  {
+    "step": 36,
+    "x": 9,
+    "y": 4,
+    "action": "AVANZAR",
+    "risk_level": "BAJO",
+    "battery_level": "MEDIA",
+    "blocked_actions": [
+      "ENVIAR_ALERTA",
+      "VOLVER_BASE"
+    ],
+    "escape_mode": false,
+    "return_to_base_mode": false,
+    "victim_detected": false,
+    "victim_search_mode": false,
+    "victim_target_x": null,
+    "victim_target_y": null,
+    "victim_found": false,
+    "victim_x": null,
+    "victim_y": null,
+    "message": "El robot avanzó"
+  },
+  {
+    "step": 37,
+    "x": 8,
+    "y": 4,
+    "action": "AVANZAR",
+    "risk_level": "BAJO",
+    "battery_level": "MEDIA",
+    "blocked_actions": [
+      "ENVIAR_ALERTA",
+      "VOLVER_BASE"
+    ],
+    "escape_mode": false,
+    "return_to_base_mode": false,
+    "victim_detected": false,
+    "victim_search_mode": false,
+    "victim_target_x": null,
+    "victim_target_y": null,
+    "victim_found": false,
+    "victim_x": null,
+    "victim_y": null,
+    "message": "El robot avanzó"
+  },
+  {
     "step": 38,
-    "x": 18,
-    "y": 16,
+    "x": 7,
+    "y": 4,
     "action": "AVANZAR",
     "risk_level": "MEDIO",
     "battery_level": "MEDIA",
     "blocked_actions": [
       "ENVIAR_ALERTA",
-      "ESCANEAR",
       "VOLVER_BASE"
     ],
-    "escape_mode": true,
+    "escape_mode": false,
     "return_to_base_mode": false,
     "victim_detected": false,
     "victim_search_mode": false,
@@ -844,17 +842,16 @@
   },
   {
     "step": 39,
-    "x": 18,
-    "y": 17,
+    "x": 6,
+    "y": 4,
     "action": "AVANZAR",
     "risk_level": "BAJO",
     "battery_level": "MEDIA",
     "blocked_actions": [
       "ENVIAR_ALERTA",
-      "ESCANEAR",
       "VOLVER_BASE"
     ],
-    "escape_mode": true,
+    "escape_mode": false,
     "return_to_base_mode": false,
     "victim_detected": false,
     "victim_search_mode": false,
@@ -867,17 +864,17 @@
   },
   {
     "step": 40,
-    "x": 18,
-    "y": 17,
-    "action": "VOLVER_BASE",
+    "x": 6,
+    "y": 4,
+    "action": "RETROCEDER",
     "risk_level": "BAJO",
-    "battery_level": "BAJA",
+    "battery_level": "MEDIA",
     "blocked_actions": [
       "ENVIAR_ALERTA",
-      "ESCANEAR"
+      "VOLVER_BASE"
     ],
     "escape_mode": false,
-    "return_to_base_mode": true,
+    "return_to_base_mode": false,
     "victim_detected": false,
     "victim_search_mode": false,
     "victim_target_x": null,
@@ -885,21 +882,21 @@
     "victim_found": false,
     "victim_x": null,
     "victim_y": null,
-    "message": "El robot avanza por ruta calculada hacia la base"
+    "message": "El robot retrocedió"
   },
   {
     "step": 41,
-    "x": 18,
-    "y": 16,
-    "action": "VOLVER_BASE",
-    "risk_level": "MEDIO",
+    "x": 6,
+    "y": 3,
+    "action": "AVANZAR",
+    "risk_level": "BAJO",
     "battery_level": "BAJA",
     "blocked_actions": [
       "ENVIAR_ALERTA",
-      "ESCANEAR"
+      "VOLVER_BASE"
     ],
     "escape_mode": false,
-    "return_to_base_mode": true,
+    "return_to_base_mode": false,
     "victim_detected": false,
     "victim_search_mode": false,
     "victim_target_x": null,
@@ -907,18 +904,20 @@
     "victim_found": false,
     "victim_x": null,
     "victim_y": null,
-    "message": "El robot avanza por ruta calculada hacia la base"
+    "message": "El robot avanzó"
   },
   {
     "step": 42,
-    "x": 18,
-    "y": 15,
+    "x": 7,
+    "y": 3,
     "action": "VOLVER_BASE",
     "risk_level": "BAJO",
     "battery_level": "BAJA",
     "blocked_actions": [
+      "AVANZAR",
       "ENVIAR_ALERTA",
-      "ESCANEAR"
+      "ESCANEAR",
+      "RETROCEDER"
     ],
     "escape_mode": false,
     "return_to_base_mode": true,
@@ -933,10 +932,10 @@
   },
   {
     "step": 43,
-    "x": 18,
-    "y": 14,
+    "x": 8,
+    "y": 3,
     "action": "VOLVER_BASE",
-    "risk_level": "BAJO",
+    "risk_level": "MEDIO",
     "battery_level": "BAJA",
     "blocked_actions": [
       "ENVIAR_ALERTA",
@@ -955,8 +954,8 @@
   },
   {
     "step": 44,
-    "x": 18,
-    "y": 13,
+    "x": 9,
+    "y": 3,
     "action": "VOLVER_BASE",
     "risk_level": "BAJO",
     "battery_level": "BAJA",
@@ -977,10 +976,10 @@
   },
   {
     "step": 45,
-    "x": 18,
-    "y": 12,
+    "x": 10,
+    "y": 3,
     "action": "VOLVER_BASE",
-    "risk_level": "BAJO",
+    "risk_level": "MEDIO",
     "battery_level": "BAJA",
     "blocked_actions": [
       "ENVIAR_ALERTA",
@@ -999,8 +998,8 @@
   },
   {
     "step": 46,
-    "x": 18,
-    "y": 11,
+    "x": 10,
+    "y": 4,
     "action": "VOLVER_BASE",
     "risk_level": "BAJO",
     "battery_level": "BAJA",
@@ -1021,8 +1020,8 @@
   },
   {
     "step": 47,
-    "x": 18,
-    "y": 10,
+    "x": 10,
+    "y": 5,
     "action": "VOLVER_BASE",
     "risk_level": "BAJO",
     "battery_level": "BAJA",
@@ -1043,10 +1042,10 @@
   },
   {
     "step": 48,
-    "x": 17,
-    "y": 10,
+    "x": 10,
+    "y": 6,
     "action": "VOLVER_BASE",
-    "risk_level": "MEDIO",
+    "risk_level": "BAJO",
     "battery_level": "BAJA",
     "blocked_actions": [
       "ENVIAR_ALERTA",
@@ -1065,8 +1064,8 @@
   },
   {
     "step": 49,
-    "x": 16,
-    "y": 10,
+    "x": 10,
+    "y": 7,
     "action": "VOLVER_BASE",
     "risk_level": "BAJO",
     "battery_level": "BAJA",
@@ -1087,8 +1086,8 @@
   },
   {
     "step": 50,
-    "x": 15,
-    "y": 10,
+    "x": 10,
+    "y": 8,
     "action": "VOLVER_BASE",
     "risk_level": "BAJO",
     "battery_level": "BAJA",
@@ -1109,10 +1108,10 @@
   },
   {
     "step": 51,
-    "x": 14,
-    "y": 10,
+    "x": 10,
+    "y": 9,
     "action": "VOLVER_BASE",
-    "risk_level": "BAJO",
+    "risk_level": "MEDIO",
     "battery_level": "BAJA",
     "blocked_actions": [
       "ENVIAR_ALERTA",
@@ -1131,72 +1130,6 @@
   },
   {
     "step": 52,
-    "x": 13,
-    "y": 10,
-    "action": "VOLVER_BASE",
-    "risk_level": "MEDIO",
-    "battery_level": "BAJA",
-    "blocked_actions": [
-      "ENVIAR_ALERTA",
-      "ESCANEAR"
-    ],
-    "escape_mode": false,
-    "return_to_base_mode": true,
-    "victim_detected": false,
-    "victim_search_mode": false,
-    "victim_target_x": null,
-    "victim_target_y": null,
-    "victim_found": false,
-    "victim_x": null,
-    "victim_y": null,
-    "message": "El robot avanza por ruta calculada hacia la base"
-  },
-  {
-    "step": 53,
-    "x": 12,
-    "y": 10,
-    "action": "VOLVER_BASE",
-    "risk_level": "MEDIO",
-    "battery_level": "BAJA",
-    "blocked_actions": [
-      "ENVIAR_ALERTA",
-      "ESCANEAR"
-    ],
-    "escape_mode": false,
-    "return_to_base_mode": true,
-    "victim_detected": false,
-    "victim_search_mode": false,
-    "victim_target_x": null,
-    "victim_target_y": null,
-    "victim_found": false,
-    "victim_x": null,
-    "victim_y": null,
-    "message": "El robot avanza por ruta calculada hacia la base"
-  },
-  {
-    "step": 54,
-    "x": 11,
-    "y": 10,
-    "action": "VOLVER_BASE",
-    "risk_level": "BAJO",
-    "battery_level": "BAJA",
-    "blocked_actions": [
-      "ENVIAR_ALERTA",
-      "ESCANEAR"
-    ],
-    "escape_mode": false,
-    "return_to_base_mode": true,
-    "victim_detected": false,
-    "victim_search_mode": false,
-    "victim_target_x": null,
-    "victim_target_y": null,
-    "victim_found": false,
-    "victim_x": null,
-    "victim_y": null,
-    "message": "El robot avanza por ruta calculada hacia la base"
-  },
-  {
-    "step": 55,
     "x": 10,
     "y": 10,
     "action": "VOLVER_BASE",

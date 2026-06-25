@@ -1,72 +1,114 @@
-# Entorno virtual
+
+# Entornos virtuales
+
 .venv/
 venv/
+.env
 
 # Python
-__pycache__/
+
+**pycache**/
 *.pyc
+*.pyo
+*.pyd
+.pytest_cache/
 .ipynb_checkpoints/
 
-# Datasets crudos pesados
-data/raw/
+# Sistema operativo
+
+.DS_Store
+
+# VS Code
+
+.vscode/
 
 # Archivos comprimidos
+
 *.zip
 *.rar
 *.7z
 *.tar
 *.gz
 
-# Sistema
-.DS_Store
+# Datasets crudos pesados
 
-# Modelos pesados, si después generan alguno muy grande
-*.pkl
-*.joblib
+data/raw/
 
-# Excepción: modelos necesarios del proyecto
-!models/
-!models/random_forest_rescuetwin.pkl
-!models/model_columns.pkl
+# Outputs generales
 
-# Outputs temporales
 outputs/
+
 # ROS 2 workspace build outputs
+
 ros2_ws/build/
 ros2_ws/install/
 ros2_ws/log/
 
 # Gazebo logs
+
 .gazebo/
 *.log
 
 # Videos pesados
+
 reports/videos/*.mp4
 
 
-# Python cache
-__pycache__/
-*.pyc
-.pytest_cache/
+# Modelos
 
-# Autonomous agent generated outputs
+# Ignorar modelos pesados por defecto
+
+*.pkl
+*.joblib
+
+# Mantener modelos necesarios del proyecto
+
+!models/
+!models/**
+!models/random_forest_rescuetwin.pkl
+!models/model_columns.pkl
+
+# Backups de Q-table
+
+models/autonomous/q_table_v*_backup.json
+
+
+# Reportes generados
+
+# Misiones autónomas generadas masivamente
+
 reports/autonomous_missions/
+
+# Si quieren conservar una carpeta sample, se permite
+
 !reports/autonomous_missions/sample/
 !reports/autonomous_missions/sample/**
 
-# Q-table backups
-models/autonomous/q_table_v*_backup.json
+# Logs generados por misiones ROS
 
-# Local environments
-.venv/
-venv/
-.env
+reports/mission_logs/ros_mission_*.csv
+reports/mission_logs/ros_mission_*.jsonl
+reports/mission_logs/environment_*.json
+reports/mission_logs/mission_route_*.png
 
-# OS files
-.DS_Store
+# Mantener evidencia final de ruta si la usan en la demo
+
+!reports/mission_logs/mission_route_20260625_142040.png
+!reports/mission_logs/latest_environment.json
+
+# Reportes antiguos generados automáticamente
+
+reports/mission_reports/
+
+# Escenarios Unity generados automáticamente
+
+reports/unity_demo_scenarios/
 
 
-# Unity generated files
+# Unity
+
+# Carpetas generadas por Unity
+
 unity/**/[Ll]ibrary/
 unity/**/[Tt]emp/
 unity/**/[Oo]bj/
@@ -74,8 +116,12 @@ unity/**/[Bb]uild/
 unity/**/[Bb]uilds/
 unity/**/[Ll]ogs/
 unity/**/[Uu]ser[Ss]ettings/
+
+# Archivos generados por IDE / Unity
+
 unity/**/*.csproj
 unity/**/*.sln
+unity/**/*.slnx
 unity/**/*.user
 unity/**/*.pidb
 unity/**/*.booproj
@@ -85,18 +131,27 @@ unity/**/*.mdb
 unity/**/*.opendb
 unity/**/*.VC.db
 unity/**/.vs/
-# Unity demo generated reports
-reports/unity_demo_scenarios/
 
-# Unity template/tutorial files
+# Archivos tutorial/template de Unity
+
 unity/**/Assets/Readme.asset
 unity/**/Assets/Readme.asset.meta
 unity/**/Assets/TutorialInfo/
 unity/**/Assets/TutorialInfo.meta
-unity/**/*.slnx
 
-# Unity default input actions not used by this project
+# Input actions default no usado
+
 unity/**/Assets/InputSystem_Actions.inputactions
 unity/**/Assets/InputSystem_Actions.inputactions.meta
 
-.vscode/
+# Misiones generadas en StreamingAssets
+
+unity/RescueTwinUnity_v2/Assets/StreamingAssets/*.json
+unity/RescueTwinUnity_v2/Assets/StreamingAssets/*.json.meta
+
+# Mantener solo la misión final de demo Unity
+
+!unity/RescueTwinUnity_v2/Assets/StreamingAssets/custom_mission_018_trajectory.json
+!unity/RescueTwinUnity_v2/Assets/StreamingAssets/custom_mission_018_trajectory.json.meta
+!unity/RescueTwinUnity_v2/Assets/StreamingAssets/custom_mission_018_world.json
+!unity/RescueTwinUnity_v2/Assets/StreamingAssets/custom_mission_018_world.json.meta
