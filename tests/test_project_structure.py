@@ -7,7 +7,6 @@ def test_project_main_folders_exist(project_root: Path):
         "models",
         "notebooks",
         "reports",
-        "ros2_ws",
         "scripts",
         "app",
     ]
@@ -24,7 +23,6 @@ def test_core_project_files_exist(project_root: Path):
     expected_files = [
         "README.md",
         "requirements.txt",
-        "run_rescuetwin_full_project.py",
         "scripts/generate_mission_report.py",
         "scripts/visualize_mission_route.py",
     ]

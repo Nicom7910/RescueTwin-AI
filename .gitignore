@@ -1,29 +1,23 @@
 
-# Entornos virtuales
 
+# Entornos virtuales
 .venv/
 venv/
 .env
 
 # Python
-
-**pycache**/
+__pycache__/
 *.pyc
 *.pyo
 *.pyd
 .pytest_cache/
 .ipynb_checkpoints/
 
-# Sistema operativo
-
+# Sistema operativo / editores
 .DS_Store
-
-# VS Code
-
 .vscode/
 
-# Archivos comprimidos
-
+# Archivos comprimidos y backups
 *.zip
 *.rar
 *.7z
@@ -31,84 +25,55 @@ venv/
 *.gz
 
 # Datasets crudos pesados
-
 data/raw/
 
 # Outputs generales
-
 outputs/
 
-# ROS 2 workspace build outputs
-
-ros2_ws/build/
-ros2_ws/install/
-ros2_ws/log/
-
-# Gazebo logs
-
-.gazebo/
-*.log
-
 # Videos pesados
-
 reports/videos/*.mp4
 
 
-# Modelos
-
 # Ignorar modelos pesados por defecto
-
 *.pkl
 *.joblib
 
 # Mantener modelos necesarios del proyecto
-
 !models/
 !models/**
 !models/random_forest_rescuetwin.pkl
 !models/model_columns.pkl
 
 # Backups de Q-table
-
 models/autonomous/q_table_v*_backup.json
 
 
-# Reportes generados
 
 # Misiones autónomas generadas masivamente
-
 reports/autonomous_missions/
 
-# Si quieren conservar una carpeta sample, se permite
-
+# Si se quiere conservar una carpeta sample
 !reports/autonomous_missions/sample/
 !reports/autonomous_missions/sample/**
 
-# Logs generados por misiones ROS
-
+# Logs generados automáticamente
 reports/mission_logs/ros_mission_*.csv
 reports/mission_logs/ros_mission_*.jsonl
 reports/mission_logs/environment_*.json
 reports/mission_logs/mission_route_*.png
 
-# Mantener evidencia final de ruta si la usan en la demo
-
+# Mantener evidencia final si se usa en la demo
 !reports/mission_logs/mission_route_20260625_142040.png
 !reports/mission_logs/latest_environment.json
 
 # Reportes antiguos generados automáticamente
-
 reports/mission_reports/
 
 # Escenarios Unity generados automáticamente
-
 reports/unity_demo_scenarios/
 
 
-# Unity
-
 # Carpetas generadas por Unity
-
 unity/**/[Ll]ibrary/
 unity/**/[Tt]emp/
 unity/**/[Oo]bj/
@@ -118,7 +83,6 @@ unity/**/[Ll]ogs/
 unity/**/[Uu]ser[Ss]ettings/
 
 # Archivos generados por IDE / Unity
-
 unity/**/*.csproj
 unity/**/*.sln
 unity/**/*.slnx
@@ -133,25 +97,21 @@ unity/**/*.VC.db
 unity/**/.vs/
 
 # Archivos tutorial/template de Unity
-
 unity/**/Assets/Readme.asset
 unity/**/Assets/Readme.asset.meta
 unity/**/Assets/TutorialInfo/
 unity/**/Assets/TutorialInfo.meta
 
 # Input actions default no usado
-
 unity/**/Assets/InputSystem_Actions.inputactions
 unity/**/Assets/InputSystem_Actions.inputactions.meta
 
 # Misiones generadas en StreamingAssets
-
 unity/RescueTwinUnity_v2/Assets/StreamingAssets/*.json
 unity/RescueTwinUnity_v2/Assets/StreamingAssets/*.json.meta
 
-# Mantener solo la misión final de demo Unity
-
-!unity/RescueTwinUnity_v2/Assets/StreamingAssets/custom_mission_018_trajectory.json
-!unity/RescueTwinUnity_v2/Assets/StreamingAssets/custom_mission_018_trajectory.json.meta
-!unity/RescueTwinUnity_v2/Assets/StreamingAssets/custom_mission_018_world.json
-!unity/RescueTwinUnity_v2/Assets/StreamingAssets/custom_mission_018_world.json.meta
+# Mantener solo la demo base del proyecto
+!unity/RescueTwinUnity_v2/Assets/StreamingAssets/demo_001_trajectory.json
+!unity/RescueTwinUnity_v2/Assets/StreamingAssets/demo_001_trajectory.json.meta
+!unity/RescueTwinUnity_v2/Assets/StreamingAssets/demo_001_world.json
+!unity/RescueTwinUnity_v2/Assets/StreamingAssets/demo_001_world.json.meta

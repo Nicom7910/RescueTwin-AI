@@ -56,7 +56,7 @@ public class MissionReplayController : MonoBehaviour
     [Header("Demo selector")]
     public bool useDemoSelector = true;
     public int currentDemo = 1;
-    public int maxDemo = 2;
+    public int maxDemo = 1;
 
     [Header("Visual trail")]
     public LineRenderer trailLine;
