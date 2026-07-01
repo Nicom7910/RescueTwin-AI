@@ -339,8 +339,6 @@ Tener instalado:
 - Unity Editor
 - VS Code o editor similar
 
-No se requiere ROS 2 ni Docker para el flujo principal actual.
-
 ---
 
 # 11. Instalación desde cero
@@ -571,20 +569,6 @@ Desde la raíz del proyecto:
 pytest
 ```
 
-Resultado esperado:
-
-```text
-18 passed
-```
-
-o:
-
-```text
-18 passed, 1 skipped
-```
-
-El test salteado puede corresponder a logs de misión no generados todavía.
-
 ---
 
 # 20. Scripts principales
@@ -784,7 +768,3 @@ La versión final del proyecto queda enfocada en:
 ```text
 Ciencia de Datos + Agente autónomo Python + Streamlit + Unity 3D
 ```
-
-No se requiere ROS 2, Docker ni Gazebo para el flujo principal.
-
-Esto permite una presentación más estable, simple y alineada con los objetivos del TPO de Ciencia de Datos.
