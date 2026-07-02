@@ -150,16 +150,16 @@ public class RescuePhotoCapture : MonoBehaviour
             return;
 
         GUIStyle style = new GUIStyle(GUI.skin.box);
-        style.fontSize = 30;
+        style.fontSize = 50;
         style.fontStyle = FontStyle.Bold;
         style.normal.textColor = Color.white;
         style.alignment = TextAnchor.MiddleCenter;
 
         Rect rect = new Rect(
-            Screen.width * 0.5f - 170f,
-            Screen.height - 80f,
-            340f,
-            46f
+            Screen.width * 0.5f - 350f,
+            Screen.height - 130f,
+            700f,
+            70f
         );
 
         GUI.Box(rect, lastMessage, style);

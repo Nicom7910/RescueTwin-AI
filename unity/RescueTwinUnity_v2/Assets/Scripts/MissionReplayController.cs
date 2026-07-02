@@ -479,25 +479,27 @@ public class MissionReplayController : MonoBehaviour
     private void SetupHudStyles()
     {
         hudStyle = new GUIStyle();
-        hudStyle.fontSize = 20;
+        hudStyle.fontSize = 32;
+        hudStyle.fontStyle = FontStyle.Bold;
         hudStyle.normal.textColor = Color.white;
 
         titleStyle = new GUIStyle();
-        titleStyle.fontSize = 26;
+        titleStyle.fontSize = 40;
         titleStyle.fontStyle = FontStyle.Bold;
         titleStyle.normal.textColor = Color.white;
 
         modeStyle = new GUIStyle();
-        modeStyle.fontSize = 20;
+        modeStyle.fontSize = 32;
         modeStyle.fontStyle = FontStyle.Bold;
         modeStyle.normal.textColor = Color.cyan;
 
         helpStyle = new GUIStyle();
-        helpStyle.fontSize = 17;
+        helpStyle.fontSize = 26;
+        helpStyle.fontStyle = FontStyle.Bold;
         helpStyle.normal.textColor = Color.white;
 
         victimStyle = new GUIStyle();
-        victimStyle.fontSize = 20;
+        victimStyle.fontSize = 32;
         victimStyle.fontStyle = FontStyle.Bold;
         victimStyle.normal.textColor = Color.magenta;
     }
@@ -509,27 +511,106 @@ public class MissionReplayController : MonoBehaviour
             return;
         }
 
-        GUI.Box(new Rect(15, 15, 600, 385), "");
+        float panelX = 25f;
+        float panelY = 25f;
+        float panelW = 910f;
+        float panelH = 560f;
 
-        GUI.Label(new Rect(30, 25, 560, 30), "RescueTwin AI - Demo Unity", titleStyle);
+        GUI.Box(new Rect(panelX, panelY, panelW, panelH), "");
+
+        float x = panelX + 30f;
+        float y = panelY + 20f;
+
+        GUI.Label(
+            new Rect(x, y, 790f, 50f),
+            "RescueTwin AI - Demo Unity",
+            titleStyle
+        );
+
+        y += 65f;
 
         if (useDemoSelector)
         {
-            GUI.Label(new Rect(30, 65, 560, 25), "Modo carga: demos predefinidas", hudStyle);
-            GUI.Label(new Rect(30, 90, 560, 25), "Demo actual: " + currentDemo + " / " + maxDemo, hudStyle);
+            GUI.Label(
+                new Rect(x, y, 790f, 38f),
+                "Modo carga: demos predefinidas",
+                hudStyle
+            );
+
+            y += 42f;
+
+            GUI.Label(
+                new Rect(x, y, 790f, 38f),
+                "Demo actual: " + currentDemo + " / " + maxDemo,
+                hudStyle
+            );
         }
         else
         {
-            GUI.Label(new Rect(30, 65, 560, 25), "Modo carga: misión manual", hudStyle);
-            GUI.Label(new Rect(30, 90, 560, 25), "Archivo manual: " + missionFileName, hudStyle);
+            GUI.Label(
+                new Rect(x, y, 790f, 38f),
+                "Modo carga: misión manual",
+                hudStyle
+            );
+
+            y += 42f;
+
+            GUI.Label(
+                new Rect(x, y, 790f, 38f),
+                "Archivo manual: " + missionFileName,
+                hudStyle
+            );
         }
 
-        GUI.Label(new Rect(30, 115, 560, 25), "Archivo: " + missionFileName, hudStyle);
-        GUI.Label(new Rect(30, 140, 560, 25), "Step: " + currentStep.step, hudStyle);
-        GUI.Label(new Rect(30, 165, 560, 25), "Posición: (" + currentStep.x + ", " + currentStep.y + ")", hudStyle);
-        GUI.Label(new Rect(30, 190, 560, 25), "Acción: " + currentStep.action, hudStyle);
-        GUI.Label(new Rect(30, 215, 560, 25), "Riesgo: " + currentStep.risk_level, hudStyle);
-        GUI.Label(new Rect(30, 240, 560, 25), "Batería: " + currentStep.battery_level, hudStyle);
+        y += 42f;
+
+        GUI.Label(
+            new Rect(x, y, 790f, 38f),
+            "Archivo: " + missionFileName,
+            hudStyle
+        );
+
+        y += 42f;
+
+        GUI.Label(
+            new Rect(x, y, 790f, 38f),
+            "Step: " + currentStep.step,
+            hudStyle
+        );
+
+        y += 42f;
+
+        GUI.Label(
+            new Rect(x, y, 790f, 38f),
+            "Posición: (" + currentStep.x + ", " + currentStep.y + ")",
+            hudStyle
+        );
+
+        y += 42f;
+
+        GUI.Label(
+            new Rect(x, y, 790f, 38f),
+            "Acción: " + currentStep.action,
+            hudStyle
+        );
+
+        y += 42f;
+
+        GUI.Label(
+            new Rect(x, y, 790f, 38f),
+            "Riesgo: " + currentStep.risk_level,
+            hudStyle
+        );
+
+        y += 42f;
+
+        GUI.Label(
+            new Rect(x, y, 790f, 38f),
+            "Batería: " + currentStep.battery_level,
+            hudStyle
+        );
+
+        y += 42f;
 
         string mode = "EXPLORACIÓN";
 
@@ -542,12 +623,18 @@ public class MissionReplayController : MonoBehaviour
             mode = "BÚSQUEDA DE VÍCTIMA";
         }
 
-        GUI.Label(new Rect(30, 265, 560, 25), "Modo: " + mode, modeStyle);
+        GUI.Label(
+            new Rect(x, y, 790f, 38f),
+            "Modo: " + mode,
+            modeStyle
+        );
+
+        y += 48f;
 
         if (victimAlreadyMarked)
         {
             GUI.Label(
-                new Rect(30, 295, 560, 25),
+                new Rect(x, y, 790f, 38f),
                 "Víctima localizada en: (" + lastVictimLocation.x + ", " + lastVictimLocation.y + ")",
                 victimStyle
             );
@@ -555,7 +642,7 @@ public class MissionReplayController : MonoBehaviour
         else if (currentStep.victim_detected)
         {
             GUI.Label(
-                new Rect(30, 295, 560, 25),
+                new Rect(x, y, 790f, 38f),
                 "Señal de posible víctima detectada",
                 victimStyle
             );
@@ -563,18 +650,20 @@ public class MissionReplayController : MonoBehaviour
         else
         {
             GUI.Label(
-                new Rect(30, 295, 560, 25),
+                new Rect(x, y, 790f, 38f),
                 "Víctima: sin localización confirmada",
                 hudStyle
             );
         }
 
+        y += 42f;
+
         string helpText = useDemoSelector
-            ? "Teclas: 1 y 2 cambiar demo | R reiniciar"
-            : "Tecla: R reiniciar misión manual";
+            ? "Teclas: 1 y 2 cambiar demo | R reiniciar | V cámara POV | C foto"
+            : "Teclas: R reiniciar | V cámara POV | C foto";
 
         GUI.Label(
-            new Rect(30, 345, 560, 25),
+            new Rect(x, y, 790f, 38f),
             helpText,
             helpStyle
         );
