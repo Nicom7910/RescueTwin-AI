@@ -657,6 +657,7 @@ GameObject:
   m_Component:
   - component: {fileID: 442004647}
   - component: {fileID: 442004646}
+  - component: {fileID: 442004648}
   m_Layer: 0
   m_Name: VisualPolishController
   m_TagString: Untagged
@@ -676,6 +677,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb701428f727c466ebf6a08bad8f9d08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RescueTwinVisualPolish
+  buildOnStart: 1
+  addExtraInteriorDebris: 1
+  gridSpacing: 1
+  gridThickness: 0.035
+  gridColor: {r: 0.1, g: 0.9, b: 1, a: 1}
+  routeColor: {r: 1, g: 0.78, b: 0.12, a: 1}
+  routeWidth: 0.13
+  dynamicTrailWidth: 0.22
+  minTrailDistance: 0.2
+  teleportResetDistance: 4.5
+  floorColor: {r: 0.16, g: 0.17, b: 0.2, a: 1}
+  rubbleColor: {r: 0.48, g: 0.46, b: 0.42, a: 1}
+  darkRubbleColor: {r: 0.25, g: 0.25, b: 0.25, a: 1}
+  metalColor: {r: 0.28, g: 0.32, b: 0.36, a: 1}
+  dangerColor: {r: 1, g: 0.08, b: 0.04, a: 1}
+  wallHeight: 1.6
+  wallThickness: 0.25
+  wallMargin: 0.4
+  wallColor: {r: 0.35, g: 0.35, b: 0.38, a: 1}
+  rubbleMoundCount: 4
+  rocksPerMound: 14
+  moundRadius: 1.05
+  victimSkinColor: {r: 0.85, g: 0.68, b: 0.55, a: 1}
+  victimClothColor: {r: 0.85, g: 0.45, b: 0.1, a: 1}
+  victimFallbackBeaconColor: {r: 0.85, g: 0.2, b: 0.85, a: 1}
+  victimScale: 3
 --- !u!4 &442004647
 Transform:
   m_ObjectHideFlags: 0
@@ -691,6 +718,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &442004648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 442004645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65c134c60a73c40c6b6636c607158dae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RescueRobotVisualUpgrade
+  targetRobot: {fileID: 182734321}
+  startDelay: 0.75
+  visualOffset: {x: 0, y: 0, z: 0}
+  visualRotation: {x: 0, y: 0, z: 0}
+  visualScale: 0.75
+  forceHideOriginalEveryFrame: 1
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
