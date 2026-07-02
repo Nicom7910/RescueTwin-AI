@@ -678,7 +678,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RescueTwinVisualPolish
   buildOnStart: 1
-  addExtraInteriorDebris: 1
+  showDigitalGrid: 1
   gridSpacing: 1
   gridThickness: 0.035
   gridColor: {r: 0.1, g: 0.9, b: 1, a: 1}
@@ -688,17 +688,18 @@ MonoBehaviour:
   minTrailDistance: 0.2
   teleportResetDistance: 4.5
   floorColor: {r: 0.16, g: 0.17, b: 0.2, a: 1}
-  rubbleColor: {r: 0.48, g: 0.46, b: 0.42, a: 1}
-  darkRubbleColor: {r: 0.25, g: 0.25, b: 0.25, a: 1}
-  metalColor: {r: 0.28, g: 0.32, b: 0.36, a: 1}
-  dangerColor: {r: 1, g: 0.08, b: 0.04, a: 1}
+  dustColor: {r: 0.3, g: 0.29, b: 0.27, a: 1}
+  crackColor: {r: 0.025, g: 0.025, b: 0.028, a: 1}
   wallHeight: 1.6
   wallThickness: 0.25
   wallMargin: 0.4
   wallColor: {r: 0.35, g: 0.35, b: 0.38, a: 1}
-  rubbleMoundCount: 4
-  rocksPerMound: 14
-  moundRadius: 1.05
+  improveObstacles: 1
+  generateRubble: 1
+  rubbleSeed: 77
+  concreteColor: {r: 0.56, g: 0.54, b: 0.5, a: 1}
+  darkConcreteColor: {r: 0.33, g: 0.32, b: 0.3, a: 1}
+  metalColor: {r: 0.28, g: 0.32, b: 0.36, a: 1}
   victimSkinColor: {r: 0.85, g: 0.68, b: 0.55, a: 1}
   victimClothColor: {r: 0.85, g: 0.45, b: 0.1, a: 1}
   victimFallbackBeaconColor: {r: 0.85, g: 0.2, b: 0.85, a: 1}
@@ -730,12 +731,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65c134c60a73c40c6b6636c607158dae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RescueRobotVisualUpgrade
-  targetRobot: {fileID: 182734321}
-  startDelay: 0.75
-  visualOffset: {x: 0, y: 0, z: 0}
-  visualRotation: {x: 0, y: 0, z: 0}
-  visualScale: 0.75
-  forceHideOriginalEveryFrame: 1
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -844,6 +839,58 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.41234, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1534560442
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1534560444}
+  - component: {fileID: 1534560443}
+  m_Layer: 0
+  m_Name: RescueCameraSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1534560443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1534560442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9df1a38739abe4d369f7f72bd99179ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RescueRobotPOVCamera
+  targetRobot: {fileID: 0}
+  mainCamera: {fileID: 0}
+  povCamera: {fileID: 0}
+  toggleKey: 118
+  povLocalPosition: {x: 0, y: 0.75, z: 0.95}
+  povLocalRotation: {x: 10, y: 0, z: 0}
+  povFieldOfView: 75
+  startInPOV: 0
+--- !u!4 &1534560444
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1534560442}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.02817, y: 0.41137, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1078,6 +1125,57 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1784628624}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1818030083
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1818030085}
+  - component: {fileID: 1818030084}
+  m_Layer: 0
+  m_Name: RescuePhotoSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1818030084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1818030083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53589badb17584537ba81d800eca7597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RescuePhotoCapture
+  targetRobot: {fileID: 0}
+  activeCamera: {fileID: 0}
+  captureKey: 99
+  exportFolderName: Exports
+  imageFolderName: robot_captures
+  csvFileName: photo_evidence.csv
+  messageDuration: 1.8
+--- !u!4 &1818030085
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1818030083}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.02817, y: 0.41137, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1819990805
 GameObject:
   m_ObjectHideFlags: 0
@@ -1151,3 +1249,5 @@ SceneRoots:
   - {fileID: 1819990807}
   - {fileID: 1113362771}
   - {fileID: 442004647}
+  - {fileID: 1534560444}
+  - {fileID: 1818030085}

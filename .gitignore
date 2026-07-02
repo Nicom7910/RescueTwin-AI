@@ -115,3 +115,6 @@ unity/RescueTwinUnity_v2/Assets/StreamingAssets/*.json.meta
 !unity/RescueTwinUnity_v2/Assets/StreamingAssets/demo_001_trajectory.json.meta
 !unity/RescueTwinUnity_v2/Assets/StreamingAssets/demo_001_world.json
 !unity/RescueTwinUnity_v2/Assets/StreamingAssets/demo_001_world.json.meta
+
+# Unity generated evidence exports
+unity/RescueTwinUnity_v2/Exports/
