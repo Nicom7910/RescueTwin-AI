@@ -7,59 +7,57 @@ public class RescueTwinVisualPolish : MonoBehaviour
 {
     [Header("General")]
     public bool buildOnStart = true;
-    public bool addExtraInteriorDebris = true;
 
-    [Header("Grid")]
+    [Header("Overlay digital")]
+    public bool showDigitalGrid = true;
     public float gridSpacing = 1f;
-    public float gridThickness = 0.015f;
-    public Color gridColor = new Color(0f, 0.85f, 1f);
+    public float gridThickness = 0.0045f;
+    public Color gridColor = new Color(0.04f, 0.42f, 0.50f);
 
-    [Header("Robot Route")]
+    [Header("Ruta del robot")]
     public Color routeColor = new Color(1f, 0.72f, 0.10f);
     public float routeWidth = 0.18f;
     public float dynamicTrailWidth = 0.22f;
     public float minTrailDistance = 0.20f;
     public float teleportResetDistance = 4.5f;
 
-    [Header("Visual Style")]
-    public Color floorColor = new Color(0.08f, 0.09f, 0.10f);
-    public Color rubbleColor = new Color(0.48f, 0.46f, 0.42f);
-    public Color darkRubbleColor = new Color(0.25f, 0.25f, 0.25f);
-    public Color metalColor = new Color(0.28f, 0.32f, 0.36f);
-    public Color dangerColor = new Color(1f, 0.08f, 0.04f);
+    [Header("Piso")]
+    public Color floorColor = new Color(0.105f, 0.105f, 0.11f);
+    public Color dustColor = new Color(0.30f, 0.29f, 0.27f);
+    public Color crackColor = new Color(0.025f, 0.025f, 0.028f);
 
-    [Header("Entorno")]
+    [Header("Paredes")]
     public float wallHeight = 1.25f;
     public float wallThickness = 0.22f;
     public float wallMargin = 0.25f;
-    public Color wallColor = new Color(0.44f, 0.40f, 0.34f);
+    public Color wallColor = new Color(0.42f, 0.39f, 0.36f);
 
-    [Header("Props")]
-    public int rubbleMoundCount = 4;
-    public int rocksPerMound = 14;
-    public float moundRadius = 1.05f;
+    [Header("Obstáculos y escombros")]
+    public bool improveObstacles = true;
+    public bool generateRubble = true;
+    public int rubbleSeed = 77;
+    public Color concreteColor = new Color(0.56f, 0.54f, 0.50f);
+    public Color darkConcreteColor = new Color(0.33f, 0.32f, 0.30f);
+    public Color metalColor = new Color(0.28f, 0.30f, 0.32f);
 
     [Header("Víctimas")]
     public Color victimSkinColor = new Color(0.85f, 0.68f, 0.55f);
     public Color victimClothColor = new Color(0.85f, 0.45f, 0.10f);
     public Color victimFallbackBeaconColor = new Color(0.85f, 0.20f, 0.85f);
-    public float victimScale = 20.0f;
+    public float victimScale = 3.6f;
 
     private Transform visualsRoot;
 
     private Material floorMat;
     private Material gridMat;
     private Material routeMat;
-    private Material dangerMat;
-    private Material rubbleMat;
-    private Material darkRubbleMat;
-    private Material metalMat;
-    private Material coneMat;
-    private Material barrelMat;
-    private Material robotMat;
     private Material wallMat;
-    private Material stripeYellowMat;
-    private Material stripeBlackMat;
+    private Material dustMat;
+    private Material crackMat;
+    private Material concreteMat;
+    private Material darkConcreteMat;
+    private Material metalMat;
+    private Material panelMat;
     private Material victimSkinMat;
     private Material victimClothMat;
 
@@ -75,7 +73,6 @@ public class RescueTwinVisualPolish : MonoBehaviour
             yield break;
 
         yield return new WaitForSeconds(0.35f);
-
         RebuildVisuals();
     }
 
@@ -87,7 +84,7 @@ public class RescueTwinVisualPolish : MonoBehaviour
     [ContextMenu("Rebuild Visuals")]
     public void RebuildVisuals()
     {
-        Random.InitState(42);
+        Random.InitState(rubbleSeed);
 
         CleanOldGeneratedObjects();
         PrepareMaterials();
@@ -105,27 +102,28 @@ public class RescueTwinVisualPolish : MonoBehaviour
         trailY = groundBounds.max.y + 0.12f;
 
         PolishGround(ground);
-        BuildThinCyanGrid(groundBounds);
-        UpgradeDangerZonesToCrosses(groundBounds);
-        PolishExistingRoute();
-        PolishRobot();
-        PolishVictims();
-        StylizeGameplayObstacles();
+        HideDangerZonesCompletely();
 
-        if (addExtraInteriorDebris)
-        {
-            BuildRubbleMounds(groundBounds);
-            BuildInteriorEmergencyProps(groundBounds);
-        }
+        BuildFloorDamageMarks(groundBounds);
+
+        if (showDigitalGrid)
+            BuildSubtleDigitalGrid(groundBounds);
+
+        PolishExistingRoute();
+        PolishVictims();
+
+        if (improveObstacles)
+            ImproveExistingObstacles();
+
+        if (generateRubble)
+            BuildBetterRubble(groundBounds);
 
         BuildPerimeterWalls(groundBounds);
-        BuildCornerLights(groundBounds);
-
         PolishLighting(groundBounds);
         PolishCamera(groundBounds);
         CreateDynamicRobotTrail();
 
-        Debug.Log("RescueTwinVisualPolish aplicado correctamente.");
+        Debug.Log("RescueTwinVisualPolish aplicado: piso, sombras, escombros y ruta mejorados.");
     }
 
     private void CleanOldGeneratedObjects()
@@ -135,6 +133,8 @@ public class RescueTwinVisualPolish : MonoBehaviour
             "__VisualPolishRoot__",
             "Generated_Tactical_Rescue_Visuals",
             "Generated_Rescue_Visuals",
+            "GeneratedRubbleVisuals",
+            "GeneratedEnvironmentVisuals",
             "Robot_Trail_Cyan",
             "Robot_Trail_Amber",
             "RobotTrail"
@@ -145,9 +145,7 @@ public class RescueTwinVisualPolish : MonoBehaviour
             GameObject obj = GameObject.Find(n);
 
             if (obj != null)
-            {
                 SafeDestroy(obj);
-            }
         }
 
         GameObject[] all = FindObjectsOfType<GameObject>(true);
@@ -155,12 +153,11 @@ public class RescueTwinVisualPolish : MonoBehaviour
         foreach (GameObject obj in all)
         {
             if (obj.name.StartsWith("Label_"))
-            {
                 SafeDestroy(obj);
-            }
-        }
 
-        ClearObstacleDetailRoots();
+            if (obj.name == "__ObstacleDetails__")
+                SafeDestroy(obj);
+        }
     }
 
     private void EnsureRoot()
@@ -172,110 +169,21 @@ public class RescueTwinVisualPolish : MonoBehaviour
 
     private void PrepareMaterials()
     {
-        floorMat = CreateMaterial(
-            "Mat_Floor_Dark_Rescue",
-            floorColor,
-            0f,
-            true
-        );
+        floorMat = CreateMaterial("Mat_Dark_Damaged_Concrete_Floor", floorColor, 0f, true, 0.18f);
+        gridMat = CreateMaterial("Mat_Subtle_Digital_Grid", gridColor, 0.28f, false, 0.0f);
+        routeMat = CreateMaterial("Mat_Robot_Route_Amber", routeColor, 2.3f, false, 0.0f);
 
-        gridMat = CreateMaterial(
-            "Mat_Thin_Cyan_Grid",
-            gridColor,
-            1.45f,
-            false
-        );
+        wallMat = CreateMaterial("Mat_Damaged_Wall", wallColor, 0f, true, 0.08f);
+        dustMat = CreateMaterial("Mat_Dust_Overlay", dustColor, 0f, true, 0.0f);
+        crackMat = CreateMaterial("Mat_Floor_Cracks", crackColor, 0f, true, 0.0f);
 
-        routeMat = CreateMaterial(
-            "Mat_Robot_Route_Amber",
-            routeColor,
-            2.8f,
-            false
-        );
+        concreteMat = CreateMaterial("Mat_Broken_Concrete", concreteColor, 0f, true, 0.06f);
+        darkConcreteMat = CreateMaterial("Mat_Dark_Broken_Concrete", darkConcreteColor, 0f, true, 0.04f);
+        metalMat = CreateMaterial("Mat_Damaged_Metal", metalColor, 0f, true, 0.12f);
+        panelMat = CreateMaterial("Mat_Obstacle_Panel", new Color(0.20f, 0.21f, 0.22f), 0f, true, 0.08f);
 
-        dangerMat = CreateMaterial(
-            "Mat_Danger_Red_Glow",
-            dangerColor,
-            2.8f,
-            false
-        );
-
-        rubbleMat = CreateMaterial(
-            "Mat_Rubble_Concrete",
-            rubbleColor,
-            0f,
-            true
-        );
-
-        darkRubbleMat = CreateMaterial(
-            "Mat_Rubble_Dark",
-            darkRubbleColor,
-            0f,
-            true
-        );
-
-        metalMat = CreateMaterial(
-            "Mat_Damaged_Metal",
-            metalColor,
-            0f,
-            true
-        );
-
-        coneMat = CreateMaterial(
-            "Mat_Emergency_Cone",
-            new Color(1f, 0.45f, 0.08f),
-            0.15f,
-            true
-        );
-
-        barrelMat = CreateMaterial(
-            "Mat_Barrel",
-            new Color(0.70f, 0.30f, 0.06f),
-            0.1f,
-            true
-        );
-
-        robotMat = CreateMaterial(
-            "Mat_Robot_Dark",
-            new Color(0.05f, 0.06f, 0.10f),
-            0f,
-            true
-        );
-
-        wallMat = CreateMaterial(
-            "Mat_Perimeter_Wall",
-            wallColor,
-            0f,
-            true
-        );
-
-        stripeYellowMat = CreateMaterial(
-            "Mat_Stripe_Yellow",
-            new Color(1f, 0.82f, 0.05f),
-            0.4f,
-            true
-        );
-
-        stripeBlackMat = CreateMaterial(
-            "Mat_Stripe_Black",
-            new Color(0.05f, 0.05f, 0.05f),
-            0f,
-            true
-        );
-
-        victimSkinMat = CreateMaterial(
-            "Mat_Victim_Skin",
-            victimSkinColor,
-            0f,
-            true
-        );
-
-        victimClothMat = CreateMaterial(
-            "Mat_Victim_Cloth",
-            victimClothColor,
-            0f,
-            true
-        );
+        victimSkinMat = CreateMaterial("Mat_Victim_Skin", victimSkinColor, 0f, true, 0.2f);
+        victimClothMat = CreateMaterial("Mat_Victim_Cloth", victimClothColor, 0f, true, 0.15f);
     }
 
     private void PolishGround(GameObject ground)
@@ -290,9 +198,101 @@ public class RescueTwinVisualPolish : MonoBehaviour
         }
     }
 
-    private void BuildThinCyanGrid(Bounds bounds)
+    private void HideDangerZonesCompletely()
     {
-        float y = bounds.max.y + 0.035f;
+        Renderer[] renderers = FindObjectsOfType<Renderer>(true);
+
+        foreach (Renderer r in renderers)
+        {
+            if (r == null)
+                continue;
+
+            if (visualsRoot != null && r.transform.IsChildOf(visualsRoot))
+                continue;
+
+            string n = r.gameObject.name.ToLower();
+
+            bool isDanger =
+                n.Contains("risk") ||
+                n.Contains("danger") ||
+                n.Contains("alto") ||
+                n.Contains("hazard") ||
+                n.Contains("red");
+
+            if (isDanger)
+                r.enabled = false;
+        }
+    }
+
+    private void BuildFloorDamageMarks(Bounds bounds)
+    {
+        for (int i = 0; i < 26; i++)
+        {
+            Vector3 pos = RandomPointInside(bounds);
+            pos.y = bounds.max.y + 0.018f;
+
+            Vector3 scale = new Vector3(
+                Random.Range(0.35f, 1.4f),
+                0.005f,
+                Random.Range(0.18f, 0.80f)
+            );
+
+            CreateFlatCube(
+                "Dust_Mark",
+                pos,
+                scale,
+                new Vector3(0f, Random.Range(0f, 360f), 0f),
+                dustMat
+            );
+        }
+
+        for (int i = 0; i < 20; i++)
+        {
+            Vector3 pos = RandomPointInside(bounds);
+            pos.y = bounds.max.y + 0.024f;
+
+            Vector3 scale = new Vector3(
+                Random.Range(0.45f, 1.35f),
+                0.006f,
+                Random.Range(0.018f, 0.045f)
+            );
+
+            CreateFlatCube(
+                "Floor_Crack",
+                pos,
+                scale,
+                new Vector3(0f, Random.Range(0f, 360f), 0f),
+                crackMat
+            );
+
+            if (Random.value > 0.45f)
+            {
+                Vector3 branchPos = pos + new Vector3(
+                    Random.Range(-0.18f, 0.18f),
+                    0.002f,
+                    Random.Range(-0.18f, 0.18f)
+                );
+
+                Vector3 branchScale = new Vector3(
+                    Random.Range(0.25f, 0.70f),
+                    0.006f,
+                    Random.Range(0.015f, 0.035f)
+                );
+
+                CreateFlatCube(
+                    "Floor_Crack_Branch",
+                    branchPos,
+                    branchScale,
+                    new Vector3(0f, Random.Range(0f, 360f), 0f),
+                    crackMat
+                );
+            }
+        }
+    }
+
+    private void BuildSubtleDigitalGrid(Bounds bounds)
+    {
+        float y = bounds.max.y + 0.038f;
 
         float minX = Mathf.Ceil(bounds.min.x);
         float maxX = Mathf.Floor(bounds.max.x);
@@ -318,7 +318,7 @@ public class RescueTwinVisualPolish : MonoBehaviour
 
     private void CreateGridLine(Vector3 start, Vector3 end)
     {
-        GameObject obj = new GameObject("Thin_Cyan_Grid_Line");
+        GameObject obj = new GameObject("Subtle_Digital_Grid_Line");
         obj.transform.SetParent(visualsRoot, false);
 
         LineRenderer line = obj.AddComponent<LineRenderer>();
@@ -331,412 +331,16 @@ public class RescueTwinVisualPolish : MonoBehaviour
         line.endWidth = gridThickness;
 
         line.material = gridMat;
-        line.startColor = new Color(gridColor.r, gridColor.g, gridColor.b, 0.60f);
-        line.endColor = new Color(gridColor.r, gridColor.g, gridColor.b, 0.60f);
+        line.startColor = new Color(gridColor.r, gridColor.g, gridColor.b, 0.28f);
+        line.endColor = new Color(gridColor.r, gridColor.g, gridColor.b, 0.28f);
 
-        line.numCornerVertices = 2;
-        line.numCapVertices = 2;
+        line.numCornerVertices = 1;
+        line.numCapVertices = 1;
         line.shadowCastingMode = ShadowCastingMode.Off;
         line.receiveShadows = false;
     }
 
-    private void UpgradeDangerZonesToCrosses(Bounds bounds)
-    {
-        Renderer[] renderers = FindObjectsOfType<Renderer>(true);
-
-        foreach (Renderer r in renderers)
-        {
-            if (r == null || r.transform.IsChildOf(visualsRoot))
-                continue;
-
-            string n = r.gameObject.name.ToLower();
-
-            bool isDanger =
-                n.Contains("risk") ||
-                n.Contains("danger") ||
-                n.Contains("alto") ||
-                n.Contains("hazard") ||
-                n.Contains("red");
-
-            if (!isDanger)
-                continue;
-
-            r.sharedMaterial = dangerMat;
-            r.shadowCastingMode = ShadowCastingMode.Off;
-            r.receiveShadows = false;
-            r.enabled = false;
-
-            Vector3 pos = r.bounds.center;
-            pos.y = bounds.max.y + 0.03f;
-
-            BuildDangerCross(pos);
-        }
-    }
-
-    private void BuildDangerCross(Vector3 position)
-    {
-        GameObject parent = new GameObject("Danger_Zone_Mark");
-        parent.transform.SetParent(visualsRoot, false);
-        parent.transform.position = position;
-
-        float squareSize = gridSpacing * 0.80f;
-
-        GameObject square = GameObject.CreatePrimitive(PrimitiveType.Cube);
-        square.name = "Danger_Square";
-        square.transform.SetParent(parent.transform, false);
-        square.transform.localPosition = Vector3.zero;
-        square.transform.localRotation = Quaternion.identity;
-        square.transform.localScale = new Vector3(squareSize, 0.01f, squareSize);
-        ApplyFlatMaterial(square, dangerMat);
-        RemoveCollider(square);
-    }
-
-    private void PolishExistingRoute()
-    {
-        LineRenderer[] lines = FindObjectsOfType<LineRenderer>(true);
-
-        foreach (LineRenderer lr in lines)
-        {
-            if (lr == null || lr.transform.IsChildOf(visualsRoot))
-                continue;
-
-            string n = lr.gameObject.name.ToLower();
-
-            bool looksLikeRoute =
-                n.Contains("route") ||
-                n.Contains("path") ||
-                n.Contains("trajectory") ||
-                n.Contains("recorrido") ||
-                n.Contains("trail");
-
-            if (!looksLikeRoute)
-                continue;
-
-            ApplyRouteStyle(lr);
-        }
-    }
-
-    private void ApplyRouteStyle(LineRenderer lr)
-    {
-        lr.material = routeMat;
-        lr.startColor = routeColor;
-        lr.endColor = routeColor;
-        lr.startWidth = routeWidth;
-        lr.endWidth = routeWidth;
-        lr.numCornerVertices = 8;
-        lr.numCapVertices = 8;
-        lr.shadowCastingMode = ShadowCastingMode.Off;
-        lr.receiveShadows = false;
-        lr.alignment = LineAlignment.View;
-    }
-
-    private void PolishRobot()
-    {
-        robot = FindRobot();
-
-        if (robot == null)
-        {
-            Debug.LogWarning("RescueTwinVisualPolish: no se encontró el perro robot.");
-            return;
-        }
-
-        ClearRobotVisualUpgrade(robot);
-        BuildRobotVisualUpgrade(robot);
-
-        CreatePointLight(
-            "Robot_Sensor_Amber_Light",
-            robot.position + new Vector3(0f, 0.8f, 0.25f),
-            routeColor,
-            1.1f,
-            3.5f
-        );
-    }
-
-    private void ClearRobotVisualUpgrade(Transform robotTransform)
-    {
-        Transform old = robotTransform.Find("__RobotVisualUpgrade__");
-
-        if (old != null)
-        {
-            SafeDestroy(old.gameObject);
-        }
-    }
-
-    private void BuildRobotVisualUpgrade(Transform robotTransform)
-    {
-        GameObject upgradeRoot = new GameObject("__RobotVisualUpgrade__");
-        upgradeRoot.transform.SetParent(robotTransform, false);
-        upgradeRoot.transform.localPosition = Vector3.zero;
-        upgradeRoot.transform.localRotation = Quaternion.identity;
-        upgradeRoot.transform.localScale = Vector3.one;
-
-        // Sombra/base suave debajo del perro.
-        CreateRobotLocalPart(
-            PrimitiveType.Cylinder,
-            "Robot_Shadow_Base",
-            new Vector3(0f, 0.035f, 0f),
-            new Vector3(0.48f, 0.025f, 0.72f),
-            Vector3.zero,
-            darkRubbleMat,
-            upgradeRoot.transform
-        );
-
-        // Módulo superior tipo sensor/caja tecnológica.
-        CreateRobotLocalPart(
-            PrimitiveType.Cube,
-            "Robot_Top_Sensor_Box",
-            new Vector3(0f, 0.58f, 0f),
-            new Vector3(0.42f, 0.16f, 0.36f),
-            Vector3.zero,
-            metalMat,
-            upgradeRoot.transform
-        );
-
-        // Cámara frontal.
-        CreateRobotLocalPart(
-            PrimitiveType.Cylinder,
-            "Robot_Front_Camera_Lens",
-            new Vector3(0f, 0.60f, 0.38f),
-            new Vector3(0.09f, 0.035f, 0.09f),
-            new Vector3(90f, 0f, 0f),
-            darkRubbleMat,
-            upgradeRoot.transform
-        );
-
-        // Aro/luz del sensor.
-        CreateRobotLocalPart(
-            PrimitiveType.Cylinder,
-            "Robot_Front_Camera_Glow",
-            new Vector3(0f, 0.60f, 0.405f),
-            new Vector3(0.12f, 0.018f, 0.12f),
-            new Vector3(90f, 0f, 0f),
-            routeMat,
-            upgradeRoot.transform
-        );
-
-        // Antena.
-        CreateRobotLocalPart(
-            PrimitiveType.Cylinder,
-            "Robot_Antenna",
-            new Vector3(0.18f, 0.82f, -0.10f),
-            new Vector3(0.025f, 0.22f, 0.025f),
-            Vector3.zero,
-            metalMat,
-            upgradeRoot.transform
-        );
-
-        CreateRobotLocalPart(
-            PrimitiveType.Sphere,
-            "Robot_Antenna_Tip",
-            new Vector3(0.18f, 1.05f, -0.10f),
-            new Vector3(0.075f, 0.075f, 0.075f),
-            Vector3.zero,
-            routeMat,
-            upgradeRoot.transform
-        );
-
-        // Panel lateral izquierdo.
-        CreateRobotLocalPart(
-            PrimitiveType.Cube,
-            "Robot_Left_Tech_Panel",
-            new Vector3(-0.36f, 0.43f, 0.02f),
-            new Vector3(0.045f, 0.18f, 0.34f),
-            Vector3.zero,
-            metalMat,
-            upgradeRoot.transform
-        );
-
-        // Panel lateral derecho.
-        CreateRobotLocalPart(
-            PrimitiveType.Cube,
-            "Robot_Right_Tech_Panel",
-            new Vector3(0.36f, 0.43f, 0.02f),
-            new Vector3(0.045f, 0.18f, 0.34f),
-            Vector3.zero,
-            metalMat,
-            upgradeRoot.transform
-        );
-
-        // Luces chicas laterales.
-        CreateRobotLocalPart(
-            PrimitiveType.Sphere,
-            "Robot_Left_Status_Light",
-            new Vector3(-0.39f, 0.50f, 0.24f),
-            new Vector3(0.055f, 0.055f, 0.055f),
-            Vector3.zero,
-            routeMat,
-            upgradeRoot.transform
-        );
-
-        CreateRobotLocalPart(
-            PrimitiveType.Sphere,
-            "Robot_Right_Status_Light",
-            new Vector3(0.39f, 0.50f, 0.24f),
-            new Vector3(0.055f, 0.055f, 0.055f),
-            Vector3.zero,
-            routeMat,
-            upgradeRoot.transform
-        );
-
-        // Luz real del sensor.
-        GameObject sensorLightObject = new GameObject("Robot_Local_Sensor_Light");
-        sensorLightObject.transform.SetParent(upgradeRoot.transform, false);
-        sensorLightObject.transform.localPosition = new Vector3(0f, 0.65f, 0.55f);
-
-        Light sensorLight = sensorLightObject.AddComponent<Light>();
-        sensorLight.type = LightType.Point;
-        sensorLight.color = routeColor;
-        sensorLight.intensity = 0.9f;
-        sensorLight.range = 2.5f;
-        sensorLight.shadows = LightShadows.None;
-    }
-
-    private GameObject CreateRobotLocalPart(
-        PrimitiveType type,
-        string name,
-        Vector3 localPosition,
-        Vector3 localScale,
-        Vector3 localEuler,
-        Material material,
-        Transform parent
-    )
-    {
-        GameObject part = GameObject.CreatePrimitive(type);
-        part.name = name;
-
-        part.transform.SetParent(parent, false);
-        part.transform.localPosition = localPosition;
-        part.transform.localScale = localScale;
-        part.transform.localRotation = Quaternion.Euler(localEuler);
-
-        Renderer renderer = part.GetComponent<Renderer>();
-
-        if (renderer != null)
-        {
-            renderer.sharedMaterial = material;
-            renderer.shadowCastingMode = ShadowCastingMode.On;
-            renderer.receiveShadows = true;
-        }
-
-        Collider collider = part.GetComponent<Collider>();
-
-        if (collider != null)
-        {
-            SafeDestroy(collider);
-        }
-
-        return part;
-    }
-    
-    private void PolishVictims()
-    {
-        Renderer[] renderers = FindObjectsOfType<Renderer>(true);
-        HashSet<Transform> processed = new HashSet<Transform>();
-
-        foreach (Renderer r in renderers)
-        {
-            if (r == null)
-                continue;
-
-            if (visualsRoot != null && r.transform.IsChildOf(visualsRoot))
-                continue;
-
-            string n = r.gameObject.name.ToLower();
-
-            if (!n.Contains("victim") && !n.Contains("victima"))
-                continue;
-
-            if (processed.Contains(r.transform))
-                continue;
-
-            processed.Add(r.transform);
-            BuildVictimFigure(r.transform, r);
-        }
-    }
-
-    private void BuildVictimFigure(Transform victimRoot, Renderer originalRenderer)
-    {
-        Color beaconColor = victimFallbackBeaconColor;
-
-        if (originalRenderer != null && originalRenderer.sharedMaterial != null)
-        {
-            beaconColor = originalRenderer.sharedMaterial.color;
-        }
-
-        if (originalRenderer != null)
-        {
-            originalRenderer.enabled = false;
-        }
-
-        Transform old = victimRoot.Find("__VictimFigure__");
-
-        if (old != null)
-        {
-            SafeDestroy(old.gameObject);
-        }
-
-        GameObject figureRoot = new GameObject("__VictimFigure__");
-        figureRoot.transform.SetParent(victimRoot, false);
-        figureRoot.transform.localPosition = Vector3.zero;
-        figureRoot.transform.localRotation = Quaternion.identity;
-        figureRoot.transform.localScale = Vector3.one * victimScale;
-
-        GameObject torso = GameObject.CreatePrimitive(PrimitiveType.Capsule);
-        torso.name = "Victim_Torso";
-        torso.transform.SetParent(figureRoot.transform, false);
-        torso.transform.localPosition = new Vector3(0f, 0.30f, 0f);
-        torso.transform.localScale = new Vector3(0.22f, 0.22f, 0.22f);
-        ApplyMaterial(torso, victimClothMat);
-        RemoveCollider(torso);
-
-        GameObject head = GameObject.CreatePrimitive(PrimitiveType.Sphere);
-        head.name = "Victim_Head";
-        head.transform.SetParent(figureRoot.transform, false);
-        head.transform.localPosition = new Vector3(0f, 0.58f, 0f);
-        head.transform.localScale = Vector3.one * 0.19f;
-        ApplyMaterial(head, victimSkinMat);
-        RemoveCollider(head);
-
-        BuildVictimArm(figureRoot.transform, new Vector3(-0.15f, 0.46f, 0f), -30f);
-        BuildVictimArm(figureRoot.transform, new Vector3(0.15f, 0.46f, 0f), 30f);
-
-        GameObject beacon = GameObject.CreatePrimitive(PrimitiveType.Sphere);
-        beacon.name = "Victim_Signal_Beacon";
-        beacon.transform.SetParent(figureRoot.transform, false);
-        beacon.transform.localPosition = new Vector3(0f, 0.88f, 0f);
-        beacon.transform.localScale = Vector3.one * 0.085f;
-
-        Material beaconMat = CreateMaterial(
-            "Mat_Victim_Beacon_" + victimRoot.GetInstanceID(),
-            beaconColor,
-            2.2f,
-            false
-        );
-
-        ApplyMaterial(beacon, beaconMat);
-        RemoveCollider(beacon);
-
-        Light l = beacon.AddComponent<Light>();
-        l.type = LightType.Point;
-        l.color = beaconColor;
-        l.intensity = 0.9f;
-        l.range = 2.0f;
-        l.shadows = LightShadows.None;
-    }
-
-    private void BuildVictimArm(Transform parent, Vector3 shoulderLocalPos, float zTilt)
-    {
-        GameObject arm = GameObject.CreatePrimitive(PrimitiveType.Capsule);
-        arm.name = "Victim_Arm";
-        arm.transform.SetParent(parent, false);
-        arm.transform.localPosition = shoulderLocalPos;
-        arm.transform.localRotation = Quaternion.Euler(0f, 0f, zTilt);
-        arm.transform.localScale = new Vector3(0.055f, 0.13f, 0.055f);
-        ApplyMaterial(arm, victimSkinMat);
-        RemoveCollider(arm);
-    }
-
-    private void StylizeGameplayObstacles()
+    private void ImproveExistingObstacles()
     {
         Renderer[] renderers = FindObjectsOfType<Renderer>(true);
 
@@ -751,24 +355,29 @@ public class RescueTwinVisualPolish : MonoBehaviour
             GameObject obj = r.gameObject;
             string n = obj.name.ToLower();
 
-            if (ShouldSkipObjectForObstacleStyle(n, obj))
+            if (ShouldSkipObstacle(n, obj))
+                continue;
+
+            BoxCollider box = obj.GetComponent<BoxCollider>();
+
+            if (box == null)
                 continue;
 
             Bounds b = r.bounds;
 
-            if (b.size.x > 3.5f || b.size.z > 3.5f || b.size.y > 3.5f)
+            if (b.size.x > 3.8f || b.size.y > 3.8f || b.size.z > 3.8f)
                 continue;
 
-            r.sharedMaterial =
-                Random.value > 0.45f
-                    ? rubbleMat
-                    : darkRubbleMat;
+            bool dark = Random.value > 0.45f;
+            r.sharedMaterial = dark ? darkConcreteMat : concreteMat;
+            r.shadowCastingMode = ShadowCastingMode.On;
+            r.receiveShadows = true;
 
-            AddDetailChunksAroundObstacle(obj.transform);
+            AddObstacleDetails(obj.transform, box);
         }
     }
 
-    private bool ShouldSkipObjectForObstacleStyle(string name, GameObject obj)
+    private bool ShouldSkipObstacle(string name, GameObject obj)
     {
         if (name.Contains("ground")) return true;
         if (name.Contains("floor")) return true;
@@ -790,6 +399,10 @@ public class RescueTwinVisualPolish : MonoBehaviour
         if (name.Contains("base")) return true;
         if (name.Contains("ui")) return true;
         if (name.Contains("canvas")) return true;
+        if (name.Contains("visual")) return true;
+        if (name.Contains("polish")) return true;
+        if (name.Contains("generated")) return true;
+        if (name.Contains("__")) return true;
 
         Renderer renderer = obj.GetComponent<Renderer>();
 
@@ -799,117 +412,290 @@ public class RescueTwinVisualPolish : MonoBehaviour
         return false;
     }
 
-    private void AddDetailChunksAroundObstacle(Transform obstacle)
+    private void AddObstacleDetails(Transform obstacle, BoxCollider box)
     {
-        Transform old = obstacle.Find("__ObstacleDetailChunks__");
+        Transform old = obstacle.Find("__ObstacleDetails__");
 
         if (old != null)
-        {
             SafeDestroy(old.gameObject);
+
+        GameObject root = new GameObject("__ObstacleDetails__");
+        root.transform.SetParent(obstacle, false);
+        root.transform.localPosition = Vector3.zero;
+        root.transform.localRotation = Quaternion.identity;
+        root.transform.localScale = Vector3.one;
+
+        Vector3 size = box.size;
+        Vector3 center = box.center;
+
+        if (size.y > 0.55f)
+        {
+            CreateLocalDetailCube(
+                root.transform,
+                "Front_Dark_Panel",
+                center + new Vector3(0f, 0f, size.z * 0.515f),
+                new Vector3(size.x * 0.30f, size.y * 0.16f, 0.035f),
+                panelMat
+            );
+
+            CreateLocalDetailCube(
+                root.transform,
+                "Small_Handle",
+                center + new Vector3(size.x * 0.18f, -size.y * 0.05f, size.z * 0.54f),
+                new Vector3(size.x * 0.10f, size.y * 0.04f, 0.04f),
+                metalMat
+            );
+
+            CreateLocalDetailCube(
+                root.transform,
+                "Top_Edge_Detail",
+                center + new Vector3(0f, size.y * 0.515f, 0f),
+                new Vector3(size.x * 0.82f, 0.035f, size.z * 0.82f),
+                darkConcreteMat
+            );
         }
 
-        GameObject detailRoot = new GameObject("__ObstacleDetailChunks__");
-        detailRoot.transform.SetParent(obstacle, false);
-        detailRoot.transform.localPosition = Vector3.zero;
-        detailRoot.transform.localRotation = Quaternion.identity;
-        detailRoot.transform.localScale = Vector3.one;
+        int chips = Random.Range(2, 5);
 
-        int pieces = Random.Range(4, 8);
-
-        for (int i = 0; i < pieces; i++)
+        for (int i = 0; i < chips; i++)
         {
-            GameObject piece = GameObject.CreatePrimitive(PrimitiveType.Cube);
-            piece.name = "Small_Rubble_Detail";
-            piece.transform.SetParent(detailRoot.transform, false);
-
-            piece.transform.localPosition = new Vector3(
-                Random.Range(-0.60f, 0.60f),
-                Random.Range(-0.30f, 0.18f),
-                Random.Range(-0.60f, 0.60f)
+            Vector3 localPos = center + new Vector3(
+                Random.Range(-size.x * 0.42f, size.x * 0.42f),
+                Random.Range(-size.y * 0.35f, size.y * 0.30f),
+                size.z * 0.54f
             );
 
-            piece.transform.localRotation = Random.rotation;
-
-            float baseScale = Random.Range(0.08f, 0.26f);
-
-            piece.transform.localScale = new Vector3(
-                baseScale * Random.Range(0.7f, 1.3f),
-                baseScale * Random.Range(0.5f, 1.0f),
-                baseScale * Random.Range(0.7f, 1.3f)
+            Vector3 localScale = new Vector3(
+                Random.Range(0.04f, 0.11f),
+                Random.Range(0.04f, 0.12f),
+                0.025f
             );
 
-            Renderer pr = piece.GetComponent<Renderer>();
-
-            if (pr != null)
-            {
-                float roll = Random.value;
-
-                pr.sharedMaterial =
-                    roll > 0.80f ? metalMat :
-                    roll > 0.40f ? rubbleMat :
-                    darkRubbleMat;
-            }
-
-            RemoveCollider(piece);
+            CreateLocalDetailCube(
+                root.transform,
+                "Broken_Surface_Chip",
+                localPos,
+                localScale,
+                Random.value > 0.5f ? darkConcreteMat : concreteMat
+            );
         }
     }
 
-    private void BuildRubbleMounds(Bounds bounds)
+    private GameObject CreateLocalDetailCube(
+        Transform parent,
+        string name,
+        Vector3 localPos,
+        Vector3 localScale,
+        Material mat
+    )
     {
-        for (int m = 0; m < rubbleMoundCount; m++)
-        {
-            Vector3 center = new Vector3(
-                Random.Range(bounds.min.x + 1.5f, bounds.max.x - 1.5f),
-                bounds.max.y,
-                Random.Range(bounds.min.z + 1.5f, bounds.max.z - 1.5f)
-            );
-
-            BuildOneMound(center);
-        }
-
-        CreateVisualCube(
-            "Metal_Container_Inside",
-            bounds.center + new Vector3(bounds.extents.x * 0.35f, bounds.max.y + 0.28f, -bounds.extents.z * 0.35f),
-            new Vector3(1.1f, 0.55f, 0.70f),
-            Vector3.zero,
-            metalMat
+        GameObject go = GameObject.CreatePrimitive(PrimitiveType.Cube);
+        go.name = name;
+        go.transform.SetParent(parent, false);
+        go.transform.localPosition = localPos;
+        go.transform.localRotation = Quaternion.Euler(
+            Random.Range(-3f, 3f),
+            Random.Range(-6f, 6f),
+            Random.Range(-3f, 3f)
         );
+        go.transform.localScale = localScale;
+
+        ApplyMaterial(go, mat);
+        RemoveCollider(go);
+
+        return go;
     }
 
-    private void BuildOneMound(Vector3 center)
+    private void BuildBetterRubble(Bounds bounds)
     {
-        GameObject moundRoot = new GameObject("Rubble_Mound");
-        moundRoot.transform.SetParent(visualsRoot, false);
-        moundRoot.transform.position = center;
-
-        for (int i = 0; i < rocksPerMound; i++)
+        Vector3[] centers =
         {
-            float t = (float)i / rocksPerMound;
-            float radius = moundRadius * (1f - t * 0.6f) * Random.Range(0.5f, 1f);
-            float angle = Random.Range(0f, Mathf.PI * 2f);
+            Point01(bounds, 0.22f, 0.32f),
+            Point01(bounds, 0.58f, 0.41f),
+            Point01(bounds, 0.55f, 0.72f),
+            Point01(bounds, 0.80f, 0.26f),
+            Point01(bounds, 0.28f, 0.70f),
+            Point01(bounds, 0.72f, 0.64f)
+        };
 
-            Vector3 localPos = new Vector3(
-                Mathf.Cos(angle) * radius,
-                Random.Range(0.05f, 0.05f + (1f - t) * 0.55f),
-                Mathf.Sin(angle) * radius
-            );
-
-            GameObject rock = GameObject.CreatePrimitive(PrimitiveType.Cube);
-            rock.name = "Rock";
-            rock.transform.SetParent(moundRoot.transform, false);
-            rock.transform.localPosition = localPos;
-            rock.transform.localRotation = Random.rotation;
-
-            float scale = Random.Range(0.18f, 0.42f) * (1f - t * 0.35f);
-            rock.transform.localScale = new Vector3(
-                scale,
-                scale * Random.Range(0.7f, 1.1f),
-                scale
-            );
-
-            ApplyMaterial(rock, Random.value > 0.5f ? rubbleMat : darkRubbleMat);
-            RemoveCollider(rock);
+        foreach (Vector3 center in centers)
+        {
+            BuildCollapsedPile(center);
         }
+
+        BuildCollapsedWallSection(Point01(bounds, 0.68f, 0.56f), 1.4f, 0.22f, 0.42f, 18f);
+        BuildCollapsedWallSection(Point01(bounds, 0.38f, 0.58f), 1.2f, 0.20f, 0.38f, -22f);
+        BuildCollapsedWallSection(Point01(bounds, 0.74f, 0.78f), 1.1f, 0.18f, 0.40f, 32f);
+    }
+
+    private void BuildCollapsedPile(Vector3 center)
+    {
+        int slabs = Random.Range(2, 4);
+
+        for (int i = 0; i < slabs; i++)
+            CreateRubbleSlab(center);
+
+        int large = Random.Range(3, 5);
+
+        for (int i = 0; i < large; i++)
+            CreateRubbleChunk(center, 0.30f, 0.65f, 0.16f, 0.32f, 0.22f, 0.55f);
+
+        int medium = Random.Range(9, 13);
+
+        for (int i = 0; i < medium; i++)
+            CreateRubbleChunk(center, 0.12f, 0.30f, 0.07f, 0.18f, 0.12f, 0.28f);
+
+        int small = Random.Range(14, 20);
+
+        for (int i = 0; i < small; i++)
+            CreateSmallDebris(center);
+    }
+
+    private void CreateRubbleSlab(Vector3 center)
+    {
+        GameObject slab = GameObject.CreatePrimitive(PrimitiveType.Cube);
+        slab.name = "Broken_Concrete_Slab";
+        slab.transform.SetParent(visualsRoot, false);
+
+        float sx = Random.Range(0.55f, 1.05f);
+        float sy = Random.Range(0.055f, 0.12f);
+        float sz = Random.Range(0.20f, 0.45f);
+
+        Vector3 pos = center + new Vector3(
+            Random.Range(-0.45f, 0.45f),
+            0f,
+            Random.Range(-0.35f, 0.35f)
+        );
+
+        slab.transform.position = pos + Vector3.up * (sy * 0.5f);
+        slab.transform.rotation = Quaternion.Euler(
+            Random.Range(-9f, 9f),
+            Random.Range(0f, 180f),
+            Random.Range(-9f, 9f)
+        );
+        slab.transform.localScale = new Vector3(sx, sy, sz);
+
+        ApplyMaterial(slab, RandomConcreteMaterial());
+        RemoveCollider(slab);
+    }
+
+    private void CreateRubbleChunk(
+        Vector3 center,
+        float minX,
+        float maxX,
+        float minY,
+        float maxY,
+        float minZ,
+        float maxZ
+    )
+    {
+        PrimitiveType type = Random.value > 0.72f ? PrimitiveType.Cylinder : PrimitiveType.Cube;
+
+        GameObject piece = GameObject.CreatePrimitive(type);
+        piece.name = "Broken_Rubble_Chunk";
+        piece.transform.SetParent(visualsRoot, false);
+
+        Vector3 scale;
+
+        if (type == PrimitiveType.Cube)
+        {
+            scale = new Vector3(
+                Random.Range(minX, maxX),
+                Random.Range(minY, maxY),
+                Random.Range(minZ, maxZ)
+            );
+        }
+        else
+        {
+            float rad = Random.Range(minX * 0.35f, maxX * 0.38f);
+            float h = Random.Range(minY, maxY);
+            scale = new Vector3(rad, h, rad);
+        }
+
+        Vector3 pos = center + new Vector3(
+            Random.Range(-0.55f, 0.55f),
+            0f,
+            Random.Range(-0.45f, 0.45f)
+        );
+
+        piece.transform.position = pos + Vector3.up * (scale.y * 0.5f);
+        piece.transform.rotation = Quaternion.Euler(
+            Random.Range(-20f, 20f),
+            Random.Range(0f, 360f),
+            Random.Range(-20f, 20f)
+        );
+        piece.transform.localScale = scale;
+
+        ApplyMaterial(piece, RandomConcreteMaterial());
+        RemoveCollider(piece);
+    }
+
+    private void CreateSmallDebris(Vector3 center)
+    {
+        PrimitiveType type = Random.value > 0.45f ? PrimitiveType.Cube : PrimitiveType.Sphere;
+
+        GameObject piece = GameObject.CreatePrimitive(type);
+        piece.name = "Small_Debris";
+        piece.transform.SetParent(visualsRoot, false);
+
+        float s = Random.Range(0.045f, 0.13f);
+
+        piece.transform.localScale = new Vector3(
+            s,
+            s * Random.Range(0.75f, 1.25f),
+            s * Random.Range(0.75f, 1.25f)
+        );
+
+        Vector3 pos = center + new Vector3(
+            Random.Range(-0.70f, 0.70f),
+            0f,
+            Random.Range(-0.55f, 0.55f)
+        );
+
+        piece.transform.position = pos + Vector3.up * (piece.transform.localScale.y * 0.5f);
+        piece.transform.rotation = Quaternion.Euler(
+            Random.Range(-25f, 25f),
+            Random.Range(0f, 360f),
+            Random.Range(-25f, 25f)
+        );
+
+        ApplyMaterial(piece, RandomConcreteMaterial());
+        RemoveCollider(piece);
+    }
+
+    private void BuildCollapsedWallSection(
+        Vector3 center,
+        float length,
+        float thickness,
+        float height,
+        float yRotation
+    )
+    {
+        GameObject wall = GameObject.CreatePrimitive(PrimitiveType.Cube);
+        wall.name = "Collapsed_Wall_Section";
+        wall.transform.SetParent(visualsRoot, false);
+        wall.transform.position = center + new Vector3(0f, height * 0.5f, 0f);
+        wall.transform.rotation = Quaternion.Euler(-8f, yRotation, 6f);
+        wall.transform.localScale = new Vector3(length, height, thickness);
+
+        ApplyMaterial(wall, RandomConcreteMaterial());
+        RemoveCollider(wall);
+
+        for (int i = 0; i < 10; i++)
+        {
+            CreateSmallDebris(
+                center + new Vector3(
+                    Random.Range(-0.45f, 0.45f),
+                    0f,
+                    Random.Range(-0.40f, 0.40f)
+                )
+            );
+        }
+    }
+
+    private Material RandomConcreteMaterial()
+    {
+        return Random.value > 0.42f ? concreteMat : darkConcreteMat;
     }
 
     private void BuildPerimeterWalls(Bounds bounds)
@@ -963,145 +749,178 @@ public class RescueTwinVisualPolish : MonoBehaviour
         RemoveCollider(go);
     }
 
-    private void BuildCornerLights(Bounds bounds)
+    private void PolishExistingRoute()
     {
-        Vector3[] corners =
-        {
-            new Vector3(bounds.min.x - 0.2f, bounds.max.y, bounds.min.z - 0.2f),
-            new Vector3(bounds.max.x + 0.2f, bounds.max.y, bounds.min.z - 0.2f),
-            new Vector3(bounds.min.x - 0.2f, bounds.max.y, bounds.max.z + 0.2f),
-            new Vector3(bounds.max.x + 0.2f, bounds.max.y, bounds.max.z + 0.2f)
-        };
+        LineRenderer[] lines = FindObjectsOfType<LineRenderer>(true);
 
-        foreach (Vector3 c in corners)
+        foreach (LineRenderer lr in lines)
         {
-            CreatePointLight(
-                "Corner_Work_Light",
-                c + Vector3.up * 2.6f,
-                new Color(1f, 0.92f, 0.75f),
-                1.4f,
-                7f
-            );
+            if (lr == null)
+                continue;
+
+            if (visualsRoot != null && lr.transform.IsChildOf(visualsRoot))
+                continue;
+
+            string n = lr.gameObject.name.ToLower();
+
+            bool looksLikeRoute =
+                n.Contains("route") ||
+                n.Contains("path") ||
+                n.Contains("trajectory") ||
+                n.Contains("recorrido") ||
+                n.Contains("trail");
+
+            if (!looksLikeRoute)
+                continue;
+
+            ApplyRouteStyle(lr);
         }
     }
 
-    private void BuildInteriorEmergencyProps(Bounds bounds)
+    private void ApplyRouteStyle(LineRenderer lr)
     {
-        Vector3 p1 = bounds.center + new Vector3(-bounds.extents.x * 0.55f, 0f, bounds.extents.z * 0.65f);
-        Vector3 p2 = bounds.center + new Vector3(bounds.extents.x * 0.55f, 0f, -bounds.extents.z * 0.65f);
-        Vector3 p3 = bounds.center + new Vector3(bounds.extents.x * 0.40f, 0f, bounds.extents.z * 0.45f);
-
-        CreateCone(p1);
-        CreateCone(p1 + new Vector3(0.35f, 0f, 0f));
-        CreateCone(p1 + new Vector3(0.70f, 0f, 0f));
-
-        CreateCone(p2);
-        CreateCone(p2 + new Vector3(-0.35f, 0f, 0.15f));
-
-        CreateBarrel(p3);
-        CreateSmallBarrier(bounds.center + new Vector3(bounds.extents.x * 0.55f, 0f, bounds.extents.z * 0.20f), 90f);
+        lr.material = routeMat;
+        lr.startColor = routeColor;
+        lr.endColor = routeColor;
+        lr.startWidth = routeWidth;
+        lr.endWidth = routeWidth;
+        lr.numCornerVertices = 8;
+        lr.numCapVertices = 8;
+        lr.shadowCastingMode = ShadowCastingMode.Off;
+        lr.receiveShadows = false;
+        lr.alignment = LineAlignment.View;
     }
 
-    private void CreateCone(Vector3 position)
+    private void PolishVictims()
     {
-        position.y = trailY;
+        Renderer[] renderers = FindObjectsOfType<Renderer>(true);
+        HashSet<Transform> processed = new HashSet<Transform>();
 
-        CreateVisualPrimitive(
-            PrimitiveType.Cylinder,
-            "Cone_Base",
-            position + new Vector3(0f, 0.025f, 0f),
-            new Vector3(0.18f, 0.025f, 0.18f),
-            Vector3.zero,
-            metalMat
-        );
+        foreach (Renderer r in renderers)
+        {
+            if (r == null)
+                continue;
 
-        CreateVisualPrimitive(
-            PrimitiveType.Cylinder,
-            "Cone_Body",
-            position + new Vector3(0f, 0.18f, 0f),
-            new Vector3(0.10f, 0.18f, 0.10f),
-            Vector3.zero,
-            coneMat
-        );
+            if (visualsRoot != null && r.transform.IsChildOf(visualsRoot))
+                continue;
+
+            string n = r.gameObject.name.ToLower();
+
+            if (!n.Contains("victim") && !n.Contains("victima"))
+                continue;
+
+            if (processed.Contains(r.transform))
+                continue;
+
+            processed.Add(r.transform);
+            BuildVictimFigure(r.transform, r);
+        }
     }
 
-    private void CreateBarrel(Vector3 position)
+    private void BuildVictimFigure(Transform victimRoot, Renderer originalRenderer)
     {
-        position.y = trailY;
+        Color beaconColor = victimFallbackBeaconColor;
 
-        CreateVisualPrimitive(
-            PrimitiveType.Cylinder,
-            "Emergency_Barrel",
-            position + new Vector3(0f, 0.28f, 0f),
-            new Vector3(0.23f, 0.28f, 0.23f),
-            Vector3.zero,
-            barrelMat
+        if (originalRenderer != null && originalRenderer.sharedMaterial != null)
+            beaconColor = originalRenderer.sharedMaterial.color;
+
+        if (originalRenderer != null)
+            originalRenderer.enabled = false;
+
+        Transform old = victimRoot.Find("__VictimFigure__");
+
+        if (old != null)
+            SafeDestroy(old.gameObject);
+
+        GameObject figureRoot = new GameObject("__VictimFigure__");
+        figureRoot.transform.SetParent(victimRoot, false);
+        figureRoot.transform.localPosition = Vector3.zero;
+        figureRoot.transform.localRotation = Quaternion.identity;
+        figureRoot.transform.localScale = Vector3.one * victimScale;
+
+        GameObject torso = GameObject.CreatePrimitive(PrimitiveType.Capsule);
+        torso.name = "Victim_Torso";
+        torso.transform.SetParent(figureRoot.transform, false);
+        torso.transform.localPosition = new Vector3(0f, 0.30f, 0f);
+        torso.transform.localScale = new Vector3(0.22f, 0.22f, 0.22f);
+        ApplyMaterial(torso, victimClothMat);
+        RemoveCollider(torso);
+
+        GameObject head = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+        head.name = "Victim_Head";
+        head.transform.SetParent(figureRoot.transform, false);
+        head.transform.localPosition = new Vector3(0f, 0.58f, 0f);
+        head.transform.localScale = Vector3.one * 0.19f;
+        ApplyMaterial(head, victimSkinMat);
+        RemoveCollider(head);
+
+        BuildVictimArm(figureRoot.transform, new Vector3(-0.15f, 0.46f, 0f), -30f);
+        BuildVictimArm(figureRoot.transform, new Vector3(0.15f, 0.46f, 0f), 30f);
+
+        GameObject beacon = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+        beacon.name = "Victim_Signal_Beacon";
+        beacon.transform.SetParent(figureRoot.transform, false);
+        beacon.transform.localPosition = new Vector3(0f, 0.88f, 0f);
+        beacon.transform.localScale = Vector3.one * 0.085f;
+
+        Material beaconMat = CreateMaterial(
+            "Mat_Victim_Beacon_" + victimRoot.GetInstanceID(),
+            beaconColor,
+            1.5f,
+            false,
+            0f
         );
+
+        ApplyMaterial(beacon, beaconMat);
+        RemoveCollider(beacon);
     }
 
-    private void CreateSmallBarrier(Vector3 position, float yRotation)
+    private void BuildVictimArm(Transform parent, Vector3 shoulderLocalPos, float zTilt)
     {
-        position.y = trailY + 0.20f;
-
-        GameObject parent = new GameObject("Interior_Barrier");
-        parent.transform.SetParent(visualsRoot, false);
-        parent.transform.position = position;
-        parent.transform.rotation = Quaternion.Euler(0f, yRotation, 0f);
-
-        CreateVisualPrimitive(
-            PrimitiveType.Cube,
-            "Barrier_Body",
-            Vector3.up * 0.22f,
-            new Vector3(1.2f, 0.34f, 0.16f),
-            Vector3.zero,
-            metalMat,
-            parent.transform
-        );
-
-        CreateVisualPrimitive(
-            PrimitiveType.Cube,
-            "Barrier_Stripe",
-            Vector3.up * 0.32f,
-            new Vector3(1.22f, 0.07f, 0.17f),
-            Vector3.zero,
-            routeMat,
-            parent.transform
-        );
+        GameObject arm = GameObject.CreatePrimitive(PrimitiveType.Capsule);
+        arm.name = "Victim_Arm";
+        arm.transform.SetParent(parent, false);
+        arm.transform.localPosition = shoulderLocalPos;
+        arm.transform.localRotation = Quaternion.Euler(0f, 0f, zTilt);
+        arm.transform.localScale = new Vector3(0.055f, 0.13f, 0.055f);
+        ApplyMaterial(arm, victimSkinMat);
+        RemoveCollider(arm);
     }
 
     private void PolishLighting(Bounds bounds)
     {
-        RenderSettings.ambientLight = new Color(0.18f, 0.18f, 0.20f);
+        QualitySettings.shadows = ShadowQuality.All;
+        QualitySettings.shadowDistance = 60f;
+
+        RenderSettings.ambientLight = new Color(0.10f, 0.10f, 0.11f);
         RenderSettings.fog = true;
-        RenderSettings.fogColor = new Color(0.12f, 0.12f, 0.13f);
+        RenderSettings.fogColor = new Color(0.09f, 0.09f, 0.10f);
         RenderSettings.fogDensity = 0.010f;
 
-        Light mainLight = FindObjectOfType<Light>();
+        Light[] lights = FindObjectsOfType<Light>(true);
 
-        if (mainLight != null)
+        foreach (Light l in lights)
         {
-            mainLight.type = LightType.Directional;
-            mainLight.intensity = 0.90f;
-            mainLight.color = new Color(1f, 0.92f, 0.78f);
-            mainLight.transform.rotation = Quaternion.Euler(50f, -35f, 0f);
-            mainLight.shadows = LightShadows.Soft;
+            if (l == null)
+                continue;
+
+            if (l.type == LightType.Directional)
+            {
+                l.intensity = 0.95f;
+                l.color = new Color(1f, 0.90f, 0.75f);
+                l.shadows = LightShadows.Soft;
+                l.shadowStrength = 0.85f;
+                l.transform.rotation = Quaternion.Euler(52f, -36f, 0f);
+            }
         }
 
-        CreatePointLight(
-            "Red_Emergency_Light",
-            bounds.center + new Vector3(-bounds.extents.x * 0.6f, 2.4f, bounds.extents.z * 0.6f),
-            dangerColor,
-            1.4f,
-            7f
-        );
+        Camera cam = Camera.main;
 
-        CreatePointLight(
-            "Amber_Route_Light",
-            bounds.center + new Vector3(bounds.extents.x * 0.55f, 2.6f, -bounds.extents.z * 0.55f),
-            routeColor,
-            1.2f,
-            7f
-        );
+        if (cam != null)
+        {
+            cam.backgroundColor = new Color(0.09f, 0.09f, 0.10f);
+            cam.clearFlags = CameraClearFlags.SolidColor;
+        }
     }
 
     private void PolishCamera(Bounds bounds)
@@ -1113,14 +932,8 @@ public class RescueTwinVisualPolish : MonoBehaviour
 
         Vector3 center = bounds.center;
 
-        // Ángulo como el que pediste:
-        // más cerca, vista elevada, pero no tan alejada ni tan rara.
         cam.transform.position = center + new Vector3(0f, 12.5f, -11.5f);
-
-        cam.transform.LookAt(
-            center + new Vector3(0f, 0f, 0.8f)
-        );
-
+        cam.transform.LookAt(center + new Vector3(0f, 0f, 0.8f));
         cam.fieldOfView = 50f;
     }
 
@@ -1158,9 +971,7 @@ public class RescueTwinVisualPolish : MonoBehaviour
     private void UpdateDynamicTrail()
     {
         if (robot == null)
-        {
             robot = FindRobot();
-        }
 
         if (robot == null || dynamicTrail == null)
             return;
@@ -1185,9 +996,7 @@ public class RescueTwinVisualPolish : MonoBehaviour
         }
 
         if (distance >= minTrailDistance)
-        {
             AddTrailPoint(current);
-        }
     }
 
     private Vector3 GetRobotTrailPosition()
@@ -1206,51 +1015,43 @@ public class RescueTwinVisualPolish : MonoBehaviour
 
     private Transform FindRobot()
     {
-        GameObject[] all = FindObjectsOfType<GameObject>(true);
-
-        // Primero buscamos el perro robot específicamente.
-        foreach (GameObject obj in all)
-        {
-            string n = obj.name.ToLower();
-
-            if (
-                n.Contains("dog") ||
-                n.Contains("perro") ||
-                n.Contains("quadruped") ||
-                n.Contains("searchdog")
-            )
-            {
-                if (obj.GetComponentInChildren<Renderer>(true) != null)
-                {
-                    return obj.transform;
-                }
-            }
-        }
-
-        // Si no existe un objeto con nombre de perro, usamos Robot.
         GameObject direct = GameObject.Find("Robot");
 
         if (direct != null)
             return direct.transform;
 
-        // Último fallback.
+        GameObject[] all = FindObjectsOfType<GameObject>(true);
+
         foreach (GameObject obj in all)
         {
             string n = obj.name.ToLower();
 
-            if (n.Contains("robot"))
-            {
-                if (obj.GetComponentInChildren<Renderer>(true) != null)
-                {
-                    return obj.transform;
-                }
-            }
+            if (n.Contains("robot") || n.Contains("dog"))
+                return obj.transform;
         }
 
         return null;
     }
 
-    private GameObject CreateVisualCube(
+    private Vector3 RandomPointInside(Bounds bounds)
+    {
+        return new Vector3(
+            Random.Range(bounds.min.x + 0.8f, bounds.max.x - 0.8f),
+            bounds.max.y,
+            Random.Range(bounds.min.z + 0.8f, bounds.max.z - 0.8f)
+        );
+    }
+
+    private Vector3 Point01(Bounds bounds, float nx, float nz)
+    {
+        float x = Mathf.Lerp(bounds.min.x + 1.0f, bounds.max.x - 1.0f, nx);
+        float z = Mathf.Lerp(bounds.min.z + 1.0f, bounds.max.z - 1.0f, nz);
+        float y = bounds.max.y + 0.015f;
+
+        return new Vector3(x, y, z);
+    }
+
+    private GameObject CreateFlatCube(
         string name,
         Vector3 position,
         Vector3 scale,
@@ -1258,44 +1059,14 @@ public class RescueTwinVisualPolish : MonoBehaviour
         Material mat
     )
     {
-        return CreateVisualPrimitive(
-            PrimitiveType.Cube,
-            name,
-            position,
-            scale,
-            euler,
-            mat
-        );
-    }
-
-    private GameObject CreateVisualPrimitive(
-        PrimitiveType type,
-        string name,
-        Vector3 position,
-        Vector3 scale,
-        Vector3 euler,
-        Material mat,
-        Transform customParent = null
-    )
-    {
-        Transform parent = customParent != null ? customParent : visualsRoot;
-
-        GameObject go = GameObject.CreatePrimitive(type);
+        GameObject go = GameObject.CreatePrimitive(PrimitiveType.Cube);
         go.name = name;
-        go.transform.SetParent(parent, false);
+        go.transform.SetParent(visualsRoot, false);
         go.transform.position = position;
         go.transform.localScale = scale;
         go.transform.rotation = Quaternion.Euler(euler);
 
-        Renderer r = go.GetComponent<Renderer>();
-
-        if (r != null)
-        {
-            r.sharedMaterial = mat;
-            r.shadowCastingMode = ShadowCastingMode.On;
-            r.receiveShadows = true;
-        }
-
+        ApplyFlatMaterial(go, mat);
         RemoveCollider(go);
 
         return go;
@@ -1325,26 +1096,6 @@ public class RescueTwinVisualPolish : MonoBehaviour
         }
     }
 
-    private void CreatePointLight(
-        string name,
-        Vector3 position,
-        Color color,
-        float intensity,
-        float range
-    )
-    {
-        GameObject lightObject = new GameObject(name);
-        lightObject.transform.SetParent(visualsRoot, false);
-        lightObject.transform.position = position;
-
-        Light l = lightObject.AddComponent<Light>();
-        l.type = LightType.Point;
-        l.color = color;
-        l.intensity = intensity;
-        l.range = range;
-        l.shadows = LightShadows.Soft;
-    }
-
     private Bounds GetObjectBounds(GameObject obj)
     {
         Renderer r = obj.GetComponent<Renderer>();
@@ -1360,9 +1111,7 @@ public class RescueTwinVisualPolish : MonoBehaviour
         Bounds b = renderers[0].bounds;
 
         for (int i = 1; i < renderers.Length; i++)
-        {
             b.Encapsulate(renderers[i].bounds);
-        }
 
         return b;
     }
@@ -1371,7 +1120,8 @@ public class RescueTwinVisualPolish : MonoBehaviour
         string name,
         Color color,
         float emissionIntensity,
-        bool lit
+        bool lit,
+        float smoothness
     )
     {
         Shader shader;
@@ -1403,6 +1153,9 @@ public class RescueTwinVisualPolish : MonoBehaviour
         if (mat.HasProperty("_Color"))
             mat.SetColor("_Color", color);
 
+        if (mat.HasProperty("_Smoothness"))
+            mat.SetFloat("_Smoothness", smoothness);
+
         mat.color = color;
 
         if (emissionIntensity > 0f && mat.HasProperty("_EmissionColor"))
@@ -1419,22 +1172,7 @@ public class RescueTwinVisualPolish : MonoBehaviour
         Collider c = go.GetComponent<Collider>();
 
         if (c != null)
-        {
             SafeDestroy(c);
-        }
-    }
-
-    private void ClearObstacleDetailRoots()
-    {
-        Transform[] transforms = FindObjectsOfType<Transform>(true);
-
-        foreach (Transform t in transforms)
-        {
-            if (t.name == "__ObstacleDetailChunks__")
-            {
-                SafeDestroy(t.gameObject);
-            }
-        }
     }
 
     private void SafeDestroy(Object obj)
