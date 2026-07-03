@@ -1,0 +1,1279 @@
+{
+  "mission": 9,
+  "width": 20,
+  "height": 20,
+  "base": {
+    "x": 10,
+    "y": 10
+  },
+  "obstacles": [
+    {
+      "x": 0,
+      "y": 6
+    },
+    {
+      "x": 0,
+      "y": 10
+    },
+    {
+      "x": 0,
+      "y": 15
+    },
+    {
+      "x": 0,
+      "y": 16
+    },
+    {
+      "x": 1,
+      "y": 2
+    },
+    {
+      "x": 1,
+      "y": 5
+    },
+    {
+      "x": 1,
+      "y": 8
+    },
+    {
+      "x": 1,
+      "y": 11
+    },
+    {
+      "x": 2,
+      "y": 2
+    },
+    {
+      "x": 2,
+      "y": 3
+    },
+    {
+      "x": 2,
+      "y": 5
+    },
+    {
+      "x": 3,
+      "y": 1
+    },
+    {
+      "x": 3,
+      "y": 17
+    },
+    {
+      "x": 4,
+      "y": 12
+    },
+    {
+      "x": 4,
+      "y": 15
+    },
+    {
+      "x": 4,
+      "y": 19
+    },
+    {
+      "x": 5,
+      "y": 18
+    },
+    {
+      "x": 6,
+      "y": 4
+    },
+    {
+      "x": 6,
+      "y": 18
+    },
+    {
+      "x": 7,
+      "y": 0
+    },
+    {
+      "x": 7,
+      "y": 4
+    },
+    {
+      "x": 7,
+      "y": 8
+    },
+    {
+      "x": 8,
+      "y": 2
+    },
+    {
+      "x": 8,
+      "y": 14
+    },
+    {
+      "x": 8,
+      "y": 15
+    },
+    {
+      "x": 8,
+      "y": 19
+    },
+    {
+      "x": 9,
+      "y": 3
+    },
+    {
+      "x": 9,
+      "y": 6
+    },
+    {
+      "x": 9,
+      "y": 14
+    },
+    {
+      "x": 9,
+      "y": 18
+    },
+    {
+      "x": 10,
+      "y": 9
+    },
+    {
+      "x": 10,
+      "y": 14
+    },
+    {
+      "x": 10,
+      "y": 15
+    },
+    {
+      "x": 10,
+      "y": 16
+    },
+    {
+      "x": 11,
+      "y": 14
+    },
+    {
+      "x": 11,
+      "y": 15
+    },
+    {
+      "x": 12,
+      "y": 6
+    },
+    {
+      "x": 12,
+      "y": 11
+    },
+    {
+      "x": 12,
+      "y": 16
+    },
+    {
+      "x": 12,
+      "y": 17
+    },
+    {
+      "x": 13,
+      "y": 9
+    },
+    {
+      "x": 13,
+      "y": 19
+    },
+    {
+      "x": 14,
+      "y": 8
+    },
+    {
+      "x": 14,
+      "y": 18
+    },
+    {
+      "x": 15,
+      "y": 0
+    },
+    {
+      "x": 15,
+      "y": 1
+    },
+    {
+      "x": 15,
+      "y": 5
+    },
+    {
+      "x": 15,
+      "y": 15
+    },
+    {
+      "x": 16,
+      "y": 7
+    },
+    {
+      "x": 16,
+      "y": 13
+    },
+    {
+      "x": 16,
+      "y": 14
+    },
+    {
+      "x": 16,
+      "y": 15
+    },
+    {
+      "x": 17,
+      "y": 0
+    },
+    {
+      "x": 17,
+      "y": 3
+    },
+    {
+      "x": 17,
+      "y": 6
+    },
+    {
+      "x": 18,
+      "y": 10
+    },
+    {
+      "x": 18,
+      "y": 14
+    },
+    {
+      "x": 18,
+      "y": 15
+    },
+    {
+      "x": 19,
+      "y": 0
+    },
+    {
+      "x": 19,
+      "y": 1
+    },
+    {
+      "x": 19,
+      "y": 4
+    },
+    {
+      "x": 19,
+      "y": 9
+    },
+    {
+      "x": 19,
+      "y": 12
+    },
+    {
+      "x": 19,
+      "y": 15
+    },
+    {
+      "x": 19,
+      "y": 17
+    }
+  ],
+  "victims": [
+    {
+      "x": 9,
+      "y": 0
+    }
+  ],
+  "risk_cells": [
+    {
+      "x": 0,
+      "y": 2,
+      "level": "MEDIO",
+      "score": 1.1,
+      "gas": 0,
+      "temperature": 0,
+      "vibration": 0.853,
+      "inclination": 0
+    },
+    {
+      "x": 0,
+      "y": 3,
+      "level": "MEDIO",
+      "score": 1.0,
+      "gas": 0,
+      "temperature": 0,
+      "vibration": 0,
+      "inclination": 15.38
+    },
+    {
+      "x": 0,
+      "y": 4,
+      "level": "ALTO",
+      "score": 2.2,
+      "gas": 226.97,
+      "temperature": 0,
+      "vibration": 0,
+      "inclination": 22.34
+    },
+    {
+      "x": 0,
+      "y": 5,
+      "level": "MEDIO",
+      "score": 1.2,
+      "gas": 180.56,
+      "temperature": 0,
+      "vibration": 0,
+      "inclination": 0
+    },
+    {
+      "x": 0,
+      "y": 14,
+      "level": "MEDIO",
+      "score": 1.1,
+      "gas": 0,
+      "temperature": 0,
+      "vibration": 0.729,
+      "inclination": 0
+    },
+    {
+      "x": 0,
+      "y": 17,
+      "level": "MEDIO",
+      "score": 1.0,
+      "gas": 0,
+      "temperature": 51.99,
+      "vibration": 0,
+      "inclination": 0
+    },
+    {
+      "x": 0,
+      "y": 19,
+      "level": "MEDIO",
+      "score": 1.1,
+      "gas": 0,
+      "temperature": 0,
+      "vibration": 0.818,
+      "inclination": 0
+    },
+    {
+      "x": 1,
+      "y": 0,
+      "level": "MEDIO",
+      "score": 1.0,
+      "gas": 0,
+      "temperature": 0,
+      "vibration": 0,
+      "inclination": 22.33
+    },
+    {
+      "x": 1,
+      "y": 4,
+      "level": "MEDIO",
+      "score": 1.2,
+      "gas": 181.27,
+      "temperature": 0,
+      "vibration": 0,
+      "inclination": 0
+    },
+    {
+      "x": 1,
+      "y": 10,
+      "level": "MEDIO",
+      "score": 1.2,
+      "gas": 252.1,
+      "temperature": 0,
+      "vibration": 0.382,
+      "inclination": 0
+    },
+    {
+      "x": 1,
+      "y": 12,
+      "level": "MEDIO",
+      "score": 1.0,
+      "gas": 0,
+      "temperature": 39.91,
+      "vibration": 0,
+      "inclination": 14.29
+    },
+    {
+      "x": 1,
+      "y": 15,
+      "level": "MEDIO",
+      "score": 2.1,
+      "gas": 0,
+      "temperature": 39.58,
+      "vibration": 0.733,
+      "inclination": 8.19
+    },
+    {
+      "x": 1,
+      "y": 19,
+      "level": "MEDIO",
+      "score": 1.2,
+      "gas": 169.41,
+      "temperature": 0,
+      "vibration": 0,
+      "inclination": 0
+    },
+    {
+      "x": 2,
+      "y": 7,
+      "level": "MEDIO",
+      "score": 1.6,
+      "gas": 0,
+      "temperature": 0,
+      "vibration": 0.7,
+      "inclination": 21.91
+    },
+    {
+      "x": 2,
+      "y": 16,
+      "level": "MEDIO",
+      "score": 1.2,
+      "gas": 219.98,
+      "temperature": 0,
+      "vibration": 0,
+      "inclination": 0
+    },
+    {
+      "x": 3,
+      "y": 0,
+      "level": "MEDIO",
+      "score": 1.2,
+      "gas": 253.12,
+      "temperature": 0,
+      "vibration": 0,
+      "inclination": 0
+    },
+    {
+      "x": 3,
+      "y": 5,
+      "level": "ALTO",
+      "score": 2.3,
+      "gas": 169.5,
+      "temperature": 37.03,
+      "vibration": 0.51,
+      "inclination": 0
+    },
+    {
+      "x": 3,
+      "y": 14,
+      "level": "MEDIO",
+      "score": 1.1,
+      "gas": 0,
+      "temperature": 0,
+      "vibration": 0.704,
+      "inclination": 0
+    },
+    {
+      "x": 3,
+      "y": 16,
+      "level": "MEDIO",
+      "score": 1.2,
+      "gas": 265.45,
+      "temperature": 30.24,
+      "vibration": 0,
+      "inclination": 0
+    },
+    {
+      "x": 3,
+      "y": 18,
+      "level": "MEDIO",
+      "score": 1.0,
+      "gas": 0,
+      "temperature": 0,
+      "vibration": 0,
+      "inclination": 23.1
+    },
+    {
+      "x": 4,
+      "y": 1,
+      "level": "MEDIO",
+      "score": 1.1,
+      "gas": 127.71,
+      "temperature": 38.18,
+      "vibration": 0,
+      "inclination": 0
+    },
+    {
+      "x": 4,
+      "y": 2,
+      "level": "MEDIO",
+      "score": 1.0,
+      "gas": 0,
+      "temperature": 0,
+      "vibration": 0,
+      "inclination": 22.34
+    },
+    {
+      "x": 4,
+      "y": 3,
+      "level": "MEDIO",
+      "score": 1.0,
+      "gas": 0,
+      "temperature": 47.37,
+      "vibration": 0,
+      "inclination": 0
+    },
+    {
+      "x": 4,
+      "y": 10,
+      "level": "MEDIO",
+      "score": 1.6,
+      "gas": 0,
+      "temperature": 0,
+      "vibration": 0.588,
+      "inclination": 20.98
+    },
+    {
+      "x": 5,
+      "y": 0,
+      "level": "MEDIO",
+      "score": 1.0,
+      "gas": 0,
+      "temperature": 54.07,
+      "vibration": 0,
+      "inclination": 0
+    },
+    {
+      "x": 5,
+      "y": 1,
+      "level": "MEDIO",
+      "score": 1.2,
+      "gas": 217.83,
+      "temperature": 29.13,
+      "vibration": 0,
+      "inclination": 0
+    },
+    {
+      "x": 5,
+      "y": 4,
+      "level": "MEDIO",
+      "score": 1.2,
+      "gas": 245.67,
+      "temperature": 29.1,
+      "vibration": 0,
+      "inclination": 0
+    },
+    {
+      "x": 5,
+      "y": 5,
+      "level": "MEDIO",
+      "score": 1.5,
+      "gas": 0,
+      "temperature": 49.57,
+      "vibration": 0,
+      "inclination": 11.62
+    },
+    {
+      "x": 5,
+      "y": 19,
+      "level": "MEDIO",
+      "score": 1.2,
+      "gas": 126.03,
+      "temperature": 0,
+      "vibration": 0.557,
+      "inclination": 0
+    },
+    {
+      "x": 6,
+      "y": 3,
+      "level": "MEDIO",
+      "score": 1.1,
+      "gas": 0,
+      "temperature": 0,
+      "vibration": 0.934,
+      "inclination": 0
+    },
+    {
+      "x": 6,
+      "y": 5,
+      "level": "MEDIO",
+      "score": 1.2,
+      "gas": 178.24,
+      "temperature": 0,
+      "vibration": 0,
+      "inclination": 0
+    },
+    {
+      "x": 6,
+      "y": 8,
+      "level": "ALTO",
+      "score": 2.3,
+      "gas": 208.67,
+      "temperature": 0,
+      "vibration": 0.94,
+      "inclination": 0
+    },
+    {
+      "x": 6,
+      "y": 12,
+      "level": "MEDIO",
+      "score": 1.2,
+      "gas": 265.33,
+      "temperature": 0,
+      "vibration": 0,
+      "inclination": 0
+    },
+    {
+      "x": 6,
+      "y": 13,
+      "level": "MEDIO",
+      "score": 1.2,
+      "gas": 226.03,
+      "temperature": 0,
+      "vibration": 0,
+      "inclination": 0
+    },
+    {
+      "x": 6,
+      "y": 14,
+      "level": "MEDIO",
+      "score": 2.1,
+      "gas": 0,
+      "temperature": 32.63,
+      "vibration": 0.554,
+      "inclination": 17.54
+    },
+    {
+      "x": 6,
+      "y": 19,
+      "level": "MEDIO",
+      "score": 1.0,
+      "gas": 0,
+      "temperature": 0,
+      "vibration": 0,
+      "inclination": 19.87
+    },
+    {
+      "x": 7,
+      "y": 3,
+      "level": "MEDIO",
+      "score": 1.0,
+      "gas": 0,
+      "temperature": 0,
+      "vibration": 0,
+      "inclination": 20.21
+    },
+    {
+      "x": 7,
+      "y": 5,
+      "level": "MEDIO",
+      "score": 1.1,
+      "gas": 0,
+      "temperature": 0,
+      "vibration": 0.438,
+      "inclination": 14.86
+    },
+    {
+      "x": 7,
+      "y": 6,
+      "level": "MEDIO",
+      "score": 1.0,
+      "gas": 0,
+      "temperature": 0,
+      "vibration": 0,
+      "inclination": 22.68
+    },
+    {
+      "x": 7,
+      "y": 9,
+      "level": "MEDIO",
+      "score": 1.2,
+      "gas": 224.77,
+      "temperature": 0,
+      "vibration": 0,
+      "inclination": 0
+    },
+    {
+      "x": 7,
+      "y": 15,
+      "level": "MEDIO",
+      "score": 1.0,
+      "gas": 0,
+      "temperature": 0,
+      "vibration": 0,
+      "inclination": 20.61
+    },
+    {
+      "x": 7,
+      "y": 16,
+      "level": "MEDIO",
+      "score": 1.2,
+      "gas": 279.83,
+      "temperature": 0,
+      "vibration": 0,
+      "inclination": 0
+    },
+    {
+      "x": 7,
+      "y": 17,
+      "level": "MEDIO",
+      "score": 1.0,
+      "gas": 0,
+      "temperature": 28.04,
+      "vibration": 0,
+      "inclination": 17.79
+    },
+    {
+      "x": 7,
+      "y": 19,
+      "level": "MEDIO",
+      "score": 1.0,
+      "gas": 0,
+      "temperature": 0,
+      "vibration": 0,
+      "inclination": 16.27
+    },
+    {
+      "x": 8,
+      "y": 3,
+      "level": "MEDIO",
+      "score": 1.0,
+      "gas": 0,
+      "temperature": 0,
+      "vibration": 0,
+      "inclination": 22.56
+    },
+    {
+      "x": 8,
+      "y": 4,
+      "level": "MEDIO",
+      "score": 1.6,
+      "gas": 0,
+      "temperature": 0,
+      "vibration": 0.411,
+      "inclination": 16.46
+    },
+    {
+      "x": 8,
+      "y": 10,
+      "level": "MEDIO",
+      "score": 1.1,
+      "gas": 0,
+      "temperature": 0,
+      "vibration": 0.98,
+      "inclination": 0
+    },
+    {
+      "x": 8,
+      "y": 11,
+      "level": "MEDIO",
+      "score": 1.2,
+      "gas": 229.43,
+      "temperature": 0,
+      "vibration": 0,
+      "inclination": 0
+    },
+    {
+      "x": 8,
+      "y": 16,
+      "level": "MEDIO",
+      "score": 1.2,
+      "gas": 234.59,
+      "temperature": 0,
+      "vibration": 0,
+      "inclination": 0
+    },
+    {
+      "x": 8,
+      "y": 18,
+      "level": "MEDIO",
+      "score": 1.1,
+      "gas": 0,
+      "temperature": 0,
+      "vibration": 0.899,
+      "inclination": 0
+    },
+    {
+      "x": 9,
+      "y": 4,
+      "level": "MEDIO",
+      "score": 1.1,
+      "gas": 0,
+      "temperature": 0,
+      "vibration": 0.858,
+      "inclination": 0
+    },
+    {
+      "x": 9,
+      "y": 10,
+      "level": "MEDIO",
+      "score": 1.0,
+      "gas": 0,
+      "temperature": 0,
+      "vibration": 0,
+      "inclination": 17.73
+    },
+    {
+      "x": 9,
+      "y": 19,
+      "level": "MEDIO",
+      "score": 2.1,
+      "gas": 0,
+      "temperature": 42.88,
+      "vibration": 0.814,
+      "inclination": 0
+    },
+    {
+      "x": 10,
+      "y": 0,
+      "level": "MEDIO",
+      "score": 1.0,
+      "gas": 0,
+      "temperature": 0,
+      "vibration": 0,
+      "inclination": 16.3
+    },
+    {
+      "x": 10,
+      "y": 3,
+      "level": "ALTO",
+      "score": 2.3,
+      "gas": 176.94,
+      "temperature": 0,
+      "vibration": 0.963,
+      "inclination": 0
+    },
+    {
+      "x": 10,
+      "y": 6,
+      "level": "MEDIO",
+      "score": 1.6,
+      "gas": 0,
+      "temperature": 0,
+      "vibration": 0.64,
+      "inclination": 23.16
+    },
+    {
+      "x": 10,
+      "y": 8,
+      "level": "MEDIO",
+      "score": 1.1,
+      "gas": 0,
+      "temperature": 0,
+      "vibration": 0.921,
+      "inclination": 0
+    },
+    {
+      "x": 11,
+      "y": 2,
+      "level": "MEDIO",
+      "score": 1.2,
+      "gas": 227.58,
+      "temperature": 0,
+      "vibration": 0,
+      "inclination": 0
+    },
+    {
+      "x": 11,
+      "y": 3,
+      "level": "MEDIO",
+      "score": 1.0,
+      "gas": 0,
+      "temperature": 0,
+      "vibration": 0,
+      "inclination": 17.99
+    },
+    {
+      "x": 11,
+      "y": 5,
+      "level": "MEDIO",
+      "score": 1.0,
+      "gas": 0,
+      "temperature": 0,
+      "vibration": 0,
+      "inclination": 19.89
+    },
+    {
+      "x": 11,
+      "y": 9,
+      "level": "MEDIO",
+      "score": 1.1,
+      "gas": 0,
+      "temperature": 0,
+      "vibration": 0.614,
+      "inclination": 10.01
+    },
+    {
+      "x": 11,
+      "y": 10,
+      "level": "MEDIO",
+      "score": 1.0,
+      "gas": 0,
+      "temperature": 49.37,
+      "vibration": 0,
+      "inclination": 0
+    },
+    {
+      "x": 11,
+      "y": 12,
+      "level": "MEDIO",
+      "score": 1.0,
+      "gas": 0,
+      "temperature": 48.11,
+      "vibration": 0,
+      "inclination": 0
+    },
+    {
+      "x": 11,
+      "y": 13,
+      "level": "MEDIO",
+      "score": 1.6,
+      "gas": 148.21,
+      "temperature": 46.74,
+      "vibration": 0,
+      "inclination": 0
+    },
+    {
+      "x": 11,
+      "y": 17,
+      "level": "MEDIO",
+      "score": 1.2,
+      "gas": 274.19,
+      "temperature": 0,
+      "vibration": 0,
+      "inclination": 0
+    },
+    {
+      "x": 11,
+      "y": 18,
+      "level": "MEDIO",
+      "score": 1.1,
+      "gas": 0,
+      "temperature": 0,
+      "vibration": 0.925,
+      "inclination": 0
+    },
+    {
+      "x": 12,
+      "y": 12,
+      "level": "MEDIO",
+      "score": 1.0,
+      "gas": 0,
+      "temperature": 52.99,
+      "vibration": 0.387,
+      "inclination": 0
+    },
+    {
+      "x": 12,
+      "y": 14,
+      "level": "MEDIO",
+      "score": 1.0,
+      "gas": 0,
+      "temperature": 52.78,
+      "vibration": 0,
+      "inclination": 0
+    },
+    {
+      "x": 12,
+      "y": 18,
+      "level": "MEDIO",
+      "score": 1.6,
+      "gas": 0,
+      "temperature": 0,
+      "vibration": 0.741,
+      "inclination": 11.87
+    },
+    {
+      "x": 13,
+      "y": 0,
+      "level": "ALTO",
+      "score": 2.3,
+      "gas": 214.57,
+      "temperature": 0,
+      "vibration": 0.873,
+      "inclination": 0
+    },
+    {
+      "x": 13,
+      "y": 4,
+      "level": "MEDIO",
+      "score": 1.6,
+      "gas": 0,
+      "temperature": 34.17,
+      "vibration": 0.796,
+      "inclination": 0
+    },
+    {
+      "x": 13,
+      "y": 6,
+      "level": "MEDIO",
+      "score": 1.2,
+      "gas": 251.94,
+      "temperature": 0,
+      "vibration": 0,
+      "inclination": 0
+    },
+    {
+      "x": 13,
+      "y": 16,
+      "level": "MEDIO",
+      "score": 1.2,
+      "gas": 201.66,
+      "temperature": 0,
+      "vibration": 0,
+      "inclination": 0
+    },
+    {
+      "x": 13,
+      "y": 18,
+      "level": "MEDIO",
+      "score": 1.0,
+      "gas": 0,
+      "temperature": 0,
+      "vibration": 0,
+      "inclination": 17.46
+    },
+    {
+      "x": 14,
+      "y": 2,
+      "level": "MEDIO",
+      "score": 1.0,
+      "gas": 0,
+      "temperature": 44.19,
+      "vibration": 0,
+      "inclination": 0
+    },
+    {
+      "x": 14,
+      "y": 5,
+      "level": "MEDIO",
+      "score": 1.7,
+      "gas": 247.5,
+      "temperature": 37.82,
+      "vibration": 0,
+      "inclination": 0
+    },
+    {
+      "x": 14,
+      "y": 11,
+      "level": "MEDIO",
+      "score": 1.6,
+      "gas": 0,
+      "temperature": 50.85,
+      "vibration": 0.614,
+      "inclination": 0
+    },
+    {
+      "x": 14,
+      "y": 12,
+      "level": "MEDIO",
+      "score": 1.1,
+      "gas": 0,
+      "temperature": 0,
+      "vibration": 0.728,
+      "inclination": 0
+    },
+    {
+      "x": 15,
+      "y": 6,
+      "level": "MEDIO",
+      "score": 1.0,
+      "gas": 0,
+      "temperature": 44.83,
+      "vibration": 0,
+      "inclination": 7.76
+    },
+    {
+      "x": 15,
+      "y": 7,
+      "level": "MEDIO",
+      "score": 1.2,
+      "gas": 227.54,
+      "temperature": 0,
+      "vibration": 0,
+      "inclination": 0
+    },
+    {
+      "x": 16,
+      "y": 0,
+      "level": "MEDIO",
+      "score": 1.0,
+      "gas": 0,
+      "temperature": 0,
+      "vibration": 0,
+      "inclination": 15.63
+    },
+    {
+      "x": 16,
+      "y": 1,
+      "level": "MEDIO",
+      "score": 1.2,
+      "gas": 228.91,
+      "temperature": 0,
+      "vibration": 0,
+      "inclination": 0
+    },
+    {
+      "x": 16,
+      "y": 2,
+      "level": "MEDIO",
+      "score": 1.2,
+      "gas": 270.67,
+      "temperature": 0,
+      "vibration": 0,
+      "inclination": 0
+    },
+    {
+      "x": 16,
+      "y": 3,
+      "level": "MEDIO",
+      "score": 1.2,
+      "gas": 228.97,
+      "temperature": 0,
+      "vibration": 0,
+      "inclination": 7.25
+    },
+    {
+      "x": 16,
+      "y": 5,
+      "level": "MEDIO",
+      "score": 1.0,
+      "gas": 0,
+      "temperature": 0,
+      "vibration": 0,
+      "inclination": 18.2
+    },
+    {
+      "x": 16,
+      "y": 6,
+      "level": "MEDIO",
+      "score": 1.0,
+      "gas": 0,
+      "temperature": 53.09,
+      "vibration": 0,
+      "inclination": 0
+    },
+    {
+      "x": 16,
+      "y": 9,
+      "level": "MEDIO",
+      "score": 1.7,
+      "gas": 160.39,
+      "temperature": 0,
+      "vibration": 0,
+      "inclination": 14.93
+    },
+    {
+      "x": 16,
+      "y": 11,
+      "level": "MEDIO",
+      "score": 1.0,
+      "gas": 0,
+      "temperature": 0,
+      "vibration": 0,
+      "inclination": 15.76
+    },
+    {
+      "x": 16,
+      "y": 16,
+      "level": "MEDIO",
+      "score": 1.2,
+      "gas": 271.85,
+      "temperature": 0,
+      "vibration": 0,
+      "inclination": 0
+    },
+    {
+      "x": 16,
+      "y": 18,
+      "level": "MEDIO",
+      "score": 1.2,
+      "gas": 207.59,
+      "temperature": 0,
+      "vibration": 0,
+      "inclination": 0
+    },
+    {
+      "x": 17,
+      "y": 7,
+      "level": "ALTO",
+      "score": 2.3,
+      "gas": 192.88,
+      "temperature": 39.65,
+      "vibration": 0.535,
+      "inclination": 0
+    },
+    {
+      "x": 17,
+      "y": 9,
+      "level": "MEDIO",
+      "score": 1.6,
+      "gas": 0,
+      "temperature": 0,
+      "vibration": 0.497,
+      "inclination": 20.62
+    },
+    {
+      "x": 17,
+      "y": 11,
+      "level": "ALTO",
+      "score": 2.2,
+      "gas": 231.78,
+      "temperature": 47.54,
+      "vibration": 0,
+      "inclination": 0
+    },
+    {
+      "x": 18,
+      "y": 4,
+      "level": "MEDIO",
+      "score": 1.0,
+      "gas": 0,
+      "temperature": 51.52,
+      "vibration": 0,
+      "inclination": 0
+    },
+    {
+      "x": 18,
+      "y": 7,
+      "level": "MEDIO",
+      "score": 1.1,
+      "gas": 0,
+      "temperature": 0,
+      "vibration": 0.819,
+      "inclination": 0
+    },
+    {
+      "x": 18,
+      "y": 13,
+      "level": "MEDIO",
+      "score": 1.2,
+      "gas": 184.4,
+      "temperature": 0,
+      "vibration": 0,
+      "inclination": 0
+    },
+    {
+      "x": 19,
+      "y": 5,
+      "level": "MEDIO",
+      "score": 1.6,
+      "gas": 0,
+      "temperature": 45.96,
+      "vibration": 0.406,
+      "inclination": 0
+    },
+    {
+      "x": 19,
+      "y": 6,
+      "level": "MEDIO",
+      "score": 1.1,
+      "gas": 0,
+      "temperature": 34.28,
+      "vibration": 0.502,
+      "inclination": 0
+    },
+    {
+      "x": 19,
+      "y": 11,
+      "level": "MEDIO",
+      "score": 2.0,
+      "gas": 0,
+      "temperature": 50.52,
+      "vibration": 0,
+      "inclination": 20.11
+    },
+    {
+      "x": 19,
+      "y": 13,
+      "level": "MEDIO",
+      "score": 1.0,
+      "gas": 0,
+      "temperature": 0,
+      "vibration": 0,
+      "inclination": 15.69
+    }
+  ]
+}

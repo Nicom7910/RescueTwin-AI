@@ -126,14 +126,14 @@ public class MissionReplayController : MonoBehaviour
     {
         if (useDemoSelector)
         {
-            if (Input.GetKeyDown(KeyCode.Alpha1))
+            for (int i = 1; i <= Mathf.Min(maxDemo, 9); i++)
             {
-                LoadDemo(1);
-            }
+                KeyCode key = KeyCode.Alpha0 + i;
 
-            if (Input.GetKeyDown(KeyCode.Alpha2))
-            {
-                LoadDemo(2);
+                if (Input.GetKeyDown(key))
+                {
+                    LoadDemo(i);
+                }
             }
         }
 
@@ -142,7 +142,7 @@ public class MissionReplayController : MonoBehaviour
             RestartCurrentDemo();
         }
     }
-
+    
     public void LoadDemo(int demoNumber)
     {
         demoNumber = Mathf.Clamp(demoNumber, 1, maxDemo);
@@ -659,7 +659,7 @@ public class MissionReplayController : MonoBehaviour
         y += 42f;
 
         string helpText = useDemoSelector
-            ? "Teclas: 1 y 2 cambiar demo | R reiniciar | V cámara POV | C foto"
+            ? "Teclas: 1 - 9 cambiar demo | R reiniciar | V cámara POV | C foto"
             : "Teclas: R reiniciar | V cámara POV | C foto";
 
         GUI.Label(
