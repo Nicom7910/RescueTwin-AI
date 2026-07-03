@@ -731,6 +731,73 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65c134c60a73c40c6b6636c607158dae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RescueRobotVisualUpgrade
+--- !u!1 &458509829
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 458509831}
+  - component: {fileID: 458509830}
+  m_Layer: 0
+  m_Name: RobotVisualSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &458509830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 458509829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52796e4834cb24227b95f91599883ce2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RescueRobotVisualStable
+  targetRobot: {fileID: 0}
+  startDelay: 0.8
+  visualOffset: {x: 0, y: 0.02, z: 0}
+  visualRotation: {x: 0, y: 0, z: 0}
+  visualScale: 1.15
+  forceHideOriginalEveryFrame: 1
+  keepSmallOriginalLegs: 1
+  legVisibilityHeight: 0.32
+  footHeight: 0.08
+  maxVisibleLegPartSize: 0.55
+  bodyColor: {r: 0.05, g: 0.16, b: 0.38, a: 1}
+  rescueYellow: {r: 0.98, g: 0.72, b: 0.08, a: 1}
+  darkColor: {r: 0.08, g: 0.08, b: 0.09, a: 1}
+  metalColor: {r: 0.48, g: 0.49, b: 0.5, a: 1}
+  lightMetalColor: {r: 0.72, g: 0.72, b: 0.74, a: 1}
+  sensorColor: {r: 0.08, g: 0.95, b: 1, a: 1}
+  medicalRed: {r: 0.95, g: 0.06, b: 0.04, a: 1}
+  whiteColor: {r: 0.94, g: 0.94, b: 0.92, a: 1}
+  statusColor: {r: 0, g: 1, b: 0, a: 1}
+  addLights: 1
+  sensorLightIntensity: 0.55
+  statusLightIntensity: 0.75
+  lightRange: 1.6
+--- !u!4 &458509831
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 458509829}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.02817, y: 0.41137, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -811,7 +878,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::RescueVisualAutoReapply
   scenePolish: {fileID: 0}
   robotPolish: {fileID: 0}
-  reapplyDelay: 0.01
+  reapplyDelay: 0.02
 --- !u!4 &938783931
 Transform:
   m_ObjectHideFlags: 0
@@ -1283,6 +1350,77 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1911790149
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1911790151}
+  - component: {fileID: 1911790150}
+  m_Layer: 0
+  m_Name: VisualPolishSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1911790150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1911790149}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb701428f727c466ebf6a08bad8f9d08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RescueTwinVisualPolish
+  buildOnStart: 1
+  showDigitalGrid: 1
+  gridSpacing: 1
+  gridThickness: 0.0045
+  gridColor: {r: 0.04, g: 0.42, b: 0.5, a: 1}
+  routeColor: {r: 1, g: 0.72, b: 0.1, a: 1}
+  routeWidth: 0.18
+  dynamicTrailWidth: 0.22
+  minTrailDistance: 0.2
+  teleportResetDistance: 4.5
+  floorColor: {r: 0.105, g: 0.105, b: 0.11, a: 1}
+  dustColor: {r: 0.3, g: 0.29, b: 0.27, a: 1}
+  crackColor: {r: 0.025, g: 0.025, b: 0.028, a: 1}
+  wallHeight: 1.25
+  wallThickness: 0.22
+  wallMargin: 0.25
+  wallColor: {r: 0.42, g: 0.39, b: 0.36, a: 1}
+  improveObstacles: 1
+  generateRubble: 1
+  rubbleSeed: 77
+  concreteColor: {r: 0.56, g: 0.54, b: 0.5, a: 1}
+  darkConcreteColor: {r: 0.33, g: 0.32, b: 0.3, a: 1}
+  metalColor: {r: 0.28, g: 0.3, b: 0.32, a: 1}
+  victimSkinColor: {r: 0.85, g: 0.68, b: 0.55, a: 1}
+  victimClothColor: {r: 0.85, g: 0.45, b: 0.1, a: 1}
+  victimFallbackBeaconColor: {r: 0.85, g: 0.2, b: 0.85, a: 1}
+  victimScale: 3.6
+--- !u!4 &1911790151
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1911790149}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.02817, y: 0.41137, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -1299,3 +1437,5 @@ SceneRoots:
   - {fileID: 1534560444}
   - {fileID: 1818030085}
   - {fileID: 938783931}
+  - {fileID: 1911790151}
+  - {fileID: 458509831}
