@@ -19,11 +19,17 @@ public class RescueVisualAutoReapply : MonoBehaviour
 
     private void Update()
     {
-        if (
-            Input.GetKeyDown(KeyCode.Alpha1) ||
-            Input.GetKeyDown(KeyCode.Alpha2) ||
-            Input.GetKeyDown(KeyCode.R)
-        )
+        for (int i = 1; i <= 9; i++)
+        {
+            KeyCode key = KeyCode.Alpha0 + i;
+
+            if (Input.GetKeyDown(key))
+            {
+                ScheduleReapply();
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.R))
         {
             ScheduleReapply();
         }
