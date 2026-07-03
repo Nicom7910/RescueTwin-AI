@@ -7,69 +7,85 @@ public class RescueVisualAutoReapply : MonoBehaviour
     public RescueTwinVisualPolish scenePolish;
     public RescueRobotVisualStable robotPolish;
 
-    [Header("Tiempo de espera")]
-    public float reapplyDelay = 0.25f;
+    [Header("Configuración")]
+    public float reapplyDelay = 0.35f;
 
-    private Coroutine reapplyRoutine;
+    private Coroutine reapplyCoroutine;
 
-    private void Start()
+    void Start()
     {
-        FindReferencesIfNeeded();
+        AutoFindReferences();
+        ScheduleReapply();
     }
 
-    private void Update()
+    void Update()
     {
-        for (int i = 1; i <= 9; i++)
-        {
-            KeyCode key = KeyCode.Alpha0 + i;
-
-            if (Input.GetKeyDown(key))
-            {
-                ScheduleReapply();
-            }
-        }
-
-        if (Input.GetKeyDown(KeyCode.R))
+        if (DemoKeyPressed() || Input.GetKeyDown(KeyCode.R))
         {
             ScheduleReapply();
         }
     }
 
-    private void FindReferencesIfNeeded()
+    private bool DemoKeyPressed()
+    {
+        return Input.GetKeyDown(KeyCode.Alpha1)
+            || Input.GetKeyDown(KeyCode.Alpha2)
+            || Input.GetKeyDown(KeyCode.Alpha3)
+            || Input.GetKeyDown(KeyCode.Alpha4)
+            || Input.GetKeyDown(KeyCode.Alpha5)
+            || Input.GetKeyDown(KeyCode.Alpha6)
+            || Input.GetKeyDown(KeyCode.Alpha7)
+            || Input.GetKeyDown(KeyCode.Alpha8)
+            || Input.GetKeyDown(KeyCode.Alpha9);
+    }
+
+    private void AutoFindReferences()
     {
         if (scenePolish == null)
-            scenePolish = FindObjectOfType<RescueTwinVisualPolish>();
+        {
+            scenePolish = FindAnyObjectByType<RescueTwinVisualPolish>();
+        }
 
         if (robotPolish == null)
-            robotPolish = FindObjectOfType<RescueRobotVisualStable>();
+        {
+            robotPolish = FindAnyObjectByType<RescueRobotVisualStable>();
+        }
     }
 
     private void ScheduleReapply()
     {
-        if (reapplyRoutine != null)
-            StopCoroutine(reapplyRoutine);
+        if (reapplyCoroutine != null)
+        {
+            StopCoroutine(reapplyCoroutine);
+        }
 
-        reapplyRoutine = StartCoroutine(ReapplyAfterDelay());
+        reapplyCoroutine = StartCoroutine(ReapplyAfterDelay());
     }
 
     private IEnumerator ReapplyAfterDelay()
     {
         yield return new WaitForSeconds(reapplyDelay);
 
-        FindReferencesIfNeeded();
+        AutoFindReferences();
 
         if (scenePolish != null)
         {
             scenePolish.RebuildVisuals();
+            Debug.Log("[RescueVisualAutoReapply] Visuales de escena reaplicados.");
         }
-
-        yield return new WaitForSeconds(0.10f);
+        else
+        {
+            Debug.LogWarning("[RescueVisualAutoReapply] No se encontró RescueTwinVisualPolish.");
+        }
 
         if (robotPolish != null)
         {
             robotPolish.BuildOrRefresh();
+            Debug.Log("[RescueVisualAutoReapply] Visual del robot reaplicado.");
         }
-
-        Debug.Log("Visual polish reaplicado después de cambiar demo.");
+        else
+        {
+            Debug.LogWarning("[RescueVisualAutoReapply] No se encontró RescueRobotVisualStable.");
+        }
     }
 }

@@ -56,6 +56,8 @@ public class MissionReplayController : MonoBehaviour
     [Header("Demo selector")]
     public bool useDemoSelector = true;
     public int currentDemo = 1;
+
+    [Tooltip("Se actualiza automáticamente según los archivos demo_XXX encontrados en StreamingAssets.")]
     public int maxDemo = 1;
 
     [Header("Visual trail")]
@@ -93,6 +95,8 @@ public class MissionReplayController : MonoBehaviour
 
         if (useDemoSelector)
         {
+            DetectAvailableDemos();
+            currentDemo = Mathf.Clamp(currentDemo, 1, maxDemo);
             LoadDemo(currentDemo);
         }
         else
@@ -122,19 +126,66 @@ public class MissionReplayController : MonoBehaviour
         }
     }
 
+    private void DetectAvailableDemos()
+    {
+        int detected = 0;
+
+        for (int i = 1; i <= 9; i++)
+        {
+            string demoId = i.ToString("D3");
+
+            string trajectoryPath = Path.Combine(
+                Application.streamingAssetsPath,
+                "demo_" + demoId + "_trajectory.json"
+            );
+
+            string worldPath = Path.Combine(
+                Application.streamingAssetsPath,
+                "demo_" + demoId + "_world.json"
+            );
+
+            bool hasTrajectory = File.Exists(trajectoryPath);
+            bool hasWorld = File.Exists(worldPath);
+
+            if (hasTrajectory && hasWorld)
+            {
+                detected = i;
+            }
+            else
+            {
+                Debug.Log(
+                    "[MissionReplayController] Demo " + demoId +
+                    " incompleta o ausente. trajectory=" + hasTrajectory +
+                    " world=" + hasWorld
+                );
+            }
+        }
+
+        if (detected > 0)
+        {
+            maxDemo = detected;
+            Debug.Log("[MissionReplayController] Demos detectadas automáticamente: " + maxDemo);
+        }
+        else
+        {
+            maxDemo = 1;
+            Debug.LogWarning("[MissionReplayController] No se detectaron demos. Se usará maxDemo = 1.");
+        }
+    }
+
     private void HandleKeyboardInput()
     {
         if (useDemoSelector)
         {
-            for (int i = 1; i <= Mathf.Min(maxDemo, 9); i++)
-            {
-                KeyCode key = KeyCode.Alpha0 + i;
-
-                if (Input.GetKeyDown(key))
-                {
-                    LoadDemo(i);
-                }
-            }
+            if (maxDemo >= 1 && Input.GetKeyDown(KeyCode.Alpha1)) LoadDemo(1);
+            if (maxDemo >= 2 && Input.GetKeyDown(KeyCode.Alpha2)) LoadDemo(2);
+            if (maxDemo >= 3 && Input.GetKeyDown(KeyCode.Alpha3)) LoadDemo(3);
+            if (maxDemo >= 4 && Input.GetKeyDown(KeyCode.Alpha4)) LoadDemo(4);
+            if (maxDemo >= 5 && Input.GetKeyDown(KeyCode.Alpha5)) LoadDemo(5);
+            if (maxDemo >= 6 && Input.GetKeyDown(KeyCode.Alpha6)) LoadDemo(6);
+            if (maxDemo >= 7 && Input.GetKeyDown(KeyCode.Alpha7)) LoadDemo(7);
+            if (maxDemo >= 8 && Input.GetKeyDown(KeyCode.Alpha8)) LoadDemo(8);
+            if (maxDemo >= 9 && Input.GetKeyDown(KeyCode.Alpha9)) LoadDemo(9);
         }
 
         if (Input.GetKeyDown(KeyCode.R))
@@ -142,9 +193,11 @@ public class MissionReplayController : MonoBehaviour
             RestartCurrentDemo();
         }
     }
-    
+
     public void LoadDemo(int demoNumber)
     {
+        DetectAvailableDemos();
+
         demoNumber = Mathf.Clamp(demoNumber, 1, maxDemo);
         currentDemo = demoNumber;
 
@@ -153,6 +206,21 @@ public class MissionReplayController : MonoBehaviour
         missionFileName = "demo_" + demoId + "_trajectory.json";
         string worldFileName = "demo_" + demoId + "_world.json";
 
+        string trajectoryPath = Path.Combine(Application.streamingAssetsPath, missionFileName);
+        string worldPath = Path.Combine(Application.streamingAssetsPath, worldFileName);
+
+        if (!File.Exists(trajectoryPath))
+        {
+            Debug.LogError("[MissionReplayController] No existe trajectory: " + trajectoryPath);
+            return;
+        }
+
+        if (!File.Exists(worldPath))
+        {
+            Debug.LogError("[MissionReplayController] No existe world: " + worldPath);
+            return;
+        }
+
         if (mapBuilder != null)
         {
             mapBuilder.LoadAndBuildWorld(worldFileName, missionFileName);
@@ -160,11 +228,20 @@ public class MissionReplayController : MonoBehaviour
             mapHeight = mapBuilder.mapHeight;
             cellSize = mapBuilder.cellSize;
         }
+        else
+        {
+            Debug.LogWarning("[MissionReplayController] mapBuilder no asignado. Solo se cargará trayectoria.");
+        }
 
         LoadMission();
         RestartCurrentDemo();
 
-        Debug.Log("Demo cargada: " + demoNumber);
+        Debug.Log(
+            "[MissionReplayController] Demo cargada: " + currentDemo +
+            " / " + maxDemo +
+            " | trajectory=" + missionFileName +
+            " | world=" + worldFileName
+        );
     }
 
     public void LoadManualMission()
@@ -184,13 +261,14 @@ public class MissionReplayController : MonoBehaviour
         LoadMission();
         RestartCurrentDemo();
 
-        Debug.Log("Misión manual cargada: " + missionFileName);
+        Debug.Log("[MissionReplayController] Misión manual cargada: " + missionFileName);
     }
 
     private void RestartCurrentDemo()
     {
         if (steps.Count == 0 || robot == null)
         {
+            Debug.LogWarning("[MissionReplayController] No se puede reiniciar: sin pasos o sin robot.");
             return;
         }
 
@@ -240,8 +318,9 @@ public class MissionReplayController : MonoBehaviour
 
         if (!File.Exists(path))
         {
-            Debug.LogError("No se encontró el archivo de misión: " + path);
+            Debug.LogError("[MissionReplayController] No se encontró el archivo de misión: " + path);
             steps = new List<MissionStep>();
+            currentStep = null;
             return;
         }
 
@@ -250,15 +329,22 @@ public class MissionReplayController : MonoBehaviour
 
         MissionStepList loaded = JsonUtility.FromJson<MissionStepList>(wrappedJson);
 
-        if (loaded != null && loaded.steps != null)
+        if (loaded != null && loaded.steps != null && loaded.steps.Count > 0)
         {
             steps = loaded.steps;
-            Debug.Log("Misión cargada correctamente: " + missionFileName + " | Pasos: " + steps.Count);
+            currentStep = steps[0];
+
+            Debug.Log(
+                "[MissionReplayController] Misión cargada correctamente: " +
+                missionFileName +
+                " | Pasos: " + steps.Count
+            );
         }
         else
         {
             steps = new List<MissionStep>();
-            Debug.LogError("No se pudo parsear el archivo JSON de misión.");
+            currentStep = null;
+            Debug.LogError("[MissionReplayController] No se pudo parsear el archivo JSON de misión o no tiene pasos.");
         }
     }
 
@@ -326,7 +412,7 @@ public class MissionReplayController : MonoBehaviour
 
         CreateVictimFoundMarker(step.victim_x, step.victim_y);
 
-        Debug.Log("Víctima encontrada en: (" + step.victim_x + ", " + step.victim_y + ")");
+        Debug.Log("[MissionReplayController] Víctima encontrada en: (" + step.victim_x + ", " + step.victim_y + ")");
     }
 
     private void CreateVictimFoundMarker(int x, int y)
@@ -346,11 +432,11 @@ public class MissionReplayController : MonoBehaviour
         victimFoundMarker.transform.position = GridToWorld(x, y, 1.1f);
         victimFoundMarker.transform.localScale = new Vector3(0.65f, 0.08f, 0.65f);
 
-        Renderer renderer = victimFoundMarker.GetComponent<Renderer>();
+        Renderer markerRenderer = victimFoundMarker.GetComponent<Renderer>();
 
-        if (renderer != null)
+        if (markerRenderer != null)
         {
-            renderer.material.color = Color.magenta;
+            markerRenderer.material.color = Color.magenta;
         }
     }
 
@@ -386,11 +472,11 @@ public class MissionReplayController : MonoBehaviour
         baseMarker.position = GridToWorld(10, 10, 0.12f);
         baseMarker.localScale = new Vector3(1.8f, 0.18f, 1.8f);
 
-        Renderer renderer = baseMarker.GetComponent<Renderer>();
+        Renderer markerRenderer = baseMarker.GetComponent<Renderer>();
 
-        if (renderer != null)
+        if (markerRenderer != null)
         {
-            renderer.material.color = Color.blue;
+            markerRenderer.material.color = Color.blue;
         }
     }
 
@@ -433,6 +519,11 @@ public class MissionReplayController : MonoBehaviour
 
     private void ApplyRobotVisualState(MissionStep step)
     {
+        if (robot == null)
+        {
+            return;
+        }
+
         Color targetColor;
 
         if (step.victim_found)
@@ -460,6 +551,19 @@ public class MissionReplayController : MonoBehaviour
             targetColor = Color.green;
         }
 
+        RescueRobotVisualStable stableVisual = robot.GetComponentInChildren<RescueRobotVisualStable>();
+
+        if (stableVisual == null)
+        {
+            stableVisual = FindAnyObjectByType<RescueRobotVisualStable>();
+        }
+
+        if (stableVisual != null)
+        {
+            stableVisual.SetStatusColor(targetColor);
+            return;
+        }
+
         QuadrupedRobotVisual quadrupedVisual = robot.GetComponent<QuadrupedRobotVisual>();
 
         if (quadrupedVisual != null)
@@ -470,9 +574,9 @@ public class MissionReplayController : MonoBehaviour
 
         Renderer[] renderers = robot.GetComponentsInChildren<Renderer>();
 
-        foreach (Renderer renderer in renderers)
+        foreach (Renderer robotRenderer in renderers)
         {
-            renderer.material.color = targetColor;
+            robotRenderer.material.color = targetColor;
         }
     }
 

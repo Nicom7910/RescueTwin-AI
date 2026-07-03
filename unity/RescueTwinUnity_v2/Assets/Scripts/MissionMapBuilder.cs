@@ -260,30 +260,59 @@ public class MissionMapBuilder : MonoBehaviour
 
     private void ClearGeneratedObjects()
     {
-        string[] names =
+        string[] generatedPrefixes =
         {
-            "Generated Grid",
-            "Generated Obstacles",
-            "Generated Risk Cells",
-            "Generated Victim Markers"
-        };
+        "Generated Grid",
+        "Generated Obstacles",
+        "Generated Risk Cells",
+        "Generated Victim Markers",
+        "Generated Rubble",
+        "Generated Perimeter Walls",
+        "Generated Floor Damage",
+        "Generated Digital Grid",
+        "Generated Route",
+        "Generated Mission Route",
+        "Generated Path",
+        "Visual Floor Damage",
+        "Visual Perimeter Walls",
+        "Visual Rubble",
+        "Visual Grid",
+        "Visual Route",
+        "Risk Overlay",
+        "Decorative Rubble",
+        "Perimeter Wall",
+        "Mission Trail"
+    };
 
-        foreach (string objectName in names)
+        GameObject[] allObjects = UnityEngine.Object.FindObjectsByType<GameObject>(
+            FindObjectsInactive.Include
+        );
+
+        foreach (GameObject obj in allObjects)
         {
-            GameObject existing = GameObject.Find(objectName);
+            if (obj == null)
+                continue;
 
-            if (existing != null)
+            foreach (string prefix in generatedPrefixes)
             {
-                if (Application.isPlaying)
+                if (obj.name.StartsWith(prefix) || obj.name.Contains(prefix))
                 {
-                    Destroy(existing);
-                }
-                else
-                {
-                    DestroyImmediate(existing);
+                    SafeDestroy(obj);
+                    break;
                 }
             }
         }
+    }
+
+    private void SafeDestroy(UnityEngine.Object obj)
+    {
+        if (obj == null)
+            return;
+
+        if (Application.isPlaying)
+            Destroy(obj);
+        else
+            DestroyImmediate(obj);
     }
 
     private void CreateGround()
